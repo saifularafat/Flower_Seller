@@ -1,17 +1,22 @@
+import { FaBars } from "react-icons/fa6";
 import Logo from "./Logo";
 import Search from "./Search";
 import HederRight from "./SignInOrderCart/HederRight";
 
 const MiddleHeader = () => {
     return (
-        <div className="grid md:grid-cols-6 grid-cols-2 gap-5 content-center border py-2 mx-6">
-            <div className="col-span-1 md:col-span-1">
+        <div className="flex items-center justify-between md:py-2 py-1 md:mx-6 mx-2">
+            <div className="md:hidden block">
+                <FaBars className=" text-xl"/>
+                <span className="text-xs font-semibold">Menu</span>
+            </div>
+            <div className="md:w-1/12 w-1/2">
                 <Logo />
             </div>
-            <div className="md:col-span-3 md:block hidden">
+            <div className="w-8/12 md:block hidden">
                 <Search />
             </div>
-            <div className="col-span-1 md:col-span-2">
+            <div className=" md:w-1/5 ">
                 <HederRight />
             </div>
         </div>

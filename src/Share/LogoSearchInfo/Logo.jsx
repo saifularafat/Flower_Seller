@@ -3,7 +3,7 @@ import logo from "./../../assets/logo/logo.webp"
 const Logo = () => {
     return (
         <Link to="/" className="">
-            <img src={logo} alt="" className="w-1/2 object-cover"/>
+            <img src={logo} alt="" className="md:w-full w-1/2 mx-auto object-cover"/>
         </Link>
     );
 };

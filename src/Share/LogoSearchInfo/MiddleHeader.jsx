@@ -5,7 +5,7 @@ import HederRight from "./SignInOrderCart/HederRight";
 
 const MiddleHeader = () => {
     return (
-        <div className="flex items-center justify-between md:py-2 py-1 md:mx-6 mx-2">
+        <div className="flex items-center justify-between py-1 md:mx-6 mx-2">
             <div className="md:hidden block">
                 <FaBars className=" text-xl"/>
                 <span className="text-xs font-semibold">Menu</span>

@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
     return (
         <Link to="" className="flex-1 items-center text-center">
-            <GrCart className="md:text-4xl w-full mx-auto text-2xl  text-[#282A33]" />
+            <div className="w-full mx-auto">
+                <GrCart className="md:w-8 md:h-8 w-6 h-6 mx-auto text-[#282A33]" />
+            </div>
             <span className="text-xs font-medium text-center md:block hidden">(0) Cart</span>
             <span className="text-xs font-medium text-center md:hidden block">Cart</span>
         </Link>

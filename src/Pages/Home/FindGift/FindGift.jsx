@@ -4,8 +4,9 @@ const FindGift = () => {
         e.preventDefault();
         const form = e.target;
         const code = form.payCode.value;
+        const occasionValue = form.my_select.value;
 
-        console.log(code);
+        console.log(code, "occasionValue => ", occasionValue);
     }
     return (
         <div className=" w-3/4 h-28 mx-auto relative -top-4 bg-slate-200 shadow-2xl rounded-md p-2 z-50">
@@ -15,7 +16,7 @@ const FindGift = () => {
                     onSubmit={handleFindGift}
                     className="flex items-center gap-3">
                     <div>
-                        <label htmlFor="" className="">Where is it going?</label> <br />
+                        <label htmlFor="payCode" className="">Where is it going?</label> <br />
                         <input 
                         type="text" 
                         name="payCode" 
@@ -24,19 +25,21 @@ const FindGift = () => {
                         className="px-2 py-1 border border-slate-700 rounded-md placeholder:text-sm placeholder:capitalize text-slate-800 outline-black mt-1" />
                     </div>
                     <div>
-                        <label htmlFor="" className="">Occasion</label> <br />
+                        <label htmlFor="my_select" className="">Occasion</label> <br />
                         <select 
                         id="my_select" 
+                        name="my_select"
+                        onChange={() =>{}}
                         className="px-2 py-1 border border-slate-700 rounded-md placeholder:text-sm placeholder:capitalize text-slate-700 outline-black mt-1">
-                            <option value="1" selected>Thanksgiving</option>
-                            <option value="2">Congratulation</option>
-                            <option value="3">Birthday</option>
-                            <option value="4">Anniversary</option>
-                            <option value="5">Love</option>
-                            <option value="6">I'm sorry</option>
-                            <option value="7">Flower Gift</option>
-                            <option value="8">New Baby</option>
-                            <option value="9">Thank You</option>
+                            <option value="thanksgiving" defaultValue="Thanksgiving">Thanksgiving</option>
+                            <option value="congratulation">Congratulation</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="love">Love</option>
+                            <option value="imsorry">I'm sorry</option>
+                            <option value="flowergift">Flower Gift</option>
+                            <option value="newbaby">New Baby</option>
+                            <option value="thankyou">Thank You</option>
                         </select>
                     </div>
                     <div>

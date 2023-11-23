@@ -8,10 +8,10 @@ import './slider.css'
 /* slider images */
 import slider1 from "../.../../../../assets/banner/slider1.webp"
 import slider2 from "../.../../../../assets/banner/slider2.webp"
-import slider3 from "../.../../../../assets/banner/slider3.webp"
+import slider3 from "../.../../../../assets/banner/slider33.webp"
 import slider4 from "../.../../../../assets/banner/slider4.webp"
-import slider5 from "../.../../../../assets/banner/slider5.webp"
-import slider6 from "../.../../../../assets/banner/slider6.webp"
+import slider5 from "../.../../../../assets/banner/slider55.webp"
+import slider6 from "../.../../../../assets/banner/slider66.webp"
 
 const Slider = () => {
     return (

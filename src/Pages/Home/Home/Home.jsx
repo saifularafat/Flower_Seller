@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import ExclusiveFlower from "../ExclusiveFlower/ExclusiveFlower";
 import FindGift from "../FindGift/FindGift";
 import OfferTitle from "./OfferTitle";
 
@@ -8,6 +9,7 @@ const Home = () => {
             <OfferTitle />
             <Banner />
             <FindGift />
+            <ExclusiveFlower />
         </div>
     );
 };

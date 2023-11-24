@@ -10,7 +10,7 @@ import flower6 from "../../../assets/flowers/84620.webp"
 import { Link } from "react-router-dom";
 const ExclusiveFlower = () => {
     return (
-        <div className="md:my-9 ">
+        <div className="md:my-9 mb-12">
             <SectionTitle color=" text-slate-900" title="Send Flowers & Exclusive Gifts" />
             {/* TODO LINKS */}
             <div className="grid grid-cols-6 gap-3 overflow-x-scroll md:overflow-x-hidden py-10 mx-2">

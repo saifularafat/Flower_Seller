@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import SectionTitle from "../../../components/SectionTitle";
 /* images */
-import flower1 from "../../../assets/flowers/14759.webp"
-import flower2 from "../../../assets/flowers/12345.webp"
-import flower3 from "../../../assets/flowers/25465.webp"
-import flower4 from "../../../assets/flowers/25978.webp"
-import flower5 from "../../../assets/flowers/56495.webp"
-import flower6 from "../../../assets/flowers/84620.webp"
+import sweet1 from "../../../assets/flowers/sweet/chocolateGift.webp"
+import sweet2 from "../../../assets/flowers/sweet/BakedGoods.webp"
+import sweet3 from "../../../assets/flowers/sweet/furitBaskets.webp"
+import sweet4 from "../../../assets/flowers/sweet/giftBaskets.webp"
+import sweet5 from "../../../assets/flowers/sweet/meatCheese.webp"
+import sweet6 from "../../../assets/flowers/sweet/wineBer.webp"
+/* components */
+import SectionTitle from "../../../components/SectionTitle";
+import HomeImages from "../../../components/HomeImages";
 import banner from "../../../assets/sectionBanner/disnep.webp"
 import SectionSiteCover from "../../../components/SectionSiteCover";
 import leftCover from "../../../assets/flowers/cover/christmas-gifts.webp"
@@ -16,32 +18,27 @@ const SweetSurprises = () => {
     return (
         <div className="md:my-10 my-5">
             <SectionTitle color="text-slate-900" title="Sweet & Savory Surprises" />
-            <div className="grid grid-cols-6 gap-3 overflow-x-scroll md:overflow-x-hidden py-10 mx-2">
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower2} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower1} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower3} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower4} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower5} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-                <Link to="" className=" border border-white rounded-md shadow-md p-0">
-                    <img src={flower6} alt="" className="hover:scale-105 transition-all duration-200" />
-                    <h4 className="text-center text-lg font-medium tracking-wide">Birthday Flowers</h4>
-                </Link>
-            </div>
+            {/* TODO Link */}
+            <HomeImages
+                path1=""
+                Image1={sweet1}
+                title1="Chocolate Gift"
+                path2=""
+                Image2={sweet2}
+                title2="Baked Goods"
+                path3=""
+                Image3={sweet3}
+                title3="Fruit Baskets"
+                path4=""
+                Image4={sweet4}
+                title4="Baskets Gift"
+                path5=""
+                Image5={sweet5}
+                title5="Meat Cheese"
+                path6=""
+                Image6={sweet6}
+                title6="wine Bar"
+            />
             <Link to="">
                 <img src={banner} alt="" className="w-11/12 mx-auto" />
             </Link>

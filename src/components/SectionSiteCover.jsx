@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const SectionSiteCover = ({ path1, Image1, title1, path2, Image2, title2 }) => {
     return (
         /* TODO Side Cover */
-        <div className="flex items-center gap-6 w-11/12 mx-auto">
+        <div className="md:flex items-center md:gap-6 gap-4 md:w-11/12 w-full mx-auto">
             <div className="relative">
                 <Link to={path1} className="">
                     <img src={Image1} alt="" className="w-full object-cover" />

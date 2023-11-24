@@ -11,6 +11,7 @@ import banner from "../../../assets/sectionBanner/disnep.webp"
 import SectionSiteCover from "../../../components/SectionSiteCover";
 import leftCover from "../../../assets/flowers/cover/christmas-gifts.webp"
 import rightCover from "../../../assets/flowers/cover/sharis-berries.webp"
+import sectionBanner from "../../../assets/sectionBanner/gift.webp"
 const SweetSurprises = () => {
     return (
         <div className="md:my-10 my-5">
@@ -46,17 +47,19 @@ const SweetSurprises = () => {
             </Link>
             <div className="mt-8">
                 {/* TODO Link */}
-                <SectionSiteCover 
-                path1="" 
-                Image1={leftCover} 
-                title1="Personalized Christmas Gift" 
-                path2="" 
-                Image2={rightCover} 
-                title2="Artisan Crafted Berries" 
+                <SectionSiteCover
+                    path1=""
+                    Image1={leftCover}
+                    title1="Personalized Christmas Gift"
+                    path2=""
+                    Image2={rightCover}
+                    title2="Artisan Crafted Berries"
                 />
             </div>
             <div className="mt-8">
-
+                <Link to="">
+                    <img src={sectionBanner} alt="" className="w-11/12 mx-auto" />
+                </Link>
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
     return (
         <div className="border-0 md:border-y border-slate-300 py-2">
-            <ul className="md:flex items-center gap-8 md:mx-4 mx-2">
+            <ul className="md:flex items-center gap-7 md:mx-4 mx-2">
                 <li>
                     <NavLink className={"text-base font-medium uppercase hover:border-0 hover:border-b-2 hover:border-slate-950 pb-2 px-1"}> 
                         Thanksgiving

@@ -1,3 +1,4 @@
+import SectionSiteCover from "../../../components/SectionSiteCover";
 import Banner from "../Banner/Banner";
 import ExclusiveFlower from "../ExclusiveFlower/ExclusiveFlower";
 import FindGift from "../FindGift/FindGift";
@@ -12,6 +13,7 @@ const Home = () => {
             <FindGift />
             <ExclusiveFlower />
             <SweetSurprises />
+            <SectionSiteCover />
         </div>
     );
 };

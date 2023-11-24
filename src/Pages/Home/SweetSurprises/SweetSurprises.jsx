@@ -8,6 +8,9 @@ import flower4 from "../../../assets/flowers/25978.webp"
 import flower5 from "../../../assets/flowers/56495.webp"
 import flower6 from "../../../assets/flowers/84620.webp"
 import banner from "../../../assets/sectionBanner/disnep.webp"
+import SectionSiteCover from "../../../components/SectionSiteCover";
+import leftCover from "../../../assets/flowers/cover/christmas-gifts.webp"
+import rightCover from "../../../assets/flowers/cover/sharis-berries.webp"
 const SweetSurprises = () => {
     return (
         <div className="md:my-10 my-5">
@@ -39,7 +42,22 @@ const SweetSurprises = () => {
                 </Link>
             </div>
             <Link to="">
-                <img src={banner} alt="" className="w-11/12 mx-auto" /></Link>
+                <img src={banner} alt="" className="w-11/12 mx-auto" />
+            </Link>
+            <div className="mt-8">
+                {/* TODO Link */}
+                <SectionSiteCover 
+                path1="" 
+                Image1={leftCover} 
+                title1="Personalized Christmas Gift" 
+                path2="" 
+                Image2={rightCover} 
+                title2="Artisan Crafted Berries" 
+                />
+            </div>
+            <div className="mt-8">
+
+            </div>
         </div>
     );
 };

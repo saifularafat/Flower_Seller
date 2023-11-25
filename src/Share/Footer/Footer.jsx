@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="py-6 bg-slate-500">
-            <div className="grid grid-cols-2 text-white md:grid-cols-5 gap-5 w-11/12 mx-auto">
+            <div className="grid grid-cols-2 text-white md:grid-cols-5 gap-5 w-11/12 mx-auto border-0 border-b border-slate-300 pb-5">
                 <div className="text-left">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">More ways to shop</h2>
                     <div className="space-y-1">
@@ -63,6 +63,9 @@ const Footer = () => {
                         <input type="submit" value="Submit" className="bg-blue-900 p-2 rounded-r-lg" />
                     </div>
                 </div>
+            </div>
+            <div className="">
+                <p className="text-center cursor-pointer pt-3 text-white"> Copyright © 2023 - 2023 TermsFeed®. All rights reserved. developer by saiful arafat</p>
             </div>
         </div>
     );

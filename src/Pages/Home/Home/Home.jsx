@@ -4,6 +4,7 @@ import ExclusiveFlower from "../ExclusiveFlower/ExclusiveFlower";
 import ExploreGifts from "../ExploreGifts/ExploreGifts";
 import FindGift from "../FindGift/FindGift";
 import SweetSurprises from "../SweetSurprises/SweetSurprises";
+import Testimonial from "../Testimonial/Testomonial";
 import TrendingGift from "../TrendingGift/TrendingGift";
 import OfferTitle from "./OfferTitle";
 
@@ -18,6 +19,7 @@ const Home = () => {
             <SectionSiteCover />
             <ExploreGifts />
             <TrendingGift />
+            <Testimonial />
         </div>
     );
 };

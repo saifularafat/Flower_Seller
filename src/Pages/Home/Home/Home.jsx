@@ -4,6 +4,7 @@ import ExclusiveFlower from "../ExclusiveFlower/ExclusiveFlower";
 import ExploreGifts from "../ExploreGifts/ExploreGifts";
 import FindGift from "../FindGift/FindGift";
 import SweetSurprises from "../SweetSurprises/SweetSurprises";
+import TrendingGift from "../TrendingGift/TrendingGift";
 import OfferTitle from "./OfferTitle";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <SweetSurprises />
             <SectionSiteCover />
             <ExploreGifts />
+            <TrendingGift />
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import Home from "../Pages/Home/Home/Home";
+import { Outlet } from "react-router-dom";
 import Footer from "../Share/Footer/Footer";
 import Header from "../Share/Header/Header";
 import MiddleHeader from "../Share/LogoSearchInfo/MiddleHeader";
@@ -10,7 +10,9 @@ const Main = () => {
             <Header />
             <MiddleHeader />
             <Nav />
-            <Home />
+            <div className="min-h-[calc(100vh-410px)]">
+                <Outlet />
+            </div>
             <Footer />
         </div>
     );

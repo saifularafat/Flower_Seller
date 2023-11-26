@@ -6,7 +6,7 @@ import FindGift from "../FindGift/FindGift";
 import SweetSurprises from "../SweetSurprises/SweetSurprises";
 import Testimonial from "../Testimonial/Testomonial";
 import TrendingGift from "../TrendingGift/TrendingGift";
-import OfferTitle from "./OfferTitle";
+import OfferTitle from "../../../components/OfferTitle";
 
 const Home = () => {
     return (

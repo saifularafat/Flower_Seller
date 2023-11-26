@@ -1,7 +1,11 @@
+import OfferTitle from "../../components/OfferTitle";
+import PageTitleAndDescription from "../../components/PageTitleAndDescription";
+
 const Birthday = () => {
     return (
         <div>
-             <h3>The Birthday Page!</h3>
+            <OfferTitle />
+            <PageTitleAndDescription />
         </div>
     );
 };

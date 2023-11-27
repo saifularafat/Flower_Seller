@@ -5,6 +5,7 @@ const LeftFilter = () => {
     const [price, setPrice] = useState(true)
     const [contains, setContains] = useState(true)
     const [moreLess, setMoreLess] = useState(false)
+    const [type, setType] = useState(true)
     const [colors, setColors] = useState(true)
     return (
         <>
@@ -22,28 +23,28 @@ const LeftFilter = () => {
                     }
                 </div>
                 {
-                    contains && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
+                    price && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Under $65</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">$71-80</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">$81-90</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">$91-100</span>
                             </label>
                         </div>
@@ -61,96 +62,96 @@ const LeftFilter = () => {
                     }
                 </div>
                 {
-                    price && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
+                    contains && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Flower</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Planet</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Chocolate</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Gift</span>
                             </label>
                         </div>
                     </div>
                 }
                 {/* Three filter*/}
-                <div className="flex items-center justify-between cursor-pointer" onClick={() => setContains(!contains)}>
+                <div className="flex items-center justify-between cursor-pointer" onClick={() => setType(!type)}>
                     <h4 className="text-lg font-bold text-slate-800 pt-2">Recipient Type</h4>
                     {
-                        contains ?
+                        type ?
                             <IoIosArrowUp className="font-bold text-lg" />
                             :
                             <IoIosArrowDown className="font-bold text-lg" />
                     }
                 </div>
                 {
-                    price && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
+                    type && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Mom</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Her</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Family</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Best Friend</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Teacher</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Student</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Client</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Employee</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Kids</span>
                             </label>
                         </div>
@@ -159,7 +160,7 @@ const LeftFilter = () => {
                         moreLess && <div>
                             <div className="">
                                 <label className="cursor-pointer flex items-center gap-2">
-                                    <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                    <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                     <span className="text-base font-medium">Best Friend</span>
                                 </label>
                             </div>
@@ -182,31 +183,31 @@ const LeftFilter = () => {
                     colors && <div className="space-y-3 mt-2 border-0 border-b border-slate-400 pb-4">
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Red</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Purple</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">White</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Pink</span>
                             </label>
                         </div>
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
-                                <input type="checkbox" className="checkbox checkbox-sm checkbox-success" />
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Green</span>
                             </label>
                         </div>

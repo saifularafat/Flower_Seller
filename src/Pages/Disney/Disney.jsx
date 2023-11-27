@@ -41,110 +41,115 @@ const Disney = () => {
             </div>
             <div className="mx-4 py-5">
                 <div className="grid grid-cols-4 gap-5">
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney1} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
                             <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse & Minnie Mouse Poinsettia</h4>
                             <p className="text-lg font-bold">$54.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney4} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
                             <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse & Friends Holiday Spruce</h4>
                             <p className="text-lg font-bold">$69.99 - $74.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney3} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
                             <h4 className="text-lg font-semibold leading-tight">Disney Mickey & Minnie Rose Plant</h4>
                             <p className="text-lg font-bold">$44.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney2} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
                             <h4 className="text-lg font-semibold leading-tight">Friends Cookie Jar</h4>
                             <p className="text-lg font-bold">$59.99 - $79.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney5} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
                             <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse & Friends Holiday Cookie Jar</h4>
                             <p className="text-lg font-bold">$59.99 - $79.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney6} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">a-Dog-able® Disney Mickey Mouse for Holiday</h4>
+                            <p className="text-lg font-bold">$59.90</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney7} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse & Minnie Mouse in Love Vase with Pink Rose</h4>
+                            <p className="text-lg font-bold">$69.99 - $84.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney8} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse Vase With Assorted Gerbera Daisies</h4>
+                            <p className="text-lg font-bold">$79.99 - $94.99</p>
                         </div>
                     </Link>
-                    <div className="col-span-2 cursor-pointer w-full h-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <div className="col-span-2 cursor-pointer w-full  h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney15} alt="" className="w-full h-80 object-cover" />
-  
+
                     </div>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney10} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse Berries</h4>
+                            <p className="text-lg font-bold">$39.99 - $104.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney9} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse Vase With Assorted Roses</h4>
+                            <p className="text-lg font-bold">$74.99 - $89.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney11} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse Celebration Cake & Berries</h4>
+                            <p className="text-lg font-bold">$69.99 - $114.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney12} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Mickey & Pluto Birthday by Jim Shore</h4>
+                            <p className="text-lg font-bold">$74.00</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                        <img src={disney13} alt="" className="w-full h-80 object-cover" />
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                        <img src={disney7} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney Mickey Mouse & Minnie Mouse in Love Vase with Pink Rose</h4>
+                            <p className="text-lg font-bold">$69.99 - $84.99</p>
                         </div>
                     </Link>
-                    <Link to="" className="w-fullh-[410px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
                         <img src={disney14} alt="" className="w-full h-80 object-cover" />
                         <div className=" px-1">
-                            <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
-                            <p className="text-lg font-bold">$50.90 - $57.10</p>
+                            <h4 className="text-lg font-semibold leading-tight">Disney’s Mickey Mouse & Friends Cookie Jar with Cookies</h4>
+                            <p className="text-lg font-bold">$44.99</p>
                         </div>
                     </Link>
-                  
-
+                    <Link to="" className="w-full h-[420px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
+                        <img src={disney13} alt="" className="w-full h-80 object-cover" />
+                        <div className=" px-1">
+                            <h4 className="text-lg font-semibold leading-tight">Fab Five Figurine by Jim Shore</h4>
+                            <p className="text-lg font-bold">$115.00</p>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </>

@@ -3,8 +3,8 @@ import errorPage from "../../assets/othersImg/errorPage.json";
 import { Link } from "react-router-dom";
 const Error = () => {
     return (
-        <div className="flex items-center justify-center bg-slate-400 h-screen">
-            <div className="shadow-2xl pb-4">
+        <div className="flex items-center justify-center bg-slate-100 h-screen">
+            <div className="shadow-2xl rounded-lg pb-4">
                 <h2 className="text-2xl font-semibold text-center text-slate-800 uppercase">Page Not Found!</h2>
                 <div>
                     <Lottie animationData={errorPage} />

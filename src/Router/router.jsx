@@ -13,6 +13,8 @@ import Plants from "../Pages/Plants/Plants";
 import GiftsFlower from "../Pages/GiftsFlower/GiftsFlower";
 import SaleFlower from "../Pages/SaleFlower/SaleFlower";
 import Community from "../Pages/Community/Community";
+import Chocolate from "../Pages/Chocolate/Chocolate";
+import LoveAndRomance from "../Pages/LoveAndRomance/LoveAndRomance";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
             {
                 path: "gift-flower",
                 element: <GiftsFlower />
+            },
+            {
+                path: "chocolate-gift",
+                element: <Chocolate />
+            },
+            {
+                path: "loveAndRomance",
+                element: <LoveAndRomance />
             },
             {
                 path: "flower-sale",

@@ -17,44 +17,45 @@ import sectionBanner from "../../../assets/sectionBanner/gift.webp"
 const SweetSurprises = () => {
     return (
         <div className="md:my-10 my-5">
-            <SectionTitle color="text-slate-900" title="Sweet & Savory Surprises" />
+            <SectionTitle 
+            color="text-slate-900" 
+            title="Sweet & Savory Surprises" />
             {/* TODO Link */}
             <HomeImages
-                path1=""
+                path1="chocolate-gift"
                 Image1={sweet1}
                 title1="Chocolate Gift"
-                path2=""
+                path2="chocolate-gift"
                 Image2={sweet2}
                 title2="Baked Goods"
-                path3=""
+                path3="fruit-gift-shop"
                 Image3={sweet3}
                 title3="Fruit Baskets"
-                path4=""
+                path4="chocolate-gift"
                 Image4={sweet4}
                 title4="Baskets Gift"
-                path5=""
+                path5="chocolate-gift"
                 Image5={sweet5}
                 title5="Meat Cheese"
-                path6=""
+                path6="alcohol-wine-bar-shop"
                 Image6={sweet6}
                 title6="wine Bar"
             />
-            <Link to="">
+            <Link to="/disney-flower">
                 <img src={banner} alt="" className="w-11/12 mx-auto" />
             </Link>
             <div className="mt-8">
-                {/* TODO Link */}
                 <SectionSiteCover
-                    path1=""
+                    path1="personalizedChristmasGifts"
                     Image1={leftCover}
                     title1="Personalized Christmas Gift"
-                    path2=""
+                    path2="ArtisanCraftedBerries"
                     Image2={rightCover}
                     title2="Artisan Crafted Berries"
                 />
             </div>
             <div className="mt-8">
-                <Link to="">
+                <Link to="gift-more-flower">
                     <img src={sectionBanner} alt="" className="w-11/12 mx-auto" />
                 </Link>
             </div>

@@ -15,6 +15,11 @@ import SaleFlower from "../Pages/SaleFlower/SaleFlower";
 import Community from "../Pages/Community/Community";
 import Chocolate from "../Pages/Chocolate/Chocolate";
 import LoveAndRomance from "../Pages/LoveAndRomance/LoveAndRomance";
+import GiftShop from "../Pages/GiftShop/GiftShop";
+import FruitGiftShop from "../Pages/FruitGiftShop/FruitGiftShop";
+import AlcoholWineBar from "../Pages/AlcoholWineBar/AlcoholWineBar";
+import PersonalizedChristmasGifts from "../Pages/PersonalizedChristmasGifts/PersonalizedChristmasGifts";
+import ArtisanCraftedBerries from "../Pages/ArtisanCraftedBerries/ArtisanCraftedBerries";
 
 const router = createBrowserRouter([
     {
@@ -22,9 +27,10 @@ const router = createBrowserRouter([
         element: <Main />,
         errorElement: <Error />,
         children: [
+            /* main page link */
             {
-                path: "/", 
-                element:<Home />,
+                path: "/",
+                element: <Home />,
             },
             {
                 path: "thanksgiving-flower",
@@ -59,9 +65,19 @@ const router = createBrowserRouter([
                 element: <Plants />
             },
             {
-                path: "gift-flower",
+                path: "gift-more-flower",
                 element: <GiftsFlower />
             },
+            {
+                path: "flower-sale",
+                element: <SaleFlower />
+            },
+            {
+                path: "community",
+                element: <Community />
+            },
+            /* main page link */
+            /* side page link */
             {
                 path: "chocolate-gift",
                 element: <Chocolate />
@@ -71,12 +87,24 @@ const router = createBrowserRouter([
                 element: <LoveAndRomance />
             },
             {
-                path: "flower-sale",
-                element: <SaleFlower />
+                path: "gift-shops",
+                element: <GiftShop />
             },
             {
-                path: "community",
-                element: <Community />
+                path: "fruit-gift-shop",
+                element: <FruitGiftShop />
+            },
+            {
+                path: "alcohol-wine-bar-shop",
+                element: <AlcoholWineBar />
+            },
+            {
+                path: "personalizedChristmasGifts",
+                element: <PersonalizedChristmasGifts />
+            },
+            {
+                path: "ArtisanCraftedBerries",
+                element: <ArtisanCraftedBerries />
             },
         ]
     },

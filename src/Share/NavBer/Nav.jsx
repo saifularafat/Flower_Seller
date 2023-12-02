@@ -62,7 +62,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="gift-flower"
+                        to="gift-more-flower"
                         className={({ isActive }) => (isActive ? "text-base font-medium uppercase hover:border-0 hover:border-b-2 hover:border-slate-950 pb-2 px-1 border-0 border-b-2 border-slate-900 rounded-sm" : "text-base font-medium uppercase hover:border-0 hover:border-b-2 hover:border-slate-950 pb-2 px-1")}>
                         Gifts & More
                     </NavLink>

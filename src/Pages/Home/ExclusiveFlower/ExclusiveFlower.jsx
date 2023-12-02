@@ -11,8 +11,9 @@ import HomeImages from "../../../components/HomeImages";
 const ExclusiveFlower = () => {
     return (
         <div className="md:my-10 my-6">
-            <SectionTitle color=" text-slate-900" title="Send Flowers & Exclusive Gifts" />
-            {/* TODO LINKS */}
+            <SectionTitle 
+            color=" text-slate-900" 
+            title="Send Flowers & Exclusive Gifts" />
             <HomeImages
                 path1="/disney-flower"
                 Image1={flower1}

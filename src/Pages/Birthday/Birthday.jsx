@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import OfferTitle from "../../components/OfferTitle";
 import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import BirthdayContainer from "./BirthdayContainer";
@@ -7,6 +8,9 @@ import SortBy from "./SortBy";
 const Birthday = () => {
     return (
         <div className=" mx-4 py-10">
+            <Helmet>
+                <title>Flower Shop || Birthday </title>
+            </Helmet>
             <OfferTitle />
             <PageTitleAndDescription
                 path="/birthday-flower"

@@ -20,6 +20,7 @@ import FruitGiftShop from "../Pages/FruitGiftShop/FruitGiftShop";
 import AlcoholWineBar from "../Pages/AlcoholWineBar/AlcoholWineBar";
 import PersonalizedChristmasGifts from "../Pages/PersonalizedChristmasGifts/PersonalizedChristmasGifts";
 import ArtisanCraftedBerries from "../Pages/ArtisanCraftedBerries/ArtisanCraftedBerries";
+import MyOrder from "../Share/MyOrder/MyOrder";
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
             },
             /* main page link */
             /* side page link */
+            {
+                path: "my-order",
+                element: <MyOrder />
+            },
             {
                 path: "chocolate-gift",
                 element: <Chocolate />

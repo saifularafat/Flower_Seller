@@ -9,7 +9,7 @@ const FindGift = () => {
         console.log(code, "occasionValue => ", occasionValue);
     }
     return (
-        <div className=" md:w-3/4 md:h-28 mx-auto relative md:-top-4 bg-slate-200 shadow-2xl rounded-md p-2 z-50">
+        <div className=" md:w-3/4 md:h-28 mx-auto relative md:-top-4 bg-slate-200 shadow-2xl rounded-md p-2 z-20">
             <div className="md:flex items-center gap-5 md:w-10/12 mx-auto ">
                 <h1 className="text-xl font-bold text-center text-slate-500 pt-6">FIND THE PERFECT GIFT</h1>
                 <form

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div className="border-0 md:border-y border-slate-300 py-2 bg-white sticky top-0 z-10">
+        <div className="border-0 md:border-y border-slate-300 py-2 bg-white sticky top-0 z-50">
             <ul className="md:flex items-center gap-7 md:mx-4 mx-2">
                 <li>
                     <NavLink

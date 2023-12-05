@@ -4,7 +4,7 @@ import SignIn from "./SignIn";
 
 const HederRight = () => {
     return (
-        <div className=" flex items-center justify-between md:gap-0 gap-3 relative">
+        <div className=" flex items-center justify-between md:gap-0 gap-3 ">
             <SignIn />
             <div className="md:block hidden">
                 <MyOrder />

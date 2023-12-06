@@ -1,6 +1,12 @@
 import { CiUser } from "react-icons/ci"
 import { Link } from "react-router-dom";
+import useAuth from "../../../api/useAuth";
 const SignIn = () => {
+    const { user, logOut } = useAuth()
+
+    const handleLogOut = () => {
+        logOut();
+    }
     return (
         <div className="relative cursor-pointer group">
             <div className="w-full mx-auto group-hover:block">
@@ -32,9 +38,18 @@ const SignIn = () => {
                     <br />
                 </div>
                 <div className="py-2">
-                    <Link to="" className="text-sm font-medium hover:underline leading-none">
-                        Sign out
-                    </Link>
+                    {
+                        user ? <Link
+                            onClick={handleLogOut}
+                            to=""
+                            className="text-sm font-medium hover:underline leading-none">
+                            Sign out
+                        </Link>
+                            :
+                            <Link to="" className="text-sm font-medium hover:underline leading-none">
+                                Sign In
+                            </Link>
+                    }
                     <br />
                 </div>
             </div>

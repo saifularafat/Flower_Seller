@@ -46,7 +46,7 @@ const SignIn = () => {
                             Sign out
                         </Link>
                             :
-                            <Link to="" className="text-sm font-medium hover:underline leading-none">
+                            <Link to="signIn" className="text-sm font-medium hover:underline leading-none">
                                 Sign In
                             </Link>
                     }

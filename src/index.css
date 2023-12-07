@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.formInput{
+    @apply bg-transparent w-full border border-slate-400 py-2 px-3 rounded-md overflow-hidden outline-slate-900 text-base
+}
+.formLabel{
+    @apply text-lg font-bold text-slate-900
+}

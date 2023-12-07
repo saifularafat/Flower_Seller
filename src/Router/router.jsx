@@ -21,6 +21,8 @@ import AlcoholWineBar from "../Pages/AlcoholWineBar/AlcoholWineBar";
 import PersonalizedChristmasGifts from "../Pages/PersonalizedChristmasGifts/PersonalizedChristmasGifts";
 import ArtisanCraftedBerries from "../Pages/ArtisanCraftedBerries/ArtisanCraftedBerries";
 import MyOrder from "../Share/MyOrder/MyOrder";
+import SignIn from "../Pages/SignIn/SignIn";
+import SignUp from "../Pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -112,6 +114,14 @@ const router = createBrowserRouter([
                 element: <ArtisanCraftedBerries />
             },
         ]
+    },
+    {
+        path: "signIn",
+        element:<SignIn />
+    },
+    {
+        path: "signUp",
+        element:<SignUp />
     },
 ]);
 export default router;

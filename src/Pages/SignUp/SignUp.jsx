@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { AiOutlineEye } from "react-icons/ai"
 import { PulseLoader } from "react-spinners";
 import useAuth from "../../api/useAuth";
+import { Link } from "react-router-dom";
+import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
 const SignUp = () => {
     const { loading } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -21,7 +23,7 @@ const SignUp = () => {
                 }}
                 className=""
             >
-                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5 py-10 min-h-full">
+                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5 py-5 min-h-full">
                     <div className="bg-white/70 p-5 col-span-3 rounded-md relative md:block hidden">
                         <div className="bg-black/10 py-2 px-3 rounded-md ">
                             <img src={logoImag} alt="" className="w-1/2 mx-auto object-cover" />
@@ -140,14 +142,26 @@ const SignUp = () => {
                                         name='phone'
                                         id='phone'
                                         placeholder='Your Phone Number'
-                                        className='formInput'
+                                        className='formInput [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
                                         data-temp-mail-org='0'
                                         {...register("phone", { required: true })}
                                     />
                                 </div>
 
                             </div>
-                            <div>
+                            <label className=" inline-flex mt-2">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    {...register("checkbox")}
+                                    required
+                                    className="w-4 h-4 rounded-full" />
+                                <p className='md:pl-3 pl-1 text-sm font-open'>Accept
+                                    <Link to='/terms' className='text-blue-600 text-sm underline md:pl-2'>Terms and Condition
+                                    </Link>
+                                </p>
+                            </label>
+                            <div className="">
                                 <button
                                     type='submit'
                                     className='bg-blue-700 w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-1 text-white hover:bg-transparent hover:text-blue-900 border-2 hover:border-blue-900 border-blue-900 transition duration-200'
@@ -163,9 +177,19 @@ const SignUp = () => {
 
                                 </button>
                             </div>
+                            <p className='px-6 text-lg text-center text-title-color'>
+                                Already have an account?{' '}
+                                <Link
+                                    to='/signIn'
+                                    className='hover:underline hover:text-color-btn text-teal-900 font-medium'
+                                >
+                                    Login
+                                </Link>
+                            </p>
+                            <SocialSignUp />
+
                         </form>
                     </div>
-                    {/* <div className="bottom-0 relative col-span-8"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, explicabo?</div> */}
                 </div>
             </div>
         </div>

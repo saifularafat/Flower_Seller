@@ -23,6 +23,7 @@ import ArtisanCraftedBerries from "../Pages/ArtisanCraftedBerries/ArtisanCrafted
 import MyOrder from "../Share/MyOrder/MyOrder";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import Terms from "../Pages/Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
             {
                 path: "ArtisanCraftedBerries",
                 element: <ArtisanCraftedBerries />
+            },
+            {
+                path: "terms",
+                element: <Terms />
             },
         ]
     },

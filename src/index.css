@@ -8,3 +8,6 @@
 .formLabel{
     @apply text-lg font-bold text-slate-900
 }
+.social_style {
+    @apply flex justify-center items-center space-x-2 border p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer w-full;
+  }

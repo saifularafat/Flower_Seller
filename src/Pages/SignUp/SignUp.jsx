@@ -142,7 +142,7 @@ const SignUp = () => {
                                         name='phone'
                                         id='phone'
                                         placeholder='Your Phone Number'
-                                        className='formInput [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
+                                        className='formInput [&::-webkit-inner-spin-button]:appearance-none'
                                         data-temp-mail-org='0'
                                         {...register("phone", { required: true })}
                                     />
@@ -183,7 +183,7 @@ const SignUp = () => {
                                     to='/signIn'
                                     className='hover:underline hover:text-color-btn text-teal-900 font-medium'
                                 >
-                                    Login
+                                    Sign In
                                 </Link>
                             </p>
                             <SocialSignUp />

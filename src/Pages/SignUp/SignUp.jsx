@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 import { AiOutlineEye } from "react-icons/ai"
 import { PulseLoader } from "react-spinners";
 import useAuth from "../../api/useAuth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
 import axios from "axios";
+import Swal from "sweetalert2";
 const SignUp = () => {
     const {
         register,
@@ -16,8 +17,10 @@ const SignUp = () => {
     const {
         loading,
         setLoading,
-        createUser
+        createUser,
+        updateUserProfile
     } = useAuth();
+    const navigate = useNavigate();
 
     //  click eya icon then show password
     const handleShowPass = () => {
@@ -31,15 +34,73 @@ const SignUp = () => {
 
     const formSubmit = (data) => {
         console.log(data);
-        createUser(data.email, data.password)
-            .then(result => {
-                console.log(result);
-                axios.post(`${import.meta.env.LOCAL_API_URL}/users`, {
-                    name: data.name,
-                    email: data.email,
-                    image: [],
-                    // role: data.role,
+        const imageUrl = data.image[0];
+        const formData = new FormData();
+        formData.append('image', imageUrl)
+        console.log(formData);
+        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`;
+
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                console.log(imageData);
+                const imageAdders = imageData.data.url;
+                createUser(data.email, data.password)
+                    .then(result => {
+                        console.log(result);
+                        updateUserProfile(data.name, imageAdders)
+                            .then(() => {
+                                axios.post(`http://localhost:5000/users`, {
+                                    name: data.name,
+                                    email: data.email,
+                                    image: imageAdders,
+                                    gender: data.gender,
+                                    role: 'client'
+                                })
+                                    .then(data => {
+                                        console.log(data);
+                                        if (data.insertedId) {
+                                            Swal.fire({
+                                                position: 'top-center',
+                                                icon: 'success',
+                                                title: 'Your SignUp Successful',
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                            })
+                                        }
+                                        navigate('/')
+                                    })
+                                    .catch((err) => {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'error',
+                                            title: `${err.message}`,
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        })
+                                        setLoading(false)
+                                    })
+                            })
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: `${error.message}`,
+                        })
+                        setLoading(false)
+                    })
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`,
                 })
+                setLoading(false)
             })
     }
     return (
@@ -103,7 +164,6 @@ const SignUp = () => {
                                         data-temp-mail-org='0'
                                         {...register("lastName", { required: true })}
                                     />
-                                    {/* <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} placeholder="last name " className="formInput" /> */}
                                 </div>
                             </div>
                             <div>
@@ -164,23 +224,37 @@ const SignUp = () => {
                                         className="absolute top-3 right-3 cursor-pointer text-lg"
                                     ></AiOutlineEye>
                                 </div>
-                                <div>
-                                    <div className='flex justify-between'>
-                                        <label htmlFor='password' className='formLabel'>
-                                            Phone
-                                        </label>
-                                    </div>
-                                    <input
-                                        type='number'
-                                        name='phone'
-                                        id='phone'
-                                        placeholder='Your Phone Number'
-                                        className='formInput [&::-webkit-inner-spin-button]:appearance-none'
-                                        data-temp-mail-org='0'
-                                        {...register("phone", { required: true })}
-                                    />
+                            </div>
+                            <div className="flex items-center justify-between gap-5">
+                                <div className="w-full">
+                                    <label htmlFor='image' className='formLabel'>
+                                        Select Image:*
+                                    </label>
+                                    <label htmlFor="image">
+                                        <input
+                                            required
+                                            type='file'
+                                            id='image'
+                                            name='image'
+                                            accept='image/*'
+                                            hidden
+                                            {...register("image", { required: true })}
+                                        />
+                                        <div className='w-full border border-slate-400 rounded-md cursor-pointer px-4 py-2'>
+                                            upload your avatar
+                                        </div>
+                                    </label>
                                 </div>
-
+                                <div>
+                                    <label htmlFor='gender' className='block text-base formLabel'>
+                                        Gender:*
+                                    </label>
+                                    <select {...register("gender")} className="px-2 bg-transparent py-2 border border-slate-400 rounded-md">
+                                        <option value="male">male</option>
+                                        <option value="female">female</option>
+                                        <option value="other">other</option>
+                                    </select>
+                                </div>
                             </div>
                             <label className=" inline-flex mt-2">
                                 <input

@@ -7,10 +7,41 @@ import { PulseLoader } from "react-spinners";
 import useAuth from "../../api/useAuth";
 import { Link } from "react-router-dom";
 import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
+import axios from "axios";
 const SignUp = () => {
-    const { loading } = useAuth();
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data)
+    const {
+        register,
+        formState: { errors },
+        handleSubmit } = useForm();
+    const {
+        loading,
+        setLoading,
+        createUser
+    } = useAuth();
+
+    //  click eya icon then show password
+    const handleShowPass = () => {
+        const passwordInput = document.getElementById("password");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    };
+
+    const formSubmit = (data) => {
+        console.log(data);
+        createUser(data.email, data.password)
+            .then(result => {
+                console.log(result);
+                axios.post(`${import.meta.env.LOCAL_API_URL}/users`, {
+                    name: data.name,
+                    email: data.email,
+                    image: [],
+                    // role: data.role,
+                })
+            })
+    }
     return (
         <div className="">
             <div
@@ -21,15 +52,17 @@ const SignUp = () => {
                     height: "100vh",
                     width: "",
                 }}
-                className=""
+                className="flex items-center justify-center min-h-screen"
             >
-                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5 py-5 min-h-full">
+                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5">
                     <div className="bg-white/70 p-5 col-span-3 rounded-md relative md:block hidden">
                         <div className="bg-black/10 py-2 px-3 rounded-md ">
-                            <img src={logoImag} alt="" className="w-1/2 mx-auto object-cover" />
+                            <Link to="/">
+                                <img src={logoImag} alt="" className="w-1/2 mx-auto object-cover" />
+                            </Link>
                         </div>
                         {/* <div className=" "> */}
-                        <p className="absolute top-1/2 left-6 mx-3 text-center text-xl font-semibold">Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</p>
+                        <p className="absolute top-1/2 text-center text-base font-bold">Create an account for faster checkout and order tracking.</p>
                         {/* </div> */}
                         <img src={celebrations} alt="" className="w-10/12 mx-auto object-cover absolute bottom-3" />
                     </div>
@@ -37,7 +70,7 @@ const SignUp = () => {
                         <h3 className="text-2xl text-slate-950 font-semibold border-0 border-b-[2px] border-slate-500 pb-3">Create account</h3>
                         {/* Sign Up From */}
 
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 pt-3">
+                        <form onSubmit={handleSubmit(formSubmit)} className="space-y-3 pt-3">
                             <div className="md:flex items-center gap-3">
                                 <div>
                                     <label
@@ -127,7 +160,7 @@ const SignUp = () => {
                                             two lowercase one number and special character</p>
                                     }
                                     <AiOutlineEye
-                                        // onClick={handleShowPass}
+                                        onClick={handleShowPass}
                                         className="absolute top-3 right-3 cursor-pointer text-lg"
                                     ></AiOutlineEye>
                                 </div>

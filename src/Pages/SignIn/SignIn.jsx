@@ -8,8 +8,11 @@ import useAuth from "../../api/useAuth";
 import { Link } from "react-router-dom";
 import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
 const SignIn = () => {
-    const { loading } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const { 
+        loading,
+    
+    } = useAuth();
     const onSubmit = (data) => console.log(data)
     return (
         <div className="">
@@ -21,12 +24,14 @@ const SignIn = () => {
                     height: "100vh",
                     width: "",
                 }}
-                className=""
+                className="flex items-center justify-center min-h-screen"
             >
-                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5 py-20 content-center">
+                <div className="w-8/12 mx-auto grid grid-cols-8 gap-5">
                     <div className="bg-white/70 p-5 col-span-3 rounded-md relative md:block hidden">
                         <div className="bg-black/10 py-2 px-3 rounded-md ">
-                            <img src={logoImag} alt="" className="w-1/2 mx-auto object-cover" />
+                            <Link to="/">
+                                <img src={logoImag} alt="" className="w-1/2 mx-auto object-cover" />
+                            </Link>
                         </div>
                         {/* <div className=" "> */}
                         <p className="absolute top-1/2 left-6 mx-3 text-center text-xl font-semibold">Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</p>
@@ -98,7 +103,7 @@ const SignIn = () => {
                                 </div>
 
                             </div>
-                            
+
                             <div className="">
                                 <button
                                     type='submit'

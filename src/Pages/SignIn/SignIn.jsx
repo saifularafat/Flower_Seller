@@ -5,15 +5,53 @@ import { useForm } from "react-hook-form";
 import { AiOutlineEye } from "react-icons/ai"
 import { PulseLoader } from "react-spinners";
 import useAuth from "../../api/useAuth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
+import Swal from "sweetalert2";
 const SignIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { 
+    const {
         loading,
-    
+        setLoading,
+        login,
     } = useAuth();
-    const onSubmit = (data) => console.log(data)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    //  click eya icon then show password
+    const handleShowPass = () => {
+        const passwordInput = document.getElementById("password");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    };
+    const loginSubmit = (data) => {
+        login(data.email, data.password)
+            .then(result => {
+                const logged = result.user;
+                console.log(logged)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your sign in Successful',
+                    showConfirmButton: false,
+                    timer: 1300
+                })
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`,
+                })
+                setLoading(false)
+            })
+    }
     return (
         <div className="">
             <div
@@ -42,7 +80,7 @@ const SignIn = () => {
                         <h3 className="text-2xl text-slate-950 font-semibold border-0 border-b-[2px] border-slate-500 pb-3">Sign In</h3>
                         {/* Sign Up From */}
 
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 pt-3">
+                        <form onSubmit={handleSubmit(loginSubmit)} className="space-y-3 pt-3">
                             <div>
                                 <label htmlFor='email' className='formLabel'>
                                     Email address*
@@ -97,7 +135,7 @@ const SignIn = () => {
                                             two lowercase one number and special character</p>
                                     }
                                     <AiOutlineEye
-                                        // onClick={handleShowPass}
+                                        onClick={handleShowPass}
                                         className="absolute top-3 right-3 cursor-pointer text-lg"
                                     ></AiOutlineEye>
                                 </div>

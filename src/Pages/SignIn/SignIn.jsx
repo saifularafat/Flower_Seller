@@ -6,7 +6,7 @@ import { AiOutlineEye } from "react-icons/ai"
 import { PulseLoader } from "react-spinners";
 import useAuth from "../../api/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import SocialSignUp from "../../Share/SocialSignUp/SocialSignUp";
+import SocialSignIn from "../../Share/SocialSignUp/SocialSignUp";
 import Swal from "sweetalert2";
 const SignIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -30,6 +30,7 @@ const SignIn = () => {
         }
     };
     const loginSubmit = (data) => {
+        // setLoading(true); 
         login(data.email, data.password)
             .then(result => {
                 const logged = result.user;
@@ -147,14 +148,15 @@ const SignIn = () => {
                                     type='submit'
                                     className='bg-blue-700 w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-1 text-white hover:bg-transparent hover:text-blue-900 border-2 hover:border-blue-900 border-blue-900 transition duration-200'
                                 >
-                                    {
+                                    {/* {
                                         loading ? <PulseLoader className="mx-auto 
                                     animate-pulse"
                                             color="#FF3811"
                                             size={18} />
                                             :
                                             'Sign In'
-                                    }
+                                    } */}
+                                    sign in
 
                                 </button>
                             </div>
@@ -167,7 +169,7 @@ const SignIn = () => {
                                     Sign UP
                                 </Link>
                             </p>
-                            <SocialSignUp />
+                            <SocialSignIn />
 
                         </form>
                     </div>

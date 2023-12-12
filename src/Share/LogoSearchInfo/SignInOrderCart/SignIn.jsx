@@ -3,7 +3,8 @@ import useAuth from "../../../api/useAuth";
 import img from "../../../assets/othersImg/avater.png"
 import Swal from "sweetalert2";
 const SignIn = () => {
-    const { user, logOut } = useAuth();
+
+    const { user, loading, setLoading, logOut } = useAuth();
 
     const handlerLogOut = () => {
         logOut()
@@ -62,15 +63,16 @@ const SignIn = () => {
                 <div className="py-2">
                     {
                         user ?
+
+                            <Link to="signIn" className="text-sm font-medium hover:underline leading-none">
+                                Sign In
+                            </Link>
+                            :
                             <button
                                 onClick={handlerLogOut}
                                 className="text-sm font-medium hover:underline leading-none">
                                 Sign out
                             </button>
-                            :
-                            <Link to="signIn" className="text-sm font-medium hover:underline leading-none">
-                                Sign In
-                            </Link>
                     }
                     <br />
                 </div>

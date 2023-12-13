@@ -24,6 +24,7 @@ import MyOrder from "../Share/MyOrder/MyOrder";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Terms from "../Pages/Terms/Terms";
+import Dashboard from "../Layouts/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -114,19 +115,29 @@ const router = createBrowserRouter([
                 path: "ArtisanCraftedBerries",
                 element: <ArtisanCraftedBerries />
             },
-            {
-                path: "terms",
-                element: <Terms />
-            },
         ]
     },
+    /* user create */
     {
         path: "signIn",
-        element:<SignIn />
+        element: <SignIn />
     },
     {
         path: "signUp",
-        element:<SignUp />
+        element: <SignUp />
     },
+    {
+        path: "terms",
+        element: <Terms />
+    },
+
+    /* // Dashboard  */
+    {
+        path: "dashboard",
+        element: <Dashboard />,
+        children: [
+
+        ]
+    }
 ]);
 export default router;

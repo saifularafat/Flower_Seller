@@ -57,7 +57,7 @@ const SignIn = () => {
                         Add Your Address
                     </Link>
                     <br />
-                    <Link to="" className="text-xs font-medium hover:underline leading-none">
+                    <Link to="my-order" className="text-xs font-medium hover:underline leading-none">
                         Track Your Order
                     </Link>
                     <br />

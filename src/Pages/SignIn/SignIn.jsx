@@ -148,14 +148,14 @@ const SignIn = () => {
                                     type='submit'
                                     className='bg-blue-700 w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-1 text-white hover:bg-transparent hover:text-blue-900 border-2 hover:border-blue-900 border-blue-900 transition duration-200'
                                 >
-                                    {/* {
+                                    {
                                         loading ? <PulseLoader className="mx-auto 
                                     animate-pulse"
                                             color="#FF3811"
                                             size={18} />
                                             :
                                             'Sign In'
-                                    } */}
+                                    }
                                     sign in
 
                                 </button>

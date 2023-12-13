@@ -4,7 +4,10 @@ import img from "../../../assets/othersImg/avater.png"
 import Swal from "sweetalert2";
 const SignIn = () => {
 
-    const { user, loading, setLoading, logOut } = useAuth();
+    const {
+        user,
+        logOut } = useAuth();
+    console.log(user);
 
     const handlerLogOut = () => {
         logOut()
@@ -26,15 +29,14 @@ const SignIn = () => {
                     ? user?.photoURL
                     : img
                 } alt=""
-                    className="md:w-9 md:h-9 w-6 h-6 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
+                    className="md:w-10 md:h-10 w-6 h-6 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
             </div>
             {
                 user ?
                     <span className="text-xs md:text-sm font-medium md:block hidden text-center group-hover:block">
                         {user?.displayName}
                     </span>
-                    :
-                    <span className="text-xs md:text-sm font-medium md:block hidden text-center group-hover:block">
+                    : <span className="text-xs md:text-sm font-medium md:block hidden text-center group-hover:block">
                         Sign In
                     </span>
             }
@@ -63,16 +65,15 @@ const SignIn = () => {
                 <div className="py-2">
                     {
                         user ?
-
-                            <Link to="signIn" className="text-sm font-medium hover:underline leading-none">
-                                Sign In
-                            </Link>
-                            :
                             <button
                                 onClick={handlerLogOut}
                                 className="text-sm font-medium hover:underline leading-none">
                                 Sign out
                             </button>
+                            :
+                            <Link to="signIn" className="text-sm font-medium hover:underline leading-none">
+                                Sign In
+                            </Link>
                     }
                     <br />
                 </div>

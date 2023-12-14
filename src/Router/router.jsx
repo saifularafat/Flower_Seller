@@ -25,6 +25,9 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Terms from "../Pages/Terms/Terms";
 import Dashboard from "../Layouts/Dashboard";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
+import AllPayment from "../Pages/Dashboard/Admin/AllPayment/AllPayment";
 
 const router = createBrowserRouter([
     {
@@ -136,7 +139,18 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
         children: [
-
+            {
+                path: '/dashboard/adminHome',
+                element: <AdminHome />
+            },
+            {
+                path: '/dashboard/allUsers',
+                element: <AllUsers />
+            },
+            {
+                path: '/dashboard/allPayment',
+                element: <AllPayment />
+            },
         ]
     }
 ]);

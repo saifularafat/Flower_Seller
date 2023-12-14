@@ -11,3 +11,13 @@
 .social_style {
     @apply flex justify-center items-center space-x-2 border p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer w-full;
   }
+
+
+  /* dashboard style */
+  .active {
+    @apply inline-block bg-slate-100 py-2 px-3 w-full font-semibold text-green-600 uppercase border-l-2  border-green-600
+      rounded tracking-wide transition duration-200;
+  }
+  .default {
+    @apply inline-block px-3 py-2 font-semibold uppercase rounded-lg tracking-wide;
+  }

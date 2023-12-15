@@ -28,6 +28,12 @@ import Dashboard from "../Layouts/Dashboard";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 import AllPayment from "../Pages/Dashboard/Admin/AllPayment/AllPayment";
+import HandDelivery from "../Pages/Dashboard/Admin/OrderInfo/HandDelivery/HandDelivery";
+import CashOnDelivery from "../Pages/Dashboard/Admin/OrderInfo/CashOnDelivery/CashOnDelivery";
+import SuccessOrder from "../Pages/Dashboard/Admin/OrderInfo/SuccessOrder/SuccessOrder";
+import RetuneOrder from "../Pages/Dashboard/Admin/OrderInfo/RetuneOrder/RetuneOrder";
+import OrderCancel from "../Pages/Dashboard/Admin/OrderInfo/OrderCancel/OrderCancel";
+import UserHome from "../Pages/Dashboard/Users/UserHome/UserHome";
 
 const router = createBrowserRouter([
     {
@@ -139,6 +145,7 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
         children: [
+            /* Admin link  */
             {
                 path: '/dashboard/adminHome',
                 element: <AdminHome />
@@ -151,6 +158,32 @@ const router = createBrowserRouter([
                 path: '/dashboard/allPayment',
                 element: <AllPayment />
             },
+            /* order information */
+            {
+                path: "/dashboard/handDelivery",
+                element: <HandDelivery />
+            },
+            {
+                path: "/dashboard/cashOnDelivery",
+                element: <CashOnDelivery />
+            },
+            {
+                path: "/dashboard/successOrder",
+                element: <SuccessOrder />
+            },
+            {
+                path: "/dashboard/retuneOrder",
+                element: <RetuneOrder />
+            },
+            {
+                path: "/dashboard/orderCancel",
+                element: <OrderCancel />
+            },
+            /* user link */
+            {
+                path: "/dashboard/clineHome",
+                element:<UserHome />
+            }
         ]
     }
 ]);

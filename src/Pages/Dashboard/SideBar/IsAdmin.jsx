@@ -22,13 +22,13 @@ const IsAdmin = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink 
-                    to="/dashboard/allPayment"
-                    className={({ isActive }) => (isActive ? "active" : " default ")}>
+                    <NavLink
+                        to="/dashboard/allPayment"
+                        className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <span>All Payment </span>
                     </NavLink>
                 </li>
-                <button onClick={() => handelOrder(!order)} className="flex items-center justify-between w-full ">
+                <button onClick={() => handelOrder(!order)} className="flex items-center justify-between w-full text-lg font-medium py-1 bg-slate-50 pl-2">
                     <span>Order information</span>
                     {
                         order ?
@@ -39,26 +39,37 @@ const IsAdmin = () => {
                 {
                     order && <div className="space-y-2 pl-2">
                         <li className=" w-full">
-                            <NavLink 
-                            className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <NavLink
+                                to="/dashboard/handDelivery"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <span>Hand Delivery </span>
                             </NavLink>
                         </li>
                         <li className=" w-full">
-                            <NavLink 
-                            className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <NavLink
+                                to="/dashboard/cashOnDelivery"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <span>Cash On Delivery </span>
                             </NavLink>
                         </li>
                         <li className=" w-full">
-                            <NavLink 
-                            className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <NavLink
+                                to="/dashboard/successOrder"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <span>Success Order</span>
+                            </NavLink>
+                        </li>
+                        <li className=" w-full">
+                            <NavLink
+                                to="/dashboard/retuneOrder"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <span>Retune Order</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink 
-                            className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <NavLink
+                                to="/dashboard/orderCancel"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <span>Order Cancel</span>
                             </NavLink>
                         </li>

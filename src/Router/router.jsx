@@ -35,6 +35,8 @@ import RetuneOrder from "../Pages/Dashboard/Admin/OrderInfo/RetuneOrder/RetuneOr
 import OrderCancel from "../Pages/Dashboard/Admin/OrderInfo/OrderCancel/OrderCancel";
 import UserHome from "../Pages/Dashboard/Users/UserHome/UserHome";
 import AddItem from "../Pages/Dashboard/Admin/AddItems/AddItem";
+import EmailAdmin from "../Pages/Dashboard/Admin/EmailAdmin/EmailAdmin";
+import ChatAdmin from "../Pages/Dashboard/Admin/ChatAdmin/ChatAdmin";
 
 const router = createBrowserRouter([
     {
@@ -183,6 +185,15 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/orderCancel",
                 element: <OrderCancel />
+            },
+            /* help section */
+            {
+                path: "/dashboard/adminEmail",
+                element: <EmailAdmin />
+            },
+            {
+                path: "/dashboard/adminChat",
+                element: <ChatAdmin />
             },
             /* user link */
             {

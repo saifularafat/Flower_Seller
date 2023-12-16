@@ -34,6 +34,7 @@ import SuccessOrder from "../Pages/Dashboard/Admin/OrderInfo/SuccessOrder/Succes
 import RetuneOrder from "../Pages/Dashboard/Admin/OrderInfo/RetuneOrder/RetuneOrder";
 import OrderCancel from "../Pages/Dashboard/Admin/OrderInfo/OrderCancel/OrderCancel";
 import UserHome from "../Pages/Dashboard/Users/UserHome/UserHome";
+import AddItem from "../Pages/Dashboard/Admin/AddItems/AddItem";
 
 const router = createBrowserRouter([
     {
@@ -149,6 +150,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/adminHome',
                 element: <AdminHome />
+            },
+            {
+                path: '/dashboard/addItem',
+                element: <AddItem />
             },
             {
                 path: '/dashboard/allUsers',

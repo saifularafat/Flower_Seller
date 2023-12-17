@@ -37,6 +37,8 @@ import UserHome from "../Pages/Dashboard/Users/UserHome/UserHome";
 import AddItem from "../Pages/Dashboard/Admin/AddItems/AddItem";
 import EmailAdmin from "../Pages/Dashboard/Admin/EmailAdmin/EmailAdmin";
 import ChatAdmin from "../Pages/Dashboard/Admin/ChatAdmin/ChatAdmin";
+import Calender from "../Pages/Dashboard/Admin/Calender/Calender";
+import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
 
 const router = createBrowserRouter([
     {
@@ -194,6 +196,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/adminChat",
                 element: <ChatAdmin />
+            },
+            {
+                path: "/dashboard/calender",
+                element: <Calender />
+            },
+            {
+                path: "/dashboard/adminProfile",
+                element: <AdminProfile />
             },
             /* user link */
             {

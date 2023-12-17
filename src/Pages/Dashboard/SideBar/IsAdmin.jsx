@@ -45,62 +45,7 @@ const IsAdmin = () => {
                         <span>All Payment </span>
                     </NavLink>
                 </li>
-                {/* offer link start */}
-                <div className="pt-2">
-                    <button onClick={() => handelOffer(!offer)} className=" flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200">
-                        <span>Offer Section</span>
-                        {
-                            offer ?
-                                <BsChevronDown />
-                                : <BsChevronUp />
-                        }
-                    </button>
-                </div>
-                {
-                    offer && <div className="space-y-2 pl-2">
-                        <li className="w-full">
-                            <NavLink
-                                to="/dashboard/handDelivery"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
-                                <GoDot className="text-xl" />
-                                <span>Hand Delivery </span>
-                            </NavLink>
-                        </li>
-                        <li className=" w-full">
-                            <NavLink
-                                to="/dashboard/cashOnDelivery"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
-                                <GoDot className="text-xl" />
-                                <span>Cash On Delivery </span>
-                            </NavLink>
-                        </li>
-                        <li className=" w-full">
-                            <NavLink
-                                to="/dashboard/successOrder"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
-                                <GoDot className="text-xl" />
-                                <span>Success Order</span>
-                            </NavLink>
-                        </li>
-                        <li className=" w-full">
-                            <NavLink
-                                to="/dashboard/retuneOrder"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
-                                <GoDot className="text-xl" />
-                                <span>Retune Order</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/dashboard/orderCancel"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
-                                <GoDot className="text-xl" />
-                                <span>Order Cancel</span>
-                            </NavLink>
-                        </li>
-                    </div>
-                }
-                {/* order link end */}
+                
                 {/* order link start */}
                 <div className="pb-2">
                     <button onClick={() => handelOrder(!order)} className="flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200 mt-3">
@@ -118,6 +63,7 @@ const IsAdmin = () => {
                             <NavLink
                                 to="/dashboard/handDelivery"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
                                 <span>Hand Delivery </span>
                             </NavLink>
                         </li>
@@ -125,6 +71,7 @@ const IsAdmin = () => {
                             <NavLink
                                 to="/dashboard/cashOnDelivery"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
                                 <span>Cash On Delivery </span>
                             </NavLink>
                         </li>
@@ -132,6 +79,7 @@ const IsAdmin = () => {
                             <NavLink
                                 to="/dashboard/successOrder"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
                                 <span>Success Order</span>
                             </NavLink>
                         </li>
@@ -139,6 +87,7 @@ const IsAdmin = () => {
                             <NavLink
                                 to="/dashboard/retuneOrder"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
                                 <span>Retune Order</span>
                             </NavLink>
                         </li>
@@ -146,12 +95,71 @@ const IsAdmin = () => {
                             <NavLink
                                 to="/dashboard/orderCancel"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
                                 <span>Order Cancel</span>
                             </NavLink>
                         </li>
                     </div>
                 }
                 {/* order link end */}
+
+                {/* offer link start */}
+                <div className="pb-2">
+                    <button onClick={() => handelOffer(!offer)} className=" flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200">
+                        <span>Offer Section</span>
+                        {
+                            offer ?
+                                <BsChevronDown />
+                                : <BsChevronUp />
+                        }
+                    </button>
+                </div>
+                {
+                    offer && <div className="space-y-2 pl-2 pt-2">
+                        <li className="w-full">
+                            <NavLink
+                                to="/dashboard/handDelivery"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Best Offer </span>
+                            </NavLink>
+                        </li>
+                        <li className=" w-full">
+                            <NavLink
+                                to="/dashboard/cashOnDelivery"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Slider Changes </span>
+                            </NavLink>
+                        </li>
+                        <li className=" w-full">
+                            <NavLink
+                                to="/dashboard/successOrder"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Banner Change</span>
+                            </NavLink>
+                        </li>
+                        <li className=" w-full">
+                            <NavLink
+                                to="/dashboard/retuneOrder"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>left&Right B.</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/dashboard/orderCancel"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Footer Change</span>
+                            </NavLink>
+                        </li>
+                    </div>
+                }
+                {/* offer link end */}
+
                 {/* messages section start */}
                 <p className="py-2 mt-1 pl-3 text-slate-600 font-semibold text-base uppercase bg-slate-100">Help section</p>
                 <li>
@@ -166,6 +174,20 @@ const IsAdmin = () => {
                         to="/dashboard/adminChat"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <span>Chat </span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/calender"
+                        className={({ isActive }) => (isActive ? "active" : " default ")}>
+                        <span>Calender </span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/adminProfile"
+                        className={({ isActive }) => (isActive ? "active" : " default ")}>
+                        <span>Profile </span>
                     </NavLink>
                 </li>
                 {/* messages section end */}

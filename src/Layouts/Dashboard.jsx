@@ -28,7 +28,7 @@ const Dashboard = () => {
             <Helmet>
                 <title>Flowers Shop || Dashboard</title>
             </Helmet>
-            <div className="col-span-2 h-screen overflow-y-scroll myScroll pb-10 border border-r-2">
+            <div className="col-span-2 h-screen overflow-y-scroll myScroll border border-r-2 relative">
                 <div className="flex items-center justify-center gap-2 py-2 shadow-lg sticky top-0 z-10 bg-white">
                     <BiSolidFlorist className="text-4xl text-blue-700" />
                     <h2 className="text-xl font-bold text-center text-blue-700 uppercase">Flowers Shop</h2>
@@ -41,14 +41,14 @@ const Dashboard = () => {
                             : <IsUsers />
                     }
                 </div>
-                <div className="absolute bottom-0 py-2 px-4 bg-white">
-                    <div className="flex items-center gap-3">
+                <div className=" w-full bg-white sticky bottom-0 z-10 mt-1">
+                    <div className="flex items-start gap-3 pl-4 py-2">
                         <img src={user && user?.photoURL
                             ? user?.photoURL
                             : img
                         } alt=""
-                            className="md:w-10 md:h-10 w-6 h-6 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
-                        <div>
+                            className="md:w-11 md:h-11 object-cover w-6 h-6 text-[#282A33] border border-[#282A33] rounded-full" />
+                        <div className="text-left">
                             {
                                 user && <p className="text-sm font-medium uppercase leading-none text-slate-700">{user?.displayName}</p>
                             }

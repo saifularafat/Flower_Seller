@@ -106,7 +106,7 @@ const IsAdmin = () => {
                 {/* offer link start */}
                 <div className="pb-2">
                     <button onClick={() => handelOffer(!offer)} className=" flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200">
-                        <span>Offer Section</span>
+                        <span>Offer & Change Section</span>
                         {
                             offer ?
                                 <BsChevronDown />
@@ -118,7 +118,7 @@ const IsAdmin = () => {
                     offer && <div className="space-y-2 pl-2 pt-2">
                         <li className="w-full">
                             <NavLink
-                                to="/dashboard/handDelivery"
+                                to="/dashboard/bestOffer"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
                                 <span>Best Offer </span>
@@ -126,15 +126,15 @@ const IsAdmin = () => {
                         </li>
                         <li className=" w-full">
                             <NavLink
-                                to="/dashboard/cashOnDelivery"
+                                to="/dashboard/sliderChanges"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
                                 <span>Slider Changes </span>
                             </NavLink>
                         </li>
                         <li className=" w-full">
-                            <NavLink
-                                to="/dashboard/successOrder"
+                            <NavLink 
+                                to="/dashboard/bannerChanges" //section banner change korar jonno kora hoice
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
                                 <span>Banner Change</span>
@@ -142,7 +142,7 @@ const IsAdmin = () => {
                         </li>
                         <li className=" w-full">
                             <NavLink
-                                to="/dashboard/retuneOrder"
+                                to="/dashboard/leftRightBanner" //section banner ar shathe je banner ashe shegula  change korar jonno kora hoice
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
                                 <span>left&Right B.</span>
@@ -150,7 +150,7 @@ const IsAdmin = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/dashboard/orderCancel"
+                                to="/dashboard/footerChange"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
                                 <span>Footer Change</span>

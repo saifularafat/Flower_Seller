@@ -39,6 +39,11 @@ import EmailAdmin from "../Pages/Dashboard/Admin/EmailAdmin/EmailAdmin";
 import ChatAdmin from "../Pages/Dashboard/Admin/ChatAdmin/ChatAdmin";
 import Calender from "../Pages/Dashboard/Admin/Calender/Calender";
 import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
+import BestOffer from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOffer";
+import SliderChanges from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderChanges";
+import BannerChange from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerChange";
+import LeftRightBanner from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightBanner";
+import FooterChange from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterChange";
 
 const router = createBrowserRouter([
     {
@@ -187,6 +192,27 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/orderCancel",
                 element: <OrderCancel />
+            },
+            /* offer and change section link */
+            {
+                path: "/dashboard/bestOffer",
+                element: <BestOffer />
+            },
+            {
+                path: "/dashboard/sliderChanges",
+                element: <SliderChanges />
+            },
+            {
+                path: "/dashboard/bannerChanges",
+                element: <BannerChange />
+            },
+            {
+                path: "/dashboard/leftRightBanner",
+                element: <LeftRightBanner />
+            },
+            {
+                path: "/dashboard/footerChange",
+                element: <FooterChange />
             },
             /* help section */
             {

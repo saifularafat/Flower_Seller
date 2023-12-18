@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import IsAdmin from "../Pages/Dashboard/SideBar/IsAdmin";
 import IsUsers from "../Pages/Dashboard/SideBar/IsUsers";
 import { Helmet } from "react-helmet-async";
@@ -29,10 +29,10 @@ const Dashboard = () => {
                 <title>Flowers Shop || Dashboard</title>
             </Helmet>
             <div className="col-span-2 h-screen overflow-y-scroll myScroll border border-r-2 relative">
-                <div className="flex items-center justify-center gap-2 py-2 shadow-lg sticky top-0 z-10 bg-white">
+                <Link to="/" className="flex items-center justify-center gap-2 py-2 shadow-lg sticky top-0 z-10 bg-white">
                     <BiSolidFlorist className="text-4xl text-blue-700" />
                     <h2 className="text-xl font-bold text-center text-blue-700 uppercase">Flowers Shop</h2>
-                </div>
+                </Link>
                 <p className="py-2 pl-3 text-slate-600 font-semibold text-base uppercase bg-slate-100">Dashboards</p>
                 <div className="p-2">
                     {

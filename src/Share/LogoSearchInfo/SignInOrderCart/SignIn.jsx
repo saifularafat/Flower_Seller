@@ -7,7 +7,7 @@ const SignIn = () => {
     const {
         user,
         logOut } = useAuth();
-    const isAdmin = true;
+    const isAdmin = false;
 
     const handlerLogOut = () => {
         logOut()
@@ -53,7 +53,7 @@ const SignIn = () => {
                                         Your Dashboard
                                     </Link>
                                         :
-                                        <Link to="/dashboard/clineHome" className="text-xs font-medium hover:underline leading-none">
+                                        <Link to="/dashboard/userHome" className="text-xs font-medium hover:underline leading-none">
                                             Your Dashboard
                                         </Link>
                                 }

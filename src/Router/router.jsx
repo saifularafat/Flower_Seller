@@ -50,6 +50,8 @@ import AddressAdd from "../Pages/Dashboard/Users/AddressAdd/AddressAdd";
 import UserProfile from "../Pages/Dashboard/Users/UserProfile/UserProfile";
 import UserEmail from "../Pages/Dashboard/Users/UserEmail/UserEmail";
 import UserChat from "../Pages/Dashboard/Users/UserChat/UserChat";
+import OrderHistory from "../Pages/Dashboard/Users/OrderHistory/OrderHistory";
+import GiftList from "../Pages/GiftList/GiftList";
 
 const router = createBrowserRouter([
     {
@@ -123,6 +125,10 @@ const router = createBrowserRouter([
             {
                 path: "gift-shops",
                 element: <GiftShop />
+            },
+            {
+                path: "gift-list",
+                element: <GiftList />
             },
             {
                 path: "fruit-gift-shop",
@@ -245,6 +251,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/selectItems",
                 element:<SelectItems />
+            },
+            {
+                path: "/dashboard/orderHistory",
+                element:<OrderHistory />
             },
             {
                 path: "/dashboard/paymentHistory",

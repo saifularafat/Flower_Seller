@@ -164,14 +164,14 @@ const IsAdmin = () => {
                 <p className="py-2 mt-1 pl-3 text-slate-600 font-semibold text-base uppercase bg-slate-100">Help section</p>
                 <li>
                     <NavLink
-                        to="/dashboard/adminEmail"
+                        to="/dashboard/email"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <span>Email </span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
-                        to="/dashboard/adminChat"
+                        to="/dashboard/chat"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <span>Chat </span>
                     </NavLink>

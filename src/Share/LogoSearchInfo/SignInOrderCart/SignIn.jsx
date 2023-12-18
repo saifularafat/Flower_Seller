@@ -60,19 +60,36 @@ const SignIn = () => {
                             </button>
                         )
                     }
-                    <br />
-                    <Link to="" className="text-xs font-medium hover:underline leading-none">
-                        Your Account
-                    </Link>
-                    <br />
-                    <Link to="" className="text-xs font-medium hover:underline leading-none">
-                        Add Your Address
-                    </Link>
-                    <br />
-                    <Link to="my-order" className="text-xs font-medium hover:underline leading-none">
-                        Track Your Order
-                    </Link>
-                    <br />
+
+                    {
+                        isAdmin ?
+                            <>
+                                <br />
+                                <Link to="/dashboard/adminProfile" className="text-xs font-medium hover:underline leading-none">
+                                    Your Profile
+                                </Link>
+                                <br />
+                                <Link to="/dashboard/email" className="text-xs font-medium hover:underline leading-none">
+                                    Your Email
+                                </Link>
+                            </>
+                            :
+                            <>
+                                <br />
+                                <Link to="/dashboard/userProfile" className="text-xs font-medium hover:underline leading-none">
+                                    Your Profile
+                                </Link>
+                                <br />
+                                <Link to="/dashboard/addressAdd" className="text-xs font-medium hover:underline leading-none">
+                                    Add Your Address
+                                </Link>
+                                <br />
+                                <Link to="my-order" className="text-xs font-medium hover:underline leading-none">
+                                    Track Your Order
+                                </Link>
+                                <br />
+                            </>
+                    }
                 </div>
                 <div className="py-2">
                     {

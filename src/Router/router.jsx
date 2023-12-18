@@ -44,6 +44,12 @@ import SliderChanges from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderCh
 import BannerChange from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerChange";
 import LeftRightBanner from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightBanner";
 import FooterChange from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterChange";
+import SelectItems from "../Pages/Dashboard/Users/SelectItems/SelectItems";
+import PaymentHistory from "../Pages/Dashboard/Users/PaymentHistory/PaymentHistory";
+import AddressAdd from "../Pages/Dashboard/Users/AddressAdd/AddressAdd";
+import UserProfile from "../Pages/Dashboard/Users/UserProfile/UserProfile";
+import UserEmail from "../Pages/Dashboard/Users/UserEmail/UserEmail";
+import UserChat from "../Pages/Dashboard/Users/UserChat/UserChat";
 
 const router = createBrowserRouter([
     {
@@ -216,11 +222,11 @@ const router = createBrowserRouter([
             },
             /* help section */
             {
-                path: "/dashboard/adminEmail",
+                path: "/dashboard/email",
                 element: <EmailAdmin />
             },
             {
-                path: "/dashboard/adminChat",
+                path: "/dashboard/chat",
                 element: <ChatAdmin />
             },
             {
@@ -231,11 +237,35 @@ const router = createBrowserRouter([
                 path: "/dashboard/adminProfile",
                 element: <AdminProfile />
             },
-            /* user link */
+            /* user DASHBOARD link */
             {
-                path: "/dashboard/clineHome",
+                path: "/dashboard/userHome",
                 element:<UserHome />
-            }
+            },
+            {
+                path: "/dashboard/selectItems",
+                element:<SelectItems />
+            },
+            {
+                path: "/dashboard/paymentHistory",
+                element:<PaymentHistory />
+            },
+            {
+                path: "/dashboard/addressAdd",
+                element:<AddressAdd />
+            },
+            {
+                path: "/dashboard/userEmail",
+                element:<UserEmail />
+            },
+            {
+                path: "/dashboard/userChat",
+                element:<UserChat />
+            },
+            {
+                path: "/dashboard/userProfile",
+                element:<UserProfile />
+            },
         ]
     }
 ]);

@@ -1,5 +1,5 @@
 
-const SelectCard = () => {
+const UserChat = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const SelectCard = () => {
     );
 };
 
-export default SelectCard;
+export default UserChat;

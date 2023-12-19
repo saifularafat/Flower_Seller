@@ -9,7 +9,7 @@ import { BiSolidFlorist } from "react-icons/bi";
 import Swal from "sweetalert2";
 const Dashboard = () => {
     const { user, logOut } = useAuth()
-    const isAdmin = false;
+    const isAdmin = true;
 
     const handlerLogOut = () => {
         logOut()
@@ -24,7 +24,7 @@ const Dashboard = () => {
             })
     };
     return (
-        <div className=" grid grid-cols-9">
+        <div className="grid grid-cols-9">
             <Helmet>
                 <title>Flowers Shop || Dashboard</title>
             </Helmet>
@@ -61,7 +61,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-7 bg-slate-50 p-4">
+            <div className="col-span-7 px-3 py-5 h-screen overflow-y-scroll myScroll">
                 <Outlet />
             </div>
         </div>

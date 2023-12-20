@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import { GiFlowerPot } from "react-icons/gi";
 import DashboardTitle from "../../../../components/DashboardTitle";
 
 const AddItem = () => {
@@ -16,7 +17,7 @@ const AddItem = () => {
             <Helmet>
                 <title> Flower Shop || Add Item</title>
             </Helmet>
-            <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="w-1/5" borderBG="bg-slate-500" title="Add The Items"></DashboardTitle>
+            <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="w-1/5" textColor=" text-slate-600" Icon={GiFlowerPot} title="Add A Items"></DashboardTitle>
             <form onSubmit={handleSubmit(onSubmit)} className="py-5">
                 <div className=" bg-[#F3F3F3] rounded-md">
                     <div className="flex items-center gap-3">
@@ -115,26 +116,38 @@ const AddItem = () => {
                             )}
                         </div>
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text text-xl  font-semibold">Item Image *</span>
-                        </label>
-                        <input
-                            {...register("flowerImage", { required: true })}
-                            type="file"
-                            className="file-input file-input-bordered w-full max-w-xs" />
-                        {errors.flowerImage?.type === "required" && (
-                            <p className="text-red-600 text-sm">Flower Image is required</p>
-                        )}
+                    <div className="flex items-center gap-3">
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text text-xl  font-semibold">Item Image *</span>
+                            </label>
+                            <input
+                                {...register("flowerImage", { required: true })}
+                                type="file"
+                                className="file-input file-input-bordered w-full " />
+                            {errors.flowerImage?.type === "required" && (
+                                <p className="text-red-600 text-sm">Flower Image is required</p>
+                            )}
+                        </div>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text text-xl  font-semibold">Item Image *</span>
+                            </label>
+                            <input
+                                {...register("flowerImage", { required: true })}
+                                type="file"
+                                className="file-input file-input-bordered w-full " />
+                            {errors.flowerImage?.type === "required" && (
+                                <p className="text-red-600 text-sm">Flower Image is required</p>
+                            )}
+                        </div>
                     </div>
-                    {/* <input type="submit" value= {`Add Item ${<FaUtensils />}`} /> */}
-                    <div className=" w-4/5 mx-auto text-center">
-                        <button className="flex items-center w-full text-center py-2 px-6 bg-[#835D23] text-white text-2xl  font-semibold rounded-lg mt-3">
+                    <div className="mt-4">
+                        <button className="flex items-center justify-center w-full bg-blue-600 rounded-md py-[6px] text-white text-xl font-semibold tracking-wide">
                             Add Item
-                            {/* <FaUtensils className="pl-4 w-9 h-9" /> */}
+                            <GiFlowerPot className=" w-12 h-9 text-slate-100" />
                         </button>
                     </div>
-
                 </div>
             </form>
         </div>

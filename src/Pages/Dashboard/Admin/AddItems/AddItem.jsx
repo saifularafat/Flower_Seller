@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import DashboardTitle from "../../../../components/DashboardTitle";
 
 const AddItem = () => {
     const { register,
         formState: { errors },
         handleSubmit,
         reset } = useForm();
-        
+
     const onSubmit = data => {
         console.log(data);
     }
@@ -15,7 +16,8 @@ const AddItem = () => {
             <Helmet>
                 <title> Flower Shop || Add Item</title>
             </Helmet>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="w-1/5" borderBG="bg-slate-500" title="Add The Items"></DashboardTitle>
+            <form onSubmit={handleSubmit(onSubmit)} className="py-5">
                 <div className=" bg-[#F3F3F3] rounded-md">
                     <div className="flex items-center gap-3">
                         <div className="w-full">
@@ -79,7 +81,7 @@ const AddItem = () => {
                             </label>
                             <select {...register("flowerNav", { required: true })}
                                 className="input input-bordered  text-xl w-full pl-2">
-                                <option value="flowers">Flowers</option>
+                                <option value="flowers" selected>Flowers</option>
                                 <option value="birthday">Birthday</option>
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
@@ -101,8 +103,7 @@ const AddItem = () => {
                             </label>
                             <select {...register("category", { required: true })}
                                 className="input input-bordered  text-xl w-full pl-2">
-                                <option selected>please choose category</option>
-                                <option value="flower">Flower</option>
+                                <option value="flower" selected>Flower</option>
                                 <option value="planet">Planet</option>
                                 <option value="chocolate">Chocolate</option>
                                 <option value="gift">Gift</option>

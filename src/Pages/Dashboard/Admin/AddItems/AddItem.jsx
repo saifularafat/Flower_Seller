@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { GiFlowerPot } from "react-icons/gi";
 import DashboardTitle from "../../../../components/DashboardTitle";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddItem = () => {
     const { register,
@@ -9,8 +11,45 @@ const AddItem = () => {
         handleSubmit,
         reset } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
+    const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
+    const onSubmit = (data) => {
+        // console.log(data, "images", imgURL);
+        /* imgbb upload in the image */
+        const imageUrl = data.flowerImage[0];
+        const formData = new FormData();
+        formData.append('image', imageUrl)
+        fetch(hosting_image_url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                const imgURL = imageData.data.display_url;
+                const { flowerName, flowerNav, price, category, offerPrice, percent } = data;
+                const createFlower = {
+                    flowerName,
+                    flowerNav,
+                    price: parseFloat(price),
+                    flowerCategory: category,
+                    offerPrice,
+                    percent,
+                    flowerImg: imgURL
+                }
+                console.log(createFlower);
+                axios.post(`http://localhost:4000/flowersAll`, createFlower)
+                    .then(data => {
+                        if (data.data.insertedId){
+                            reset();
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: 'New sport item added successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
+            })
     }
     return (
         <div className="px-2">
@@ -64,12 +103,12 @@ const AddItem = () => {
                         </div>
                         <div className="w-full">
                             <label className="label">
-                                <span className="label-text text-lg  font-semibold">Parentis</span>
+                                <span className="label-text text-lg  font-semibold">Percent</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Price Parentis"
-                                {...register("parentis", { maxLength: 120 })}
+                                placeholder="Price Percent"
+                                {...register("percent", { maxLength: 120 })}
                                 className="input input-bordered w-full text-base"
                             />
                         </div>
@@ -109,6 +148,7 @@ const AddItem = () => {
                                 <option value="chocolate">Chocolate</option>
                                 <option value="gift">Gift</option>
                                 <option value="baby">BabyGift</option>
+                                <option value="lave">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>
                             </select>
                             {errors.category?.type === "required" && (

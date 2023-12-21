@@ -61,7 +61,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-7 px-3 py-5 h-screen overflow-y-scroll myScroll">
+            <div className="col-span-7 md:px-3 py-5 h-screen overflow-y-scroll myScroll">
                 <Outlet />
             </div>
         </div>

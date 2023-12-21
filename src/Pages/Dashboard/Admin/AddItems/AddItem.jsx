@@ -17,10 +17,10 @@ const AddItem = () => {
             <Helmet>
                 <title> Flower Shop || Add Item</title>
             </Helmet>
-            <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="w-1/5" textColor=" text-slate-600" Icon={GiFlowerPot} title="Add A Items"></DashboardTitle>
+            <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="md:w-1/5" textColor=" text-slate-600" Icon={GiFlowerPot} title="Add A Items"></DashboardTitle>
             <form onSubmit={handleSubmit(onSubmit)} className="py-5">
                 <div className=" bg-[#F3F3F3] rounded-md">
-                    <div className="flex items-center gap-3">
+                    <div className="md:flex items-center gap-3">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-lg  font-semibold">Flower Name*</span>
@@ -50,7 +50,7 @@ const AddItem = () => {
                             )}
                         </div>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="md:flex items-center gap-3">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-lg  font-semibold">Offer Price</span>
@@ -76,9 +76,9 @@ const AddItem = () => {
 
                     </div>
                     <div className="md:flex items-center mt-3 space-x-3">
-                        <div className="w-1/2">
+                        <div className="md:w-1/2">
                             <label className="label">
-                                <span className="label-text text-3xl  font-semibold">Flower NavLink*</span>
+                                <span className="label-text md:text-3xl text-xl font-semibold">Flower NavLink*</span>
                             </label>
                             <select {...register("flowerNav", { required: true })}
                                 className="input input-bordered  text-xl w-full pl-2">
@@ -98,9 +98,9 @@ const AddItem = () => {
                                 <p className="text-red-600 text-sm">Flower NavLink is required</p>
                             )}
                         </div>
-                        <div className="w-1/2">
+                        <div className="md:w-1/2">
                             <label className="label">
-                                <span className="label-text text-3xl  font-semibold">Flower Category*</span>
+                                <span className="label-text md:text-3xl text-xl font-semibold">Flower Category*</span>
                             </label>
                             <select {...register("category", { required: true })}
                                 className="input input-bordered  text-xl w-full pl-2">
@@ -117,18 +117,6 @@ const AddItem = () => {
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <div className="form-control w-full ">
-                            <label className="label">
-                                <span className="label-text text-xl  font-semibold">Item Image *</span>
-                            </label>
-                            <input
-                                {...register("flowerImage", { required: true })}
-                                type="file"
-                                className="file-input file-input-bordered w-full " />
-                            {errors.flowerImage?.type === "required" && (
-                                <p className="text-red-600 text-sm">Flower Image is required</p>
-                            )}
-                        </div>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text text-xl  font-semibold">Item Image *</span>

@@ -1,8 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import DashboardTitle from "../../../../components/DashboardTitle";
 import { PiFlowerLotusBold } from "react-icons/pi";
+import useAllUsers from "../../../../api/useAllUser";
+import useAllFlowers from "../../../../api/useAllFlowers";
 
 const AllUsers = () => {
+    const [users, refetch] = useAllUsers();
+    console.log(users);
+    const [flowerAll] = useAllFlowers();
+    console.log( "line number is 11",flowerAll);
     return (
         <>
             <Helmet>

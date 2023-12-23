@@ -1,11 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query"
 import axios from "axios";
 
-const useAllUsers = () => {
-    const { data: users = [], refetch } = useQuery(["users"], async () => {
-        const res = await axios.get(`${import.meta.env.LOCAL_API_URL}/users`);
-        return res.json();
-    })
-    return [users, refetch]
-}
-export default useAllUsers;
+const allUsers = () => {
+    const { data: users = [], refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axios.get('http://localhost:4000/users');
+            return res.data;
+        },
+    });
+    return [users, refetch];
+};
+
+export default allUsers;

@@ -2,13 +2,10 @@ import { Helmet } from "react-helmet-async";
 import DashboardTitle from "../../../../components/DashboardTitle";
 import { PiFlowerLotusBold } from "react-icons/pi";
 import useAllUsers from "../../../../api/useAllUser";
-import useAllFlowers from "../../../../api/useAllFlowers";
 
 const AllUsers = () => {
     const [users, refetch] = useAllUsers();
     console.log(users);
-    const [flowerAll] = useAllFlowers();
-    console.log( "line number is 11",flowerAll);
     return (
         <>
             <Helmet>
@@ -26,38 +23,20 @@ const AllUsers = () => {
                             <th>Gender</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        <tr className="hover:bg-slate-200 transition-all duration-200">
-                            <th>1</th>
-                            <td className="text-xs">Cy Ganderton</td>
-                            <td className="text-xs lowercase">Quality Control Specialist</td>
-                            <td className="text-xs">Blue</td>
-                        </tr>
-                        {/* row 2 */}
-                        <tr className="hover:bg-slate-200 transition-all duration-200">
-                            <th>2</th>
-                            <td className="text-xs">Brice Swyre</td>
-                            <td className="text-xs">Tax Accountant</td>
-                            <td className="text-xs">Red</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr className="hover:bg-slate-200 transition-all duration-200">
-                            <th>3</th>
-                            <td className="text-xs">Brice Swyre</td>
-                            <td className="text-xs">Tax Accountant</td>
-                            <td className="text-xs">Red</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr className="hover:bg-slate-200 transition-all duration-200">
-                            <th>3</th>
-                            <td className="text-xs">Brice Swyre</td>
-                            <td className="text-xs">Tax Accountant</td>
-                            <td className="text-xs">Red</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    {
+                        users.map((user, index) =>
+                            <tbody key={user._id}>
+                                <tr className="hover:bg-slate-200 transition-all duration-200">
+                                    <th>{index + 1}</th>
+                                    <td className="text-sm">{user?.name}</td>
+                                    <td className="text-sm">{user?.email}</td>
+                                    <td className="text-sm">{user?.gender}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    }
+            </table>
+        </div >
         </>
     );
 };

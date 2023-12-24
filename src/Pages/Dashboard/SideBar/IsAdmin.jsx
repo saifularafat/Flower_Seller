@@ -6,6 +6,7 @@ import { FaUsers } from "react-icons/fa6";
 import { } from "react-icons/md";
 import { IoAddCircleSharp, IoLogoPaypal } from "react-icons/io5";
 import { GoDot } from "react-icons/go";
+import { GiFlowerEmblem } from "react-icons/gi";
 
 const IsAdmin = () => {
     const [order, handelOrder] = useState(false);
@@ -35,6 +36,14 @@ const IsAdmin = () => {
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <FaUsers className="text-xl" />
                         <span>All Users </span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/totalFlowerItems"
+                        className={({ isActive }) => (isActive ? "active" : " default ")}>
+                        <GiFlowerEmblem className="text-xl" />
+                        <span>Total Flower  </span>
                     </NavLink>
                 </li>
                 <li>

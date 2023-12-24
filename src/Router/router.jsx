@@ -52,6 +52,7 @@ import UserEmail from "../Pages/Dashboard/Users/UserEmail/UserEmail";
 import UserChat from "../Pages/Dashboard/Users/UserChat/UserChat";
 import OrderHistory from "../Pages/Dashboard/Users/OrderHistory/OrderHistory";
 import GiftList from "../Pages/GiftList/GiftList";
+import TotalFlowerItems from "../Pages/Dashboard/Admin/TotalFlowerItems/TotalFlowerItems";
 
 const router = createBrowserRouter([
     {
@@ -179,6 +180,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allUsers',
                 element: <AllUsers />
+            },
+            {
+                path: '/dashboard/totalFlowerItems',
+                element: <TotalFlowerItems />
             },
             {
                 path: '/dashboard/allPayment',

@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { GiFlowerPot, GiFlowers } from "react-icons/gi";
 import DashboardTitle from "../../../../../components/DashboardTitle";
 import { useForm } from "react-hook-form";
-import { MdAddAPhoto } from "react-icons/md";
 
 const BannerChange = () => {
     const {
@@ -21,17 +20,12 @@ const BannerChange = () => {
                         <label className="label">
                             <span className="label-file file-lg  font-semibold">Banner One</span>
                         </label>
-                        <input
-                            id="file"
+                        <input 
                             type="file"
                             placeholder=""
                             {...register("bannerOne", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerOne" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
                         {errors.bannerOne?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
@@ -41,16 +35,14 @@ const BannerChange = () => {
                             <span className="label-file file-lg  font-semibold">Banner Two</span>
                         </label>
                         <input
-                            id="file"
                             type="file"
                             placeholder=""
                             {...register("bannerTwo", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerTwo" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
+                        {errors.bannerTwo?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
                     </div>
                 </div>
                 <div className="md:flex items-center gap-3">
@@ -59,32 +51,28 @@ const BannerChange = () => {
                             <span className="label-file file-lg  font-semibold">Banner Three</span>
                         </label>
                         <input
-                            id="file"
                             type="file"
                             placeholder=""
                             {...register("bannerThree", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerThree" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
+                        {errors.bannerThree?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
                     </div>
                     <div className="md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-file file-lg  font-semibold">Banner Four</span>
                         </label>
                         <input
-                            id="file"
                             type="file"
                             placeholder=""
                             {...register("bannerFour", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerFour" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
+                        {errors.bannerFour?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
                     </div>
                 </div>
                 <div className="md:flex items-center gap-3">
@@ -93,32 +81,28 @@ const BannerChange = () => {
                             <span className="label-file file-lg  font-semibold">Banner Five</span>
                         </label>
                         <input
-                            id="file"
                             type="file"
                             placeholder=""
                             {...register("bannerFive", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerFive" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
+                        {errors.bannerFive?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
                     </div>
                     <div className="md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-file file-lg  font-semibold">Banner Six</span>
                         </label>
                         <input
-                            id="file"
                             type="file"
                             placeholder=""
                             {...register("bannerSix", { maxLength: 60 })}
-                            className="input input-bordered w-full file-base pt-1 hidden"
+                            className="input input-bordered w-full file-base pt-1"
                         />
-                        <label htmlFor="file" name="bannerSix" className="w-full border-2 border-slate-300 rounded-md  cursor-pointer flex items-center gap-2 px-3 py-2">
-                            <MdAddAPhoto className="text-xl"/>
-                            <span className="text-base text-slate-400">+Banner Image</span>
-                        </label>
+                        {errors.bannerSix?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
                     </div>
                 </div>
                 <div className="mt-4">

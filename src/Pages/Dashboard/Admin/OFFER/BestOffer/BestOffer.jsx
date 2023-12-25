@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { GiFlowerPot } from "react-icons/gi";
+import { GiFlowerPot, GiFlowers } from "react-icons/gi";
+import DashboardTitle from "../../../../../components/DashboardTitle";
 
 const BestOffer = () => {
     const {
@@ -12,6 +13,7 @@ const BestOffer = () => {
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>
+            <DashboardTitle  borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiFlowers} textColor="" title="Top Best Offer "/>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="label">
                     <span className="label-text text-lg  font-semibold">Top Best Offer</span>

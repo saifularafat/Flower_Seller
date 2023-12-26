@@ -134,7 +134,7 @@ const FooterChange = () => {
                 </div>
                 {/* WAY SHOP is SECTION  END*/}
                 {/* CUSTOM SERVICE is SECTION  START*/}
-                <div className="CustomService">
+                <div className="CustomService bg-blue-200 p-3 mt-2 rounded-md">
                     <label className="label">
                         <span className="label-text text-lg  font-semibold uppercase">Custom Service</span>
                     </label>
@@ -197,7 +197,7 @@ const FooterChange = () => {
                 </div>
                 {/* CUSTOM SERVICE is SECTION  END*/}
                 {/* OUR STORES START THE SECTION  */}
-                <div className="ourStores">
+                <div className="ourStores bg-emerald-100 p-3 mt-2 rounded-md">
                     <label className="label">
                         <span className="label-text text-lg  font-semibold uppercase">OUR STORES</span>
                     </label>
@@ -260,7 +260,7 @@ const FooterChange = () => {
                 </div>
                 {/* OUR STORES END THE SECTION  */}
                 {/* CORPORATE START THE SECTION  */}
-                <div className="CORPORATE">
+                <div className="CORPORATE bg-cyan-200 p-3 mt-2 rounded-md">
                     <label className="label">
                         <span className="label-text text-lg  font-semibold uppercase">CORPORATE</span>
                     </label>
@@ -337,22 +337,24 @@ const FooterChange = () => {
                 </div>
                 {/* OUR STORES END THE SECTION  */}
                 {/* Footer Socket start THE SECTION  */}
-                <label className="label">
-                    <span className="label-text text-lg  font-semibold uppercase">Footer Socket</span>
-                </label>
-                <div className="flex items-center gap-5 space-y-2">
-                    <input
-                        type="text"
-                        placeholder="Text Footer Socket"
-                        {...register("footerSocket", { required: true, maxLength: 20 })}
-                        className="input input-bordered w-full text-base"
-                    />
-                    <input
-                        type="text"
-                        placeholder="developer url"
-                        {...register("developerURL", { required: true, maxLength: 20 })}
-                        className="input input-bordered w-full text-base"
-                    />
+                <div className="bg-violet-300 p-3 mt-2 rounded-md">
+                    <label className="label ">
+                        <span className="label-text text-lg  font-semibold uppercase">Footer Socket</span>
+                    </label>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Text Footer Socket"
+                            {...register("footerSocket", { required: true, maxLength: 20 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="developer url"
+                            {...register("developerURL", { required: true, maxLength: 20 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
                 </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-600 rounded-md py-[6px] text-white text-xl font-semibold tracking-wide">

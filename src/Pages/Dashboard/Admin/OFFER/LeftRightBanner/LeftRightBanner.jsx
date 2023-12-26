@@ -77,13 +77,13 @@ const LeftRightBanner = () => {
                     </div>
                 </div>
                 <div className="w-full pb-4">
-                        <label className="label">
-                            <span className="label-file file-lg  font-semibold">Category</span>
-                        </label>
-                        <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
-                            <option value="leftRightImage">LeftRight Image</option>
-                        </select>
-                    </div>
+                    <label className="label">
+                        <span className="label-file file-lg  font-semibold">Category</span>
+                    </label>
+                    <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
+                        <option value="leftRightImage">LeftRight Image</option>
+                    </select>
+                </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
                         LeftRight Image

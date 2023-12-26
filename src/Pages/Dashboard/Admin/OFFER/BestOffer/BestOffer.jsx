@@ -13,7 +13,7 @@ const BestOffer = () => {
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>
-            <DashboardTitle  borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiFlowers} textColor="" title="Top Best Offer "/>
+            <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiFlowers} textColor="" title="Top Best Offer " />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="label">
                     <span className="label-text text-lg  font-semibold">Top Best Offer</span>
@@ -40,7 +40,14 @@ const BestOffer = () => {
                 {errors.topBestOfferLink?.type === "required" && (
                     <p className="text-red-600 text-sm">Flower Name is required</p>
                 )}
-
+                <div className="w-full pb-4">
+                    <label className="label">
+                        <span className="label-file file-lg  font-semibold">Category</span>
+                    </label>
+                    <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
+                        <option value="bestOffer">Best Offer</option>
+                    </select>
+                </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-600 rounded-md py-[6px] text-white text-xl font-semibold tracking-wide">
                         Best Offer

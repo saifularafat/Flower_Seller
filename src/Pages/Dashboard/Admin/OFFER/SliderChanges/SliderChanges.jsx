@@ -29,6 +29,13 @@ const SliderChanges = () => {
                         {errors.sliderOne?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial One"
+                            {...register("sliderSerialOne")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="md:w-1/2 w-full">
                         <label className="label">
@@ -43,6 +50,13 @@ const SliderChanges = () => {
                         {errors.sliderTwo?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial Two"
+                            {...register("sliderSerialTwo")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
                 <div className="md:flex items-center gap-3">
@@ -59,6 +73,13 @@ const SliderChanges = () => {
                         {errors.sliderThree?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial Three"
+                            {...register("sliderSerialThree")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="md:w-1/2 w-full">
                         <label className="label">
@@ -73,6 +94,13 @@ const SliderChanges = () => {
                         {errors.sliderFour?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial Four"
+                            {...register("sliderSerialFour")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
                 <div className="md:flex items-center gap-3">
@@ -89,6 +117,13 @@ const SliderChanges = () => {
                         {errors.sliderFive?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial Five"
+                            {...register("sliderSerialFive")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="md:w-1/2 w-full">
                         <label className="label">
@@ -103,15 +138,23 @@ const SliderChanges = () => {
                         {errors.sliderSix?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Slider Serial Six"
+                            {...register("sliderSerialSix")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
-                <div className="w-full pb-4">
-                    <label className="label">
-                        <span className="label-file file-lg  font-semibold">Category</span>
-                    </label>
-                    <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
-                        <option value="sliderImage">Slider Image</option>
-                    </select>
+                <div className="w-full pb-4 hidden">
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="slider"
+                        {...register("category")}
+                        className="hidden"
+                    />
                 </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">

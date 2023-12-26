@@ -30,6 +30,13 @@ const LeftRightBanner = () => {
                         {errors.imageOne?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                         <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Image Serial One"
+                            {...register("imageSerialOne")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="w-full">
                         <label className="label">
@@ -44,6 +51,13 @@ const LeftRightBanner = () => {
                         {errors.imageTwo?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                         <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Image Serial Two"
+                            {...register("imageSerialTwo")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
                 <div className="md:flex items-center gap-4">
@@ -60,6 +74,13 @@ const LeftRightBanner = () => {
                         {errors.imageThree?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                         <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Image Serial Three"
+                            {...register("imageSerialThree")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="w-full">
                         <label className="label">
@@ -74,15 +95,23 @@ const LeftRightBanner = () => {
                         {errors.imageFour?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                         <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Image Serial Four"
+                            {...register("imageSerialFour")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
-                <div className="w-full pb-4">
-                    <label className="label">
-                        <span className="label-file file-lg  font-semibold">Category</span>
-                    </label>
-                    <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
-                        <option value="leftRightImage">LeftRight Image</option>
-                    </select>
+                <div className="w-full pb-4 hidden">
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="leftRightImage"
+                        {...register("category")}
+                        className="hidden"
+                    />
                 </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">

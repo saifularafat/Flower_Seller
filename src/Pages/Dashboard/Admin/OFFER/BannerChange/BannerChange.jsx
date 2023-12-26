@@ -29,6 +29,13 @@ const BannerChange = () => {
                         {errors.bannerOne?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Banner Serial One"
+                            {...register("bannerSerialOne")}
+                            className="hidden"
+                        />
                     </div>
                     <div className="w-full">
                         <label className="label">
@@ -43,6 +50,13 @@ const BannerChange = () => {
                         {errors.bannerTwo?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Banner Serial Two"
+                            {...register("bannerSerialTwo")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -59,14 +73,22 @@ const BannerChange = () => {
                         {errors.bannerThree?.type === "required" && (
                             <p className="file-red-600 file-sm">Please Provide The Image</p>
                         )}
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="Banner Serial Three"
+                            {...register("bannerSerialThree")}
+                            className="hidden"
+                        />
                     </div>
-                    <div className="w-full">
-                        <label className="label">
-                            <span className="label-file file-lg  font-semibold">Category</span>
-                        </label>
-                        <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
-                            <option value="bannerImage">Banner Image</option>
-                        </select>
+                    <div className="w-full pb-4 hidden">
+                        <input
+                            type="text"
+                            placeholder=""
+                            defaultValue="bannerImage"
+                            {...register("category")}
+                            className="hidden"
+                        />
                     </div>
                 </div>
                 <div className="mt-7">

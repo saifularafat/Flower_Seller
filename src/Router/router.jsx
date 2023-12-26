@@ -53,6 +53,12 @@ import UserChat from "../Pages/Dashboard/Users/UserChat/UserChat";
 import OrderHistory from "../Pages/Dashboard/Users/OrderHistory/OrderHistory";
 import GiftList from "../Pages/GiftList/GiftList";
 import TotalFlowerItems from "../Pages/Dashboard/Admin/TotalFlowerItems/TotalFlowerItems";
+import SliderFirstPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFirstPost";
+import SliderSecondPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderSEcondPost";
+import SliderThreePost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderThreePost";
+import SliderFourPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFourPost";
+import SliderFivePost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFivePost";
+import SliderSixPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderSixPost";
 
 const router = createBrowserRouter([
     {
@@ -218,6 +224,30 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/sliderChanges",
                 element: <SliderChanges />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderOne",
+                element: <SliderFirstPost />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderTwo",
+                element: <SliderSecondPost />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderThree",
+                element: <SliderThreePost />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderFour",
+                element: <SliderFourPost />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderFive",
+                element: <SliderFivePost />
+            },
+            {
+                path: "/dashboard/sliderChanges/sliderSix",
+                element: <SliderSixPost />
             },
             {
                 path: "/dashboard/bannerChanges",

@@ -7,7 +7,7 @@ const BannerChange = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        reset
     } = useForm()
     const onSubmit = (data) => console.log(data)
     return (
@@ -23,12 +23,9 @@ const BannerChange = () => {
                         <input
                             type="file"
                             placeholder=""
-                            {...register("bannerOne")}
+                            {...register("imageOne")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.bannerOne?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                         <input
                             type="text"
                             placeholder=""
@@ -44,12 +41,9 @@ const BannerChange = () => {
                         <input
                             type="file"
                             placeholder=""
-                            {...register("bannerTwo")}
+                            {...register("imageTwo")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.bannerTwo?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                         <input
                             type="text"
                             placeholder=""
@@ -67,12 +61,9 @@ const BannerChange = () => {
                         <input
                             type="file"
                             placeholder=""
-                            {...register("bannerThree")}
+                            {...register("imageThree")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.bannerThree?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                         <input
                             type="text"
                             placeholder=""

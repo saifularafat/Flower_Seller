@@ -8,7 +8,7 @@ const LeftRightBanner = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        reset
     } = useForm()
     const onSubmit = (data) => console.log(data)
     return (
@@ -27,9 +27,6 @@ const LeftRightBanner = () => {
                             {...register("imageOne")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.imageOne?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                          <input
                             type="text"
                             placeholder=""
@@ -48,9 +45,6 @@ const LeftRightBanner = () => {
                             {...register("imageTwo")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.imageTwo?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                          <input
                             type="text"
                             placeholder=""
@@ -71,9 +65,6 @@ const LeftRightBanner = () => {
                             {...register("imageThree")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.imageThree?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                          <input
                             type="text"
                             placeholder=""
@@ -92,9 +83,6 @@ const LeftRightBanner = () => {
                             {...register("imageFour")}
                             className="input input-bordered w-full file-base pt-1"
                         />
-                        {errors.imageFour?.type === "required" && (
-                            <p className="file-red-600 file-sm">Please Provide The Image</p>
-                        )}
                          <input
                             type="text"
                             placeholder=""

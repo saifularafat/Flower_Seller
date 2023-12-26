@@ -15,44 +15,61 @@ const BannerChange = () => {
             <Helmet><title>Flower Shop || Banner Change</title></Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-4/12" Icon={GiButterflyFlower} fileColor="" title="Upload Banner Image " />
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="label">
-                    <span className="label-file file-lg  font-semibold">Banner One</span>
-                </label>
-                <input
-                    type="file"
-                    placeholder=""
-                    {...register("bannerOne")}
-                    className="input input-bordered w-full file-base pt-1"
-                />
-                {errors.bannerOne?.type === "required" && (
-                    <p className="file-red-600 file-sm">Please Provide The Image</p>
-                )}
-
-                <label className="label">
-                    <span className="label-file file-lg  font-semibold">Banner Two</span>
-                </label>
-                <input
-                    type="file"
-                    placeholder=""
-                    {...register("bannerTwo")}
-                    className="input input-bordered w-full file-base pt-1"
-                />
-                {errors.bannerTwo?.type === "required" && (
-                    <p className="file-red-600 file-sm">Please Provide The Image</p>
-                )}
-                <label className="label">
-                    <span className="label-file file-lg  font-semibold">Banner Three</span>
-                </label>
-                <input
-                    type="file"
-                    placeholder=""
-                    {...register("bannerThree")}
-                    className="input input-bordered w-full file-base pt-1"
-                />
-                {errors.bannerThree?.type === "required" && (
-                    <p className="file-red-600 file-sm">Please Provide The Image</p>
-                )}
-                <div className="mt-4">
+                <div className="md:flex items-center gap-4">
+                    <div className="w-full">
+                        <label className="label">
+                            <span className="label-file file-lg  font-semibold">Banner One</span>
+                        </label>
+                        <input
+                            type="file"
+                            placeholder=""
+                            {...register("bannerOne")}
+                            className="input input-bordered w-full file-base pt-1"
+                        />
+                        {errors.bannerOne?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
+                    </div>
+                    <div className="w-full">
+                        <label className="label">
+                            <span className="label-file file-lg  font-semibold">Banner Two</span>
+                        </label>
+                        <input
+                            type="file"
+                            placeholder=""
+                            {...register("bannerTwo")}
+                            className="input input-bordered w-full file-base pt-1"
+                        />
+                        {errors.bannerTwo?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
+                    </div>
+                </div>
+                <div className="flex items-center gap-4">
+                    <div className="w-full">
+                        <label className="label">
+                            <span className="label-file file-lg  font-semibold">Banner Three</span>
+                        </label>
+                        <input
+                            type="file"
+                            placeholder=""
+                            {...register("bannerThree")}
+                            className="input input-bordered w-full file-base pt-1"
+                        />
+                        {errors.bannerThree?.type === "required" && (
+                            <p className="file-red-600 file-sm">Please Provide The Image</p>
+                        )}
+                    </div>
+                    <div className="w-full">
+                        <label className="label">
+                            <span className="label-file file-lg  font-semibold">Category</span>
+                        </label>
+                        <select {...register("category")} className="w-full border-2 rounded-md py-[10px] px-3 outline-slate-300">
+                            <option value="bannerImage">Banner Image</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="mt-7">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
                         Banner Image
                         <GiButterflyFlower className=" w-12 h-9 file-slate-100" />

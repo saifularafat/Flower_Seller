@@ -59,6 +59,7 @@ import SliderThreePost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/Slider
 import SliderFourPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFourPost";
 import SliderFivePost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFivePost";
 import SliderSixPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderSixPost";
+import BannerOne from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerOne";
 
 const router = createBrowserRouter([
     {
@@ -252,6 +253,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/bannerChanges",
                 element: <BannerChange />
+            },
+            {
+                path: "/dashboard/bannerChangesOne",
+                element: <BannerOne />
             },
             {
                 path: "/dashboard/leftRightBanner",

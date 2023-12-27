@@ -1,12 +1,48 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiLotusFlower } from "react-icons/gi";
+import Swal from "sweetalert2";
 
 const FooterCorporate = () => {
     const {
         register,
         handleSubmit,
+        reset
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        console.log(data);
+        const { corporate1, corporate1url, corporate2, corporate2url, corporate3, corporate3url, corporate4, corporate4url, corporate5, corporate5url, category, corporate, footerSocket, developerURL } = data;
+        const customServerInfo = {
+            corporate1,
+            corporate1url,
+            corporate2,
+            corporate2url,
+            corporate3,
+            corporate3url,
+            corporate4,
+            corporate4url,
+            corporate5,
+            corporate5url,
+            category,
+            corporate,
+            footerSocket,
+            developerURL
+        }
+        axios.post(`http://localhost:4000/footerChange`, customServerInfo)
+            .then(data => {
+                console.log(data);
+                if (data.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'footer Corporate add successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -114,16 +150,21 @@ const FooterCorporate = () => {
                     {...register("corporate")}
                     className="hidden"
                 />
-                <input
-                    type="text"
-                    placeholder=""
-                    defaultValue="corporate"
-                    {...register("category")}
-                    className="hidden"
-                />
+                <div className="w-1/2 hidden">
+                    <label className="label">
+                        <span className="label-text text-3xl font-Cinzel font-semibold">Category*</span>
+                    </label>
+                    <select {...register("category", { required: true })}
+                        className="input input-bordered  text-xl w-full pl-2">
+                        <option value="wayToShop ">Way To Shop</option>
+                        <option value="customServer">Custom Server</option>
+                        <option value="ourStores">Our Stores</option>
+                        <option value="corporate" selected>Corporate</option>
+                    </select>
+                </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
-                       Corporate
+                        Corporate
                         <GiLotusFlower className=" w-12 h-9 file-slate-100" />
                     </button>
                 </div>

@@ -1,15 +1,17 @@
 import { Helmet } from "react-helmet-async";
-import { useForm } from "react-hook-form";
 import DashboardTitle from "../../../../../components/DashboardTitle";
 import { GiLotusFlower } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import footerChange from "../../../../../api/useFooterGet";
 
 const FooterChange = () => {
-    // const {
-    //     register,
-    //     handleSubmit,
-    // } = useForm()
-    // const onSubmit = (data) => console.log(data)
+    const [footerGet] = footerChange();
+    const wayToShops = footerGet.find(footer => footer.category === "wayToShop");
+    const customService = footerGet.find(footer => footer.category === "customServer");
+    const ourStores = footerGet.find(footer => footer.category === "ourStores");
+    const corporate = footerGet.find(footer => footer.category === "corporate");
+    console.log(wayToShops);
+
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>
@@ -26,60 +28,64 @@ const FooterChange = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
+                        {/* {
+                            wayToShops.map(shop => */}
                         <tr>
                             <td>
-                               Way Shop
+                                {wayToShops?.wayToShop}
                             </td>
-                            <td>Category</td>
+                            <td>{wayToShops?.category}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/footerChange/footerWayToShop" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
                                 </div>
                                 <div>
-                                    <button className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
                                 </div>
                             </div>
                         </tr>
+                        {/* )
+                        } */}
 
                         <tr>
                             <td>
-                               Custom Service
+                                {customService?.customService}
                             </td>
-                            <td>Category</td>
+                            <td>{customService?.category}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/footerChange/footerCustomService" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
                                 </div>
                                 <div>
-                                    <button className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
                                 </div>
                             </div>
                         </tr>
                         <tr>
                             <td>
-                               Our Stores
+                                {ourStores?.ourStores}
                             </td>
-                            <td>Category</td>
+                            <td>{ourStores?.category}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/footerChange/footerOurStores" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
                                 </div>
                                 <div>
-                                    <button className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
                                 </div>
                             </div>
                         </tr>
                         <tr>
                             <td>
-                               Corporate
+                                {corporate?.corporate}
                             </td>
-                            <td>Category</td>
+                            <td>{corporate?.category}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/footerChange/footerCorporate" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
                                 </div>
                                 <div>
-                                    <button className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
                                 </div>
                             </div>
                         </tr>

@@ -1,12 +1,54 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiLotusFlower } from "react-icons/gi";
+import Swal from "sweetalert2";
 
 const FooterWayShop = () => {
     const {
         register,
         handleSubmit,
+        reset
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        console.log(data);
+        const { shopName1, shopName1url, shopName2, shopName2url, shopName3, shopName3url, shopName4, shopName4url, shopName5, shopName5url, shopName6, shopName6url, shopName7, shopName7url, shopName8, shopName8url, category, wayToShop } = data;
+        const wayToShopInfo = {
+            shopName1,
+            shopName1url,
+            shopName2,
+            shopName2url,
+            shopName3,
+            shopName3url,
+            shopName4,
+            shopName4url,
+            shopName5,
+            shopName5url,
+            shopName6,
+            shopName6url,
+            shopName7,
+            shopName7url,
+            shopName8,
+            shopName8url,
+            category,
+            wayToShop
+        }
+        console.log(wayToShopInfo);
+        // axios.post(`${import.meta.env.LOCAL_API_URL}/footerChange`, wayToShopInfo)
+        axios.post(`http://localhost:4000/footerChange`, wayToShopInfo)
+            .then(data => {
+                console.log(data);
+                if (data.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'footer way to shop add successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -61,14 +103,28 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
+                            {...register("shopName4", { required: true, maxLength: 20 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="please url"
+                            {...register("shopName4url", { required: true, maxLength: 20 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Name Of Shop"
                             {...register("shopName5", { required: true, maxLength: 20 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName5url", { required: true, maxLength: 20 })}
-                            className="input input-bordered w-full text-base"
+                            {...register("shopName6url", { required: true, maxLength: 20 })}
+                            className="input input-5ordered w-full text-base"
                         />
                     </div>
                     <div className="flex items-center gap-5 space-y-2">
@@ -113,20 +169,6 @@ const FooterWayShop = () => {
                             className="input input-bordered w-full text-base"
                         />
                     </div>
-                    <div className="flex items-center gap-5 space-y-2">
-                        <input
-                            type="text"
-                            placeholder="Name Of Shop"
-                            {...register("shopName4", { required: true, maxLength: 20 })}
-                            className="input input-bordered w-full text-base"
-                        />
-                        <input
-                            type="text"
-                            placeholder="please url"
-                            {...register("shopName4url", { required: true, maxLength: 20 })}
-                            className="input input-bordered w-full text-base"
-                        />
-                    </div>
                 </div>
                 <input
                     type="text"
@@ -135,21 +177,26 @@ const FooterWayShop = () => {
                     {...register("wayToShop")}
                     className="hidden"
                 />
-                <input
-                    type="text"
-                    placeholder=""
-                    defaultValue="WayToShop"
-                    {...register("category")}
-                    className="hidden"
-                />
+                <div className="w-1/2 hidden">
+                    <label className="label">
+                        <span className="label-text text-3xl font-Cinzel font-semibold">Category*</span>
+                    </label>
+                    <select {...register("category", { required: true })}
+                        className="input input-bordered  text-xl w-full pl-2">
+                        <option value="wayToShop" selected>Way To Shop</option>
+                        <option value="customServer">Custom Server</option>
+                        <option value="ourStores">Our Stores</option>
+                        <option value="corporate">Corporate</option>
+                    </select>
+                </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
                         Way To Shop
                         <GiLotusFlower className=" w-12 h-9 file-slate-100" />
                     </button>
                 </div>
-            {/* WAY SHOP is SECTION  END*/}
-        </form>
+                {/* WAY SHOP is SECTION  END*/}
+            </form>
         </div >
     );
 };

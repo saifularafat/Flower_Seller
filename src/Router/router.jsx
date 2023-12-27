@@ -60,6 +60,12 @@ import SliderFourPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderF
 import SliderFivePost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderFivePost";
 import SliderSixPost from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderSixPost";
 import BannerOne from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerOne";
+import BannerTwo from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerTwo";
+import BannerThree from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerThree";
+import LeftRightOne from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightOne";
+import LeftRightTwo from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightTwo";
+import LeftRightThree from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightThree";
+import LeftRightFour from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightFour";
 
 const router = createBrowserRouter([
     {
@@ -255,12 +261,36 @@ const router = createBrowserRouter([
                 element: <BannerChange />
             },
             {
-                path: "/dashboard/bannerChangesOne",
+                path: "/dashboard/bannerChanges/bannerOne",
                 element: <BannerOne />
+            },
+            {
+                path: "/dashboard/bannerChanges/bannerTwo",
+                element: <BannerTwo />
+            },
+            {
+                path: "/dashboard/bannerChanges/bannerThree",
+                element: <BannerThree />
             },
             {
                 path: "/dashboard/leftRightBanner",
                 element: <LeftRightBanner />
+            },
+            {
+                path: "/dashboard/leftRightBanner/leftRightBannerOne",
+                element: <LeftRightOne />
+            },
+            {
+                path: "/dashboard/leftRightBanner/leftRightBannerTwo",
+                element: <LeftRightTwo />
+            },
+            {
+                path: "/dashboard/leftRightBanner/leftRightBannerThree",
+                element: <LeftRightThree />
+            },
+            {
+                path: "/dashboard/leftRightBanner/leftRightBannerFour",
+                element: <LeftRightFour />
             },
             {
                 path: "/dashboard/footerChange",

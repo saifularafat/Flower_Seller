@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { GiTwirlyFlower } from "react-icons/gi";
+import { LuFlower2 } from "react-icons/lu";
 
-const BannerOne = () => {
+const LeftRightTwo = () => {
     const {
         register,
         handleSubmit,
@@ -14,26 +14,26 @@ const BannerOne = () => {
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <label className="label">
-                            <span className="label-file file-lg  font-semibold">Banner One</span>
+                            <span className="label-file file-lg  font-semibold">Right One</span>
                         </label>
                         <input
                             type="file"
                             placeholder=""
                             defaultValue=""
-                            {...register("imageOne")}
+                            {...register("imageTwo")}
                             className="input input-bordered w-full file-base pt-1"
                         />
                         <input
                             type="text"
                             placeholder=""
-                            defaultValue="Banner Serial One"
-                            {...register("bannerSerialOne")}
+                            defaultValue="Left Right Serial Two"
+                            {...register("LeftRightSerialTwo")}
                             className="hidden"
                         />
                         <div className="mt-4">
                             <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
-                                Banner One
-                                <GiTwirlyFlower className=" w-12 h-9 file-slate-100" />
+                                Right One
+                                <LuFlower2 className=" w-12 h-9 file-slate-100" />
                             </button>
                         </div>
                     </form>
@@ -42,4 +42,4 @@ const BannerOne = () => {
         );
     };
 
-    export default BannerOne;
+    export default LeftRightTwo;

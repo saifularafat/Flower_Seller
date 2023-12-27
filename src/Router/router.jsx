@@ -66,6 +66,10 @@ import LeftRightOne from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRig
 import LeftRightTwo from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightTwo";
 import LeftRightThree from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightThree";
 import LeftRightFour from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightFour";
+import FooterWayShop from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterWayShop";
+import FooterCustomService from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCustomService";
+import FooterOurStores from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterOurStores";
+import FooterCorporate from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCorporate";
 
 const router = createBrowserRouter([
     {
@@ -295,6 +299,22 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/footerChange",
                 element: <FooterChange />
+            },
+            {
+                path: "/dashboard/footerChange/footerWayToShop",
+                element: <FooterWayShop />
+            },
+            {
+                path: "/dashboard/footerChange/footerCustomService",
+                element: <FooterCustomService />
+            },
+            {
+                path: "/dashboard/footerChange/footerOurStores",
+                element: <FooterOurStores />
+            },
+            {
+                path: "/dashboard/footerChange/footerCorporate",
+                element: <FooterCorporate />
             },
             /* help section */
             {

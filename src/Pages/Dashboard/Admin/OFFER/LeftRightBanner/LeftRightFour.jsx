@@ -22,10 +22,12 @@ const LeftRightFour = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imageURL = imageData.data.display_url;
-                const { LeftRightSerialThree } = data;
+                const { LeftRightSerialFour, rightTwoContent, category } = data;
                 const rightTwoInfo = {
                     rightTwoImage: imageURL,
-                    LeftRightSerialThree
+                    LeftRightSerialFour,
+                    rightTwoContent,
+                    category
                 }
                 axios.post(`http://localhost:4000/leftRightImage`, rightTwoInfo)
                     .then(data => {
@@ -33,7 +35,7 @@ const LeftRightFour = () => {
                         if (data.data.insertedId) {
                             reset()
                             Swal.fire({
-                                position:"top-center",
+                                position: "top-center",
                                 icon: "success",
                                 title: "Right Two Upload Successfully",
                                 showConfirmButton: false,
@@ -51,22 +53,37 @@ const LeftRightFour = () => {
                         <span className="label-file file-lg  font-semibold">Right Two</span>
                     </label>
                     <input
-                        type="file"
-                        placeholder=""
-                        defaultValue=""
                         {...register("rightTwoImage", { required: true })}
-                        className="input input-bordered w-full file-base pt-1"
-                    />
-                    {
-                        errors.RightTwoImage?.type === "required" && (
-                            <p className="text-red-600 text-sm">Right Image is required</p>
-                        )
-                    }
+                        type="file"
+                        className="file-input file-input-bordered w-full " />
+                    {errors.rightTwoImage?.type === "required" && (
+                        <p className="text-red-600 text-sm">Right Image is required</p>
+                    )}
+                    
+
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Right Content Two *</span>
+                    </label>
+                    <input
+                        {...register("rightTwoContent", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.rightTwoContent?.type === "required" && (
+                        <p className="text-red-600 text-sm">Right Content is required</p>
+                    )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial Four"
                         {...register("LeftRightSerialFour")}
+                        className="hidden"
+                    />
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="rightTwo"
+                        {...register("category")}
                         className="hidden"
                     />
                     <div className="mt-4">

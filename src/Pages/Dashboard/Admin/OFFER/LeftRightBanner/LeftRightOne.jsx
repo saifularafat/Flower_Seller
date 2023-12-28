@@ -22,10 +22,12 @@ const LeftRightOne = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imgURL = imageData.data.display_url;
-                const { LeftRightSerialOne } = data;
+                const { LeftRightSerialOne, leftOneContent, category } = data;
                 const leftRightBanner = {
                     leftOneImage: imgURL,
-                    LeftRightSerialOne
+                    LeftRightSerialOne,
+                    leftOneContent,
+                    category
                 }
                 console.log(leftRightBanner);
                 axios.post(`http://localhost:4000/leftRightImage`, leftRightBanner)
@@ -57,11 +59,30 @@ const LeftRightOne = () => {
                     {errors.leftOneImage?.type === "required" && (
                         <p className="text-red-600 text-sm">Left Image is required</p>
                     )}
+
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Left Content One *</span>
+                    </label>
+                    <input
+                        {...register("leftOneContent", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.leftOneContent?.type === "required" && (
+                        <p className="text-red-600 text-sm">Left Content is required</p>
+                    )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial One"
                         {...register("LeftRightSerialOne")}
+                        className="hidden"
+                    />
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="leftOne"
+                        {...register("category")}
                         className="hidden"
                     />
                     <div className="mt-4">

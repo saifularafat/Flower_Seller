@@ -3,8 +3,15 @@ import { LuFlower2 } from "react-icons/lu";
 import DashboardTitle from "../../../../../components/DashboardTitle";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
+import useLeftRightBannerGet from "../../../../../api/useLeftRightBannerGet";
 
 const LeftRightBanner = () => {
+    const [leftRightBGet, refetch] = useLeftRightBannerGet();
+    const leftOne = leftRightBGet.find(leftOne => leftOne.category === "leftOne")
+    const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
+    const leftTwo = leftRightBGet.find(leftTwo => leftTwo.category === "leftTwo")
+    const rightTwo = leftRightBGet.find(rightTwo => rightTwo.category === "rightTwo")
+    console.log(leftOne);
     return (
         <div>
             <Helmet><title>Flower Shop || Left & Right image Change</title></Helmet>
@@ -19,6 +26,7 @@ const LeftRightBanner = () => {
                         <tr>
                             <th> image</th>
                             <th>image serial </th>
+                            <th>Content </th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -29,12 +37,13 @@ const LeftRightBanner = () => {
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="" alt="flower" />
+                                            <img src={leftOne?.leftOneImage} alt="flower" />
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td>LeftRight Image One</td>
+                            <td>{leftOne?.LeftRightSerialOne}</td>
+                            <td>{leftOne?.leftOneContent}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/leftRightBanner/leftRightBannerOne" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
@@ -49,12 +58,13 @@ const LeftRightBanner = () => {
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="" alt="flower" />
+                                            <img src={rightOne?.rightOneImage} alt="flower" />
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td>LeftRight Image Two</td>
+                            <td>{rightOne?.LeftRightSerialTwo}</td>
+                            <td>{rightOne?.rightOneContent}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/leftRightBanner/leftRightBannerTwo" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
@@ -69,12 +79,13 @@ const LeftRightBanner = () => {
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="" alt="flower" />
+                                            <img src={leftTwo?.leftTwoImage} alt="flower" />
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td>LeftRight Image Three</td>
+                            <td>{leftTwo?.LeftRightSerialThree}</td>
+                            <td>{leftTwo?.leftTwoContent}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/leftRightBanner/leftRightBannerThree" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
@@ -89,12 +100,13 @@ const LeftRightBanner = () => {
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="" alt="flower" />
+                                            <img src={rightTwo?.rightTwoImage} alt="flower" />
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td>LeftRight Image Four</td>
+                            <td>{rightTwo?.LeftRightSerialFour}</td>
+                            <td>{rightTwo?.rightTwoContent}</td>
                             <div className="flex items-center gap-2 mt-4">
                                 <div>
                                     <Link to="/dashboard/leftRightBanner/leftRightBannerFour" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>

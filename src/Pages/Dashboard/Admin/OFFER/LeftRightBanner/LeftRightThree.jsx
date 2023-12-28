@@ -22,10 +22,12 @@ const LeftRightThree = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imageURL = imageData.data.display_url;
-                const { LeftRightSerialThree } = data;
+                const { LeftRightSerialThree, leftTwoContent, category } = data;
                 const leftTwoInfo = {
                     leftTwoImage: imageURL,
-                    LeftRightSerialThree
+                    LeftRightSerialThree,
+                    leftTwoContent,
+                    category
                 }
                 axios.post(`http://localhost:4000/leftRightImage`, leftTwoInfo)
                     .then(data => {
@@ -33,7 +35,7 @@ const LeftRightThree = () => {
                         if (data.data.insertedId) {
                             reset()
                             Swal.fire({
-                                position:"top-center",
+                                position: "top-center",
                                 icon: "success",
                                 title: "Left Two Upload Successfully",
                                 showConfirmButton: false,
@@ -51,20 +53,37 @@ const LeftRightThree = () => {
                         <span className="label-file file-lg  font-semibold">Left Two</span>
                     </label>
                     <input
-                        type="file"
-                        placeholder=""
-                        defaultValue=""
                         {...register("leftTwoImage", { required: true })}
-                        className="input input-bordered w-full file-base pt-1"
-                    />
+                        type="file"
+                        className="file-input file-input-bordered w-full " />
                     {errors.leftTwoImage?.type === "required" && (
                         <p className="text-red-600 text-sm">Left Image is required</p>
+                    )}
+                  
+
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Left Content Two *</span>
+                    </label>
+                    <input
+                        {...register("leftTwoContent", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.leftTwoContent?.type === "required" && (
+                        <p className="text-red-600 text-sm">Left Content is required</p>
                     )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial Three"
                         {...register("LeftRightSerialThree")}
+                        className="hidden"
+                    />
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="leftTwo"
+                        {...register("category")}
                         className="hidden"
                     />
                     <div className="mt-4">

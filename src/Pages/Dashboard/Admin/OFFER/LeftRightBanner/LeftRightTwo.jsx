@@ -22,10 +22,12 @@ const LeftRightTwo = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imgURL = imageData.data.display_url;
-                const { LeftRightSerialTwo } = data;
+                const { LeftRightSerialTwo, rightOneContent, category } = data;
                 const rightInfo = {
                     rightOneImage: imgURL,
                     LeftRightSerialTwo,
+                    rightOneContent,
+                    category
                 }
                 axios.post(`http://localhost:4000/leftRightImage`, rightInfo)
                     .then(data => {
@@ -51,20 +53,36 @@ const LeftRightTwo = () => {
                         <span className="label-file file-lg  font-semibold">Right One</span>
                     </label>
                     <input
-                        type="file"
-                        placeholder=""
-                        defaultValue=""
                         {...register("rightOneImage", { required: true })}
-                        className="input input-bordered w-full file-base pt-1"
-                    />
+                        type="file"
+                        className="file-input file-input-bordered w-full " />
                     {errors.rightOneImage?.type === "required" && (
                         <p className="text-red-600 text-sm">Right Image is required</p>
+                    )}
+                    
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Right Content One *</span>
+                    </label>
+                    <input
+                        {...register("rightOneContent", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.rightOneContent?.type === "required" && (
+                        <p className="text-red-600 text-sm">Right Content is required</p>
                     )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial Two"
                         {...register("LeftRightSerialTwo")}
+                        className="hidden"
+                    />
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="rightOne"
+                        {...register("category")}
                         className="hidden"
                     />
                     <div className="mt-4">

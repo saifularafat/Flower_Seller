@@ -2,13 +2,16 @@ import { Helmet } from "react-helmet-async";
 import { LuFlower2 } from "react-icons/lu";
 import DashboardTitle from "../../../../../components/DashboardTitle";
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 const LeftRightBanner = () => {
     return (
         <div>
             <Helmet><title>Flower Shop || Left & Right image Change</title></Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-4/12" Icon={LuFlower2} fileColor="" title=" Left & Right Image " />
-        
+            <Marquee className="py-3 w-1/2 bg-slate-200 mt-2">
+                Please first Post Button click, and agin post after post delete then agin post Button Click then post and return a post .
+            </Marquee>
             <div className="overflow-x-auto md:py-8 py-3">
                 <table className="table">
                     {/* head */}
@@ -101,7 +104,7 @@ const LeftRightBanner = () => {
                                 </div>
                             </div>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>

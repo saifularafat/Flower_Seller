@@ -13,7 +13,7 @@ const BannerChange = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>Banner img1</th>
+                            <th>Banner img</th>
                             <th>Banner image serial </th>
                             <th>Action</th>
                         </tr>

@@ -1,45 +1,82 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { LuFlower2 } from "react-icons/lu";
+import Swal from "sweetalert2";
 
 const LeftRightTwo = () => {
     const {
         register,
         handleSubmit,
+        formState: { errors },
+        reset
     } = useForm()
+    const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
     const onSubmit = (data) => {
-        console.log(data);
+        const imgUrl = data.rightOneImage[0];
+        const formData = new FormData();
+        formData.append("image", imgUrl);
+        fetch(hosting_image_url, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                const imgURL = imageData.data.display_url;
+                const { LeftRightSerialTwo } = data;
+                const rightInfo = {
+                    rightOneImage: imgURL,
+                    LeftRightSerialTwo,
+                }
+                axios.post(`http://localhost:4000/leftRightImage`, rightInfo)
+                    .then(data => {
+                        console.log(data);
+                        if (data.data.insertedId) {
+                            reset()
+                            Swal.fire({
+                                position: "top-center",
+                                icon: "success",
+                                title: "banner upload successfully",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
+            })
     }
-        return (
+    return (
+        <div>
             <div>
-                <div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <label className="label">
-                            <span className="label-file file-lg  font-semibold">Right One</span>
-                        </label>
-                        <input
-                            type="file"
-                            placeholder=""
-                            defaultValue=""
-                            {...register("imageTwo")}
-                            className="input input-bordered w-full file-base pt-1"
-                        />
-                        <input
-                            type="text"
-                            placeholder=""
-                            defaultValue="Left Right Serial Two"
-                            {...register("LeftRightSerialTwo")}
-                            className="hidden"
-                        />
-                        <div className="mt-4">
-                            <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
-                                Right One
-                                <LuFlower2 className=" w-12 h-9 file-slate-100" />
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <label className="label">
+                        <span className="label-file file-lg  font-semibold">Right One</span>
+                    </label>
+                    <input
+                        type="file"
+                        placeholder=""
+                        defaultValue=""
+                        {...register("rightOneImage", { required: true })}
+                        className="input input-bordered w-full file-base pt-1"
+                    />
+                    {errors.rightOneImage?.type === "required" && (
+                        <p className="text-red-600 text-sm">Right Image is required</p>
+                    )}
+                    <input
+                        type="text"
+                        placeholder=""
+                        defaultValue="Left Right Serial Two"
+                        {...register("LeftRightSerialTwo")}
+                        className="hidden"
+                    />
+                    <div className="mt-4">
+                        <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
+                            Right One
+                            <LuFlower2 className=" w-12 h-9 file-slate-100" />
+                        </button>
+                    </div>
+                </form>
             </div>
-        );
-    };
+        </div>
+    );
+};
 
-    export default LeftRightTwo;
+export default LeftRightTwo;

@@ -15,7 +15,7 @@ const FooterChange = () => {
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>
-            <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiLotusFlower} textColor="" title="Footer" />
+            <DashboardTitle borderColor="border-slate-600" borderStyle=" border" borderWidth=" w-2/12" Icon={GiLotusFlower} textColor="" title="Footer" />
             <div className="overflow-x-auto md:py-8 py-3">
                 <table className="table">
                     {/* head */}

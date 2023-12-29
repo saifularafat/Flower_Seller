@@ -2,14 +2,44 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { GiFlowerPot, GiFlowers } from "react-icons/gi";
 import DashboardTitle from "../../../../../components/DashboardTitle";
+import Swal from "sweetalert2";
+import axios from "axios";
+import useBestOffer from "../../../../../api/useBestOffer";
 
 const BestOffer = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        const { topBestOffer, topBestOfferLink, category } = data;
+        const bestOfferInfo = {
+            topBestOffer,
+            topBestOfferLink,
+            category
+        }
+        axios.post(`http://localhost:4000/offerText`, bestOfferInfo)
+            .then(data => {
+                console.log(data);
+                if (data.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Best Offer Uploaded successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+
+    const [bestOffer, refetch] = useBestOffer()
+    const best = bestOffer.filter(best => best.category === 'bestOffer')
+    console.log(best);
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>
@@ -20,12 +50,13 @@ const BestOffer = () => {
                 </label>
                 <textarea cols={30} rows={15}
                     type="text"
+                    defaultValue={best?.topBestOffer }
                     placeholder="Please Type On The Best Offer Text"
-                    {...register("topBestOffer", { required: true, maxLength: 60 })}
+                    {...register("topBestOffer", { required: true, maxLength: 120 })}
                     className="input input-bordered w-full text-base pt-1"
                 />
                 {errors.topBestOffer?.type === "required" && (
-                    <p className="text-red-600 text-sm">Flower Name is required</p>
+                    <p className="text-red-600 text-sm">Please Type Your Best Offer</p>
                 )}
 
                 <label className="label">
@@ -33,14 +64,15 @@ const BestOffer = () => {
                 </label>
                 <input
                     type="text"
-                    placeholder="Please Type Best Offer Link"
-                    {...register("topBestOfferLink", { required: true, maxLength: 20 })}
+                    defaultValue={best?.topBestOfferLink}
+                    placeholder="Please Provide The Best Offer Link"
+                    {...register("topBestOfferLink", { required: true, maxLength: 30 })}
                     className="input input-bordered w-full text-base"
                 />
                 {errors.topBestOfferLink?.type === "required" && (
-                    <p className="text-red-600 text-sm">Flower Name is required</p>
+                    <p className="text-red-600 text-sm">Please Best Offer Link</p>
                 )}
-                  <div className="w-full pb-4 hidden">
+                <div className="w-full pb-4 hidden">
                     <input
                         type="text"
                         placeholder=""
@@ -68,16 +100,18 @@ const BestOffer = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>/df df/edf sf324</td>
-                            <th>
-                                <button className="text-sm font-medium tracking-wider bg-blue-700 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">Edit</button>
-                            </th>
-                        </tr>
-                    </tbody>
+                    {
+                        bestOffer.map(best =>
+                            <tbody key={best._id}>
+                                <tr>
+                                    <td>{best?.topBestOffer}</td>
+                                    <td>{best?.topBestOfferLink}</td>
+                                    <th>
+                                        <button className="text-sm font-medium tracking-wider bg-blue-700 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">Edit</button>
+                                    </th>
+                                </tr>
+                            </tbody>)
+                    }
                 </table>
             </div>
         </div>

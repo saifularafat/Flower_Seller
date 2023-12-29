@@ -47,7 +47,7 @@ const FooterCorporate = () => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* CORPORATE START THE SECTION  */}
-                <div className="CORPORATE bg-cyan-200 p-3 mt-2 rounded-md">
+                <div className="CORPORATE bg-cyan-300 p-3 mt-2 rounded-md">
                     <label className="label">
                         <span className="label-text text-lg  font-semibold uppercase">CORPORATE</span>
                     </label>
@@ -55,13 +55,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Name Of Corporate"
-                            {...register("corporate1", { required: true, maxLength: 20 })}
+                            {...register("corporate1", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("corporate1url", { required: true, maxLength: 20 })}
+                            {...register("corporate1url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -69,13 +69,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Name Of Corporate"
-                            {...register("corporate2", { required: true, maxLength: 20 })}
+                            {...register("corporate2", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("corporate2url", { required: true, maxLength: 20 })}
+                            {...register("corporate2url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -83,13 +83,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Name Of Corporate"
-                            {...register("corporate3", { required: true, maxLength: 20 })}
+                            {...register("corporate3", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("corporate3url", { required: true, maxLength: 20 })}
+                            {...register("corporate3url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -97,13 +97,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Name Of Corporate"
-                            {...register("corporate4", { required: true, maxLength: 20 })}
+                            {...register("corporate4", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("corporate4url", { required: true, maxLength: 20 })}
+                            {...register("corporate4url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -111,13 +111,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Name Of Corporate"
-                            {...register("corporate5", { required: true, maxLength: 20 })}
+                            {...register("corporate5", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("corporate5url", { required: true, maxLength: 20 })}
+                            {...register("corporate5url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -132,13 +132,13 @@ const FooterCorporate = () => {
                         <input
                             type="text"
                             placeholder="Text Footer Socket"
-                            {...register("footerSocket", { required: true, maxLength: 20 })}
+                            {...register("footerSocket", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="developer url"
-                            {...register("developerURL", { required: true, maxLength: 20 })}
+                            {...register("developerURL", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>

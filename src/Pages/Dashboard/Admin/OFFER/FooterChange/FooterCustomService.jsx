@@ -43,7 +43,7 @@ const FooterCustomService = () => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* CUSTOM SERVICE is SECTION  START*/}
-                <div className="CustomService bg-blue-200 p-3 mt-2 rounded-md">
+                <div className="CustomService bg-blue-300 p-3 mt-2 rounded-md">
                     <label className="label">
                         <span className="label-text text-lg  font-semibold uppercase">Custom Service</span>
                     </label>
@@ -51,13 +51,13 @@ const FooterCustomService = () => {
                         <input
                             type="text"
                             placeholder="Name Of Service"
-                            {...register("service1", { required: true, maxLength: 20 })}
+                            {...register("service1", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("service1url", { required: true, maxLength: 20 })}
+                            {...register("service1url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -65,13 +65,13 @@ const FooterCustomService = () => {
                         <input
                             type="text"
                             placeholder="Name Of Service"
-                            {...register("service2", { required: true, maxLength: 20 })}
+                            {...register("service2", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("service2url", { required: true, maxLength: 20 })}
+                            {...register("service2url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -79,13 +79,13 @@ const FooterCustomService = () => {
                         <input
                             type="text"
                             placeholder="Name Of Service"
-                            {...register("service3", { required: true, maxLength: 20 })}
+                            {...register("service3", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("service3url", { required: true, maxLength: 20 })}
+                            {...register("service3url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -93,13 +93,13 @@ const FooterCustomService = () => {
                         <input
                             type="text"
                             placeholder="Name Of Service"
-                            {...register("service4", { required: true, maxLength: 20 })}
+                            {...register("service4", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("service4url", { required: true, maxLength: 20 })}
+                            {...register("service4url", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>

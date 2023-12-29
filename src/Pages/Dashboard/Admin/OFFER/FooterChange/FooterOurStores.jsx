@@ -42,75 +42,70 @@ const FooterOurStores = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {/* CUSTOM store is SECTION  START*/}
-                <div className="Customstore bg-blue-200 p-3 mt-2 rounded-md">
+
+                {/* OUR STORES START THE SECTION  */}
+                <div className="ourStores bg-emerald-100 p-3 mt-2 rounded-md">
                     <label className="label">
-                        <span className="label-text text-lg  font-semibold uppercase">Our Stores</span>
+                        <span className="label-text text-lg  font-semibold uppercase">OUR STORES</span>
                     </label>
-                    {/* OUR STORES START THE SECTION  */}
-                    <div className="ourStores bg-emerald-100 p-3 mt-2 rounded-md">
-                        <label className="label">
-                            <span className="label-text text-lg  font-semibold uppercase">OUR STORES</span>
-                        </label>
-                        <div className="flex items-center gap-5 space-y-2">
-                            <input
-                                type="text"
-                                placeholder="Name Of Store"
-                                {...register("store1", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                            <input
-                                type="text"
-                                placeholder="please url"
-                                {...register("store1url", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                        </div>
-                        <div className="flex items-center gap-5 space-y-2">
-                            <input
-                                type="text"
-                                placeholder="Name Of Store"
-                                {...register("store2", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                            <input
-                                type="text"
-                                placeholder="please url"
-                                {...register("store2url", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                        </div>
-                        <div className="flex items-center gap-5 space-y-2">
-                            <input
-                                type="text"
-                                placeholder="Name Of Store"
-                                {...register("store3", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                            <input
-                                type="text"
-                                placeholder="please url"
-                                {...register("store3url", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                        </div>
-                        <div className="flex items-center gap-5 space-y-2">
-                            <input
-                                type="text"
-                                placeholder="Name Of Store"
-                                {...register("store4", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                            <input
-                                type="text"
-                                placeholder="please url"
-                                {...register("store4url", { required: true, maxLength: 20 })}
-                                className="input input-bordered w-full text-base"
-                            />
-                        </div>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Name Of Store"
+                            {...register("store1", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="please url"
+                            {...register("store1url", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
                     </div>
-                    {/* OUR STORES END THE SECTION  */}
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Name Of Store"
+                            {...register("store2", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="please url"
+                            {...register("store2url", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Name Of Store"
+                            {...register("store3", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="please url"
+                            {...register("store3url", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Name Of Store"
+                            {...register("store4", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            placeholder="please url"
+                            {...register("store4url", { required: true, maxLength: 30 })}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
                 </div>
+                {/* OUR STORES END THE SECTION  */}
                 <input
                     type="text"
                     placeholder=""

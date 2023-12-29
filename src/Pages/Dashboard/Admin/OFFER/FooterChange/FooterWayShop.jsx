@@ -33,7 +33,6 @@ const FooterWayShop = () => {
             wayToShop
         }
         console.log(wayToShopInfo);
-        // axios.post(`${import.meta.env.LOCAL_API_URL}/footerChange`, wayToShopInfo)
         axios.post(`http://localhost:4000/footerChange`, wayToShopInfo)
             .then(data => {
                 console.log(data);
@@ -61,13 +60,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName1", { required: true, maxLength: 20 })}
+                            {...register("shopName1", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName1url", { required: true, maxLength: 20 })}
+                            {...register("shopName1url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -75,13 +74,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName2", { required: true, maxLength: 20 })}
+                            {...register("shopName2", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName2url", { required: true, maxLength: 20 })}
+                            {...register("shopName2url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -89,13 +88,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName3", { required: true, maxLength: 20 })}
+                            {...register("shopName3", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName3url", { required: true, maxLength: 20 })}
+                            {...register("shopName3url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -103,13 +102,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName4", { required: true, maxLength: 20 })}
+                            {...register("shopName4", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName4url", { required: true, maxLength: 20 })}
+                            {...register("shopName4url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -117,13 +116,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName5", { required: true, maxLength: 20 })}
+                            {...register("shopName5", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName6url", { required: true, maxLength: 20 })}
+                            {...register("shopName6url", { required: true, maxLength: 40 })}
                             className="input input-5ordered w-full text-base"
                         />
                     </div>
@@ -131,13 +130,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName6", { required: true, maxLength: 20 })}
+                            {...register("shopName6", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName6url", { required: true, maxLength: 20 })}
+                            {...register("shopName6url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -145,13 +144,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName7", { required: true, maxLength: 20 })}
+                            {...register("shopName7", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName7url", { required: true, maxLength: 20 })}
+                            {...register("shopName7url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -159,13 +158,13 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName8", { required: true, maxLength: 20 })}
+                            {...register("shopName8", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName8url", { required: true, maxLength: 20 })}
+                            {...register("shopName8url", { required: true, maxLength: 40 })}
                             className="input input-bordered w-full text-base"
                         />
                     </div>

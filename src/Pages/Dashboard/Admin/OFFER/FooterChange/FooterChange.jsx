@@ -28,8 +28,6 @@ const FooterChange = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                        {/* {
-                            wayToShops.map(shop => */}
                         <tr>
                             <td>
                                 {wayToShops?.wayToShop}
@@ -44,9 +42,6 @@ const FooterChange = () => {
                                 </div>
                             </div>
                         </tr>
-                        {/* )
-                        } */}
-
                         <tr>
                             <td>
                                 {customService?.customService}

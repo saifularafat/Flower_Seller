@@ -70,6 +70,7 @@ import FooterWayShop from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterWay
 import FooterCustomService from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCustomService";
 import FooterOurStores from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterOurStores";
 import FooterCorporate from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCorporate";
+import BestOfferEdit from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOfferEdit";
 
 const router = createBrowserRouter([
     {
@@ -231,6 +232,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/bestOffer",
                 element: <BestOffer />
+            },
+            {
+                path: "/dashboard/bestOfferEdit/:id",
+                element: <BestOfferEdit />,                
             },
             {
                 path: "/dashboard/sliderChanges",

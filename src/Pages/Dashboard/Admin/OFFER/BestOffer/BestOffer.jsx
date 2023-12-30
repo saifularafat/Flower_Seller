@@ -5,8 +5,11 @@ import DashboardTitle from "../../../../../components/DashboardTitle";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useBestOffer from "../../../../../api/useBestOffer";
+import { Link, useParams } from "react-router-dom";
 
 const BestOffer = () => {
+    // const [id] = useParams();
+    // console.log(id);
     const {
         register,
         handleSubmit,
@@ -107,7 +110,7 @@ const BestOffer = () => {
                                     <td>{best?.topBestOffer}</td>
                                     <td>{best?.topBestOfferLink}</td>
                                     <th>
-                                        <button className="text-sm font-medium tracking-wider bg-blue-700 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">Edit</button>
+                                        <Link to={`/dashboard/bestOfferEdit/${best?._id}`} className="text-sm font-medium tracking-wider bg-blue-700 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">Edit</Link>
                                     </th>
                                 </tr>
                             </tbody>)

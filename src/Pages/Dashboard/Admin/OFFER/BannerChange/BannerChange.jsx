@@ -69,17 +69,32 @@ const BannerChange = () => {
                             </td>
                             <td>{oneBanner?.bannerSerialOne}</td>
                             <td>{oneBanner?.bannerLink}</td>
-                            <div className="flex items-center justify-center gap-2 mt-8">
-                                <div>
-                                    <Link to="/dashboard/bannerChanges/bannerOne" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to={`/dashboard/bannerChanges/bannerOne/${oneBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                                <div>
-                                    <button onClick={() => handleDeleted(oneBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
-                                </div>
-                            </div>
+                            {
+                                oneBanner ?
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/bannerChanges/bannerOne/${oneBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                        <div>
+                                            <button onClick={() => handleDeleted(oneBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <Link to="/dashboard/bannerChanges/bannerOne" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                        <div>
+                                            <button disabled className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
                         {/* banner two */}
                         <tr className="hover:bg-slate-200 bg-slate-100 rounded-md transition-all duration-200">
@@ -94,17 +109,32 @@ const BannerChange = () => {
                             </td>
                             <td>{twoBanner?.bannerSerialTwo}</td>
                             <td>{twoBanner?.bannerLink}</td>
-                            <div className="flex items-center justify-center gap-2 mt-8">
-                                <div>
-                                    <Link to="/dashboard/bannerChanges/bannerTwo" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to={`/dashboard/bannerChanges/bannerTwo/${twoBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                                <div>
-                                    <button onClick={() => handleDeleted(twoBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
-                                </div>
-                            </div>
+                            {
+                                twoBanner ?
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/bannerChanges/bannerTwo/${twoBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                        <div>
+                                            <button onClick={() => handleDeleted(twoBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <Link to="/dashboard/bannerChanges/bannerTwo" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                        <div>
+                                            <button disabled className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
 
                         <tr className="hover:bg-slate-200 rounded-md transition-all duration-200">
@@ -119,17 +149,32 @@ const BannerChange = () => {
                             </td>
                             <td>{threeBanner?.bannerSerialThree}</td>
                             <td>{threeBanner?.bannerLink}</td>
-                            <div className="flex items-center justify-center gap-2 mt-8">
-                                <div>
-                                    <Link to="/dashboard/bannerChanges/bannerThree" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to={`/dashboard/bannerChanges/bannerThree/${threeBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                                <div>
-                                    <button onClick={() => handleDeleted(threeBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
-                                </div>
-                            </div>
+                            {
+                                threeBanner ?
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/bannerChanges/bannerThree/${threeBanner?._id}`} className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                        <div>
+                                            <button onClick={() => handleDeleted(threeBanner)} className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center justify-center gap-2 mt-8">
+                                        <div>
+                                            <Link to="/dashboard/bannerChanges/bannerThree" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-600 rounded-md py-1 px-3 text-white hover:bg-green-400 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                        <div>
+                                            <button disabled className="text-sm font-medium tracking-wider bg-red-700 rounded-md py-1 px-3 text-white hover:bg-red-400 hover:text-slate-900 transition-all duration-200">Delete</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
 
                     </tbody>

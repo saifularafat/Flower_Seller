@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useSliderGet from "../../../../../api/useSliderGet";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Marquee from "react-fast-marquee";
 
 const SliderChanges = () => {
     const [sliders, refetch] = useSliderGet();
@@ -27,7 +28,7 @@ const SliderChanges = () => {
         }).then((result) => {
             console.log("Click is Done!", result);
             if (result.isConfirmed) {
-            //     // axios.delete(`${import.meta.env.VITE_API_URL}/bookmarks/${select._id}`)
+                //     // axios.delete(`${import.meta.env.VITE_API_URL}/bookmarks/${select._id}`)
                 axios.delete(`http://localhost:4000/sliderImage/${sliders._id}`)
                     .then(data => {
                         console.log(data.data);
@@ -47,6 +48,12 @@ const SliderChanges = () => {
         <div>
             <Helmet><title>Flower Shop || Slider Change</title></Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-4/12" Icon={GiTwirlyFlower} textColor="" title="Change Slider Image " />
+            {
+                sliders &&
+                <Marquee className="my-3 bg-slate-200">
+                    Please First of all Slider Item Deleted then Click Now Post Button....!
+                </Marquee>
+            }
             <div className="overflow-x-auto md:py-8 py-3">
                 <table className="table">
                     {/* head */}

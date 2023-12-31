@@ -36,7 +36,7 @@ const FooterEdit = () => {
                         timer: 1500
                     })
                 }
-                Navigate("/dashboard/footerChange")
+                navigate("/dashboard/footerChange")
             })
     }
     return (

@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { GiLotusFlower } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const FooterOurStores = () => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -13,14 +15,14 @@ const FooterOurStores = () => {
         console.log(data);
         const { store1, store1url, store2, store2url, store3, store3url, store4, store4url, category, ourStores } = data;
         const ourStoresInfo = {
-            store1,
-            store1url,
-            store2,
-            store2url,
-            store3,
-            store3url,
-            store4,
-            store4url,
+            ftName1:store1,
+            ftUrl1:store1url,
+            ftName2:store2,
+            ftUrl2:store2url,
+            ftName3:store3,
+            ftUrl3:store3url,
+            ftName4:store4,
+            ftUrl4:store4url,
             category,
             ourStores
         }
@@ -37,6 +39,7 @@ const FooterOurStores = () => {
                         timer: 1500
                     })
                 }
+                navigate("/dashboard/footerChange")
             })
     }
     return (

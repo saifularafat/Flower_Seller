@@ -1,54 +1,42 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiLotusFlower } from "react-icons/gi";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const FooterWayShop = () => {
+const FooterEdit = () => {
     const navigate = useNavigate()
+    const ftEdit = useLoaderData();
+    const {
+        _id, ftName1, ftUrl1, ftName2, ftUrl2, ftName3, ftUrl3, ftName4, ftUrl4, ftName5, ftUrl5,
+        ftName6, ftUrl6, ftName7, ftUrl7, ftName8, ftUrl8, category, footerSocket, developerURL
+    } = ftEdit;
     const {
         register,
         handleSubmit,
-        reset
     } = useForm()
     const onSubmit = (data) => {
-        console.log(data);
-        const { shopName1, shopName1url, shopName2, shopName2url, shopName3, shopName3url, shopName4, shopName4url, shopName5, shopName5url, shopName6, shopName6url, shopName7, shopName7url, shopName8, shopName8url, category, wayToShop } = data;
-        const wayToShopInfo = {
-            ftName1:shopName1,
-            ftUrl1:shopName1url,
-            ftName2:shopName2,
-            ftUrl2:shopName2url,
-            ftName3:shopName3,
-            ftUrl3:shopName3url,
-            ftName4:shopName4,
-            ftUrl4:shopName4url,
-            ftName5:shopName5,
-            ftUrl5:shopName5url,
-            ftName6:shopName6,
-            ftUrl6:shopName6url,
-            ftName7:shopName7,
-            ftUrl7:shopName7url,
-            ftName8:shopName8,
-            ftUrl8:shopName8url,
-            category,
-            wayToShop
+        const {
+            ftName1, ftUrl1, ftName2, ftUrl2, ftName3, ftUrl3, ftName4, ftUrl4, ftName5, ftUrl5,
+            ftName6, ftUrl6, ftName7, ftUrl7, ftName8, ftUrl8, category, footerSocket, developerURL
+        } = data;
+        const upDateInfo = {
+            ftName1, ftUrl1, ftName2, ftUrl2, ftName3, ftUrl3, ftName4, ftUrl4, ftName5, ftUrl5,
+            ftName6, ftUrl6, ftName7, ftUrl7, ftName8, ftUrl8, category, footerSocket, developerURL
         }
-        console.log(wayToShopInfo);
-        axios.post(`http://localhost:4000/footerChange`, wayToShopInfo)
+        axios.patch(`http://localhost:4000/footerChange/${_id}`, upDateInfo)
             .then(data => {
                 console.log(data);
-                if (data.data.insertedId) {
-                    reset();
+                if (data.data.modifiedCount > 0) {
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
-                        title: 'footer way to shop add successfully',
+                        title: 'Footer Edit Complete',
                         showConfirmButton: false,
                         timer: 1500
                     })
                 }
-                navigate("/dashboard/footerChange")
+                Navigate("/dashboard/footerChange")
             })
     }
     return (
@@ -57,19 +45,21 @@ const FooterWayShop = () => {
                 {/* WAY SHOP is SECTION START*/}
                 <div className="wayToShop bg-slate-300 p-3 mt-2 rounded-md">
                     <label className="label">
-                        <span className="label-text text-lg  font-semibold uppercase">Way To Shop</span>
+                        <span className="label-text text-lg  font-semibold uppercase">{category}</span>
                     </label>
                     <div className="flex items-center gap-5 space-y-2">
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName1", { required: true, maxLength: 40 })}
+                            defaultValue={ftName1}
+                            {...register("ftName1")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName1url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl1}
+                            {...register("ftUrl1")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -77,13 +67,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName2", { required: true, maxLength: 40 })}
+                            defaultValue={ftName2}
+                            {...register("ftName2")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName2url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl2}
+                            {...register("ftUrl2")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -91,13 +83,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName3", { required: true, maxLength: 40 })}
+                            defaultValue={ftName3}
+                            {...register("ftName3")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName3url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl3}
+                            {...register("ftUrl3")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -105,13 +99,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName4", { required: true, maxLength: 40 })}
+                            defaultValue={ftName4}
+                            {...register("ftName4")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName4url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl4}
+                            {...register("ftUrl4")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -119,13 +115,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName5", { required: true, maxLength: 40 })}
+                            defaultValue={ftName5}
+                            {...register("ftName5")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName6url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl5}
+                            {...register("ftUrl5")}
                             className="input input-5ordered w-full text-base"
                         />
                     </div>
@@ -133,13 +131,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName6", { required: true, maxLength: 40 })}
+                            defaultValue={ftName6}
+                            {...register("ftName6")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName6url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl6}
+                            {...register("ftUrl6")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -147,13 +147,15 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName7", { required: true, maxLength: 40 })}
+                            defaultValue={ftName7}
+                            {...register("ftName7")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName7url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl7}
+                            {...register("ftUrl7")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
@@ -161,39 +163,43 @@ const FooterWayShop = () => {
                         <input
                             type="text"
                             placeholder="Name Of Shop"
-                            {...register("shopName8", { required: true, maxLength: 40 })}
+                            defaultValue={ftName8}
+                            {...register("ftName8")}
                             className="input input-bordered w-full text-base"
                         />
                         <input
                             type="text"
                             placeholder="please url"
-                            {...register("shopName8url", { required: true, maxLength: 40 })}
+                            defaultValue={ftUrl8}
+                            {...register("ftUrl8")}
                             className="input input-bordered w-full text-base"
                         />
                     </div>
                 </div>
-                <input
-                    type="text"
-                    placeholder=""
-                    defaultValue="Way To Shop"
-                    {...register("wayToShop")}
-                    className="hidden"
-                />
-                <div className="w-1/2 hidden">
-                    <label className="label">
-                        <span className="label-text text-3xl font-Cinzel font-semibold">Category*</span>
+                <div className="bg-violet-300 p-3 mt-2 rounded-md">
+                    <label className="label ">
+                        <span className="label-text text-lg  font-semibold uppercase">Footer Socket</span>
                     </label>
-                    <select {...register("category", { required: true })}
-                        className="input input-bordered  text-xl w-full pl-2">
-                        <option value="wayToShop" selected>Way To Shop</option>
-                        <option value="customServer">Custom Server</option>
-                        <option value="ourStores">Our Stores</option>
-                        <option value="corporate">Corporate</option>
-                    </select>
+                    <div className="flex items-center gap-5 space-y-2">
+                        <input
+                            type="text"
+                            defaultValue={footerSocket}
+                            placeholder="Text Footer Socket"
+                            {...register("footerSocket")}
+                            className="input input-bordered w-full text-base"
+                        />
+                        <input
+                            type="text"
+                            defaultValue={developerURL}
+                            placeholder="developer url"
+                            {...register("developerURL")}
+                            className="input input-bordered w-full text-base"
+                        />
+                    </div>
                 </div>
                 <div className="mt-4">
                     <button className="flex items-center justify-center w-full bg-blue-500 rounded-md py-[6px] text-white file-xl font-semibold tracking-wide">
-                        Way To Shop
+                        Footer Edit
                         <GiLotusFlower className=" w-12 h-9 file-slate-100" />
                     </button>
                 </div>
@@ -203,4 +209,4 @@ const FooterWayShop = () => {
     );
 };
 
-export default FooterWayShop;
+export default FooterEdit;

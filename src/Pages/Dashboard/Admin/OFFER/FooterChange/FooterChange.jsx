@@ -33,56 +33,105 @@ const FooterChange = () => {
                                 {wayToShops?.wayToShop}
                             </td>
                             <td>{wayToShops?.category}</td>
-                            <div className="flex items-center gap-2 mt-4">
-                                <div>
-                                    <Link to="/dashboard/footerChange/footerWayToShop" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                            </div>
+                            {
+                                wayToShops ?
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/footerChange/footerEdit/${wayToShops?._id}`} className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <Link to="/dashboard/footerChange/footerWayToShop" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
                         <tr>
                             <td>
                                 {customService?.customService}
                             </td>
                             <td>{customService?.category}</td>
-                            <div className="flex items-center gap-2 mt-4">
-                                <div>
-                                    <Link to="/dashboard/footerChange/footerCustomService" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                            </div>
+                            {
+                                customService ?
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/footerChange/footerEdit/${customService?._id}`} className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <Link to="/dashboard/footerChange/footerCustomService" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                    </div>
+                            }
+
                         </tr>
                         <tr>
                             <td>
                                 {ourStores?.ourStores}
                             </td>
                             <td>{ourStores?.category}</td>
-                            <div className="flex items-center gap-2 mt-4">
-                                <div>
-                                    <Link to="/dashboard/footerChange/footerOurStores" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                            </div>
+                            {
+                                ourStores ?
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/footerChange/footerEdit/${ourStores?._id}`} className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <Link to="/dashboard/footerChange/footerOurStores" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
                         <tr>
                             <td>
                                 {corporate?.corporate}
                             </td>
                             <td>{corporate?.category}</td>
-                            <div className="flex items-center gap-2 mt-4">
-                                <div>
-                                    <Link to="/dashboard/footerChange/footerCorporate" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
-                                </div>
-                                <div>
-                                    <Link to="" className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
-                                </div>
-                            </div>
+                            {
+                                corporate ?
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</button>
+                                        </div>
+                                        <div>
+                                            <Link to={`/dashboard/footerChange/footerEdit/${corporate?._id}`} className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</Link>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div>
+                                            <Link to="/dashboard/footerChange/footerCorporate" className="file-sm font-medium tracking-wider bg-blue-500 rounded-md py-1 px-3 text-white hover:bg-blue-300 hover:text-slate-900 transition-all duration-200">POST</Link>
+                                        </div>
+                                        <div>
+                                            <button disabled className="file-sm font-medium tracking-wider bg-green-700 rounded-md py-1 px-3 text-white hover:bg-green-500 hover:text-slate-200 transition-all duration-200">Edit</button>
+                                        </div>
+                                    </div>
+                            }
                         </tr>
                     </tbody>
                 </table>

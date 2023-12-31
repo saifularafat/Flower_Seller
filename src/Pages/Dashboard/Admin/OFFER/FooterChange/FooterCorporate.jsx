@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiLotusFlower } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FooterCorporate = () => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -13,16 +15,16 @@ const FooterCorporate = () => {
         console.log(data);
         const { corporate1, corporate1url, corporate2, corporate2url, corporate3, corporate3url, corporate4, corporate4url, corporate5, corporate5url, category, corporate, footerSocket, developerURL } = data;
         const customServerInfo = {
-            corporate1,
-            corporate1url,
-            corporate2,
-            corporate2url,
-            corporate3,
-            corporate3url,
-            corporate4,
-            corporate4url,
-            corporate5,
-            corporate5url,
+            ftName1: corporate1,
+            ftUrl1: corporate1url,
+            ftName2: corporate2,
+            ftUrl2: corporate2url,
+            ftName3: corporate3,
+            ftUrl3: corporate3url,
+            ftName4: corporate4,
+            ftUrl4: corporate4url,
+            ftName5: corporate5,
+            ftUrl5: corporate5url,
             category,
             corporate,
             footerSocket,
@@ -41,6 +43,7 @@ const FooterCorporate = () => {
                         timer: 1500
                     })
                 }
+                navigate("/dashboard/footerChange")
             })
     }
     return (

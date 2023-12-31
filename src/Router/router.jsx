@@ -73,6 +73,7 @@ import FooterCorporate from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterC
 import BestOfferEdit from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOfferEdit";
 import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
 import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightEdit";
+import FooterEdit from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterEdit";
 
 const router = createBrowserRouter([
     {
@@ -317,6 +318,7 @@ const router = createBrowserRouter([
                 path: "/dashboard/leftRightBanner/leftRightBannerFour",
                 element: <LeftRightFour />
             },
+            /* footer api Path */
             {
                 path: "/dashboard/footerChange",
                 element: <FooterChange />
@@ -336,6 +338,11 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/footerChange/footerCorporate",
                 element: <FooterCorporate />
+            },
+            {
+                path: "/dashboard/footerChange/footerEdit/:id",
+                element: <FooterEdit />,
+                loader: ({params}) => fetch(`http://localhost:4000/footerChange/${params.id}`)
             },
             /* help section */
             {

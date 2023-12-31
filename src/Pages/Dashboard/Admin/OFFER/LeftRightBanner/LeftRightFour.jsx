@@ -1,47 +1,51 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiTwirlyFlower } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const LeftRightFour = () => {
-    const {
-        register,
-        handleSubmit,
+    const navigate = useNavigate();
+    const { register,
         formState: { errors },
+        handleSubmit,
         reset
-    } = useForm()
+    } = useForm();
+
     const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
     const onSubmit = (data) => {
-        const imgUrl = data.rightTwoImage[0];
+        const imageUrl = data.leftRightImage[0];
         const formData = new FormData();
-        formData.append("image", imgUrl)
+        formData.append('image', imageUrl)
         fetch(hosting_image_url, {
-            method: "POST",
+            method: 'POST',
             body: formData
         })
             .then(res => res.json())
             .then(imageData => {
-                const imageURL = imageData.data.display_url;
-                const { LeftRightSerialFour, rightTwoContent, category } = data;
-                const rightTwoInfo = {
-                    rightTwoImage: imageURL,
-                    LeftRightSerialFour,
-                    rightTwoContent,
+                const imgURL = imageData.data.display_url;
+                const { LeftRightSerial, leftRightContent, leftRightLink,category } = data;
+                const leftRightBanner = {
+                    leftRightImage: imgURL,
+                    LeftRightSerial,
+                    leftRightContent,
+                    leftRightLink,
                     category
                 }
-                axios.post(`http://localhost:4000/leftRightImage`, rightTwoInfo)
+                console.log(leftRightBanner);
+                axios.post(`http://localhost:4000/leftRightImage`, leftRightBanner)
                     .then(data => {
-                        console.log(data);
                         if (data.data.insertedId) {
-                            reset()
+                            reset();
                             Swal.fire({
-                                position: "top-center",
-                                icon: "success",
-                                title: "Right Two Upload Successfully",
+                                position: 'top-center',
+                                icon: 'success',
+                                title: 'Left Right Banner successfully add',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
                         }
+                        navigate("/dashboard/leftRightBanner")
                     })
             })
     }
@@ -50,33 +54,43 @@ const LeftRightFour = () => {
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="label">
-                        <span className="label-file file-lg  font-semibold">Right Two</span>
+                        <span className="label-text text-xl  font-semibold">Right Image Two *</span>
                     </label>
                     <input
-                        {...register("rightTwoImage", { required: true })}
+                        {...register("leftRightImage", { required: true })}
                         type="file"
                         className="file-input file-input-bordered w-full " />
-                    {errors.rightTwoImage?.type === "required" && (
+                    {errors.leftRightImage?.type === "required" && (
                         <p className="text-red-600 text-sm">Right Image is required</p>
                     )}
-                    
 
                     <label className="label">
                         <span className="label-text text-xl  font-semibold">Right Content Two *</span>
                     </label>
                     <input
-                        {...register("rightTwoContent", { required: true })}
+                        {...register("leftRightContent", { required: true })}
                         type="text"
                         placeholder="Please type Any Text"
                         className="file-input file-input-bordered w-full px-4" />
-                    {errors.rightTwoContent?.type === "required" && (
-                        <p className="text-red-600 text-sm">Right Content is required</p>
+                    {errors.leftRightContent?.type === "required" && (
+                        <p className="text-red-600 text-sm">Left Content is required</p>
+                    )}
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Right Two Link *</span>
+                    </label>
+                    <input
+                        {...register("leftRightLink", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.leftRightLink?.type === "required" && (
+                        <p className="text-red-600 text-sm">Right Link is required</p>
                     )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial Four"
-                        {...register("LeftRightSerialFour")}
+                        {...register("LeftRightSerial")}
                         className="hidden"
                     />
                     <input

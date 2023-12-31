@@ -72,6 +72,7 @@ import FooterOurStores from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterO
 import FooterCorporate from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCorporate";
 import BestOfferEdit from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOfferEdit";
 import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
+import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightEdit";
 
 const router = createBrowserRouter([
     {
@@ -278,28 +279,19 @@ const router = createBrowserRouter([
                 element: <BannerOne />
             },
             {
-                path: "/dashboard/bannerChanges/bannerOne/:id",
-                element: <BannerEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
-            },
-            {
                 path: "/dashboard/bannerChanges/bannerTwo",
                 element: <BannerTwo />
-            },
-            {
-                path: "/dashboard/bannerChanges/bannerTwo/:id",
-                element: <BannerEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
             },
             {
                 path: "/dashboard/bannerChanges/bannerThree",
                 element: <BannerThree />
             },
             {
-                path: "/dashboard/bannerChanges/bannerThree/:id",
+                path: "/dashboard/bannerChanges/bannerEdit/:id",
                 element: <BannerEdit />,
                 loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
             },
+            /* L>R> Banner path */
             {
                 path: "/dashboard/leftRightBanner",
                 element: <LeftRightBanner />
@@ -307,6 +299,11 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerOne",
                 element: <LeftRightOne />
+            },
+            {
+                path: "/dashboard/leftRightBanner/leftRightBannerEdit/:id",
+                element: <LeftRightEdit />,
+                loader: ({params}) => fetch(`http://localhost:4000/leftRightImage/${params.id}`)
             },
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerTwo",

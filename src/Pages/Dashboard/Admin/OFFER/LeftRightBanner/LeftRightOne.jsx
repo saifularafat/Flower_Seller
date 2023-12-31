@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { LuFlower2 } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const LeftRightOne = () => {
+    const navigate = useNavigate()
     const { register,
         formState: { errors },
         handleSubmit,
@@ -12,7 +14,7 @@ const LeftRightOne = () => {
 
     const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
     const onSubmit = (data) => {
-        const imageUrl = data.leftOneImage[0];
+        const imageUrl = data.leftRightImage[0];
         const formData = new FormData();
         formData.append('image', imageUrl)
         fetch(hosting_image_url, {
@@ -22,11 +24,12 @@ const LeftRightOne = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imgURL = imageData.data.display_url;
-                const { LeftRightSerialOne, leftOneContent, category } = data;
+                const { LeftRightSerial, leftRightContent,leftRightLink, category } = data;
                 const leftRightBanner = {
-                    leftOneImage: imgURL,
-                    LeftRightSerialOne,
-                    leftOneContent,
+                    leftRightImage: imgURL,
+                    LeftRightSerial,
+                    leftRightContent,
+                    leftRightLink,
                     category
                 }
                 console.log(leftRightBanner);
@@ -37,11 +40,12 @@ const LeftRightOne = () => {
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',
-                                title: ' banner successfully add',
+                                title: ' Left Right Banner successfully add',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
                         }
+                        navigate("/dashboard/leftRightBanner")
                     })
             })
     }
@@ -50,13 +54,13 @@ const LeftRightOne = () => {
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="label">
-                        <span className="label-text text-xl  font-semibold">Left  One *</span>
+                        <span className="label-text text-xl  font-semibold">Left Image One *</span>
                     </label>
                     <input
-                        {...register("leftOneImage", { required: true })}
+                        {...register("leftRightImage", { required: true })}
                         type="file"
                         className="file-input file-input-bordered w-full " />
-                    {errors.leftOneImage?.type === "required" && (
+                    {errors.leftRightImage?.type === "required" && (
                         <p className="text-red-600 text-sm">Left Image is required</p>
                     )}
 
@@ -64,18 +68,29 @@ const LeftRightOne = () => {
                         <span className="label-text text-xl  font-semibold">Left Content One *</span>
                     </label>
                     <input
-                        {...register("leftOneContent", { required: true })}
+                        {...register("leftRightContent", { required: true })}
                         type="text"
                         placeholder="Please type Any Text"
                         className="file-input file-input-bordered w-full px-4" />
-                    {errors.leftOneContent?.type === "required" && (
+                    {errors.leftRightContent?.type === "required" && (
                         <p className="text-red-600 text-sm">Left Content is required</p>
+                    )}
+                    <label className="label">
+                        <span className="label-text text-xl  font-semibold">Left Link *</span>
+                    </label>
+                    <input
+                        {...register("leftRightLink", { required: true })}
+                        type="text"
+                        placeholder="Please type Any Text"
+                        className="file-input file-input-bordered w-full px-4" />
+                    {errors.leftRightLink?.type === "required" && (
+                        <p className="text-red-600 text-sm">Left Link is required</p>
                     )}
                     <input
                         type="text"
                         placeholder=""
                         defaultValue="Left Right Serial One"
-                        {...register("LeftRightSerialOne")}
+                        {...register("LeftRightSerial")}
                         className="hidden"
                     />
                     <input

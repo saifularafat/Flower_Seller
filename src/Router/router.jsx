@@ -71,6 +71,7 @@ import FooterCustomService from "../Pages/Dashboard/Admin/OFFER/FooterChange/Foo
 import FooterOurStores from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterOurStores";
 import FooterCorporate from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterCorporate";
 import BestOfferEdit from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOfferEdit";
+import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
 
 const router = createBrowserRouter([
     {
@@ -235,8 +236,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/bestOfferEdit/:id",
-                element: <BestOfferEdit />,                
+                element: <BestOfferEdit />,
+                loader: ({ params }) => fetch(`http://localhost:4000/offerText/${params.id}`)
             },
+            /* slider path */
             {
                 path: "/dashboard/sliderChanges",
                 element: <SliderChanges />
@@ -265,6 +268,7 @@ const router = createBrowserRouter([
                 path: "/dashboard/sliderChanges/sliderSix",
                 element: <SliderSixPost />
             },
+            /* banner path */
             {
                 path: "/dashboard/bannerChanges",
                 element: <BannerChange />
@@ -274,12 +278,27 @@ const router = createBrowserRouter([
                 element: <BannerOne />
             },
             {
+                path: "/dashboard/bannerChanges/bannerOne/:id",
+                element: <BannerEdit />,
+                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
+            },
+            {
                 path: "/dashboard/bannerChanges/bannerTwo",
                 element: <BannerTwo />
             },
             {
+                path: "/dashboard/bannerChanges/bannerTwo/:id",
+                element: <BannerEdit />,
+                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
+            },
+            {
                 path: "/dashboard/bannerChanges/bannerThree",
                 element: <BannerThree />
+            },
+            {
+                path: "/dashboard/bannerChanges/bannerThree/:id",
+                element: <BannerEdit />,
+                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
             },
             {
                 path: "/dashboard/leftRightBanner",
@@ -341,35 +360,35 @@ const router = createBrowserRouter([
             /* user DASHBOARD link */
             {
                 path: "/dashboard/userHome",
-                element:<UserHome />
+                element: <UserHome />
             },
             {
                 path: "/dashboard/selectItems",
-                element:<SelectItems />
+                element: <SelectItems />
             },
             {
                 path: "/dashboard/orderHistory",
-                element:<OrderHistory />
+                element: <OrderHistory />
             },
             {
                 path: "/dashboard/paymentHistory",
-                element:<PaymentHistory />
+                element: <PaymentHistory />
             },
             {
                 path: "/dashboard/addressAdd",
-                element:<AddressAdd />
+                element: <AddressAdd />
             },
             {
                 path: "/dashboard/userEmail",
-                element:<UserEmail />
+                element: <UserEmail />
             },
             {
                 path: "/dashboard/userChat",
-                element:<UserChat />
+                element: <UserChat />
             },
             {
                 path: "/dashboard/userProfile",
-                element:<UserProfile />
+                element: <UserProfile />
             },
         ]
     }

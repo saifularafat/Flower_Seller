@@ -14,9 +14,6 @@ const SliderChanges = () => {
     const sliderFour = sliders.find(slider => slider.category === "sliderFour")
     const sliderFive = sliders.find(slider => slider.category === "sliderFive")
     const sliderSix = sliders.find(slider => slider.category === "sliderSix")
-    const mapSlider = sliders.map(oneSlider => oneSlider._id)
-    console.log("12345", mapSlider);
-    console.log(sliderSix)
 
     const handlerDelete = (sliders) => {
         Swal.fire({

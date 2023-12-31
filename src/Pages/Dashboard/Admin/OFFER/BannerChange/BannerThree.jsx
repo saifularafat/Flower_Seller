@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { GiTwirlyFlower } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const BannerThree = () => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -12,7 +14,7 @@ const BannerThree = () => {
     } = useForm()
     const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
     const onSubmit = (data) => {
-        const imgUrl = data.bannerThree[0];
+        const imgUrl = data.bannerImage[0];
         const formData = new FormData();
         formData.append("image", imgUrl)
         fetch(hosting_image_url, {
@@ -22,10 +24,10 @@ const BannerThree = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imageURL = imageData.data.display_url;
-                const { bannerSerialThree, bannerThreeLink, category } = data;
+                const { bannerSerialThree, bannerLink, category } = data;
                 const bannerOneInfo = {
-                    bannerThree: imageURL,
-                    bannerThreeLink,
+                    bannerImage: imageURL,
+                    bannerLink,
                     bannerSerialThree,
                     category
                 }
@@ -42,6 +44,7 @@ const BannerThree = () => {
                                 timer: 1500
                             })
                         }
+                        navigate("/dashboard/bannerChanges")
                     })
             })
     }
@@ -52,21 +55,21 @@ const BannerThree = () => {
                     <span className="label-file file-lg  font-semibold">Banner Three</span>
                 </label>
                 <input
-                    {...register("bannerThree", { required: true })}
+                    {...register("bannerImage", { required: true })}
                     type="file"
                     className="file-input file-input-bordered w-full " />
-                {errors.bannerThree?.type === "required" && (
+                {errors.bannerImage?.type === "required" && (
                     <p className="text-red-600 text-sm">Banner Image is required</p>
                 )}
                 <label className="label">
                     <span className="label-file file-lg  font-semibold">Banner Three in Link</span>
                 </label>
                 <input
-                    {...register("bannerThreeLink", { required: true })}
+                    {...register("bannerLink", { required: true })}
                     type="text"
                     placeholder="Please Provide the Banner Link"
                     className="file-input file-input-bordered w-full px-4" />
-                {errors.bannerThreeLink?.type === "required" && (
+                {errors.bannerLink?.type === "required" && (
                     <p className="text-red-600 text-sm">Banner Link is required</p>
                 )}
                 <input

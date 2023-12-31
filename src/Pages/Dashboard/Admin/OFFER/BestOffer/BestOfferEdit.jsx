@@ -1,22 +1,14 @@
 import { useForm } from "react-hook-form";
 import { GiFlowerPot } from "react-icons/gi";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const BestOfferEdit = () => {
-    const [data, setData] = useState({})
-
-    const { id } = useParams();
-    console.log(id);
-    useEffect(() => {
-        fetch(`http://localhost:4000/offerText/${id}`)
-            .then(res => res.json())
-            .then(data =>
-                setData(data)
-            )
-    }, [id])
+    const navigate = useNavigate()
+    const bestOffer = useLoaderData();
+    console.log(bestOffer);
+    const { _id, topBestOffer, topBestOfferLink } = bestOffer;
     const {
         register,
         handleSubmit,
@@ -28,7 +20,7 @@ const BestOfferEdit = () => {
             topBestOffer,
             topBestOfferLink
         };
-        axios.patch(`http://localhost:4000/offerText/${id}`, updateData)
+        axios.patch(`http://localhost:4000/offerText/${_id}`, updateData)
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {
@@ -40,6 +32,7 @@ const BestOfferEdit = () => {
                         timer: 1500
                     })
                 }
+                navigate("/dashboard/bestOffer")
             })
     }
     return (
@@ -51,7 +44,7 @@ const BestOfferEdit = () => {
                     </label>
                     <textarea cols={30} rows={15}
                         type="text"
-                        defaultValue={data.topBestOffer}
+                        defaultValue={topBestOffer}
                         placeholder="Please Type On The Best Offer Text"
                         {...register("topBestOffer")}
                         className="input input-bordered w-full text-base pt-1"
@@ -61,7 +54,7 @@ const BestOfferEdit = () => {
                     </label>
                     <input
                         type="text"
-                        defaultValue={data.topBestOfferLink}
+                        defaultValue={topBestOfferLink}
                         placeholder="Please Provide The Best Offer Link"
                         {...register("topBestOfferLink")}
                         className="input input-bordered w-full text-base"

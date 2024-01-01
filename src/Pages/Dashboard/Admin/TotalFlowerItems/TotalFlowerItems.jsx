@@ -13,7 +13,7 @@ const TotalFlowerItems = () => {
             <Helmet>
                 <title>Flower Shop || Total Flowers</title>
             </Helmet>
-            <DashboardTitle  borderColor="border-slate-600" borderStyle=" border-dotted" borderWidth=" w-3/12" Icon={GiFlowers} textColor="" title="Total Flowers "/>
+            <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dotted" borderWidth=" w-3/12" Icon={GiFlowers} textColor="" title="Total Flowers " />
             <h2 className="text-xl font-bold py-4 text-right">Total Flower {flowerAll?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -52,9 +52,9 @@ const TotalFlowerItems = () => {
                                     <th>
                                         <p className="btn-sm">{flower?.price}$</p>
                                     </th>
-                                    <div className="flex item-center gap-2  pt-2">
-                                        <div> <Link to='' className="rounded-md py-1 hover:bg-blue-300 hover:text-slate-950 bg-green-400 text-white btn-sm transition-all duration-200 tracking-wider font-semibold">Edit</Link></div>
-                                        <div> <Link to='' className="rounded-md py-1 hover:bg-red-300 hover:text-slate-950 bg-red-600 text-slate-700 font-semibold btn-sm transition-all duration-200">Delate</Link></div>
+                                    <div className="flex item-center gap-2 pt-4">
+                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md py-1 hover:bg-blue-300 hover:text-slate-950 bg-green-400 text-white btn-sm transition-all duration-200 tracking-wider font-semibold">Edit</Link>
+                                        <button className="rounded-md py-1 hover:bg-red-300 hover:text-slate-950 bg-red-600 text-slate-700 btn-sm transition-all duration-200 tracking-wider font-semibold">Delate</button>
                                     </div>
                                 </tr>
                             </tbody>

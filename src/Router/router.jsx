@@ -74,6 +74,7 @@ import BestOfferEdit from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOfferEdi
 import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
 import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightEdit";
 import FooterEdit from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterEdit";
+import EditItemFlower from "../Pages/Dashboard/Admin/TotalFlowerItems/EditItemFlower";
 
 const router = createBrowserRouter([
     {
@@ -205,6 +206,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/totalFlowerItems',
                 element: <TotalFlowerItems />
+            },
+            {
+                path: '/dashboard/editByFlowers/:id',
+                element: <EditItemFlower />,
+                loader:({params}) => fetch(`http://localhost:4000/flowersAll/${params.id}`)
             },
             {
                 path: '/dashboard/allPayment',

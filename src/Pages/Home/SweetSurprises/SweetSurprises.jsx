@@ -9,12 +9,18 @@ import sweet6 from "../../../assets/flowers/sweet/wineBer.webp"
 /* components */
 import SectionTitle from "../../../components/SectionTitle";
 import HomeImages from "../../../components/HomeImages";
-import banner from "../../../assets/sectionBanner/disnep.webp"
 import SectionSiteCover from "../../../components/SectionSiteCover";
-import leftCover from "../../../assets/flowers/cover/christmas-gifts.webp"
-import rightCover from "../../../assets/flowers/cover/sharis-berries.webp"
-import sectionBanner from "../../../assets/sectionBanner/gift.webp"
+import useBannerGet from "../../../api/useBannerGet";
+import useLeftRightBannerGet from "../../../api/useLeftRightBannerGet";
+
 const SweetSurprises = () => {
+    const [banners] = useBannerGet();
+    const [leftRightBGet] = useLeftRightBannerGet();
+    const twoBanner = banners.find(banner => banner.category === "bannerTwo");
+    const threeBanner = banners.find(banner => banner.category === "bannerThree");
+    const leftOne = leftRightBGet.find(leftOne => leftOne.category === "leftOne")
+    const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
+    console.log(leftRightBGet);
     return (
         <div className="md:my-10 my-5">
             <SectionTitle 
@@ -41,22 +47,22 @@ const SweetSurprises = () => {
                 Image6={sweet6}
                 title6="wine Bar"
             />
-            <Link to="/disney-flower">
-                <img src={banner} alt="" className="w-11/12 mx-auto" />
+            <Link to={twoBanner?.bannerLink}>
+                <img src={twoBanner?.bannerImage} alt="" className="w-11/12 mx-auto" />
             </Link>
             <div className="mt-8">
                 <SectionSiteCover
-                    path1="personalizedChristmasGifts"
-                    Image1={leftCover}
-                    title1="Personalized Christmas Gift"
-                    path2="ArtisanCraftedBerries"
-                    Image2={rightCover}
-                    title2="Artisan Crafted Berries"
+                    path1={leftOne?.leftRightLink}
+                    Image1={leftOne?.leftRightImage}
+                    title1={leftOne?.leftRightContent}
+                    path2={rightOne?.leftRightLink}
+                    Image2={rightOne?.leftRightImage}
+                    title2={rightOne?.leftRightContent}
                 />
             </div>
             <div className="mt-8">
-                <Link to="gift-more-flower">
-                    <img src={sectionBanner} alt="" className="w-11/12 mx-auto" />
+                <Link to={threeBanner?.bannerLink}>
+                    <img src={threeBanner?.bannerImage} alt="" className="w-11/12 mx-auto" />
                 </Link>
             </div>
         </div>

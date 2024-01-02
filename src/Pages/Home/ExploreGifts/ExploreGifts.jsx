@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTitle";
 /* images */
 import gift1 from "../../../assets/flowers/exploreGift/giftSets.webp"
@@ -8,11 +7,13 @@ import gift4 from "../../../assets/flowers/exploreGift/HomeDecor.webp"
 import gift5 from "../../../assets/flowers/exploreGift/spaBaskets.jpeg"
 import gift6 from "../../../assets/flowers/14759.webp"
 import SectionSiteCover from "../../../components/SectionSiteCover";
-import leftCover from "../../../assets/flowers/cover/gifts-personalizatio.webp"
-import rightCover from "../../../assets/flowers/cover/harry-david-gift.webp"
 import HomeImages from "../../../components/HomeImages";
+import useLeftRightBannerGet from "../../../api/useLeftRightBannerGet";
 
 const ExploreGifts = () => {
+    const [leftRightBGet] = useLeftRightBannerGet();
+    const leftTwo = leftRightBGet.find(leftTwo => leftTwo.category === "leftTwo")
+    const rightTwo = leftRightBGet.find(rightTwo => rightTwo.category === "rightTwo")
     return (
         <div className="md:my-10 my-6">
             <SectionTitle color="text-slate-900" title="Explore Our Gifts & More" />
@@ -38,12 +39,12 @@ const ExploreGifts = () => {
             title6="Preserved Roses"
             />
             <SectionSiteCover
-              path1=""
-              Image1={rightCover }
-              title1="Delicious Gifts That Make The Celebration "
-              path2=""
-              Image2={leftCover}
-              title2="Custom Creations for Moments That Count"
+              path1={leftTwo?.leftRightLink}
+              Image1={leftTwo?.leftRightImage }
+              title1={leftTwo?.leftRightContent}
+              path2={rightTwo?.leftRightLink}
+              Image2={rightTwo?.leftRightImage }
+              title2={rightTwo?.leftRightContent}
             />
         </div>
     );

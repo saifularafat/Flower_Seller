@@ -75,7 +75,7 @@ const BannerTwo = () => {
                 <input
                     type="text"
                     placeholder=""
-                    defaultValue="Banner Serial One"
+                    defaultValue="Banner Serial Two"
                     {...register("bannerSerialTwo")}
                     className="hidden"
                 />

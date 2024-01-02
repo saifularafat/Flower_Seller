@@ -13,8 +13,7 @@ const LeftRightBanner = () => {
     const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
     const leftTwo = leftRightBGet.find(leftTwo => leftTwo.category === "leftTwo")
     const rightTwo = leftRightBGet.find(rightTwo => rightTwo.category === "rightTwo")
-    console.log(leftRightBGet);
-
+    
     const handleDeleted = (leftRightBGet) => {
         Swal.fire({
             title: 'Are you sure?',

@@ -4,16 +4,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css'
+import useSliderGet from '../../../api/useSliderGet';
 
-/* slider images */
-import slider1 from "../.../../../../assets/banner/slider1.webp"
-import slider2 from "../.../../../../assets/banner/slider2.webp"
-import slider3 from "../.../../../../assets/banner/slider33.webp"
-import slider4 from "../.../../../../assets/banner/slider4.webp"
-import slider5 from "../.../../../../assets/banner/slider55.webp"
-import slider6 from "../.../../../../assets/banner/slider66.webp"
 
 const Slider = () => {
+    const [sliders] = useSliderGet();
+    const sliderOne = sliders.find(slider => slider.category === "sliderOne")
+    const sliderTwo = sliders.find(slider => slider.category === "sliderTwo")
+    const sliderThree = sliders.find(slider => slider.category === "sliderThree")
+    const sliderFour = sliders.find(slider => slider.category === "sliderFour")
+    const sliderFive = sliders.find(slider => slider.category === "sliderFive")
+    const sliderSix = sliders.find(slider => slider.category === "sliderSix")
+
     return (
         <>
             <Swiper
@@ -32,32 +34,32 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <div className='w-full md:h-[320px] h-44'>
-                        <img src={slider1} alt="" className='object-cover' />
+                        <img src={sliderOne?.sliderOne} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={slider2} alt="" className='object-cover' />
+                        <img src={sliderTwo?.sliderTwo} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={slider3} alt="" className='object-cover' />
+                        <img src={sliderThree?.sliderThree} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={slider4} alt="" className='object-cover' />
+                        <img src={sliderFour?.sliderFour} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={slider5} alt="" className='object-cover' />
+                        <img src={sliderFive?.sliderFive} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={slider6} alt="" className='object-cover' />
+                        <img src={sliderSix?.sliderSix} alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
             </Swiper>

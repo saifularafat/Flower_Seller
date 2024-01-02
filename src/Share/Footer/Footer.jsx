@@ -1,52 +1,58 @@
 import { FaFacebookF, FaInstagram, FaPinterestP, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import footerChange from "../../api/useFooterGet";
 
 const Footer = () => {
+    const [footerGet] = footerChange();
+    const wayToShops = footerGet.find(footer => footer.category === "wayToShop");
+    const customService = footerGet.find(footer => footer.category === "customServer");
+    const ourStores = footerGet.find(footer => footer.category === "ourStores");
+    const corporate = footerGet.find(footer => footer.category === "corporate");
+    console.log(corporate);
     return (
         <div className="py-6 bg-slate-500">
             <div className="grid grid-cols-2 text-white md:grid-cols-5 gap-5 w-11/12 mx-auto border-0 border-b border-slate-300 pb-5">
                 <div className="text-left">
-                    <h2 className="md:text-lg font-bold pb-2 uppercase">More ways to shop</h2>
+                    <h2 className="md:text-lg font-bold pb-2 uppercase">More {wayToShops?.wayToShop}</h2>
                     <div className="space-y-1">
-                        <Link to="" className="text-sm hover:underline block">Flower Delivery Same-Day</Link>
-                        <Link to="" className="text-sm hover:underline block">Flowers Arrangements</Link>
-                        <Link to="" className="text-sm hover:underline block">Sympathy Flowers & Gifts</Link>
-                        <Link to="" className="text-sm hover:underline block">Roses</Link>
-                        <Link to="" className="text-sm hover:underline block">Chocolate Covered</Link>
-                        <Link to="" className="text-sm hover:underline block">New Year's Flowers</Link>
-                        <Link to="" className="text-sm hover:underline block">Birthday Flowers & Gifts</Link>
-                        <Link to="" className="text-sm hover:underline block">Marketplace Sellers</Link>
+                        <Link to={wayToShops?.ftUrl1} className="text-sm hover:underline block">{wayToShops?.ftName1}</Link>
+                        <Link to={wayToShops?.ftUrl2} className="text-sm hover:underline block">{wayToShops?.ftName2}</Link>
+                        <Link to={wayToShops?.ftUrl3} className="text-sm hover:underline block">{wayToShops?.ftName3}</Link>
+                        <Link to={wayToShops?.ftUrl4} className="text-sm hover:underline block">{wayToShops?.ftName4}</Link>
+                        <Link to={wayToShops?.ftUrl5} className="text-sm hover:underline block">{wayToShops?.ftName5}</Link>
+                        <Link to={wayToShops?.ftUrl6} className="text-sm hover:underline block">{wayToShops?.ftName6}</Link>
+                        <Link to={wayToShops?.ftUrl7} className="text-sm hover:underline block">{wayToShops?.ftName7}</Link>
+                        <Link to={wayToShops?.ftUrl8} className="text-sm hover:underline block">{wayToShops?.ftName8}</Link>
                     </div>
                 </div>
                 <div className="text-left">
-                    <h2 className="md:text-lg font-bold pb-2 uppercase">Customer Service</h2>
+                    <h2 className="md:text-lg font-bold pb-2 uppercase">{customService?.customService}</h2>
                     <div className="space-y-1">
-                        <Link to="" className="text-sm hover:underline block">Customer Service</Link>
-                        <Link to="" className="text-sm hover:underline block">Contact us</Link>
-                        <Link to="" className="text-sm hover:underline block">Gift Cards</Link>
-                        <Link to="" className="text-sm hover:underline block">Home Delivery</Link>
+                    <Link to={customService?.ftUrl1} className="text-sm hover:underline block">{customService?.ftName1}</Link>
+                    <Link to={customService?.ftUrl2} className="text-sm hover:underline block">{customService?.ftName2}</Link>
+                    <Link to={customService?.ftUrl3} className="text-sm hover:underline block">{customService?.ftName3}</Link>
+                    <Link to={customService?.ftUrl4} className="text-sm hover:underline block">{customService?.ftName4}</Link>
                     </div>
                 </div>
                 <div className="text-left">
-                    <h2 className="md:text-lg font-bold pb-2 uppercase">Our Stores</h2>
+                    <h2 className="md:text-lg font-bold pb-2 uppercase">{ourStores?.ourStores}</h2>
                     <div className="space-y-1">
-                        <Link to="" className="text-sm hover:underline block">Local Store</Link>
-                        <Link to="" className="text-sm hover:underline block">Your Location</Link>
-                        <Link to="" className="text-sm hover:underline block">Local Event</Link>
-                        <Link to="" className="text-sm hover:underline block">Roses</Link>
-                        <h3 className="md:text-lg font-bold py-1 uppercase">Account Login</h3>
+                    <Link to={ourStores?.ftUrl1} className="text-sm hover:underline block">{ourStores?.ftName1}</Link>
+                    <Link to={ourStores?.ftUrl2} className="text-sm hover:underline block">{ourStores?.ftName2}</Link>
+                    <Link to={ourStores?.ftUrl3} className="text-sm hover:underline block">{ourStores?.ftName3}</Link>
+                    <Link to={ourStores?.ftUrl4} className="text-sm hover:underline block">{ourStores?.ftName4}</Link>
                         <Link to="" className="text-sm hover:underline block">Login</Link>
                         <Link to="" className="text-sm hover:underline block">Register</Link>
                     </div>
                 </div>
                 <div className="text-left">
-                    <h2 className="md:text-lg font-bold pb-2 uppercase">Corporate</h2>
+                    <h2 className="md:text-lg font-bold pb-2 uppercase">{corporate?.corporate}</h2>
                     <div className="space-y-1">
-                        <Link to="" className="text-sm hover:underline block">About us</Link>
-                        <Link to="" className="text-sm hover:underline block">Our Brands</Link>
-                        <Link to="" className="text-sm hover:underline block">Careers</Link>
-                        <Link to="" className="text-sm hover:underline block">Investor</Link>
-                        <Link to="" className="text-sm hover:underline block">News & Media</Link>
+                    <Link to={corporate?.ftUrl1} className="text-sm hover:underline block">{corporate?.ftName1}</Link>
+                    <Link to={corporate?.ftUrl2} className="text-sm hover:underline block">{corporate?.ftName2}</Link>
+                    <Link to={corporate?.ftUrl3} className="text-sm hover:underline block">{corporate?.ftName3}</Link>
+                    <Link to={corporate?.ftUrl4} className="text-sm hover:underline block">{corporate?.ftName4}</Link>
+                    <Link to={corporate?.ftUrl5} className="text-sm hover:underline block">{corporate?.ftName5}</Link>
                     </div>
                 </div>
                 <div className="text-left">
@@ -65,7 +71,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="">
-                <p className="text-center cursor-pointer pt-3 text-white"> Copyright © 2023 - 2023 TermsFeed®. All rights reserved. developer by saiful arafat</p>
+                <p className="text-center pt-3 text-white">{corporate?.footerSocket} <Link to={corporate?.developerURL} className="hover:text-blue-900 hover:underline font-semibold tracking-wider transition-all duration-200" >Saiful Islam</Link></p>
             </div>
         </div>
     );

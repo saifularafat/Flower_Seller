@@ -20,7 +20,6 @@ const SweetSurprises = () => {
     const threeBanner = banners.find(banner => banner.category === "bannerThree");
     const leftOne = leftRightBGet.find(leftOne => leftOne.category === "leftOne")
     const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
-    console.log(leftRightBGet);
     return (
         <div className="md:my-10 my-5">
             <SectionTitle 

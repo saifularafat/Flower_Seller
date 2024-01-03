@@ -1,19 +1,45 @@
+import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { GiFlowerPot } from "react-icons/gi";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const EditItemFlower = () => {
     const editFlower = useLoaderData();
-    console.log(editFlower);
-    const { flowerImg, flowerName, flowerNav, price, offerPrice, } = editFlower;
+    const { _id, flowerImg, flowerName, flowerNav, price, flowerCategory } = editFlower;
+
+    const navigate = useNavigate();
 
     const { register,
-        formState: { errors },
-        handleSubmit,
+        handleSubmit
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
+        const { flowerName, price, offerPrice, percent, flowerNav, flowerCategory, flowerImg } = data;
+        const upDateFlower = {
+            flowerName,
+            price,
+            percent,
+            offerPrice,
+            flowerNav,
+            flowerImg,
+            flowerCategory
+        }
+        axios.patch(`http://localhost:4000/flowersAll/${_id}`, upDateFlower)
+            .then(data => {
+                console.log(data.data);
+                if (data.data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Flower UpDate successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+                navigate("/dashboard/totalFlowerItems")
+            })
     }
     return (
         <div className="px-2">
@@ -85,7 +111,7 @@ const EditItemFlower = () => {
                             <select {...register("flowerNav")}
                                 className="input input-bordered  text-xl w-full pl-2"
                                 defaultValue={editFlower?.flowerCategory}>
-                                <option value="flowers">Flowers</option>
+                                <option value={flowerNav} selected>{flowerNav}</option>
                                 <option value="birthday">Birthday</option>
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
@@ -102,20 +128,17 @@ const EditItemFlower = () => {
                             <label className="label">
                                 <span className="label-text md:text-3xl text-xl font-semibold">Flower Category*</span>
                             </label>
-                            {/* how to the Show in the category and navLink the click button on the state set  */}
-                            <select {...register("category")}
+                            {/* how to the Show in the flowerCategory and navLink the click button on the state set  */}
+                            <select {...register("flowerCategory")}
                                 className="input input-bordered  text-xl w-full pl-2">
-                                <option value="flower" selected>Flower</option>
+                                <option value={flowerCategory} selected>{flowerCategory}</option>
                                 <option value="planet">Planet</option>
                                 <option value="chocolate">Chocolate</option>
                                 <option value="gift">Gift</option>
-                                <option value="baby">BabyGift</option>
-                                <option value="lave">Love</option>
+                                <option value="babyGift">BabyGift</option>
+                                <option value="love">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>
                             </select>
-                            {errors.category?.type === "required" && (
-                                <p className="text-red-600 text-sm">Flower category is required</p>
-                            )}
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -124,8 +147,7 @@ const EditItemFlower = () => {
                                 <span className="label-text text-xl  font-semibold">Item Image <br /> <span className="text-sm text-red-700">Please Provide The Image Link</span></span>
                             </label>
                             <input
-                                {...register("flowerImage")}
-                                // type="file"
+                                {...register("flowerImg")}
                                 defaultValue={flowerImg}
                                 className="file-input file-input-bordered w-full px-4" />
 

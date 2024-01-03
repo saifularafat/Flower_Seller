@@ -8,7 +8,7 @@ const Footer = () => {
     const customService = footerGet.find(footer => footer.category === "customServer");
     const ourStores = footerGet.find(footer => footer.category === "ourStores");
     const corporate = footerGet.find(footer => footer.category === "corporate");
-    console.log(corporate);
+
     return (
         <div className="py-6 bg-slate-500">
             <div className="grid grid-cols-2 text-white md:grid-cols-5 gap-5 w-11/12 mx-auto border-0 border-b border-slate-300 pb-5">

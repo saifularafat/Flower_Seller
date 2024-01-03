@@ -3,11 +3,40 @@ import useAllFlowers from "../../../../api/useAllFlowers";
 import { Link } from "react-router-dom";
 import DashboardTitle from "../../../../components/DashboardTitle";
 import { GiFlowers } from "react-icons/gi";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const TotalFlowerItems = () => {
     const [flowerAll, refetch] = useAllFlowers();
     console.log(flowerAll);
+    const itemDelete = (flower) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be Select flower Delete!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            console.log("Click is Done!", result);
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:4000/flowersAll/${flower?._id}`)
+                    .then(data => {
+                        console.log(data.data);
+                        if (data.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Flower has been Deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
     return (
         <div>
             <Helmet>
@@ -54,7 +83,7 @@ const TotalFlowerItems = () => {
                                     </th>
                                     <div className="flex item-center gap-2 pt-4">
                                         <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md py-1 hover:bg-blue-300 hover:text-slate-950 bg-green-400 text-white btn-sm transition-all duration-200 tracking-wider font-semibold">Edit</Link>
-                                        <button className="rounded-md py-1 hover:bg-red-300 hover:text-slate-950 bg-red-600 text-slate-700 btn-sm transition-all duration-200 tracking-wider font-semibold">Delate</button>
+                                        <button onClick={() => itemDelete(flower)} className="rounded-md py-1 hover:bg-red-300 hover:text-slate-950 bg-red-600 text-slate-700 btn-sm transition-all duration-200 tracking-wider font-semibold">Delate</button>
                                     </div>
                                 </tr>
                             </tbody>

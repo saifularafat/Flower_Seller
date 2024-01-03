@@ -9,7 +9,7 @@ import trending7 from "../../../assets/flowers/trending/giftHoliday.webp"
 import trending8 from "../../../assets/flowers/trending/pegantasion.webp"
 const TrendingGift = () => {
     return (
-        <div className="md:my-10 my-6">
+        <div className="md:my-10 my-6 md:overflow-x-hidden overflow-x-scroll mx-2 md:mx-0">
             <div className="grid grid-cols-8 gap-3 w-[1320px] mx-auto md:overflow-x-hidden overflow-x-scroll">
                 <Link to="" className=" border border-white rounded-md shadow-md p-0">
                     <img src={trending1} alt="" className="hover:scale-105 transition-all duration-200" />

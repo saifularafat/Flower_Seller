@@ -13,9 +13,9 @@ import user4 from "../../../assets/user/user4.jpeg"
 import user5 from "../../../assets/user/user5.jpeg"
 const Testimonial = () => {
     return (
-        <div className="md:my-10 my-5">
+        <div className="md:my-10 my-5 ">
             <SectionTitle color="text-slate-800" title="Our Testimonial" />
-            <div className="my-8">
+            <div className="my-8 ">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
@@ -23,9 +23,9 @@ const Testimonial = () => {
                         clickable: true,
                     }}
                     modules={[Pagination]}
-                    className="mySwiper"
+                    className="mySwiper "
                 >
-                    <SwiperSlide>
+                    <SwiperSlide className="md:w-auto w-full">
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user1}

@@ -16,7 +16,6 @@ const Home = () => {
             <FindGift />
             <ExclusiveFlower />
             <SweetSurprises />
-            <SectionSiteCover />
             <ExploreGifts />
             <TrendingGift />
             <Testimonial />

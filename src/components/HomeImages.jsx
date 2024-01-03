@@ -8,7 +8,7 @@ const HomeImages = ({
     path5, Image5, title5,
     path6, Image6, title6, }) => {
     return (
-        <div className="grid grid-cols-6 gap-3 overflow-x-scroll md:overflow-x-hidden py-10 mx-2">
+        <div className="grid grid-cols-6 gap-3 w-[1320px] md:mx-auto md:overflow-x-hidden overflow-x-scroll my-10">
             <Link to={path1} className=" border border-white rounded-md shadow-md p-0">
                 <img src={Image1} alt="" className="hover:scale-105 transition-all duration-200" />
                 <h4 className="text-center text-lg font-medium tracking-wide">{title1}</h4>

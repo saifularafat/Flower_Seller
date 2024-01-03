@@ -22,32 +22,34 @@ const SweetSurprises = () => {
     const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
     return (
         <div className="md:my-10 my-5">
-            <SectionTitle 
-            color="text-slate-900" 
-            title="Sweet & Savory Surprises" />
+            <SectionTitle
+                color="text-slate-900"
+                title="Sweet & Savory Surprises" />
             {/* TODO Link */}
-            <HomeImages
-                path1="chocolate-gift"
-                Image1={sweet1}
-                title1="Chocolate Gift"
-                path2="chocolate-gift"
-                Image2={sweet2}
-                title2="Baked Goods"
-                path3="fruit-gift-shop"
-                Image3={sweet3}
-                title3="Fruit Baskets"
-                path4="chocolate-gift"
-                Image4={sweet4}
-                title4="Baskets Gift"
-                path5="chocolate-gift"
-                Image5={sweet5}
-                title5="Meat Cheese"
-                path6="alcohol-wine-bar-shop"
-                Image6={sweet6}
-                title6="wine Bar"
-            />
-            <Link to={twoBanner?.bannerLink}>
-                <img src={twoBanner?.bannerImage} alt="" className="w-11/12 mx-auto" />
+            <div className="md:overflow-x-hidden overflow-x-scroll mx-2 md:mx-0">
+                <HomeImages
+                    path1="chocolate-gift"
+                    Image1={sweet1}
+                    title1="Chocolate Gift"
+                    path2="chocolate-gift"
+                    Image2={sweet2}
+                    title2="Baked Goods"
+                    path3="fruit-gift-shop"
+                    Image3={sweet3}
+                    title3="Fruit Baskets"
+                    path4="chocolate-gift"
+                    Image4={sweet4}
+                    title4="Baskets Gift"
+                    path5="chocolate-gift"
+                    Image5={sweet5}
+                    title5="Meat Cheese"
+                    path6="alcohol-wine-bar-shop"
+                    Image6={sweet6}
+                    title6="wine Bar"
+                />
+            </div>
+            <Link to={twoBanner?.bannerLink} className="">
+                <img src={twoBanner?.bannerImage} alt="" className="md:w-11/12 h-32 md:h-full mx-auto" />
             </Link>
             <div className="mt-8">
                 <SectionSiteCover
@@ -60,8 +62,8 @@ const SweetSurprises = () => {
                 />
             </div>
             <div className="mt-8">
-                <Link to={threeBanner?.bannerLink}>
-                    <img src={threeBanner?.bannerImage} alt="" className="w-11/12 mx-auto" />
+                <Link to={threeBanner?.bannerLink} >
+                    <img src={threeBanner?.bannerImage} alt="" className="md:w-11/12 h-32 md:h-full mx-auto" />
                 </Link>
             </div>
         </div>

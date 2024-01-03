@@ -28,31 +28,31 @@ const Footer = () => {
                 <div className="text-left">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">{customService?.customService}</h2>
                     <div className="space-y-1">
-                    <Link to={customService?.ftUrl1} className="text-sm hover:underline block">{customService?.ftName1}</Link>
-                    <Link to={customService?.ftUrl2} className="text-sm hover:underline block">{customService?.ftName2}</Link>
-                    <Link to={customService?.ftUrl3} className="text-sm hover:underline block">{customService?.ftName3}</Link>
-                    <Link to={customService?.ftUrl4} className="text-sm hover:underline block">{customService?.ftName4}</Link>
+                        <Link to={customService?.ftUrl1} className="text-sm hover:underline block">{customService?.ftName1}</Link>
+                        <Link to={customService?.ftUrl2} className="text-sm hover:underline block">{customService?.ftName2}</Link>
+                        <Link to={customService?.ftUrl3} className="text-sm hover:underline block">{customService?.ftName3}</Link>
+                        <Link to={customService?.ftUrl4} className="text-sm hover:underline block">{customService?.ftName4}</Link>
                     </div>
                 </div>
                 <div className="text-left">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">{ourStores?.ourStores}</h2>
                     <div className="space-y-1">
-                    <Link to={ourStores?.ftUrl1} className="text-sm hover:underline block">{ourStores?.ftName1}</Link>
-                    <Link to={ourStores?.ftUrl2} className="text-sm hover:underline block">{ourStores?.ftName2}</Link>
-                    <Link to={ourStores?.ftUrl3} className="text-sm hover:underline block">{ourStores?.ftName3}</Link>
-                    <Link to={ourStores?.ftUrl4} className="text-sm hover:underline block">{ourStores?.ftName4}</Link>
-                        <Link to="" className="text-sm hover:underline block">Login</Link>
-                        <Link to="" className="text-sm hover:underline block">Register</Link>
+                        <Link to={ourStores?.ftUrl1} className="text-sm hover:underline block">{ourStores?.ftName1}</Link>
+                        <Link to={ourStores?.ftUrl2} className="text-sm hover:underline block">{ourStores?.ftName2}</Link>
+                        <Link to={ourStores?.ftUrl3} className="text-sm hover:underline block">{ourStores?.ftName3}</Link>
+                        <Link to={ourStores?.ftUrl4} className="text-sm hover:underline block">{ourStores?.ftName4}</Link>
+                        <Link to="/signIn" className="text-sm hover:underline block">Login</Link>
+                        <Link to="/signUP" className="text-sm hover:underline block">Register</Link>
                     </div>
                 </div>
                 <div className="text-left">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">{corporate?.corporate}</h2>
                     <div className="space-y-1">
-                    <Link to={corporate?.ftUrl1} className="text-sm hover:underline block">{corporate?.ftName1}</Link>
-                    <Link to={corporate?.ftUrl2} className="text-sm hover:underline block">{corporate?.ftName2}</Link>
-                    <Link to={corporate?.ftUrl3} className="text-sm hover:underline block">{corporate?.ftName3}</Link>
-                    <Link to={corporate?.ftUrl4} className="text-sm hover:underline block">{corporate?.ftName4}</Link>
-                    <Link to={corporate?.ftUrl5} className="text-sm hover:underline block">{corporate?.ftName5}</Link>
+                        <Link to={corporate?.ftUrl1} className="text-sm hover:underline block">{corporate?.ftName1}</Link>
+                        <Link to={corporate?.ftUrl2} className="text-sm hover:underline block">{corporate?.ftName2}</Link>
+                        <Link to={corporate?.ftUrl3} className="text-sm hover:underline block">{corporate?.ftName3}</Link>
+                        <Link to={corporate?.ftUrl4} className="text-sm hover:underline block">{corporate?.ftName4}</Link>
+                        <Link to={corporate?.ftUrl5} className="text-sm hover:underline block">{corporate?.ftName5}</Link>
                     </div>
                 </div>
                 <div className="text-left  md:hidden">

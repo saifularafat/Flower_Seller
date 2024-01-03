@@ -29,7 +29,7 @@ const SignIn = () => {
                     ? user?.photoURL
                     : img
                 } alt=""
-                    className="md:w-10 md:h-10 w-6 h-6 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
+                    className="md:w-10 md:h-10 w-8 h-8 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
             </div>
             {
                 user ?
@@ -41,7 +41,7 @@ const SignIn = () => {
                     </span>
             }
             <div className="md:hidden block">
-                <span className="text-xs font-medium block md:hidden group-hover:block">SignIn</span>
+                <span className="text-xs text-slate-300 font-medium block md:hidden group-hover:block">SignIn</span>
             </div>
             <div className="absolute hidden top-13 text-slate-500 bg-slate-50 z-50 px-4 py-1 w-44 border border-slate-400 shadow-2xl group-hover:block rounded overflow-hidden">
                 <div className="border-0 border-b-[2px] border-slate-400 pb-3">

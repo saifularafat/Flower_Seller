@@ -9,7 +9,7 @@ const Main = () => {
         <div>
             <Header />
             <MiddleHeader />
-            {/* <Nav /> */}
+            <Nav />
             <div className="min-h-[calc(100vh-410px)]">
                 <Outlet />
             </div>

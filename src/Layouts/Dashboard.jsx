@@ -28,7 +28,7 @@ const Dashboard = () => {
             <Helmet>
                 <title>Flowers Shop || Dashboard</title>
             </Helmet>
-            <div className="col-span-2 h-screen overflow-y-scroll myScroll border border-r-2 relative">
+            <div className="col-span-2 h-screen overflow-y-scroll myScroll border border-r-2 relative md:block hidden">
                 <Link to="/" className="flex items-center justify-center gap-2 py-2 shadow-lg sticky top-0 z-10 bg-white">
                     <BiSolidFlorist className="text-4xl text-blue-700" />
                     <h2 className="text-xl font-bold text-center text-blue-700 uppercase">Flowers Shop</h2>

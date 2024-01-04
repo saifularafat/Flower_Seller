@@ -55,7 +55,7 @@ const Footer = () => {
                         <Link to={corporate?.ftUrl5} className="text-sm hover:underline block">{corporate?.ftName5}</Link>
                     </div>
                 </div>
-                <div className="text-left  md:hidden">
+                <div className="text-left hidden md:block">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">Follow us</h2>
                     <div className="grid md:grid-cols-4 grid-cols-3 gap-3">
                         <Link to="" className="bg-green-500 w-10 h-10 rounded-lg"><FaFacebookF className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>

@@ -75,7 +75,7 @@ import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
 import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightEdit";
 import FooterEdit from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterEdit";
 import EditItemFlower from "../Pages/Dashboard/Admin/TotalFlowerItems/EditItemFlower";
-import Payment from "../Pages/Payment/Payment";
+import PaymentOption from "../Pages/Payment/PaymentOption";
 
 const router = createBrowserRouter([
     {
@@ -172,7 +172,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/payment/:id",
-                element: <Payment />
+                element: <PaymentOption />
             },
         ]
     },

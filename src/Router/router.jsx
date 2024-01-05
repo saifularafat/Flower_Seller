@@ -75,6 +75,7 @@ import BannerEdit from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerEdit";
 import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRightEdit";
 import FooterEdit from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterEdit";
 import EditItemFlower from "../Pages/Dashboard/Admin/TotalFlowerItems/EditItemFlower";
+import Payment from "../Pages/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -169,6 +170,10 @@ const router = createBrowserRouter([
                 path: "ArtisanCraftedBerries",
                 element: <ArtisanCraftedBerries />
             },
+            {
+                path: "/payment/:id",
+                element: <Payment />
+            },
         ]
     },
     /* user create */
@@ -210,7 +215,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/editByFlowers/:id',
                 element: <EditItemFlower />,
-                loader:({params}) => fetch(`http://localhost:4000/flowersAll/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:4000/flowersAll/${params.id}`)
             },
             {
                 path: '/dashboard/allPayment',
@@ -310,7 +315,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerEdit/:id",
                 element: <LeftRightEdit />,
-                loader: ({params}) => fetch(`http://localhost:4000/leftRightImage/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:4000/leftRightImage/${params.id}`)
             },
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerTwo",
@@ -348,7 +353,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/footerChange/footerEdit/:id",
                 element: <FooterEdit />,
-                loader: ({params}) => fetch(`http://localhost:4000/footerChange/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:4000/footerChange/${params.id}`)
             },
             /* help section */
             {

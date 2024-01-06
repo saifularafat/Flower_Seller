@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const PaymentOption = () => {
+    const { id } = useParams();
+    console.log(id);
     const [selectSystem, setSelectSystem] = useState("sslPayment");
 
     const handleSystemChange = (e) => {
@@ -47,7 +50,7 @@ const PaymentOption = () => {
                 <label
                     className={`cursor-pointer grid grid-cols-2 border-2 shadow-lg
            md:w-[460px] p-10 rounded-lg  mt-4 mb-6
-           ${selectSystem === 'cashOnDelivery' ? ' bg-primary' : 'bg-secondary'
+           ${selectSystem === 'cashOnDeliveryPayment' ? ' bg-primary' : 'bg-secondary'
                         }
            
            `}
@@ -57,13 +60,15 @@ const PaymentOption = () => {
                         type='radio'
                         name='radio-1'
                         className='radio radio-danger ms-auto'
-                        value='cashOnDelivery'
-                        checked={selectSystem === 'cashOnDelivery'}
+                        value='cashOnDeliveryPayment'
+                        checked={selectSystem === 'cashOnDeliveryPayment'}
                         onChange={handleSystemChange}
                     />
                 </label>
                 <div className=" mb-4">
-                    <button className='btn btn-primary'>Go to Payment Process</button>
+                    <Link to={`/${selectSystem}?flowerShop=${id}`}>
+                        <button className='btn btn-primary'>Go to Payment Process</button>
+                    </Link>
                 </div>
             </div>
         </div>

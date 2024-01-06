@@ -76,6 +76,9 @@ import LeftRightEdit from "../Pages/Dashboard/Admin/OFFER/LeftRightBanner/LeftRi
 import FooterEdit from "../Pages/Dashboard/Admin/OFFER/FooterChange/FooterEdit";
 import EditItemFlower from "../Pages/Dashboard/Admin/TotalFlowerItems/EditItemFlower";
 import PaymentOption from "../Pages/Payment/PaymentOption";
+import StripePayment from "../Pages/Payment/StripePament/StripePayment";
+import SSLPayment from "../Pages/Payment/SSLPayment/SSLPayment";
+import CashOnDeliveryPayment from "../Pages/Payment/CashOnDeliveryPayment/CashOnDeliveryPayment";
 
 const router = createBrowserRouter([
     {
@@ -171,8 +174,24 @@ const router = createBrowserRouter([
                 element: <ArtisanCraftedBerries />
             },
             {
-                path: "/payment/:id",
+                path: "/paymentOption/:id",
                 element: <PaymentOption />
+            },
+            {
+                path: "/paymentOption/:id",
+                element: <PaymentOption />
+            },
+            {
+                path: "/stripePayment",
+                element: <StripePayment />
+            },
+            {
+                path: "/sslPayment",
+                element: <SSLPayment />
+            },
+            {
+                path: "/cashOnDeliveryPayment",
+                element: <CashOnDeliveryPayment />
             },
         ]
     },

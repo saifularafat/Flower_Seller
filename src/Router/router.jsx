@@ -182,15 +182,15 @@ const router = createBrowserRouter([
                 element: <PaymentOption />
             },
             {
-                path: "/stripePayment",
+                path: "/stripePayment/:id",
                 element: <StripePayment />
             },
             {
-                path: "/sslPayment",
+                path: "/sslPayment/:id",
                 element: <SSLPayment />
             },
             {
-                path: "/cashOnDeliveryPayment",
+                path: "/cashOnDeliveryPayment/:id",
                 element: <CashOnDeliveryPayment />
             },
         ]

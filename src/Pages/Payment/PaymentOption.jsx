@@ -66,7 +66,7 @@ const PaymentOption = () => {
                     />
                 </label>
                 <div className=" mb-4">
-                    <Link to={`/${selectSystem}?flowerShop=${id}`}>
+                    <Link to={`/${selectSystem}/${id}?flowerShop=${id}`}>
                         <button className='btn btn-primary'>Go to Payment Process</button>
                     </Link>
                 </div>

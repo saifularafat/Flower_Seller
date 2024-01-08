@@ -18,140 +18,140 @@ const BirthdayContainer = () => {
     return (
         <div className="grid grid-cols-3 gap-5 ">
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img1} alt="" className="w-full h-80 object-cover" />
+                <img src={img1} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Birthday Wishes Flower Cake Vibrant</h4>
                     <p className="text-lg font-bold">$50.90 - $57.10</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img2} alt="" className="w-full h-80 object-cover" />
+                <img src={img2} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Party Pooch™</h4>
                     <p className="text-lg font-bold">$58.99 - $67.60</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img3} alt="" className="w-full h-80 object-cover" />
+                <img src={img3} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Denari Lavender SpaBasket</h4>
                     <p className="text-lg font-bold">$48.99 - $56.00</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img4} alt="" className="w-full h-80 object-cover" />
+                <img src={img4} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Happy Birthday Kid</h4>
                     <p className="text-lg font-bold">$55.40 - $63.60</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img5} alt="" className="w-full h-80 object-cover" />
+                <img src={img5} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Animated Happy Birthday Gift</h4>
                     <p className="text-lg font-bold">$60.00 - $68.90</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img6} alt="" className="w-full h-80 object-cover" />
+                <img src={img6} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Conversation Roses Happy Birthday</h4>
                     <p className="text-lg font-bold">$63.70 - $71.10</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img7} alt="" className="w-full h-80 object-cover" />
+                <img src={img7} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">B-Day Gift</h4>
                     <p className="text-lg font-bold">$49.99 - $56.70</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img2} alt="" className="w-full h-80 object-cover" />
+                <img src={img2} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Party Pooch™</h4>
                     <p className="text-lg font-bold">$58.99 - $67.60</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img3} alt="" className="w-full h-80 object-cover" />
+                <img src={img3} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Denari Lavender SpaBasket</h4>
                     <p className="text-lg font-bold">$48.99 - $56.00</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img8} alt="" className="w-full h-80 object-cover" />
+                <img src={img8} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Animated Birthday Dog Gift</h4>
                     <p className="text-lg font-bold">$65.10 - $73.60</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img9} alt="" className="w-full h-80 object-cover" />
+                <img src={img9} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Happy Birthday Sweets Gift Basket</h4>
                     <p className="text-lg font-bold">$57.80 - $62.20</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img10} alt="" className="w-full h-80 object-cover" />
+                <img src={img10} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Holiday Lily Bouquet</h4>
                     <p className="text-lg font-bold">$55.10 - $59.99</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img11} alt="" className="w-full h-80 object-cover" />
+                <img src={img11} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Jumbo Birthday</h4>
                     <p className="text-lg font-bold">$53.99 - $59.77</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img12} alt="" className="w-full h-80 object-cover" />
+                <img src={img12} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Birthday Cake Explosion Box </h4>
                     <p className="text-lg font-bold">$69.69 - $77.77</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img13} alt="" className="w-full h-80 object-cover" />
+                <img src={img13} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight"> Mickey & Pluto Birthday</h4>
                     <p className="text-lg font-bold">$58.29 - $61.50</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img14} alt="" className="w-full h-80 object-cover" />
+                <img src={img14} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Warm Sunset Bouquet</h4>
                     <p className="text-lg font-bold">$65.99 - $ 75.69</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img15} alt="" className="w-full h-80 object-cover" />
+                <img src={img15} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Happy Birthday Dish Garden </h4>
                     <p className="text-lg font-bold">$54.80 - $60.20</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img8} alt="" className="w-full h-80 object-cover" />
+                <img src={img8} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Animated Birthday Dog Gift</h4>
                     <p className="text-lg font-bold">$65.10 - $73.60</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img9} alt="" className="w-full h-80 object-cover" />
+                <img src={img9} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Happy Birthday Sweets Gift Basket</h4>
                     <p className="text-lg font-bold">$57.80 - $62.20</p>
                 </div>
             </Link>
             <Link to="" className="w-full h-[400px] space-y-3 hover:shadow-md transition-all duration-200 rounded overflow-hidden">
-                <img src={img10} alt="" className="w-full h-80 object-cover" />
+                <img src={img10} loading='lazy' alt="flowerBirthday" className="w-full h-80 object-cover" />
                 <div className=" px-1">
                     <h4 className="text-lg font-semibold leading-tight">Holiday Lily Bouquet</h4>
                     <p className="text-lg font-bold">$55.10 - $59.99</p>

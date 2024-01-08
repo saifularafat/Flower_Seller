@@ -49,7 +49,7 @@ const SweetSurprises = () => {
                 />
             </div>
             <Link to={twoBanner?.bannerLink} className="">
-                <img src={twoBanner?.bannerImage} alt="" className="md:w-11/12 h-32 md:h-full mx-auto" />
+                <img src={twoBanner?.bannerImage} loading='lazy' alt="bannerFlower" className="md:w-11/12 h-32 md:h-full mx-auto" />
             </Link>
             <div className="mt-8">
                 <SectionSiteCover

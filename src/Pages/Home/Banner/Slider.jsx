@@ -34,32 +34,32 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <div className='w-full md:h-[320px] h-44'>
-                        <img src={sliderOne?.sliderOne} alt="" className='object-cover' />
+                        <img src={sliderOne?.sliderOne} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={sliderTwo?.sliderTwo} alt="" className='object-cover' />
+                        <img src={sliderTwo?.sliderTwo} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={sliderThree?.sliderThree} alt="" className='object-cover' />
+                        <img src={sliderThree?.sliderThree} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={sliderFour?.sliderFour} alt="" className='object-cover' />
+                        <img src={sliderFour?.sliderFour} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={sliderFive?.sliderFive} alt="" className='object-cover' />
+                        <img src={sliderFive?.sliderFive} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='w-full  md:h-[320px] h-44'>
-                        <img src={sliderSix?.sliderSix} alt="" className='object-cover' />
+                        <img src={sliderSix?.sliderSix} loading='lazy' alt="" className='object-cover' />
                     </div>
                 </SwiperSlide>
             </Swiper>

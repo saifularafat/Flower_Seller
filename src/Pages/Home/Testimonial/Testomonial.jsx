@@ -29,7 +29,8 @@ const Testimonial = () => {
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user1}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -45,12 +46,13 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Pet Commings</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                     <SwiperSlide>
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user2}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -66,12 +68,13 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Lena Guwe</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                     <SwiperSlide>
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user3}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -87,12 +90,13 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Stivan Smit</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                     <SwiperSlide>
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user4}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -108,12 +112,13 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Selina Gumas</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                     <SwiperSlide>
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user5}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -129,12 +134,13 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Sen Watson</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                     <SwiperSlide>
                         <div className="space-y-2 mx-3">
                             <div className="w-20 h-20 rounded-full mx-auto">
                                 <img src={user1}
-                                    alt=""
+                                    loading='lazy'
+                                    alt="user"
                                     className="rounded-full object-cover border-2 border-slate-500" />
                             </div>
                             <div className="rating">
@@ -150,7 +156,7 @@ const Testimonial = () => {
                             <h4 className="text-xl font-semibold text-slate-950">-Sam Current</h4>
                         </div>
                     </SwiperSlide>
-                   
+
                 </Swiper>
             </div>
         </div>

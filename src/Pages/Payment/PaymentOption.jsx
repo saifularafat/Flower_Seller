@@ -7,8 +7,7 @@ const PaymentOption = () => {
     const [selectSystem, setSelectSystem] = useState("sslPayment");
 
     const handleSystemChange = (e) => {
-        const result = setSelectSystem(e.target.value)
-        console.log(result);
+        setSelectSystem(e.target.value)
     }
     return (
         <div>

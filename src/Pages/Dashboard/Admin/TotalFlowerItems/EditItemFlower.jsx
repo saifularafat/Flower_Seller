@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const EditItemFlower = () => {
     const editFlower = useLoaderData();
-    const { _id, flowerImg, flowerName, flowerNav, price, flowerCategory } = editFlower;
+    const { _id, flowerImg, flowerName, color,recipient, price, flowerCategory } = editFlower;
 
     const navigate = useNavigate();
 
@@ -16,13 +16,14 @@ const EditItemFlower = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        const { flowerName, price, offerPrice, percent, flowerNav, flowerCategory, flowerImg } = data;
+        const { flowerName, price, offerPrice, percent, color,recipient, flowerCategory, flowerImg } = data;
         const upDateFlower = {
             flowerName,
             price,
             percent,
             offerPrice,
-            flowerNav,
+            color,
+            recipient,
             flowerImg,
             flowerCategory
         }
@@ -47,7 +48,7 @@ const EditItemFlower = () => {
                 <title> Flower Shop || {editFlower?.flowerName}</title>
             </Helmet>
             <form onSubmit={handleSubmit(onSubmit)} className="py-5">
-                <div className=" bg-[#F3F3F3] rounded-md">
+                <div className=" bg-[#F3F3F3] px-4 rounded-md">
                     <div className="md:flex items-center gap-3">
                         <div className="w-full">
                             <label className="label">
@@ -82,7 +83,7 @@ const EditItemFlower = () => {
                                 <span className="label-text text-lg  font-semibold">Offer Price</span>
                             </label>
                             <input
-                                type="text"
+                                type="number"
                                 placeholder="Offer Price"
                                 defaultValue={editFlower?.offerPrice}
                                 {...register("offerPrice", { maxLength: 120 })}
@@ -106,12 +107,45 @@ const EditItemFlower = () => {
                     <div className="md:flex items-center mt-3 space-x-3">
                         <div className="md:w-1/2">
                             <label className="label">
-                                <span className="label-text md:text-3xl text-xl font-semibold">Flower NavLink*</span>
+                                <span className="label-text md:text-xl text-xl font-semibold">Flower Recipient</span>
                             </label>
-                            <select {...register("flowerNav")}
-                                className="input input-bordered  text-xl w-full pl-2"
-                                defaultValue={editFlower?.flowerCategory}>
-                                <option value={flowerNav} selected>{flowerNav}</option>
+                            <select {...register("recipient")}
+                                className="input input-bordered text-base w-full pl-2">
+                                <option value={recipient} selected>{recipient}</option>
+                                <option value="mom">Mom</option>
+                                <option value="her">Her</option>
+                                <option value="bestFriend">Best Friend</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="student">Student</option>
+                                <option value="client">Client</option>
+                                <option value="employee">Employee</option>
+                                <option value="lover">Lover</option>
+                                <option value="kids">Kids</option>
+                            </select>
+                        </div>
+                        <div className="md:w-1/2">
+                            <label className="label">
+                                <span className="label-text md:text-xl text-xl font-semibold">Flower Color</span>
+                            </label>
+                            <select {...register("color")}
+                                className="input input-bordered text-base w-full pl-2">
+                                <option value={color} selected>{color}</option>
+                                <option value="red">Red</option>
+                                <option value="purple">Purple</option>
+                                <option value="white">white</option>
+                                <option value="pink">Pink</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                            </select>
+                        </div>
+                        <div className="md:w-1/2">
+                            <label className="label">
+                                <span className="label-text md:text-3xl text-xl font-semibold">Flower Category*</span>
+                            </label>
+                            <select {...register("flowerCategory")}
+                                className="input input-bordered  text-xl w-full pl-2">
+                                <option value={flowerCategory} selected>{flowerCategory}</option>
+                                <option value="flower">Flower</option>
                                 <option value="birthday">Birthday</option>
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
@@ -122,21 +156,9 @@ const EditItemFlower = () => {
                                 <option value="giftsMore">Gifts & More</option>
                                 <option value="sale">Sale</option>
                                 <option value="community">Community</option>
-                            </select>
-                        </div>
-                        <div className="md:w-1/2">
-                            <label className="label">
-                                <span className="label-text md:text-3xl text-xl font-semibold">Flower Category*</span>
-                            </label>
-                            {/* how to the Show in the flowerCategory and navLink the click button on the state set  */}
-                            <select {...register("flowerCategory")}
-                                className="input input-bordered  text-xl w-full pl-2">
-                                <option value={flowerCategory} selected>{flowerCategory}</option>
-                                <option value="planet">Planet</option>
                                 <option value="chocolate">Chocolate</option>
-                                <option value="gift">Gift</option>
-                                <option value="babyGift">BabyGift</option>
-                                <option value="love">Love</option>
+                                <option value="baby">BabyGift</option>
+                                <option value="lave">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>
                             </select>
                         </div>

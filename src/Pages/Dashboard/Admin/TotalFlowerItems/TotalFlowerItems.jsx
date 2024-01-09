@@ -75,9 +75,10 @@ const TotalFlowerItems = () => {
                                     </td>
                                     <div>
                                         <div className="font-bold">{flower?.flowerName}</div>
-                                        <div className="text-sm opacity-50">{flower?.flowerNav}</div>
+                                        <div className="text-sm opacity-50">{flower?.recipient}</div>
                                     </div>
-                                    <td>{flower?.flowerCategory}</td>
+                                    <td><span className="text-base font-medium">{flower?.flowerCategory}</span> <br />
+                                    <span className="text-xs">{flower?.color}</span></td>
                                     <th>
                                         <p className="btn-sm">{flower?.price}$</p>
                                     </th>

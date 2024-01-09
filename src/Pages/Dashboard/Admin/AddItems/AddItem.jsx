@@ -13,8 +13,7 @@ const AddItem = () => {
 
     const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
     const onSubmit = (data) => {
-        // console.log(data, "images", imgURL);
-        /* imgbb upload in the image */
+        console.log("first data", data);
         const imageUrl = data.flowerImage[0];
         const formData = new FormData();
         formData.append('image', imageUrl)
@@ -35,15 +34,16 @@ const AddItem = () => {
                     percent,
                     flowerImg: imgURL
                 }
-                console.log(createFlower);
+                console.log("update data", createFlower);
                 axios.post(`http://localhost:4000/flowersAll`, createFlower)
                     .then(data => {
-                        if (data.data.insertedId){
+                        console.log("post data", data.data);
+                        if (data.data.insertedId) {
                             reset();
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',
-                                title: 'New sport item added successfully',
+                                title: 'New flower added!',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -58,7 +58,7 @@ const AddItem = () => {
             </Helmet>
             <DashboardTitle borderColor=" border-slate-800" borderStyle="border-dashed" borderWidth="md:w-1/5" textColor=" text-slate-600" Icon={GiFlowerPot} title="Add A Items"></DashboardTitle>
             <form onSubmit={handleSubmit(onSubmit)} className="py-5">
-                <div className=" bg-[#F3F3F3] rounded-md">
+                <div className=" bg-[#F3F3F3] px-4 rounded-md">
                     <div className="md:flex items-center gap-3">
                         <div className="w-full">
                             <label className="label">
@@ -79,7 +79,7 @@ const AddItem = () => {
                                 <span className="label-text text-lg  font-semibold">Flower Price*</span>
                             </label>
                             <input
-                                type="text"
+                                type="number"
                                 placeholder="Flower Price"
                                 {...register("price", { required: true, maxLength: 120 })}
                                 className="input input-bordered w-full text-base"
@@ -95,7 +95,7 @@ const AddItem = () => {
                                 <span className="label-text text-lg  font-semibold">Offer Price</span>
                             </label>
                             <input
-                                type="text"
+                                type="number"
                                 placeholder="Offer Price"
                                 {...register("offerPrice", { maxLength: 120 })}
                                 className="input input-bordered w-full text-base"
@@ -117,11 +117,44 @@ const AddItem = () => {
                     <div className="md:flex items-center mt-3 space-x-3">
                         <div className="md:w-1/2">
                             <label className="label">
-                                <span className="label-text md:text-3xl text-xl font-semibold">Flower NavLink*</span>
+                                <span className="label-text md:text-xl text-xl font-semibold">Flower Recipient</span>
                             </label>
-                            <select {...register("flowerNav", { required: true })}
-                                className="input input-bordered  text-xl w-full pl-2">
-                                <option value="flowers" selected>Flowers</option>
+                            <select {...register("recipient")}
+                                className="input input-bordered text-base w-full pl-2">
+                                <option value="" selected></option>
+                                <option value="mom">Mom</option>
+                                <option value="her">Her</option>
+                                <option value="bestFriend">Best Friend</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="student">Student</option>
+                                <option value="client">Client</option>
+                                <option value="employee">Employee</option>
+                                <option value="kids">Kids</option>
+                            </select>
+                        </div>
+                        <div className="md:w-1/2">
+                            <label className="label">
+                                <span className="label-text md:text-xl text-xl font-semibold">Flower Color</span>
+                            </label>
+                            <select {...register("color")}
+                                className="input input-bordered text-base w-full pl-2">
+                                <option value="" selected></option>
+                                <option value="red">Red</option>
+                                <option value="purple">Purple</option>
+                                <option value="white">white</option>
+                                <option value="pink">Pink</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                            </select>
+                        </div>
+                        <div className="md:w-1/2">
+                            <label className="label">
+                                <span className="label-text md:text-xl text-xl font-semibold">Flower Category*</span>
+                            </label>
+                            <select {...register("category", { required: true })}
+                                className="input input-bordered text-base w-full pl-2">
+                                <option value="" selected></option>
+                                <option value="flower">Flower</option>
                                 <option value="birthday">Birthday</option>
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
@@ -132,21 +165,7 @@ const AddItem = () => {
                                 <option value="giftsMore">Gifts & More</option>
                                 <option value="sale">Sale</option>
                                 <option value="community">Community</option>
-                            </select>
-                            {errors.flowerNav?.type === "required" && (
-                                <p className="text-red-600 text-sm">Flower NavLink is required</p>
-                            )}
-                        </div>
-                        <div className="md:w-1/2">
-                            <label className="label">
-                                <span className="label-text md:text-3xl text-xl font-semibold">Flower Category*</span>
-                            </label>
-                            <select {...register("category", { required: true })}
-                                className="input input-bordered  text-xl w-full pl-2">
-                                <option value="flower" selected>Flower</option>
-                                <option value="planet">Planet</option>
                                 <option value="chocolate">Chocolate</option>
-                                <option value="gift">Gift</option>
                                 <option value="baby">BabyGift</option>
                                 <option value="lave">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>

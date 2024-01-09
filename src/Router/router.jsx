@@ -234,7 +234,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/editByFlowers/:id',
                 element: <EditItemFlower />,
-                loader: ({ params }) => fetch(`http://localhost:4000/flowersAll/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/flowersAll/${params.id}`)
             },
             {
                 path: '/dashboard/allPayment',
@@ -269,7 +269,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/bestOfferEdit/:id",
                 element: <BestOfferEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/offerText/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/offerText/${params.id}`)
             },
             /* slider path */
             {
@@ -320,7 +320,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/bannerChanges/bannerEdit/:id",
                 element: <BannerEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/bannerImage/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/bannerImage/${params.id}`)
             },
             /* L>R> Banner path */
             {
@@ -334,7 +334,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerEdit/:id",
                 element: <LeftRightEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/leftRightImage/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/leftRightImage/${params.id}`)
             },
             {
                 path: "/dashboard/leftRightBanner/leftRightBannerTwo",
@@ -372,7 +372,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/footerChange/footerEdit/:id",
                 element: <FooterEdit />,
-                loader: ({ params }) => fetch(`http://localhost:4000/footerChange/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/footerChange/${params.id}`)
             },
             /* help section */
             {

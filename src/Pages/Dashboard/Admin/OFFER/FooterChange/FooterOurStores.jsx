@@ -26,7 +26,7 @@ const FooterOurStores = () => {
             category,
             ourStores
         }
-        axios.post(`http://localhost:4000/footerChange`, ourStoresInfo)
+        axios.post(`${import.meta.env.VITE_API_URL}/footerChange`, ourStoresInfo)
             .then(data => {
                 console.log(data);
                 if (data.data.insertedId) {

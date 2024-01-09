@@ -23,7 +23,7 @@ const BestOffer = () => {
             topBestOfferLink,
             category
         }
-        axios.post(`http://localhost:4000/offerText`, bestOfferInfo)
+        axios.post(`${import.meta.env.VITE_API_URL}/offerText`, bestOfferInfo)
             .then(data => {
                 console.log(data);
                 if (data.data.insertedId) {

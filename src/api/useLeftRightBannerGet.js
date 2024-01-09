@@ -5,7 +5,7 @@ const useLeftRightBannerGet = () => {
     const { data: leftRightBGet = [], refetch } = useQuery({
         queryKey: ["leftRightBGet"],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:4000/leftRightImage`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/leftRightImage`)
             return res.data
         }
     })

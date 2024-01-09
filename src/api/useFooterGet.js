@@ -5,7 +5,7 @@ import axios from "axios"
     const { data: footerGet = [], refetch } = useQuery({
         queryKey: ["footerGet"],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:4000/footerChange`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/footerChange`)
             return res.data;
         }
     })

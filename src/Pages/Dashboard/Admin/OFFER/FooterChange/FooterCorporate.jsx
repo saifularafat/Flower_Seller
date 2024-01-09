@@ -30,7 +30,7 @@ const FooterCorporate = () => {
             footerSocket,
             developerURL
         }
-        axios.post(`http://localhost:4000/footerChange`, customServerInfo)
+        axios.post(`${import.meta.env.VITE_API_URL}/footerChange`, customServerInfo)
             .then(data => {
                 console.log(data);
                 if (data.data.insertedId) {

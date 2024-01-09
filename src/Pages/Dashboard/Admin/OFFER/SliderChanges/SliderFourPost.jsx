@@ -28,7 +28,7 @@ const SliderFourPost = () => {
                     sliderSerialFour,
                     category
                 }
-                axios.post(`http://localhost:4000/sliderImage`, sliderFourInfo)
+                axios.post(`${import.meta.env.VITE_API_URL}/sliderImage`, sliderFourInfo)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.insertedId) {

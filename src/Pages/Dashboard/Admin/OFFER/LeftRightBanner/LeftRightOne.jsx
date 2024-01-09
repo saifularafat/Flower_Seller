@@ -33,7 +33,7 @@ const LeftRightOne = () => {
                     category
                 }
                 console.log(leftRightBanner);
-                axios.post(`http://localhost:4000/leftRightImage`, leftRightBanner)
+                axios.post(`${import.meta.env.VITE_API_URL}/leftRightImage`, leftRightBanner)
                     .then(data => {
                         if (data.data.insertedId) {
                             reset();

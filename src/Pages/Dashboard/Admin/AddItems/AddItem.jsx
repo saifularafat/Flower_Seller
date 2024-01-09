@@ -35,7 +35,7 @@ const AddItem = () => {
                     flowerImg: imgURL
                 }
                 console.log("update data", createFlower);
-                axios.post(`http://localhost:4000/flowersAll`, createFlower)
+                axios.post(`${import.meta.env.VITE_API_URL}/flowersAll`, createFlower)
                     .then(data => {
                         console.log("post data", data.data);
                         if (data.data.insertedId) {

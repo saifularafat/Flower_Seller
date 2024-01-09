@@ -21,7 +21,7 @@ const LeftRightEdit = () => {
             leftRightContent,
             leftRightLink
         }
-        axios.patch(`http://localhost:4000/leftRightImage/${_id}`, updateInfo)
+        axios.patch(`${import.meta.env.VITE_API_URL}/leftRightImage/${_id}`, updateInfo)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {

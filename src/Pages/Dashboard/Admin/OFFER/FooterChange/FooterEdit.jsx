@@ -24,7 +24,7 @@ const FooterEdit = () => {
             ftName1, ftUrl1, ftName2, ftUrl2, ftName3, ftUrl3, ftName4, ftUrl4, ftName5, ftUrl5,
             ftName6, ftUrl6, ftName7, ftUrl7, ftName8, ftUrl8, category, footerSocket, developerURL
         }
-        axios.patch(`http://localhost:4000/footerChange/${_id}`, upDateInfo)
+        axios.patch(`${import.meta.env.VITE_API_URL}/footerChange/${_id}`, upDateInfo)
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {

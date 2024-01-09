@@ -5,7 +5,7 @@ const useSliderGet = () => {
     const { data: sliders = [], refetch } = useQuery({
         queryKey: ["sliders"],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:4000/sliderImage`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/sliderImage`)
             return res.data
         }
     })

@@ -22,7 +22,7 @@ const TotalFlowerItems = () => {
         }).then((result) => {
             console.log("Click is Done!", result);
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:4000/flowersAll/${flower?._id}`)
+                axios.delete(`${import.meta.env.VITE_API_URL}/flowersAll/${flower?._id}`)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.deletedCount > 0) {

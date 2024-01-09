@@ -26,8 +26,7 @@ const LeftRightBanner = () => {
         }).then((result) => {
             console.log("Click is Done!", result);
             if (result.isConfirmed) {
-                //     // axios.delete(`${import.meta.env.VITE_API_URL}/leftRightImage/${banner._id}`)
-                axios.delete(`http://localhost:4000/leftRightImage/${leftRightBGet?._id}`)
+                axios.delete(`${import.meta.env.VITE_API_URL}/leftRightImage/${leftRightBGet?._id}`)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.deletedCount > 0) {
@@ -47,7 +46,7 @@ const LeftRightBanner = () => {
             <Helmet><title>Flower Shop || Left & Right image Change</title></Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-4/12" Icon={LuFlower2} fileColor="" title=" Left & Right Image " />
             <Marquee className="py-3 w-1/2 bg-slate-200 mt-2">
-                Please first Post Button click, and agin post after post delete then agin post Button Click then post and return a post .
+                Please first Post click by Delete Button and agin post after post delete then agin post Button Click then post and return a post .
             </Marquee>
             <div className="overflow-x-auto md:py-8 py-3">
                 <table className="table">

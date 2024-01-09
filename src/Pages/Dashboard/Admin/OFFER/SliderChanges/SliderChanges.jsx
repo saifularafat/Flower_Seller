@@ -28,8 +28,7 @@ const SliderChanges = () => {
         }).then((result) => {
             console.log("Click is Done!", result);
             if (result.isConfirmed) {
-                //     // axios.delete(`${import.meta.env.VITE_API_URL}/bookmarks/${select._id}`)
-                axios.delete(`http://localhost:4000/sliderImage/${sliders._id}`)
+                axios.delete(`${import.meta.env.VITE_API_URL}/sliderImage/${sliders._id}`)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.deletedCount > 0) {

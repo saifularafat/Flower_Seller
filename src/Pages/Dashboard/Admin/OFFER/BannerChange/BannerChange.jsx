@@ -24,8 +24,7 @@ const BannerChange = () => {
         }).then((result) => {
             console.log("Click is Done!", result);
             if (result.isConfirmed) {
-                //     // axios.delete(`${import.meta.env.VITE_API_URL}/bannerImage/${banner._id}`)
-                axios.delete(`http://localhost:4000/bannerImage/${banners?._id}`)
+                axios.delete(`${import.meta.env.VITE_API_URL}/bannerImage/${banners?._id}`)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.deletedCount > 0) {

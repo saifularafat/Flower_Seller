@@ -31,7 +31,7 @@ const BannerThree = () => {
                     bannerSerialThree,
                     category
                 }
-                axios.post(`http://localhost:4000/bannerImage`, bannerOneInfo)
+                axios.post(`${import.meta.env.VITE_API_URL}/bannerImage`, bannerOneInfo)
                     .then(data => {
                         console.log(data);
                         if (data.data.insertedId) {

@@ -5,7 +5,7 @@ const useBannerGet = () => {
     const {data: banners = [], refetch} = useQuery({
         queryKey: ["banners"],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:4000/bannerImage`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/bannerImage`)
             return res.data
         }
     })

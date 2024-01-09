@@ -27,7 +27,7 @@ const EditItemFlower = () => {
             flowerImg,
             flowerCategory
         }
-        axios.patch(`http://localhost:4000/flowersAll/${_id}`, upDateFlower)
+        axios.patch(`${import.meta.env.VITE_API_URL}/flowersAll/${_id}`, upDateFlower)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {

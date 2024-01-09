@@ -20,7 +20,7 @@ const BestOfferEdit = () => {
             topBestOffer,
             topBestOfferLink
         };
-        axios.patch(`http://localhost:4000/offerText/${_id}`, updateData)
+        axios.patch(`${import.meta.env.VITE_API_URL}/offerText/${_id}`, updateData)
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {

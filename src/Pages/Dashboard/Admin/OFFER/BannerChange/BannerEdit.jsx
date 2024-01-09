@@ -19,7 +19,7 @@ const BannerEdit = () => {
             bannerLink
         }
         console.log(updateData);
-        axios.patch(`http://localhost:4000/bannerImage/${_id}`, updateData)
+        axios.patch(`${import.meta.env.VITE_API_URL}/bannerImage/${_id}`, updateData)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {

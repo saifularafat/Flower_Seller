@@ -5,7 +5,7 @@ const useBestOffer = () => {
     const { data: bestOffer = [], refetch } = useQuery({
         queryKey: ["bestOffer"],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:4000/offerText`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/offerText`)
             return res.data
         }
     })

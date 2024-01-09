@@ -79,6 +79,7 @@ import PaymentOption from "../Pages/Payment/PaymentOption";
 import StripePayment from "../Pages/Payment/StripePament/StripePayment";
 import SSLPayment from "../Pages/Payment/SSLPayment/SSLPayment";
 import CashOnDeliveryPayment from "../Pages/Payment/CashOnDeliveryPayment/CashOnDeliveryPayment";
+import FlowerDetails from "../Pages/FlowerDetails/FlowerDetails";
 
 const router = createBrowserRouter([
     {
@@ -134,6 +135,10 @@ const router = createBrowserRouter([
             {
                 path: "community",
                 element: <Community />
+            },
+            {
+                path: "flowerDetails/:id",
+                element: <FlowerDetails />
             },
             /* main page link */
             /* side page link */

@@ -83,7 +83,7 @@ const EditItemFlower = () => {
                                 <span className="label-text text-lg  font-semibold">Offer Price</span>
                             </label>
                             <input
-                                type="number"
+                                type="text"
                                 placeholder="Offer Price"
                                 defaultValue={editFlower?.offerPrice}
                                 {...register("offerPrice", { maxLength: 120 })}

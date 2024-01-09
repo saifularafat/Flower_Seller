@@ -24,7 +24,7 @@ const AddItem = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imgURL = imageData.data.display_url;
-                const { flowerName, flowerNav, price, category, offerPrice, percent } = data;
+                const { flowerName, flowerNav, price, category, offerPrice,flowerDetails, percent } = data;
                 const createFlower = {
                     flowerName,
                     flowerNav,
@@ -32,7 +32,8 @@ const AddItem = () => {
                     flowerCategory: category,
                     offerPrice,
                     percent,
-                    flowerImg: imgURL
+                    flowerImg: imgURL,
+                    flowerDetails
                 }
                 console.log("update data", createFlower);
                 axios.post(`${import.meta.env.VITE_API_URL}/flowersAll`, createFlower)
@@ -186,6 +187,27 @@ const AddItem = () => {
                                 className="file-input file-input-bordered w-full " />
                             {errors.flowerImage?.type === "required" && (
                                 <p className="text-red-600 text-sm">Flower Image is required</p>
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text text-xl  font-semibold">Details *</span>
+                            </label>
+                            <textarea
+                                name=""
+                                id=""
+                                cols="20"
+                                rows="3"
+                                placeholder="Please Type The Flower Description"
+                                {...register("flowerDetails")}
+                                className="border border-slate-300 rounded-md overflow-hidden w-full p-2"
+                            >
+
+                            </textarea>
+                            {errors.flowerDetails?.type === "required" && (
+                                <p className="text-red-600 text-sm">Flower Description is required</p>
                             )}
                         </div>
                     </div>

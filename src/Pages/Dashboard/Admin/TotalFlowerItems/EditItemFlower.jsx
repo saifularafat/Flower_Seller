@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const EditItemFlower = () => {
     const editFlower = useLoaderData();
-    const { _id, flowerImg, flowerName, color,recipient, price, flowerCategory } = editFlower;
+    const { _id, flowerImg, flowerName, color, recipient, price, flowerCategory } = editFlower;
 
     const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const EditItemFlower = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        const { flowerName, price, offerPrice, percent, color,recipient, flowerCategory, flowerImg } = data;
+        const { flowerName, price, offerPrice, percent, color, recipient, flowerCategory, flowerImg, flowerDetails } = data;
         const upDateFlower = {
             flowerName,
             price,
@@ -25,7 +25,8 @@ const EditItemFlower = () => {
             color,
             recipient,
             flowerImg,
-            flowerCategory
+            flowerCategory,
+            flowerDetails
         }
         axios.patch(`${import.meta.env.VITE_API_URL}/flowersAll/${_id}`, upDateFlower)
             .then(data => {
@@ -173,6 +174,25 @@ const EditItemFlower = () => {
                                 defaultValue={flowerImg}
                                 className="file-input file-input-bordered w-full px-4" />
 
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text text-xl  font-semibold">Details *</span>
+                            </label>
+                            <textarea
+                                name=""
+                                id=""
+                                cols="20"
+                                rows="3"
+                                defaultValue={editFlower?.flowerDetails}
+                                placeholder="Please Type The Flower Description"
+                                {...register("flowerDetails", { required: true })}
+                                className="border border-slate-300 rounded-md overflow-hidden w-full p-2"
+                            >
+
+                            </textarea>
                         </div>
                     </div>
                     <div className="mt-4">

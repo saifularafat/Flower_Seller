@@ -80,7 +80,7 @@ const TotalFlowerItems = () => {
                                     <td><span className="text-base font-medium">{flower?.flowerCategory}</span> <br />
                                     <span className="text-xs">{flower?.color}</span></td>
                                     <th>
-                                        <p className="btn-sm">{flower?.price}$</p>
+                                        <p className="btn-sm">{flower?.price +"$"} <br /><span className="text-sm font-medium">{flower?.offerPrice}{flower?.offerPrice && <>$</>}</span></p>
                                     </th>
                                     <div className="flex item-center gap-2 pt-4">
                                         <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md py-1 hover:bg-blue-300 hover:text-slate-950 bg-green-400 text-white btn-sm transition-all duration-200 tracking-wider font-semibold">Edit</Link>

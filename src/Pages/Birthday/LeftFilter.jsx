@@ -122,6 +122,12 @@ const LeftFilter = () => {
                         <div className="">
                             <label className="cursor-pointer flex items-center gap-2">
                                 <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
+                                <span className="text-base font-medium">Love</span>
+                            </label>
+                        </div>
+                        <div className="">
+                            <label className="cursor-pointer flex items-center gap-2">
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">Best Friend</span>
                             </label>
                         </div>
@@ -197,6 +203,12 @@ const LeftFilter = () => {
                             <label className="cursor-pointer flex items-center gap-2">
                                 <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
                                 <span className="text-base font-medium">White</span>
+                            </label>
+                        </div>
+                        <div className="">
+                            <label className="cursor-pointer flex items-center gap-2">
+                                <input type="checkbox" className="checkbox checkbox-sm checkbox-info" />
+                                <span className="text-base font-medium">Black</span>
                             </label>
                         </div>
                         <div className="">

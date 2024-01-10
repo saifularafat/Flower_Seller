@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
 import LeftFilter from "../Birthday/LeftFilter";
 import { Helmet } from "react-helmet-async";
 import OfferTitle from "../../components/OfferTitle";
 import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import SortBy from "../Birthday/SortBy";
 import SympathyContent from "./SympathyContent";
+import useAllFlowers from "../../api/useAllFlowers";
 
 const Sympathy = () => {
-   
+    const [flowerAll] = useAllFlowers();
+    const sympathyAll = flowerAll.filter(sympathy => sympathy.flowerCategory === "sympathy");
     return (
 
         <div className=" mx-4 py-10">
@@ -16,25 +17,25 @@ const Sympathy = () => {
             </Helmet>
             <OfferTitle />
             <PageTitleAndDescription
-                path="/birthday-flower"
-                name="Birthday"
-                pageTitle="Birthday Flower"
-                title="Happy Birthday Flowers"
-                borderBG="bg-slate-400"
-                des1="Our birthday flowers include fresh roses, daisies, and more! Whether your happy birthday flower delivery is sent to home or office, Need your birthday flowers today? "
-                textLink1="birthday-flower"
-                linkName1="same-day-birthday-delivery"
-                des2="is available! With"
-                textLink2="birthday-flower"
-                linkName2="same-day-birthday-delivery"
-                des3=" on orders placed by 2PM, no one has to know whether you ordered weeks ago or this morning. "
+                path="/sympathy-flower"
+                name="Sympathy"
+                pageTitle="Sympathy"
+                title="Sympathy"
+                borderBG="bg-slate-900"
+                des1="Our wide selection of flowers and gifts, from hand-arranged flowers to gourmet fruit baskets, provide a tasteful means to express your deepest condolences."
+                textLink1=""
+                linkName1=""
+                des2="Appropriate to send to the home or office, "
+                textLink2=""
+                linkName2=""
+                des3=" each gift includes your personal sympathy message."
             />
             <div className="grid grid-cols-8 gap-5 mt-4">
                 <div className="col-span-2 md:pt-10">
                     <LeftFilter />
                 </div>
                 <div className="col-span-6">
-                    <SortBy />
+                    <SortBy length={sympathyAll?.length}/>
                     <div className="">
                         <SympathyContent />
                     </div>

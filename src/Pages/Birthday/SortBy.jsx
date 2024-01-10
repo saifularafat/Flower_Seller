@@ -1,11 +1,8 @@
-import useAllFlowers from "../../api/useAllFlowers";
 
-const SortBy = () => {
-    const [flowerAll] = useAllFlowers();
-    const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
+const SortBy = ({length}) => {
     return (
         <div className="flex items-center justify-between pb-2">
-            <p className="font-medium text-lg">{birthDays.length} Result</p>
+            <p className="font-medium text-lg">{length} Result</p>
             <div className="flex items-center gap-2">
                 <h4 className="text-lg font-bold">Sort by</h4>
                 <div className="relative transition-all duration-300">

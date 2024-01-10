@@ -116,11 +116,11 @@ const EditItemFlower = () => {
                                 <option value="mom">Mom</option>
                                 <option value="her">Her</option>
                                 <option value="bestFriend">Best Friend</option>
+                                <option value="love">love</option>
                                 <option value="teacher">Teacher</option>
                                 <option value="student">Student</option>
                                 <option value="client">Client</option>
                                 <option value="employee">Employee</option>
-                                <option value="lover">Lover</option>
                                 <option value="kids">Kids</option>
                             </select>
                         </div>
@@ -134,6 +134,7 @@ const EditItemFlower = () => {
                                 <option value="red">Red</option>
                                 <option value="purple">Purple</option>
                                 <option value="white">white</option>
+                                <option value="black">Black</option>
                                 <option value="pink">Pink</option>
                                 <option value="green">Green</option>
                                 <option value="blue">Blue</option>

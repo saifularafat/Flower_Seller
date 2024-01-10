@@ -80,7 +80,7 @@ const AddItem = () => {
                                 <span className="label-text text-lg  font-semibold">Flower Price*</span>
                             </label>
                             <input
-                                type="number"
+                                type="text"
                                 placeholder="Flower Price"
                                 {...register("price", { required: true, maxLength: 120 })}
                                 className="input input-bordered w-full text-base"
@@ -96,7 +96,7 @@ const AddItem = () => {
                                 <span className="label-text text-lg  font-semibold">Offer Price</span>
                             </label>
                             <input
-                                type="number"
+                                type="text"
                                 placeholder="Offer Price"
                                 {...register("offerPrice", { maxLength: 120 })}
                                 className="input input-bordered w-full text-base"
@@ -126,6 +126,7 @@ const AddItem = () => {
                                 <option value="mom">Mom</option>
                                 <option value="her">Her</option>
                                 <option value="bestFriend">Best Friend</option>
+                                <option value="love">love</option>
                                 <option value="teacher">Teacher</option>
                                 <option value="student">Student</option>
                                 <option value="client">Client</option>
@@ -143,6 +144,7 @@ const AddItem = () => {
                                 <option value="red">Red</option>
                                 <option value="purple">Purple</option>
                                 <option value="white">white</option>
+                                <option value="black">Black</option>
                                 <option value="pink">Pink</option>
                                 <option value="green">Green</option>
                                 <option value="blue">Blue</option>

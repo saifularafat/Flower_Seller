@@ -154,10 +154,8 @@ const SignIn = () => {
                                             color="#FF3811"
                                             size={18} />
                                             :
-                                            'Sign In'
+                                            'sign in'
                                     }
-                                    sign in
-
                                 </button>
                             </div>
                             <p className='px-6 text-lg text-center text-title-color'>

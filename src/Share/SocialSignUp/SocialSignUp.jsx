@@ -9,7 +9,6 @@ const SocialSignIn = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
     const {
         setLoading,
         googleSignIn,
@@ -21,11 +20,11 @@ const SocialSignIn = () => {
             .then(result => {
                 const loggedUser = result.user;
 
-                axios.post(`${import.meta.env.LOCAL_API_URL}/users`, {
+                axios.post(`${import.meta.env.VITE_API_URL}/users`, {
                     name: loggedUser.displayName,
                     email: loggedUser.email,
                     image: loggedUser.photoURL,
-                    role: "client",
+                    role: loggedUser.role,
                 })
                     .then(() => {
                         Swal.fire({

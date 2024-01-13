@@ -7,7 +7,7 @@ const SignIn = () => {
     const {
         user,
         logOut } = useAuth();
-    const isAdmin = true;
+    const isAdmin = false;
 
     const handlerLogOut = () => {
         logOut()

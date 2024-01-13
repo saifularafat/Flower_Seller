@@ -80,6 +80,7 @@ import StripePayment from "../Pages/Payment/StripePament/StripePayment";
 import SSLPayment from "../Pages/Payment/SSLPayment/SSLPayment";
 import CashOnDeliveryPayment from "../Pages/Payment/CashOnDeliveryPayment/CashOnDeliveryPayment";
 import FlowerDetails from "../Pages/FlowerDetails/FlowerDetails";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -144,7 +145,7 @@ const router = createBrowserRouter([
             /* side page link */
             {
                 path: "my-order",
-                element: <MyOrder />
+                element: <PrivateRouter><MyOrder /></PrivateRouter> 
             },
             {
                 path: "chocolate-gift",
@@ -180,7 +181,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/paymentOption/:id",
-                element: <PaymentOption />
+                element: <PrivateRouter><PaymentOption /></PrivateRouter> 
             },
             {
                 path: "/paymentOption/:id",
@@ -217,7 +218,7 @@ const router = createBrowserRouter([
     /* // Dashboard  */
     {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <PrivateRouter><Dashboard /></PrivateRouter>,
         children: [
             /* Admin link  */
             {

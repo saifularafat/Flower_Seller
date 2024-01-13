@@ -6,6 +6,8 @@ const BirthdayContainer = () => {
     const [cartAdd, setCartAdd] = useState(false);
     const [flowerAll] = useAllFlowers();
     const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
+    const totalNumber = birthDays.length;
+    console.log(totalNumber);
 
     return (
         <div className="grid md:grid-cols-3 grid-cols-2 gap-5 ">

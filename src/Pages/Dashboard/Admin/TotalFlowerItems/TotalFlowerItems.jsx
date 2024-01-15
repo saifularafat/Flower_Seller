@@ -5,6 +5,8 @@ import DashboardTitle from "../../../../components/DashboardTitle";
 import { GiFlowers } from "react-icons/gi";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 
 const TotalFlowerItems = () => {
@@ -78,13 +80,13 @@ const TotalFlowerItems = () => {
                                         <div className="text-sm opacity-50">{flower?.recipient}</div>
                                     </div>
                                     <td><span className="text-base font-medium">{flower?.flowerCategory}</span> <br />
-                                    <span className="text-xs">{flower?.color}</span></td>
+                                        <span className="text-xs">{flower?.color}</span></td>
                                     <th>
-                                        <p className="btn-sm">{flower?.price +"$"} <br /><span className="text-sm font-medium">{flower?.offerPrice}{flower?.offerPrice && <>$</>}</span></p>
+                                        <p className="btn-sm">{flower?.price + "$"} <br /><span className="text-sm font-medium">{flower?.offerPrice}{flower?.offerPrice && <>$</>}</span></p>
                                     </th>
                                     <div className="flex item-center gap-2 pt-4">
-                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md py-1 hover:bg-blue-300 hover:text-slate-950 bg-green-400 text-white btn-sm transition-all duration-200 tracking-wider font-semibold">Edit</Link>
-                                        <button onClick={() => itemDelete(flower)} className="rounded-md py-1 hover:bg-red-300 hover:text-slate-950 bg-red-600 text-slate-700 btn-sm transition-all duration-200 tracking-wider font-semibold">Delate</button>
+                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md p-[6px] hover:bg-blue-200 hover:text-green-600 bg-green-400 text-white transition-all duration-200"><FaEdit className="text-2xl"/></Link>
+                                        <button onClick={() => itemDelete(flower)} className="rounded-md p-[6px] hover:bg-red-200 hover:text-red-600 bg-red-600 text-slate-700 transition-all duration-200"><MdDelete className="text-2xl"/></button>
                                     </div>
                                 </tr>
                             </tbody>

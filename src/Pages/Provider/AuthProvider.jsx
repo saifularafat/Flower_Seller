@@ -52,19 +52,19 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            // if (currentUser) {
-            //     axios
-            //         .post(`${import.meta.env.LOCAL_API_URL}`, {
-            //             email: currentUser.email,
-            //         })
-            //         .then((data) => {
-            //             localStorage.setItem("token_access", data.data.token);
-            //             setLoading(false);
-            //         });
-            // } else {
-            //     localStorage.removeItem("token_access");
-            // }
             setLoading(false);
+            if (currentUser) {
+                axios
+                    .post(`${import.meta.env.VITE_API_URL}/jwt`, {
+                        email: currentUser.email,
+                    })
+                    .then((data) => {
+                        localStorage.setItem("access_token", data.data.token);
+                        setLoading(false);
+                    });
+            } else {
+                localStorage.removeItem("access_token");
+            }
         });
         return () => {
             return unsubscribe();

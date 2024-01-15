@@ -8,7 +8,7 @@ const SignIn = () => {
         user,
         logOut } = useAuth();
         /* TODO: admin link and component */
-    const isAdmin = false;
+    const isAdmin = true;
 
     const handlerLogOut = () => {
         logOut()

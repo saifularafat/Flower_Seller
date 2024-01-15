@@ -9,7 +9,7 @@ import { BiSolidFlorist } from "react-icons/bi";
 import Swal from "sweetalert2";
 const Dashboard = () => {
     const { user, logOut } = useAuth()
-    const isAdmin = false;
+    const isAdmin = true;
 
     const handlerLogOut = () => {
         logOut()

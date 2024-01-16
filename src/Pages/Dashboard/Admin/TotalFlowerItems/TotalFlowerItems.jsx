@@ -5,13 +5,13 @@ import DashboardTitle from "../../../../components/DashboardTitle";
 import { GiFlowers } from "react-icons/gi";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { BiSolidEdit } from "react-icons/bi";
 
 
 const TotalFlowerItems = () => {
     const [flowerAll, refetch] = useAllFlowers();
-    console.log(flowerAll);
+    // console.log(flowerAll);
     const itemDelete = (flower) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -85,8 +85,8 @@ const TotalFlowerItems = () => {
                                         <p className="btn-sm">{flower?.price + "$"} <br /><span className="text-sm font-medium">{flower?.offerPrice}{flower?.offerPrice && <>$</>}</span></p>
                                     </th>
                                     <div className="flex item-center gap-2 pt-4">
-                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md p-[6px] hover:bg-blue-200 hover:text-green-600 bg-green-400 text-white transition-all duration-200"><FaEdit className="text-2xl"/></Link>
-                                        <button onClick={() => itemDelete(flower)} className="rounded-md p-[6px] hover:bg-red-200 hover:text-red-600 bg-red-600 text-slate-700 transition-all duration-200"><MdDelete className="text-2xl"/></button>
+                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md p-1 hover:bg-blue-200 hover:text-green-600 bg-green-400 text-white transition-all duration-200"><BiSolidEdit className="text-xl"/></Link>
+                                        <button onClick={() => itemDelete(flower)} className="rounded-md p-1 hover:bg-red-200 hover:text-red-600 bg-red-600 text-slate-800 transition-all duration-200"><MdDelete className="text-xl"/></button>
                                     </div>
                                 </tr>
                             </tbody>

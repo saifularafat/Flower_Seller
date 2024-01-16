@@ -10,7 +10,7 @@ const Birthday = () => {
     const [flowerAll] = useAllFlowers();
     const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
     return (
-        <div className=" mx-4 py-10">
+        <div className=" mx-4 pb-10 pt-2">
             <Helmet>
                 <title>Flower Shop || Birthday </title>
             </Helmet>

@@ -189,7 +189,7 @@ const EditItemFlower = () => {
                                 rows="3"
                                 defaultValue={editFlower?.flowerDetails}
                                 placeholder="Please Type The Flower Description"
-                                {...register("flowerDetails", { required: true })}
+                                {...register("flowerDetails")}
                                 className="border border-slate-300 rounded-md overflow-hidden w-full p-2"
                             >
 

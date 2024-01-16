@@ -9,7 +9,7 @@ const FlowerDetails = () => {
     console.log(id, "full Details =>", singleFlower);
     return (
         <>
-            <div className="grid md:grid-cols-5 grid-cols-3 gap-5 py-6">
+            <div className="grid md:grid-cols-5 grid-cols-3 gap-5 py-6 container mx-auto">
                 <div className="md:col-span-2 col-span-1">
                     <div className=" md:flex items-center rounded-lg overflow-hidden">
                         <div className="w-1/5 md:block hidden">

@@ -53,7 +53,7 @@ const SignUp = () => {
                         console.log(result);
                         updateUserProfile(data.name, imageAdders)
                             .then(() => {
-                                axios.post(`${import.meta.env.LOCAL_API_URL}/users`, {
+                                axios.post(`${import.meta.env.VITE_API_URL}/users`, {
                                     name: data.name,
                                     email: data.email,
                                     image: imageAdders,

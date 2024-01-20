@@ -7,9 +7,10 @@ import img from "../assets/othersImg/avater.png"
 import { BiSolidFlorist } from "react-icons/bi";
 
 import Swal from "sweetalert2";
+import useAdmin from "../api/useAdmin";
 const Dashboard = () => {
     const { user, logOut } = useAuth()
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     const handlerLogOut = () => {
         logOut()

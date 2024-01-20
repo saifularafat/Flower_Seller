@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../api/useAuth";
 import img from "../../../assets/othersImg/avater.png"
 import Swal from "sweetalert2";
+import useAdmin from "../../../api/useAdmin";
 const SignIn = () => {
-
     const {
         user,
         logOut } = useAuth();
-        /* TODO: admin link and component */
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     const handlerLogOut = () => {
         logOut()
@@ -46,8 +45,11 @@ const SignIn = () => {
             </div>
             <div className="absolute hidden top-13 text-slate-500 bg-slate-50 z-50 px-4 py-1 w-44 border border-slate-400 shadow-2xl group-hover:block rounded overflow-hidden">
                 <div className="border-0 border-b-[2px] border-slate-400 pb-3">
+                    {/* {
+                    user && <OrderButton />
+                } */}
                     {
-                        user && (
+                        user ? (
                             <button className="">
                                 {
                                     isAdmin ? <Link to="/dashboard/adminHome" className="text-xs font-medium hover:underline leading-none">
@@ -60,10 +62,13 @@ const SignIn = () => {
                                 }
                             </button>
                         )
+                            :
+                            <></>
                     }
 
                     {
-                        isAdmin ?
+                        user &&
+                            isAdmin ?
                             <>
                                 <br />
                                 <Link to="/dashboard/adminProfile" className="text-xs font-medium hover:underline leading-none">

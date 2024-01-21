@@ -42,10 +42,10 @@ const CashOnDeliveryPayment = () => {
                 <div className="grid grid-cols-5 gap-5">
                     <div className="col-span-3 text-center">
                         <div className="w-1/2 mx-auto">
-                            <img src={singleFlower?.flowerImg} loading="lazy" alt="flower" className="w-60 h-60 mx-auto rounded border-2 border-solid border-slate-500" />
+                            <img src={singleFlower?.flowerImg} loading="lazy" alt="flower" className="md:w-60 md:h-60 mx-auto rounded border-2 hover:scale-105 transition-all duration-200 border-solid border-slate-500" />
                         </div>
-                        <h2 className="text-base font-semibold">{singleFlower?.flowerName} </h2>
-                        <h4 className="text-xl font-semibold">Price : {singleFlower?.price}</h4>
+                        <h2 className="md:text-xl text-base font-semibold">{singleFlower?.flowerName} </h2>
+                        <h4 className="text-xl font-semibold">Price : {singleFlower?.price+'$'}</h4>
                         <h4 className="text-lg font-semibold">Cash On Delivery Charge <span className="text-xl">2$</span></h4>
                         <hr />
                         <h1 className="text-xl font-medium">Total Amount = <span className="text-2xl ">91$</span></h1>

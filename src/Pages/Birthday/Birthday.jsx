@@ -34,7 +34,9 @@ const Birthday = () => {
                     <LeftFilter />
                 </div>
                 <div className="col-span-6">
-                    <SortBy length={birthDays?.length} />
+                    <SortBy length={birthDays?.length} 
+                    setCategory={flowerAll}
+                    />
                     <div className="">
                         <BirthdayContainer />
                     </div>

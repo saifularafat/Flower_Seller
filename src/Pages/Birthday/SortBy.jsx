@@ -1,10 +1,16 @@
 import axios from "axios";
 
-const SortBy = ({ length,setCategory }) => {
+const SortBy = ({ length, category}) => {
 
+    /* Ascending Descending handler */
     const handleDescendingPrice = () => {
         axios.get(`${import.meta.env.VITE_API_URL}/descendingPrice`)
-            .then(res => setCategory(console.log(res.data, "click the button ")))
+            .then(res => category(console.log(res.data, "click the button ")))
+            .catch(error => console.log(error))
+    }
+    const handlerAscending = () => {
+        axios.get(`${import.meta.env.VITE_API_URL}/ascendingPrice`)
+            .then(res => category(console.log(res.data, "click the button ascending ")))
             .catch(error => console.log(error))
     }
     return (
@@ -14,19 +20,22 @@ const SortBy = ({ length,setCategory }) => {
                 <h4 className="text-lg font-bold">Sort by</h4>
                 <div className="relative transition-all duration-300">
                     <div>
-                        <select
+                        <button onClick={handlerAscending}>ascending</button>
+                        <button onClick={handleDescendingPrice}>Descending</button>
+                        {/* <select
                             id=""
                             name=""
                             onChange={() => { }}
                             className="px-2 py-1 text-base font-medium border border-slate-700 rounded-md placeholder:text-sm placeholder:capitalize text-slate-700 outline-none">
-                            <option value="pricing" defaultValue="Thanksgiving">pricing</option>
-                            {/* <option value="lowToHight"> */}
-                                <button onClick={handleDescendingPrice}>
-                                    Price: Low To Hight
-                                </button>
-                            {/* </option> */}
-                            <option value="hightToLow" onClick="">Price: Hight To Low</option>
-                        </select>
+                            <option value="pricing" defaultValue="pricing" onClick={console.log("this pricing button")}>pricing</option>
+                            <option value="lowToHight" onClick={
+                                console.log("this Descending Price")
+                                // handleDescendingPrice
+                                }>
+                                Price: Low To Hight
+                            </option>
+                            <option value="hightToLow" onClick={handlerAscending}>Price: Hight To Low</option>
+                        </select> */}
                     </div>
                 </div>
             </div>

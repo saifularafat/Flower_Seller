@@ -3,12 +3,8 @@ import OfferTitle from "../../components/OfferTitle";
 import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import BirthdayContainer from "./BirthdayContainer";
 import LeftFilter from "./LeftFilter";
-import SortBy from "./SortBy";
-import useAllFlowers from "../../api/useAllFlowers";
 
 const Birthday = () => {
-    const [flowerAll] = useAllFlowers();
-    const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
     return (
         <div className=" mx-4 pb-10 pt-2">
             <Helmet>
@@ -34,9 +30,7 @@ const Birthday = () => {
                     <LeftFilter />
                 </div>
                 <div className="col-span-6">
-                    <SortBy length={birthDays?.length} 
-                    setCategory={flowerAll}
-                    />
+                   
                     <div className="">
                         <BirthdayContainer />
                     </div>

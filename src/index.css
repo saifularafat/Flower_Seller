@@ -15,6 +15,16 @@
 .formLabel {
   @apply text-lg font-bold text-slate-900;
 }
+/* top header style */
+.top_header_one{
+  @apply py-3 px-3 border-t-0  border-b-[2px] border-solid border-slate-100 hover:border-b-[2px] hover:border-t-0 hover:border-b-slate-800 transition-all duration-300 opacity-60 hover:opacity-100
+}
+.top_header_two{
+  @apply py-3 px-3 border-t-0  border-b-[2px] border-l-[0.5px] border-r-[0.5px] border-solid border-slate-100 hover:border-b-[2px] hover:border-t-0 hover:border-b-slate-800 transition-all duration-300 opacity-60 hover:opacity-100
+}
+.top_header_three{
+  @apply py-3 px-3 border-t-0  border-b-[2px]  border-solid border-slate-100 hover:border-b-[2px] hover:border-t-0 hover:border-b-slate-800 transition-all duration-300 opacity-60 hover:opacity-100
+}
 .social_style {
   @apply flex justify-center items-center space-x-2 border p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer w-full;
 }

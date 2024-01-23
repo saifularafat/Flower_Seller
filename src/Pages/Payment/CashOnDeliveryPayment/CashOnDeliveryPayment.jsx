@@ -19,19 +19,22 @@ const CashOnDeliveryPayment = () => {
     let amount = parseFloat(singleFlower?.price);
     let tex = parseFloat(amount * 9 / 100);
     const texFixed = tex.toFixed(2);
-    let totalAmount = amount + tex;
+    const deliveryCharge = 1.10;
+    let totalAmount = amount + tex + deliveryCharge;
     const totalPrice = totalAmount.toFixed(2);
+    console.log(texFixed);
 
     const onSubmit = data => {
-        console.log(data);
+        /* TODO POST THE PAYMENT */
         const conformPayment = {
-            flowerImage: data.image,
-            flowerName: data.name,
-            flowerPrice: data.price,
-            deliveryCharge: "2$",
-            CurrentAddress: data.CurrentAddress,
-            userPhoneNumber: data.userPhoneNumber,
-            userEmail: data.userEmail,
+            image: singleFlower?.flowerImg,
+            name: singleFlower?.flowerName,
+            price: amount,
+            totalPrice: totalPrice,
+            charge: texFixed,
+            currentAddress: data.CurrentAddress,
+            PhoneNumber: data.userPhoneNumber,
+            email: data.userEmail,
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);
@@ -45,12 +48,37 @@ const CashOnDeliveryPayment = () => {
                         <div className="w-1/2 mx-auto">
                             <img src={singleFlower?.flowerImg} loading="lazy" alt="flower" className="md:w-60 md:h-60 mx-auto rounded border-2 hover:scale-105 transition-all duration-200 border-solid border-slate-500" />
                         </div>
-                        <h2 className="md:text-xl text-base font-semibold">{singleFlower?.flowerName} </h2>
-                        <h4 className="text-xl font-semibold">Price : {singleFlower?.price + '$'}</h4>
-                        <h4 className="text-lg font-semibold">Cash On Delivery Charge <span className="text-xl">: {texFixed + "$"}</span></h4>
-                        <hr />
-                        <h1 className="text-xl font-medium">Total Amount = <span className="text-2xl ">{totalPrice + "$"}</span></h1>
-                        <p className="text-red-700">Delivery Duration Time is 7 Day!</p>
+                        <div className="overflow-x-auto">
+                        <h2 className="md:text-xl text-base font-semibold pt-2">{singleFlower?.flowerName}</h2>
+                            <table className="table table-zebra w-3/4 mx-auto">
+                                {/* head */}
+                                <thead>
+                                    <tr>
+                                        <th className="text-base text-slate-900">Info </th>
+                                        <th className="text-base text-slate-900">Amount </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="text-base">Price</td>
+                                        <td className="text-base">{singleFlower?.price + '$'}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-base">Delivery Charge</td>
+                                        <td className="text-base">{deliveryCharge.toFixed(2) + "$"}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-base">Tex</td>
+                                        <td className="text-base">{texFixed + "$"}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-base font-semibold uppercase">Total Amount</td>
+                                        <td className="text-lg font-semibold">{totalPrice + "$"}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className="text-red-700">Delivery Duration Time is 7 Day!</p> 
                     </div>
                     <div className="col-span-2">
                         <label className="label">

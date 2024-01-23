@@ -7,6 +7,13 @@ const FlowerDetails = () => {
     const singleFlower = flowerAll.find(flower => flower._id === id);
     // const { flowerImg } = singleFlower;
     console.log(id, "full Details =>", singleFlower);
+
+    let amount = parseFloat(singleFlower?.price);
+    let tex = parseFloat(amount * 9 / 100);
+    const texFixed = tex.toFixed(2);
+    const deliveryCharge = 1.10;
+    let totalAmount = amount + tex + deliveryCharge;
+    const totalPrice = totalAmount.toFixed(2);
     return (
         <>
             <div className="grid md:grid-cols-5 grid-cols-3 gap-5 py-6 container mx-auto">
@@ -28,21 +35,17 @@ const FlowerDetails = () => {
                         <p className="text-xl font-semibold">Flower Price</p>
                         <p className="text-xl font-semibold">{singleFlower?.offerPrice ? <>{singleFlower?.offerPrice + "$"}</> : <>{singleFlower?.price + "$"}</>}</p>
                     </div>
-                    <div className="flex items-center justify-between shadow-md rounded-md md:w-2/3 md:p-3 w-full p-1">
-                        <p className="text-xl font-semibold">Quantity</p>
-                        <p className="text-xl font-semibold"></p>
-                    </div>
                     <div className="flex items-center justify-between shadow-lg rounded-md md:w-2/3 md:p-3 w-full p-1">
                         <p className="text-xl font-semibold">Delivery Charge</p>
-                        <p className="text-xl font-semibold">{"2$"}</p>
+                        <p className="text-xl font-semibold">{deliveryCharge.toFixed(2) + "$"}</p>
                     </div>
                     <div className="flex items-center justify-between shadow-lg rounded-md md:w-2/3 md:p-3 w-full p-1">
                         <p className="text-xl font-semibold">Product Tex</p>
-                        <p className="text-xl font-semibold">{".75$"}</p>
+                        <p className="text-xl font-semibold">{texFixed + "$"}</p>
                     </div>
                     <div className="flex items-center justify-between shadow-md rounded-md md:w-2/3 md:p-3 w-full p-1">
                         <p className="text-xl font-semibold">Total Amount</p>
-                        <p className="text-xl font-semibold"></p>
+                        <p className="text-xl font-semibold">{totalPrice + "$"}</p>
                     </div>
 
                     <div className="flex items-center bg-slate-600 justify-between shadow-2xl rounded-md md:w-2/3 md:p-3 w-full p-1 my-6">

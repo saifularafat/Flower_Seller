@@ -16,17 +16,11 @@ const CashOnDeliveryPayment = () => {
         formState: { errors },
     } = useForm();
 
-    //!! TODO total Amount 
-    let amount = (singleFlower?.price);
-    let tex = amount * 9 / 100;
-    const texFixed = tex.toFixed(2)
-    let totalAmount = (amount + tex)
-    const numberTotal = parseInt(totalAmount)
-    // const totalAmount = ;
-
-    console.log(totalAmount);
-    // const tex = 
-    // const totalAmount = 
+    let amount = parseFloat(singleFlower?.price);
+    let tex = parseFloat(amount * 9 / 100);
+    const texFixed = tex.toFixed(2);
+    let totalAmount = amount + tex;
+    const totalPrice = totalAmount.toFixed(2);
 
     const onSubmit = data => {
         console.log(data);
@@ -53,9 +47,9 @@ const CashOnDeliveryPayment = () => {
                         </div>
                         <h2 className="md:text-xl text-base font-semibold">{singleFlower?.flowerName} </h2>
                         <h4 className="text-xl font-semibold">Price : {singleFlower?.price + '$'}</h4>
-                        <h4 className="text-lg font-semibold">Cash On Delivery Charge <span className="text-xl">: {tex.toFixed(2) + "$"}</span></h4>
+                        <h4 className="text-lg font-semibold">Cash On Delivery Charge <span className="text-xl">: {texFixed + "$"}</span></h4>
                         <hr />
-                        <h1 className="text-xl font-medium">Total Amount = <span className="text-2xl ">{ numberTotal + "$"}</span></h1>
+                        <h1 className="text-xl font-medium">Total Amount = <span className="text-2xl ">{totalPrice + "$"}</span></h1>
                         <p className="text-red-700">Delivery Duration Time is 7 Day!</p>
                     </div>
                     <div className="col-span-2">

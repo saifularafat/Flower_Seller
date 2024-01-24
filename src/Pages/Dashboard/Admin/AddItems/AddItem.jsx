@@ -162,7 +162,7 @@ const AddItem = () => {
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
                                 <option value="disney">disney</option>
-                                <option value="occasions">Occasions</option>
+                                <option value="valentines">Valentines</option>
                                 <option value="sympathy">Sympathy</option>
                                 <option value="plants">Plants</option>
                                 <option value="giftsMore">Gifts & More</option>

@@ -6,7 +6,7 @@ import ThanksGiving from "../Pages/ThanksGiving/ThanksGiving";
 import Birthday from "../Pages/Birthday/Birthday";
 import IndependenceDay from "../Pages/IndependenceDay/IndependentDay";
 import Disney from "../Pages/Disney/Disney";
-import Occasions from "../Pages/Occasions/Occasions";
+import Valentines from "../Pages/Valentines/Valentines";
 import Sympathy from "../Pages/Sympathy/Sympathy";
 import Flowers from "../Pages/Flowers/Flowers";
 import Plants from "../Pages/Plants/Plants";
@@ -110,8 +110,8 @@ const router = createBrowserRouter([
                 element: <Disney />
             },
             {
-                path: "occasions-flower",
-                element: <Occasions />
+                path: "valentineDay-flower",
+                element: <Valentines />
             },
             {
                 path: "sympathy-flower",

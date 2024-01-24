@@ -30,7 +30,6 @@ const Birthday = () => {
                     <LeftFilter />
                 </div>
                 <div className="col-span-6">
-                   
                     <div className="">
                         <BirthdayContainer />
                     </div>

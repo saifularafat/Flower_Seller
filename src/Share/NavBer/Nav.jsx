@@ -20,6 +20,13 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
+                        to="valentineDay-flower"
+                        className={({ isActive }) => (isActive ? "activeNav" : "defaultNav")}>
+                        valentine's
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
                         to="independenceday-flower"
                         className={({ isActive }) => (isActive ? "activeNav" : "defaultNav")}>
                         IndependenceDay
@@ -30,13 +37,6 @@ const Nav = () => {
                         to="disney-flower"
                         className={({ isActive }) => (isActive ? "activeNav" : "defaultNav")}>
                         DISNEY
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to="occasions-flower"
-                        className={({ isActive }) => (isActive ? "activeNav" : "defaultNav")}>
-                        occasions
                     </NavLink>
                 </li>
                 <li>

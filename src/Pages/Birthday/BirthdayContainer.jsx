@@ -8,7 +8,7 @@ const BirthdayContainer = () => {
     const [flowerAll] = useAllFlowers();
     const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
     const totalNumber = birthDays.length;
-    console.log(totalNumber);
+    console.log(flowerAll);
 
     return (
         <>

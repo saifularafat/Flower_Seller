@@ -8,8 +8,7 @@ const Search = () => {
     const [showTheDiv, setShowTheDiv] = useState(false);
     const [clickCount, setClickCount] = useState(0);
     const [selectedItemId, setSelectedItemId] = useState(null);
-
-    console.log(flowerSingle);
+    
     const handelSearch = () => {
         fetch(`${import.meta.env.VITE_API_URL}/searchFiledFlower/${searchText}`)
             .then(res => res.json())
@@ -29,7 +28,7 @@ const Search = () => {
 
     return (
         <>
-            <div className="w-10/12 mx-auto flex items-center relative">
+            <div className="md:w-10/12 mx-auto flex items-center relative">
                 <input
                     type="text"
                     name=""
@@ -37,11 +36,11 @@ const Search = () => {
                     onChange={(e) => setSearchText(e.target.value)}
                     onFocus={handleInputField}
                     placeholder="please search your flower!"
-                    className="w-full px-3 py-2 border-2 border-slate-200 rounded-l-md outline-none"
+                    className="w-full md:px-3 md:py-2 border-2 border-slate-200 rounded-l-md outline-none"
                 />
                 <button
                     onClick={handelSearch}
-                    className="bg-blue-900 text-white py-2 px-4 border-2 border-blue-900">Search</button>
+                    className="bg-blue-900 text-white md:py-2 md:px-4 border-2 border-blue-900 rounded-r-md">Search</button>
             </div>
             {
                 Array.isArray(flowerSingle) && flowerSingle.length > 0 && showTheDiv && (
@@ -51,12 +50,12 @@ const Search = () => {
                                 <div key={flowers?._id} onClick={() => handleClickItem(flowers?._id)}>
                                     {/* {selectedItemId === flowers?._id && ( */}
                                         <Link to={`/flowerDetails/${flowers?._id}`} className="">
-                                            <div className=" py-3 w-full hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
+                                            <div className=" py-1 w-full hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
                                                 <img src={flowers?.flowerImg} loading='lazy' alt="flower" className="w-16 h-16 mx-auto object-cover hover:scale-105 duration-200 transition-all" />
-                                                <div className="px-2 pt-2">
+                                                <div className="px-1 pt-1">
                                                     <h4 className="text-sm font-medium leading-tight">{flowers?.flowerName}</h4>
                                                 </div>
-                                                <div className="flex items-center justify-between p-2">
+                                                <div className="flex items-center justify-between p-1">
                                                     <p>
                                                         {flowers?.offerPrice && <span className="text-xs font-medium pr-2">{flowers?.offerPrice}</span>}
                                                         <span className={`text-xs font-medium ${flowers?.offerPrice && "line-through text-red-700"}`}>{flowers?.price + "$"}</span>

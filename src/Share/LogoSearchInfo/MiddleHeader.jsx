@@ -127,7 +127,7 @@ const MiddleHeader = () => {
             <div className="md:w-1/12 w-1/2 md:block hidden">
                 <Logo />
             </div>
-            <div className="w-8/12 md:block hidden relative">
+            <div className="md:w-8/12 w-full relative">
                 <Search />
             </div>
             <div className=" md:w-1/5 md:block hidden">

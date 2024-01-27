@@ -87,7 +87,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Main />,
         loader: () => fetch(`${import.meta.VITE_API_URL}/flowersAll`),
-        errorElement: <Error />,
+        errorElement: <Error />,sli
         children: [
             /* main page link */
             {

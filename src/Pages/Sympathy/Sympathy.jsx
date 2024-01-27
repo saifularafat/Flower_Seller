@@ -11,7 +11,7 @@ const Sympathy = () => {
     const sympathyAll = flowerAll.filter(sympathy => sympathy.flowerCategory === "sympathy");
     return (
 
-        <div className=" mx-4 py-10">
+        <div className=" mx-4 py-2">
             <Helmet>
                 <title>Flower Shop || Sympathy </title>
             </Helmet>
@@ -30,7 +30,7 @@ const Sympathy = () => {
                 linkName2=""
                 des3=" each gift includes your personal sympathy message."
             />
-            <div className="grid grid-cols-8 gap-5 mt-4">
+            <div className="grid md:grid-cols-8 gap-5 md:mt-4">
                 <div className="col-span-2 md:pt-10">
                     <LeftFilter />
                 </div>

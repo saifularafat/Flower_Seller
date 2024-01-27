@@ -17,13 +17,13 @@ const SortBy = ({ length, category }) => {
     }
     return (
         <div className="flex items-center justify-between pb-2">
-            <p className="font-medium text-lg">{length} Result</p>
+            <p className="md:font-medium text-sm md:text-lg">{length} Result</p>
             <div className="flex items-center gap-2">
-                <h4 className="text-lg font-bold">Sort by</h4>
+                <h4 className="md:text-lg md:font-bold font-medium">Sort by</h4>
                 <div className="relative transition-all duration-300">
                     <div>
-                        <button onClick={handlerAscending}>ascending</button>
-                        <button onClick={handleDescendingPrice}>Descending</button>
+                        <button onClick={handlerAscending}>ascend</button>
+                        <button onClick={handleDescendingPrice}>Descend</button>
                         {/* <select
                             id=""
                             name=""

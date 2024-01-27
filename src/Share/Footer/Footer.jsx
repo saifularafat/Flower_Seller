@@ -57,16 +57,16 @@ const Footer = () => {
                 </div>
                 <div className="text-left hidden md:block">
                     <h2 className="md:text-lg font-bold pb-2 uppercase">Follow us</h2>
-                    <div className="grid md:grid-cols-4 grid-cols-3 gap-3">
+                    <div className="grid lg:grid-cols-4 grid-cols-3 gap-3">
                         <Link to="" className="bg-green-500 w-10 h-10 rounded-lg"><FaFacebookF className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                         <Link to="" className="bg-orange-800 w-10 h-10 rounded-lg"><FaInstagram className="translate-x-1/3 translate-y-1/3 text-2xl" /></Link>
                         <Link to="" className="bg-black w-10 h-10 rounded-lg"><FaXTwitter className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                         <Link to="" className="bg-red-800 w-10 h-10 rounded-lg"><FaPinterestP className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                         <Link to="" className="bg-red-800 w-10 h-10 rounded-lg"><FaYoutube className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                     </div>
-                    <div className="mt-5 flex items-center">
+                    <div className="mt-5 flex items-center md:hidden lg:block">
                         <input type="text" placeholder="search your flower?" className="py-2 pl-2 rounded-l-lg outline-none text-slate-900 text-base" />
-                        <input type="submit" value="Submit" className="bg-blue-900 p-2 rounded-r-lg" />
+                        <input type="submit" value="Submit" className="bg-blue-900 p-2 rounded-r-lg " />
                     </div>
                 </div>
             </div>

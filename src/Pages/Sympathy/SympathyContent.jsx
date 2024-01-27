@@ -17,17 +17,17 @@ const SympathyContent = () => {
                 sympathyAll.map(sympathy =>
                     <div key={sympathy?._id} className="w-full md:h-[400px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
                         <Link to={`/flowerDetails/${sympathy?._id}`} className="">
-                            <img src={sympathy?.flowerImg} loading='lazy' alt="flower sympathy" className="w-full md:h-80 h-full object-cover hover:scale-105 duration-200 transition-all" />
+                            <img src={sympathy?.flowerImg} loading='lazy' alt="flower sympathy" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
                             <div className="px-2 pt-2">
-                                <h4 className="text-base font-semibold leading-tight">{sympathy?.flowerName}</h4>
+                                <h4 className="text-base md:font-semibold font-medium leading-tight">{sympathy?.flowerName}</h4>
                             </div>
                         </Link>
                         <div className="flex items-center justify-between p-2">
                             <p>
                                 {
-                                    sympathy?.offerPrice && <span className="text-lg font-bold pr-2">{sympathy?.offerPrice}</span>
+                                    sympathy?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{sympathy?.offerPrice}</span>
                                 }
-                                <span className={`text-lg font-bold ${sympathy?.offerPrice && "line-through text-red-700"}`}>{sympathy?.price + "$"}</span>
+                                <span className={`md:text-lg text-base md:font-bold font-bold ${sympathy?.offerPrice && "line-through text-red-700"}`}>{sympathy?.price + "$"}</span>
                             </p>
 
                             <div onClick={() => setCartAdd(!cartAdd)}>

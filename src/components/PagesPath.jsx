@@ -3,11 +3,11 @@ import {AiOutlineDoubleRight } from "react-icons/ai"
 const PagesPath = ({ path, name, title }) => {
     return (
         <div className="flex items-center gap-1 py-2">
-            <Link to="/" className="text-sm font-semibold text-blue-400 hover:underline">Home</Link>
+            <Link to="/" className="md:text-sm text-xs font-semibold text-blue-400 hover:underline">Home</Link>
             <AiOutlineDoubleRight  className="text-[9px] mt-1" />
-            <Link to={path} className="text-sm font-semibold text-blue-400 hover:underline">{name}</Link>
+            <Link to={path} className="md:text-sm text-xs font-semibold text-blue-400 hover:underline">{name}</Link>
             <AiOutlineDoubleRight className="text-[9px] mt-1" />
-            <p className="text-sm font-semibold text-blue-500">{title}</p>
+            <p className="md:text-sm text-xs font-semibold text-blue-500">{title}</p>
         </div>
     );
 };

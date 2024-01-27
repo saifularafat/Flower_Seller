@@ -24,6 +24,7 @@ const MiddleHeader = () => {
                         <HederRight />
                     </div>
                 </div>
+                {/* Mobile Menu */}
                 {
                     isMenu &&
                     <div className='absolute top-0 left-0 transition-all duration-300 w-full z-40'>
@@ -72,9 +73,9 @@ const MiddleHeader = () => {
                                 </li>
                                 <li>
                                     <NavLink
-                                        to="occasions-flower"
+                                        to="valentineDay-flower"
                                         className={({ isActive }) => (isActive ? "activeNav" : "defaultNav")}>
-                                        occasions
+                                        Valentine's
                                     </NavLink>
                                 </li>
                                 <li>

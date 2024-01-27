@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div className="md:block hidden border-0 md:border-y border-slate-300 py-2 bg-white sticky top-0 z-40">
+        <div className="md:block md:overflow-x-auto hidden border-0 md:border-y border-slate-300 py-2 bg-white sticky top-0 z-40">
             <ul className="md:flex items-center gap-7 md:mx-4 mx-2">
                 <li>
                     <NavLink

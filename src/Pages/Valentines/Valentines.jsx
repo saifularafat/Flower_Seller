@@ -17,7 +17,7 @@ const Valentines = () => {
     }
     return (
         <>
-            <div className="mx-4 pb-10">
+            <div className="mx-4 md:pb-10">
                 <PageTitleAndDescription
                     path="/valentineDay-flower"
                     name="valentineDay"
@@ -50,22 +50,22 @@ const Valentines = () => {
                         valentines.map(valentine =>
                             <div key={valentine?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden relative">
                                 <Link to={`/flowerDetails/${valentine?._id}`} className="">
-                                    <img src={valentine?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 h-full object-cover hover:scale-105 duration-200 transition-all" />
+                                    <img src={valentine?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
                                     <div className="px-2 pt-1">
-                                        <h4 className="text-base md:text-lg font-semibold leading-none">{valentine?.flowerName}</h4>
+                                        <h4 className="text-base md:font-semibold font-medium leading-tight">{valentine?.flowerName}</h4>
                                     </div>
                                 </Link>
                                 <div className="flex items-center justify-between px-2 py-1">
                                     <p>
                                         {
-                                            valentine?.offerPrice && <span className="text-lg font-bold pr-2">{valentine?.offerPrice}</span>
+                                            valentine?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{valentine?.offerPrice}</span>
                                         }
-                                        <span className={`text-lg font-bold ${valentine?.offerPrice && "line-through text-red-700"}`}>{valentine?.price + "$"}</span>
+                                        <span className={`md:text-lg text-base md:font-bold font-bold ${valentine?.offerPrice && "line-through text-red-700"}`}>{valentine?.price + "$"}</span>
                                     </p>
                                     {/* offer price show the image */}
                                     {valentine?.percent &&
-                                        <div className="absolute top-2 right-3">
-                                            <p className="bg-red-700 text-white text-sm font-medium p-1 tracking-wider rounded uppercase">save <span className="text-base">{valentine?.percent}</span></p>
+                                        <div className="absolute md:top-2 top-1 md:right-3 right-1">
+                                            <p className="bg-red-700 text-white md:text-sm text-xs font-medium md:p-1 p-[2px] tracking-wider rounded uppercase">save <span className="text-base">{valentine?.percent}</span></p>
                                         </div>
                                     }
                                     <div onClick={() => setCartAdd(!cartAdd)}>

@@ -25,11 +25,11 @@ const Birthday = () => {
                 linkName2="same-day-birthday-delivery"
                 des3=" on orders placed by 2PM, no one has to know whether you ordered weeks ago or this morning. "
             />
-            <div className="grid grid-cols-8 gap-5 mt-4">
-                <div className="col-span-2 md:pt-10">
+            <div className="grid md:grid-cols-8 gap-5 md:mt-4">
+                <div className="md:col-span-2 md:pt-10">
                     <LeftFilter />
                 </div>
-                <div className="col-span-6">
+                <div className="md:col-span-6">
                     <div className="">
                         <BirthdayContainer />
                     </div>

@@ -9,7 +9,7 @@ const LeftFilter = () => {
     const [colors, setColors] = useState(true)
     return (
         <>
-            <div className="w-8/12">
+            <div className="w-8/12 md:block hidden">
                 <h2 className="py-3 text-2xl font-semibold">Filter by</h2>
 
                 {/* first filter*/}
@@ -225,12 +225,12 @@ const LeftFilter = () => {
                         </div>
                     </div>
                 }
-
             </div>
             {/* image and content */}
-            <div className="py-10">
+            <div className="py-10 md:block hidden">
                 <img src={smileImage} alt="" className=" w-10/12 "/>
             </div>
+            {/* TODO Filter Bar */}
         </>
     );
 };

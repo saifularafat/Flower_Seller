@@ -33,10 +33,10 @@ const SignIn = () => {
             </div>
             {
                 user ?
-                    <span className="text-xs md:text-sm font-medium md:block hidden text-center group-hover:block">
+                    <span className="text-xs lg:text-sm font-medium md:block hidden text-center group-hover:block">
                         {user?.displayName}
                     </span>
-                    : <span className="text-xs md:text-sm font-medium md:block hidden text-center group-hover:block">
+                    : <span className="text-xs lg:text-sm font-medium md:block hidden text-center group-hover:block">
                         Sign In
                     </span>
             }

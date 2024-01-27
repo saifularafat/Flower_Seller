@@ -1,8 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import DashboardTitle from "../../../../components/DashboardTitle";
 import { GiFireFlower } from "react-icons/gi";
+import DataLoading from "../../../../Share/Loading/DataLoading";
 
 const AllPayment = () => {
+    // if(isLoading){
+    //     return <DataLoading />
+    // }
     return (
         <div>
             <Helmet>

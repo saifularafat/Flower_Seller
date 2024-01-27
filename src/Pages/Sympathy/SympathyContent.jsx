@@ -2,11 +2,15 @@ import { useState } from "react";
 import useAllFlowers from "../../api/useAllFlowers";
 import { Link } from "react-router-dom";
 import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
+import DataLoading from "../../Share/Loading/DataLoading";
 
 const SympathyContent = () => {
     const [cartAdd, setCartAdd] = useState(false);
-    const [flowerAll] = useAllFlowers();
+    const [flowerAll, refetch, isLoading] = useAllFlowers();
     const sympathyAll = flowerAll.filter(sympathy => sympathy.flowerCategory === "sympathy");
+    if (isLoading) {
+        return <DataLoading />
+    }
     return (
         <div className="grid md:grid-cols-3 grid-cols-2 gap-5 ">
             {

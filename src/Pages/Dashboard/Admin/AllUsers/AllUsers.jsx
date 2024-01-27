@@ -5,10 +5,11 @@ import useAllUsers from "../../../../api/useAllUser";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import axios from "axios";
+import DataLoading from "../../../../Share/Loading/DataLoading";
 
 const AllUsers = () => {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
-    const [users, refetch] = useAllUsers();
+    const [users, refetch, isLoading] = useAllUsers();
 
     const handlerMakeAdmin = (user) => {
         Swal.fire({
@@ -43,6 +44,9 @@ const AllUsers = () => {
         })
     }
 
+    if(isLoading){
+        return <DataLoading />
+    }
     const handlerDelete = (user) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -90,7 +94,7 @@ const AllUsers = () => {
                     {
                         users.map((user, index) =>
                             <tbody key={user._id}>
-                                <tr className="hover:bg-slate-200 transition-all duration-200">
+                                <tr className="hover:bg-slate-50 transition-all duration-200">
                                     <th>{index + 1}</th>
                                     <td className="text-sm">{user?.name}</td>
                                     <td className="text-sm">{user?.email}</td>

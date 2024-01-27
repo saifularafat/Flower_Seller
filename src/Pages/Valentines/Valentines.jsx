@@ -4,13 +4,17 @@ import SortBy from "../Birthday/SortBy";
 import useAllFlowers from "../../api/useAllFlowers";
 import { Link } from "react-router-dom";
 import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
+import DataLoading from "../../Share/Loading/DataLoading";
 
 const Valentines = () => {
     const [cartAdd, setCartAdd] = useState(false);
-    const [flowerAll] = useAllFlowers();
+    const [flowerAll, refetch, isLoading] = useAllFlowers();
     const valentines = flowerAll.filter(valentine => valentine.flowerCategory === "valentines");
     const totalNumber = valentines.length;
-    console.log(valentines);
+
+    if (isLoading) {
+        return <DataLoading />
+    }
     return (
         <>
             <div className="mx-4 pb-10">

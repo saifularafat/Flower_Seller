@@ -3,17 +3,14 @@ import useAllFlowers from "../../api/useAllFlowers";
 import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
 import { useState } from "react";
 import SortBy from "./SortBy";
-import useAuth from "../../api/useAuth";
-import Loading from "../../Share/Loading/Loading";
+import DataLoading from "../../Share/Loading/DataLoading";
 const BirthdayContainer = () => {
     const [cartAdd, setCartAdd] = useState(false);
-    const {loading} = useAuth();
-    const [flowerAll] = useAllFlowers();
+    const [flowerAll, refetch, isLoading] = useAllFlowers();
     const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "birthday");
 
-    console.log(flowerAll);
-    if (loading) {
-        return <Loading />
+    if (isLoading) {
+        return <DataLoading />
     }
 
     return (

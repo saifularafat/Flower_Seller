@@ -6,9 +6,10 @@ import useSliderGet from "../../../../../api/useSliderGet";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Marquee from "react-fast-marquee";
+import DataLoading from "../../../../../Share/Loading/DataLoading";
 
 const SliderChanges = () => {
-    const [sliders, refetch] = useSliderGet();
+    const [sliders, refetch, isLoading] = useSliderGet();
     const sliderOne = sliders.find(slider => slider.category === "sliderOne")
     const sliderTwo = sliders.find(slider => slider.category === "sliderTwo")
     const sliderThree = sliders.find(slider => slider.category === "sliderThree")
@@ -42,6 +43,9 @@ const SliderChanges = () => {
                     })
             }
         })
+    };
+    if(isLoading){
+        return <DataLoading />
     }
     return (
         <div>
@@ -65,7 +69,7 @@ const SliderChanges = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-50 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -105,7 +109,7 @@ const SliderChanges = () => {
                                 }
                             </div>
                         </tr>
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-100 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -145,7 +149,7 @@ const SliderChanges = () => {
                                 }
                             </div>
                         </tr>
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-50 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -185,7 +189,7 @@ const SliderChanges = () => {
                                 }
                             </div>
                         </tr>
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-100 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -225,7 +229,7 @@ const SliderChanges = () => {
                                 }
                             </div>
                         </tr>
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-50 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -265,7 +269,7 @@ const SliderChanges = () => {
                                 }
                             </div>
                         </tr>
-                        <tr className="hover:bg-green-200 transition-all duration-200">
+                        <tr className="hover:bg-green-100 transition-all duration-200">
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">

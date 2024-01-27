@@ -5,13 +5,15 @@ import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SortBy from "../Birthday/SortBy";
+import DataLoading from "../../Share/Loading/DataLoading";
 const ThanksGiving = () => {
     const [cartAdd, setCartAdd] = useState(false);
-    const [flowerAll] = useAllFlowers();
-    console.log(flowerAll);
+    const [flowerAll, refetch, isLoading] = useAllFlowers();
     const thankSgiving = flowerAll.filter(thanksGift => thanksGift.flowerCategory === "thanksgiving");
     const totalNumber = thankSgiving.length;
-    console.log(thankSgiving);
+    if (isLoading) {
+        return <DataLoading />
+    }
     return (
         <>
             <div className="mx-4 pb-10">
@@ -34,10 +36,17 @@ const ThanksGiving = () => {
                 <img src={bannerImage} loading='lazy' alt="banner" />
             </div>
 
-            <SortBy length={totalNumber}
-                category={thankSgiving}
-                ascending={thankSgiving}
-            />
+            <div className="grid md:grid-cols-4">
+                <div className="md:col-span-1 md:block hidden">
+
+                </div>
+                <div className="md:col-span-3 ">
+                    <SortBy length={totalNumber}
+                    category={thankSgiving}
+                    ascending={thankSgiving}
+                    />
+                </div>
+            </div>
             <div className="md:mx-4 mx-1 md:py-5 py-2">
                 <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                     {

@@ -6,9 +6,10 @@ import Marquee from "react-fast-marquee";
 import useLeftRightBannerGet from "../../../../../api/useLeftRightBannerGet";
 import Swal from "sweetalert2";
 import axios from "axios";
+import DataLoading from "../../../../../Share/Loading/DataLoading";
 
 const LeftRightBanner = () => {
-    const [leftRightBGet, refetch] = useLeftRightBannerGet();
+    const [leftRightBGet, refetch, isLoading] = useLeftRightBannerGet();
     const leftOne = leftRightBGet.find(leftOne => leftOne.category === "leftOne")
     const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
     const leftTwo = leftRightBGet.find(leftTwo => leftTwo.category === "leftTwo")
@@ -40,6 +41,9 @@ const LeftRightBanner = () => {
                     })
             }
         })
+    };
+    if(isLoading){
+        return <DataLoading />
     }
     return (
         <div>

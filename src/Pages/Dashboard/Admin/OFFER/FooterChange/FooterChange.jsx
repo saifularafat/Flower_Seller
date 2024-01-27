@@ -3,15 +3,19 @@ import DashboardTitle from "../../../../../components/DashboardTitle";
 import { GiLotusFlower } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import footerChange from "../../../../../api/useFooterGet";
+import DataLoading from "../../../../../Share/Loading/DataLoading";
 
 const FooterChange = () => {
-    const [footerGet] = footerChange();
+    const [footerGet, refetch,isLoading] = footerChange();
     const wayToShops = footerGet.find(footer => footer.category === "wayToShop");
     const customService = footerGet.find(footer => footer.category === "customServer");
     const ourStores = footerGet.find(footer => footer.category === "ourStores");
     const corporate = footerGet.find(footer => footer.category === "corporate");
     console.log(wayToShops);
 
+    if(isLoading){
+        return <DataLoading />
+    }
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>

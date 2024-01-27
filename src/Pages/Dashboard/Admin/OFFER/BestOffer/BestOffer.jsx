@@ -5,11 +5,10 @@ import DashboardTitle from "../../../../../components/DashboardTitle";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useBestOffer from "../../../../../api/useBestOffer";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import DataLoading from "../../../../../Share/Loading/DataLoading";
 
 const BestOffer = () => {
-    // const [id] = useParams();
-    // console.log(id);
     const {
         register,
         handleSubmit,
@@ -40,9 +39,11 @@ const BestOffer = () => {
     }
 
 
-    const [bestOffer, refetch] = useBestOffer()
+    const [bestOffer, refetch,isLoading] = useBestOffer()
     const best = bestOffer.filter(best => best.category === 'bestOffer')
-    console.log(best);
+    if(isLoading){
+        return <DataLoading />
+    }
     return (
         <div>
             <Helmet><title>Flower Shop || Best Offer</title></Helmet>

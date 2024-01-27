@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import useBannerGet from "../../../../../api/useBannerGet";
 import Swal from "sweetalert2";
 import axios from "axios";
+import DataLoading from "../../../../../Share/Loading/DataLoading";
 
 const BannerChange = () => {
-    const [banners, refetch] = useBannerGet();
+    const [banners, refetch,isLoading] = useBannerGet();
     const oneBanner = banners.find(banner => banner.category === "bannerOne");
     const twoBanner = banners.find(banner => banner.category === "bannerTwo");
     const threeBanner = banners.find(banner => banner.category === "bannerThree");
@@ -38,6 +39,9 @@ const BannerChange = () => {
                     })
             }
         })
+    };
+    if(isLoading){
+        return <DataLoading />
     }
     return (
         <div>

@@ -7,10 +7,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { MdDelete } from "react-icons/md";
 import { BiSolidEdit } from "react-icons/bi";
+import DataLoading from "../../../../Share/Loading/DataLoading";
 
 
 const TotalFlowerItems = () => {
-    const [flowerAll, refetch] = useAllFlowers();
+    const [flowerAll, refetch, isLoading] = useAllFlowers();
     // console.log(flowerAll);
     const itemDelete = (flower) => {
         Swal.fire({
@@ -38,6 +39,9 @@ const TotalFlowerItems = () => {
                     })
             }
         })
+    }
+    if (isLoading) {
+        return <DataLoading />
     }
     return (
         <div>

@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const SortBy = ({ length, category}) => {
+const SortBy = ({ length, category }) => {
+    // const flowers = useLoaderData();
+    // console.log(flowers);
 
     /* Ascending Descending handler */
     const handleDescendingPrice = () => {

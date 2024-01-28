@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
+import { FaCalendarAlt, FaHome } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
-import { } from "react-icons/md";
-import { IoAddCircleSharp, IoLogoPaypal } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { IoAddCircleSharp, IoChatboxEllipses, IoLogoPaypal } from "react-icons/io5";
 import { GoDot } from "react-icons/go";
 import { GiFlowerEmblem } from "react-icons/gi";
+import { ImProfile } from "react-icons/im";
 
 const IsAdmin = () => {
     const [order, handelOrder] = useState(false);
@@ -18,7 +19,7 @@ const IsAdmin = () => {
                     <NavLink
                         to="/dashboard/adminHome"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
-                        <FaHome className="text-xl" />
+                        <FaHome className="md:text-xl text-sm" />
                         <span>Admin Home </span>
                     </NavLink>
                 </li>
@@ -26,7 +27,7 @@ const IsAdmin = () => {
                     <NavLink
                         to="/dashboard/addItem"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
-                        <IoAddCircleSharp className="text-xl" />
+                        <IoAddCircleSharp className="md:text-xl text-sm" />
                         <span>Add Item </span>
                     </NavLink>
                 </li>
@@ -43,7 +44,8 @@ const IsAdmin = () => {
                         to="/dashboard/totalFlowerItems"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <GiFlowerEmblem className="text-xl" />
-                        <span>Total Flower  </span>
+                        <span className="md:block hidden">Total Flowers  </span>
+                        <span className="block md:hidden">T. Flowers  </span>
                     </NavLink>
                 </li>
                 <li>
@@ -54,11 +56,12 @@ const IsAdmin = () => {
                         <span>All Payment </span>
                     </NavLink>
                 </li>
-                
+
                 {/* order link start */}
                 <div className="pb-2">
-                    <button onClick={() => handelOrder(!order)} className="flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200 mt-3">
-                        <span>Order information</span>
+                    <button onClick={() => handelOrder(!order)} className="flex items-center justify-between w-full md:text-base text-[10px] font-medium py-1 md:pl-2 px-1 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200 md:mt-3 mt-2">
+                        <span className="md:block hidden">Order information</span>
+                        <span className="md:hidden block">Order info</span>
                         {
                             order ?
                                 <BsChevronDown />
@@ -114,8 +117,9 @@ const IsAdmin = () => {
 
                 {/* offer link start */}
                 <div className="pb-2">
-                    <button onClick={() => handelOffer(!offer)} className=" flex items-center justify-between w-full text-base font-medium py-1 pl-2 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200">
-                        <span>Offer & Change Section</span>
+                    <button onClick={() => handelOffer(!offer)} className="flex items-center justify-between w-full md:text-base text-[10px] font-medium py-1 md:pl-2 px-1 hover:bg-slate-100 rounded bg-slate-100 text-slate-600 uppercase transition-all duration-200 md:mt-3 mt-2">
+                        <span className="md:block hidden">Offer & Change Section</span>
+                        <span className="block md:hidden">Offer Change </span>
                         {
                             offer ?
                                 <BsChevronDown />
@@ -124,7 +128,7 @@ const IsAdmin = () => {
                     </button>
                 </div>
                 {
-                    offer && <div className="space-y-2 pl-2 pt-2">
+                    offer && <div className="space-y-2 md:pl-2 pl-[2px] pt-2">
                         <li className="w-full">
                             <NavLink
                                 to="/dashboard/bestOffer"
@@ -138,15 +142,17 @@ const IsAdmin = () => {
                                 to="/dashboard/sliderChanges"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
-                                <span>Slider Changes </span>
+                                <span className="md:block hidden">Slider Changes </span>
+                                <span className="block md:hidden">S. Changes  </span>
                             </NavLink>
                         </li>
                         <li className=" w-full">
-                            <NavLink 
+                            <NavLink
                                 to="/dashboard/bannerChanges" //section banner change korar jonno kora hoice
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
-                                <span>Banner Change</span>
+                                <span className="md:block hidden">Banner Change  </span>
+                                <span className="block md:hidden">B. Changes  </span>
                             </NavLink>
                         </li>
                         <li className=" w-full">
@@ -154,15 +160,17 @@ const IsAdmin = () => {
                                 to="/dashboard/leftRightBanner" //section banner ar shathe je banner ashe shegula  change korar jonno kora hoice
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />
-                                <span>left&Right B.</span>
+                                <span className="md:block hidden">left&Right B. </span>
+                                <span className="block md:hidden">left&RightB. </span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
                                 to="/dashboard/footerChange"
-                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                className={({ isActive }) => (isActive ? "active" : " default")}>
                                 <GoDot className="text-xl" />
-                                <span>Footer Change</span>
+                                <span className="md:block hidden">Footer Changes  </span>
+                                <span className="block md:hidden">F. Changes </span>
                             </NavLink>
                         </li>
                     </div>
@@ -170,11 +178,14 @@ const IsAdmin = () => {
                 {/* offer link end */}
 
                 {/* messages section start */}
-                <p className="py-2 mt-1 pl-3 text-slate-600 font-semibold text-base uppercase bg-slate-100">Help section</p>
+                <p className="pt-1"></p>
+                <p className="md:py-2 py-1 mt-1 md:pl-3 px-1 text-slate-600 font-semibold md:text-base text-xs uppercase rounded-md bg-slate-100">Help section</p>
+                <p className="pt-1"></p>
                 <li>
                     <NavLink
                         to="/dashboard/email"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <MdEmail />
                         <span>Email </span>
                     </NavLink>
                 </li>
@@ -182,6 +193,7 @@ const IsAdmin = () => {
                     <NavLink
                         to="/dashboard/chat"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <IoChatboxEllipses />
                         <span>Chat </span>
                     </NavLink>
                 </li>
@@ -189,6 +201,7 @@ const IsAdmin = () => {
                     <NavLink
                         to="/dashboard/calender"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <FaCalendarAlt />
                         <span>Calender </span>
                     </NavLink>
                 </li>
@@ -196,6 +209,7 @@ const IsAdmin = () => {
                     <NavLink
                         to="/dashboard/adminProfile"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
+                            <ImProfile />
                         <span>Profile </span>
                     </NavLink>
                 </li>

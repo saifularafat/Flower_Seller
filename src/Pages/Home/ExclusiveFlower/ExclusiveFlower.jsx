@@ -10,10 +10,11 @@ import flower6 from "../../../assets/flowers/84620.webp"
 import HomeImages from "../../../components/HomeImages";
 const ExclusiveFlower = () => {
     return (
-        <div className="md:my-10 my-6">
+        <div className="md:my-16 my-8">
             <SectionTitle
                 color=" text-slate-900"
-                title="Send Flowers & Exclusive Gifts" />
+                title="Send Flowers & Exclusive Gifts"
+                textSize="text-[20px]" />
             <div className=" md:overflow-x-hidden overflow-x-scroll mx-2 md:mx-0">
                 <HomeImages
                     path1="/disney-flower"

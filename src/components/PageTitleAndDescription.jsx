@@ -5,9 +5,9 @@ const PageTitleAndDescription = ({ path, name, pageTitle, title, bgBorder, des1,
     return (
         <>
             <PagesPath path={path} name={name} title={pageTitle} />
-            <div className="grid grid-cols-3 md:grid-cols-7 gap-5  hidden md:block">
+            <div className="md:grid grid-cols-3 md:grid-cols-7 gap-5 hidden">
                 <div className="col-span-1 md:col-span-2 relative">
-                    <div className="absolute translate-y-1/2 pt-1 md:hidden block">
+                    <div className="absolute translate-y-1/2 pt-1 md:block hidden">
                         <h3 className="md:text-2xl text-base font-semibold text-blue-950">{title}</h3>
                     </div>
                     <div className={`absolute h-full w-[2px] bg-slate-300 ${bgBorder} right-6 top-0`}>

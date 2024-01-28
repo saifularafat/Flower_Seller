@@ -21,10 +21,11 @@ const SweetSurprises = () => {
     const leftOne = leftRightBGet.find(leftOne => leftOne.category === "leftOne")
     const rightOne = leftRightBGet.find(rightOne => rightOne.category === "rightOne")
     return (
-        <div className="md:my-10 my-5">
+        <div className="md:my-16 my-8">
             <SectionTitle
                 color="text-slate-900"
-                title="Sweet & Savory Surprises" />
+                title="Sweet & Savory Surprises"
+                textSize="text-2xl" />
             {/* TODO Link */}
             <div className="md:overflow-x-hidden overflow-x-scroll mx-2 md:mx-0">
                 <HomeImages
@@ -51,7 +52,7 @@ const SweetSurprises = () => {
             <Link to={twoBanner?.bannerLink} className="">
                 <img src={twoBanner?.bannerImage} loading='lazy' alt="bannerFlower" className="md:w-11/12 h-32 md:h-full mx-auto" />
             </Link>
-            <div className="mt-8">
+            <div className="md:mt-10 mt-5">
                 <SectionSiteCover
                     path1={leftOne?.leftRightLink}
                     Image1={leftOne?.leftRightImage}

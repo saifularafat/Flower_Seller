@@ -17,7 +17,7 @@ const Disney = () => {
         <>
             <div className="mx-4 md:pb-10">
                 <PageTitleAndDescription
-                    path="/disney"
+                    path="/disney-flower"
                     name="Disney Flowers"
                     pageTitle="Bouquets & Arrangements"
                     title="Disney Flowers"

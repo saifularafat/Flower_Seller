@@ -15,8 +15,8 @@ const ExploreGifts = () => {
     const leftTwo = leftRightBGet.find(leftTwo => leftTwo.category === "leftTwo")
     const rightTwo = leftRightBGet.find(rightTwo => rightTwo.category === "rightTwo")
     return (
-        <div className="md:my-10 my-6">
-            <SectionTitle color="text-slate-900" title="Explore Our Gifts & More" />
+        <div className="md:my-16 my-8">
+            <SectionTitle color="text-slate-900" title="Explore Our Gifts & More" textSize="text-2xl" />
             {/* TODO LINKS */}
             <div className=" md:overflow-x-hidden overflow-x-scroll mx-2 md:mx-0">
                 <HomeImages
@@ -40,14 +40,16 @@ const ExploreGifts = () => {
                     title6="Preserved Roses"
                 />
             </div>
-            <SectionSiteCover
-                path1={leftTwo?.leftRightLink}
-                Image1={leftTwo?.leftRightImage}
-                title1={leftTwo?.leftRightContent}
-                path2={rightTwo?.leftRightLink}
-                Image2={rightTwo?.leftRightImage}
-                title2={rightTwo?.leftRightContent}
-            />
+            <div className="md:mt-10 mt-5">
+                <SectionSiteCover
+                    path1={leftTwo?.leftRightLink}
+                    Image1={leftTwo?.leftRightImage}
+                    title1={leftTwo?.leftRightContent}
+                    path2={rightTwo?.leftRightLink}
+                    Image2={rightTwo?.leftRightImage}
+                    title2={rightTwo?.leftRightContent}
+                />
+            </div>
         </div>
     );
 };

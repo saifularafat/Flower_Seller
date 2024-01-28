@@ -64,9 +64,9 @@ const Footer = () => {
                         <Link to="" className="bg-red-800 w-10 h-10 rounded-lg"><FaPinterestP className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                         <Link to="" className="bg-red-800 w-10 h-10 rounded-lg"><FaYoutube className="translate-x-1/2 translate-y-1/2 text-xl" /></Link>
                     </div>
-                    <div className="mt-5 flex items-center md:hidden lg:block">
-                        <input type="text" placeholder="search your flower?" className="py-2 pl-2 rounded-l-lg outline-none text-slate-900 text-base" />
-                        <input type="submit" value="Submit" className="bg-blue-900 p-2 rounded-r-lg " />
+                    <div className="mt-5 md:flex items-center block">
+                        <input type="text" placeholder="search your flower?" className="md:py-1 lg:py-2 md:pl-1 lg:pl-1 md:w-3/4 rounded-l-lg outline-none text-slate-900 text-base" />
+                        <input type="submit" value="Submit" className="bg-blue-900 lg:p-2 md:p-1 rounded-r-lg " />
                     </div>
                 </div>
             </div>

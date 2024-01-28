@@ -25,7 +25,7 @@ const Dashboard = () => {
             })
     };
     return (
-        <div className="grid grid-cols-9">
+        <div className="grid md:grid-cols-9 grid-cols-3">
             <Helmet>
                 <title>Flowers Shop || Dashboard</title>
             </Helmet>
@@ -62,7 +62,20 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-7 md:px-3 py-5 h-screen overflow-y-scroll myScroll">
+            <div className="md:hidden block col-span-1 bg-black h-screen overflow-y-visible">
+                <Link to="/" className="flex items-center justify-center py-2 shadow-lg sticky top-0 z-10 bg-white">
+                    <BiSolidFlorist className="text-sm text-blue-700" />
+                    <h2 className="text-xs font-semibold text-center text-blue-700 uppercase">Flowers Shop</h2>
+                </Link>
+                <div className="p-1 h-screen overflow-y-scroll myScroll">
+                    {
+                        isAdmin ?
+                            <IsAdmin />
+                            : <IsUsers />
+                    }
+                </div>
+            </div>
+            <div className="md:col-span-7 col-span-2 md:px-3 py-5 h-screen overflow-y-scroll myScroll md:bg-transparent bg-slate-200">
                 <Outlet />
             </div>
         </div>

@@ -24,7 +24,7 @@ const SocialSignIn = () => {
                     name: loggedUser.displayName,
                     email: loggedUser.email,
                     image: loggedUser.photoURL,
-                    role: loggedUser.role,
+                    role: 'client',
                 })
                     .then(() => {
                         Swal.fire({

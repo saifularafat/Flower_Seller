@@ -86,13 +86,13 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
-        loader: () => fetch(`${import.meta.VITE_API_URL}/flowersAll`),
         errorElement: <Error />,
         children: [
             /* main page link */
             {
                 path: "/",
                 element: <Home />,
+                loader: () => fetch(`${import.meta.VITE_API_URL}/flowersAll`),
             },
             {
                 path: "thanksgiving-flower",

@@ -81,6 +81,8 @@ import SSLPayment from "../Pages/Payment/SSLPayment/SSLPayment";
 import CashOnDeliveryPayment from "../Pages/Payment/CashOnDeliveryPayment/CashOnDeliveryPayment";
 import FlowerDetails from "../Pages/FlowerDetails/FlowerDetails";
 import PrivateRouter from "./PrivateRouter";
+import PaymentSuccess from "../Pages/Payment/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/Payment/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
     {
@@ -201,6 +203,15 @@ const router = createBrowserRouter([
                 element: <CashOnDeliveryPayment />
             },
         ]
+    },
+    /* Payment success router */
+    {
+        path: "payment/success/:transition",
+        element: <PaymentSuccess />
+    },
+    {
+        path: "payment/fail/:transition",
+        element: <PaymentFail />
     },
     /* user create */
     {

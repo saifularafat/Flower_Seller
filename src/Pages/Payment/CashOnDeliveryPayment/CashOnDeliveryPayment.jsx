@@ -4,6 +4,7 @@ import { GiFlowerPot } from "react-icons/gi";
 import { useParams } from "react-router-dom";
 import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
+import axios from "axios";
 
 const CashOnDeliveryPayment = () => {
     const { id } = useParams();
@@ -27,6 +28,7 @@ const CashOnDeliveryPayment = () => {
     const onSubmit = data => {
         /* TODO POST THE PAYMENT */
         const conformPayment = {
+            id: singleFlower?._id,
             image: singleFlower?.flowerImg,
             name: singleFlower?.flowerName,
             price: amount,
@@ -35,9 +37,12 @@ const CashOnDeliveryPayment = () => {
             currentAddress: data.CurrentAddress,
             PhoneNumber: data.userPhoneNumber,
             email: data.userEmail,
+            userName: user.displayName,
+            paymentType: "Case On Delivery.",
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);
+        axios.post(`${import.meta.env.VITE_API_URL}/sslPayment`, conformPayment)
     }
     return (
         <div className="w-10/12 mx-auto my-5">
@@ -49,7 +54,7 @@ const CashOnDeliveryPayment = () => {
                             <img src={singleFlower?.flowerImg} loading="lazy" alt="flower" className="md:w-60 md:h-60 mx-auto rounded border-2 hover:scale-105 transition-all duration-200 border-solid border-slate-500" />
                         </div>
                         <div className="overflow-x-auto">
-                        <h2 className="md:text-xl text-base font-semibold pt-2">{singleFlower?.flowerName}</h2>
+                            <h2 className="md:text-xl text-base font-semibold pt-2">{singleFlower?.flowerName}</h2>
                             <table className="table table-zebra w-3/4 mx-auto">
                                 {/* head */}
                                 <thead>
@@ -78,7 +83,7 @@ const CashOnDeliveryPayment = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <p className="text-red-700">Delivery Duration Time is 7 Day!</p> 
+                        <p className="text-red-700">Delivery Duration Time is 7 Day!</p>
                     </div>
                     <div className="col-span-2">
                         <label className="label">

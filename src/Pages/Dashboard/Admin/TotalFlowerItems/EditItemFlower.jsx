@@ -152,7 +152,7 @@ const EditItemFlower = () => {
                                 <option value="thanksgiving">Thanksgiving</option>
                                 <option value="IndependenceDay">IndependenceDay</option>
                                 <option value="disney">disney</option>
-                                <option value="occasions">Occasions</option>
+                                <option value="valentines">Valentines</option>
                                 <option value="sympathy">Sympathy</option>
                                 <option value="plants">Plants</option>
                                 <option value="giftsMore">Gifts & More</option>
@@ -160,8 +160,12 @@ const EditItemFlower = () => {
                                 <option value="community">Community</option>
                                 <option value="chocolate">Chocolate</option>
                                 <option value="baby">BabyGift</option>
-                                <option value="lave">Love</option>
+                                <option value="christmasGift">Christmas Gift</option>
+                                <option value="love">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>
+                                <option value="fruitGift">Fruit Gift</option>
+                                <option value="cosmetic">Cosmetic</option>
+                                <option value="alcoholDrinks">Alcohol $ Drinks</option>
                             </select>
                         </div>
                     </div>

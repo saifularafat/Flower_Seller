@@ -170,8 +170,12 @@ const AddItem = () => {
                                 <option value="community">Community</option>
                                 <option value="chocolate">Chocolate</option>
                                 <option value="baby">BabyGift</option>
-                                <option value="lave">Love</option>
+                                <option value="christmasGift">Christmas Gift</option>
+                                <option value="love">Love</option>
                                 <option value="valentinesDay">ValentinesDay</option>
+                                <option value="fruitGift">Fruit Gift</option>
+                                <option value="cosmetic">Cosmetic</option>
+                                <option value="alcoholDrinks">Alcohol $ Drinks</option>
                             </select>
                             {errors.category?.type === "required" && (
                                 <p className="text-red-600 text-sm">Flower category is required</p>

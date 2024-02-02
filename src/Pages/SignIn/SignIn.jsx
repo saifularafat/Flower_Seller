@@ -8,6 +8,8 @@ import useAuth from "../../api/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialSignIn from "../../Share/SocialSignUp/SocialSignUp";
 import Swal from "sweetalert2";
+import { FaRegEyeSlash } from "react-icons/fa6";
+import { useState } from "react";
 const SignIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {
@@ -16,12 +18,14 @@ const SignIn = () => {
         login,
     } = useAuth();
 
+    const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     //  click eya icon then show password
     const handleShowPass = () => {
+        setShowPass(!showPass)
         const passwordInput = document.getElementById("password");
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
@@ -30,7 +34,7 @@ const SignIn = () => {
         }
     };
     const loginSubmit = (data) => {
-        // setLoading(true); 
+        setLoading(true);
         login(data.email, data.password)
             .then(result => {
                 const logged = result.user;
@@ -135,10 +139,18 @@ const SignIn = () => {
                                         <p className="text-red-600 mt-1">Password must have one Uppercase
                                             two lowercase one number and special character</p>
                                     }
-                                    <AiOutlineEye
-                                        onClick={handleShowPass}
-                                        className="absolute top-3 right-3 cursor-pointer text-lg"
-                                    ></AiOutlineEye>
+                                    <div onClick={handleShowPass}>
+                                        {
+                                            showPass ? <AiOutlineEye
+                                                className="absolute top-3 right-3 cursor-pointer text-lg"
+                                            ></AiOutlineEye>
+                                                :
+                                                <FaRegEyeSlash
+                                                    className="absolute top-3 right-3 cursor-pointer text-lg"
+                                                ></FaRegEyeSlash >
+                                        }
+                                    </div>
+
                                 </div>
 
                             </div>

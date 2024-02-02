@@ -94,7 +94,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch(`${import.meta.VITE_API_URL}/flowersAll`),
+                // loader: () => fetch(`${import.meta.VITE_API_URL}/flowersAll`),
             },
             {
                 path: "thanksgiving-flower",
@@ -148,7 +148,10 @@ const router = createBrowserRouter([
             /* side page link */
             {
                 path: "my-order",
-                element: <PrivateRouter><MyOrder /></PrivateRouter> 
+                element:
+                    <PrivateRouter>
+                        <MyOrder />
+                    </PrivateRouter>
             },
             {
                 path: "chocolate-gift",
@@ -184,7 +187,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/paymentOption/:id",
-                element: <PrivateRouter><PaymentOption /></PrivateRouter> 
+                element: <PrivateRouter><PaymentOption /></PrivateRouter>
             },
             {
                 path: "/paymentOption/:id",

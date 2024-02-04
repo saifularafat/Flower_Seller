@@ -28,7 +28,6 @@ import Dashboard from "../Layouts/Dashboard";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 import AllPayment from "../Pages/Dashboard/Admin/AllPayment/AllPayment";
-import HandDelivery from "../Pages/Dashboard/Admin/OrderInfo/HandDelivery/HandDelivery";
 import CashOnDelivery from "../Pages/Dashboard/Admin/OrderInfo/CashOnDelivery/CashOnDelivery";
 import SuccessOrder from "../Pages/Dashboard/Admin/OrderInfo/SuccessOrder/SuccessOrder";
 import RetuneOrder from "../Pages/Dashboard/Admin/OrderInfo/RetuneOrder/RetuneOrder";
@@ -83,6 +82,8 @@ import FlowerDetails from "../Pages/FlowerDetails/FlowerDetails";
 import PrivateRouter from "./PrivateRouter";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payment/PaymentFail/PaymentFail";
+import SSLPaymentDelivery from "../Pages/Dashboard/Admin/OrderInfo/SSLPaymentDelivery/SSLPaymentDelivery";
+import StripePay from "../Pages/Dashboard/Admin/OrderInfo/StripePay/StripePay";
 
 const router = createBrowserRouter([
     {
@@ -263,8 +264,12 @@ const router = createBrowserRouter([
             },
             /* order information */
             {
-                path: "/dashboard/handDelivery",
-                element: <HandDelivery />
+                path: "/dashboard/sslPayment",
+                element: <SSLPaymentDelivery />
+            },
+            {
+                path: "/dashboard/stripePayment",
+                element: <StripePay />
             },
             {
                 path: "/dashboard/cashOnDelivery",

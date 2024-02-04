@@ -36,9 +36,9 @@ const Accordion = () => {
     ];
     return (
         <div className="space-y-4 p-2 md:p-6">
-            <SectionTitle title="More About Our Flower Delivery" color="" textSize="" />
+            <SectionTitle title="More About Our Flower Delivery" color="md:text-green-600  text-slate-900" textSize="md:text-3xl text-2xl" />
             {datas?.map((data, idx) => (
-                <div key={idx}>
+                <div key={idx} className="pt-4">
                     {/* header / Title */}
                     <div onClick={() => handleToggle(idx)} className={`px-4 md:px-8 py-6 ${idx === 0 ? 'bg-green-50 border-green-500' : idx === 1 ? 'bg-sky-50 border-sky-500' : idx === 2 ? 'bg-purple-50 border-purple-500' : idx === 3 ? 'bg-amber-50 border-amber-500' : idx === 4 ? 'bg-blue-50 border-blue-400' : 'bg-blue-100 border-blue-400'} border-l-[3px] cursor-pointer`}>
                         <div className="flex items-center">

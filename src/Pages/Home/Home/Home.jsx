@@ -7,6 +7,7 @@ import SweetSurprises from "../SweetSurprises/SweetSurprises";
 import Testimonial from "../Testimonial/Testomonial";
 import TrendingGift from "../TrendingGift/TrendingGift";
 import OfferTitle from "../../../components/OfferTitle";
+import Accordion from "../Accordion/Accordion";
 
 const Home = () => {
     return (
@@ -19,6 +20,9 @@ const Home = () => {
             <ExploreGifts />
             <TrendingGift />
             <Testimonial />
+            <div className="md:pb-0 pb-6 md:pt-10 pt-6">
+                <Accordion />
+            </div>
         </div>
     );
 };

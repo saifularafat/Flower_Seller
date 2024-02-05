@@ -73,6 +73,14 @@ const IsAdmin = () => {
                     order && <div className="space-y-2 pl-2">
                         <li className=" w-full">
                             <NavLink
+                                to="/dashboard/totalPayment"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Total Payment </span>
+                            </NavLink>
+                        </li>
+                        <li className=" w-full">
+                            <NavLink
                                 to="/dashboard/sslPayment"
                                 className={({ isActive }) => (isActive ? "active" : " default ")}>
                                 <GoDot className="text-xl" />

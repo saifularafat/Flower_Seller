@@ -25,11 +25,15 @@ const SignIn = () => {
     return (
         <div className="relative cursor-pointer group">
             <div className="w-full mx-auto group-hover:block">
-                <img src={user && user?.photoURL
-                    ? user?.photoURL
-                    : img
-                } alt=""
-                    className="md:w-10 md:h-10 w-8 h-8 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
+                <div className="relative group">
+                    <img src={user && user?.photoURL
+                        ? user?.photoURL
+                        : img
+                    } alt=""
+                        className="md:w-11 md:h-11 w-9 h-9 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
+                    <span className="md:h-4 h-3 md:w-4 w-3 bg-green-500 absolute rounded-full bottom-[2px] md:right-3 right-0 md:border-[3px] border-[2px] border-white"></span>
+                    <span className="md:h-4 h-3 md:w-4 w-3 bg-green-500 absolute rounded-full bottom-[2px] md:right-3 right-0 animate-ping transition-all duration-300"></span>
+                </div>
             </div>
             {
                 user ?

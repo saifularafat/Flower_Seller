@@ -84,6 +84,7 @@ import PaymentSuccess from "../Pages/Payment/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payment/PaymentFail/PaymentFail";
 import SSLPaymentDelivery from "../Pages/Dashboard/Admin/OrderInfo/SSLPaymentDelivery/SSLPaymentDelivery";
 import StripePay from "../Pages/Dashboard/Admin/OrderInfo/StripePay/StripePay";
+import TotalPayment from "../Pages/Payment/TotalPayment/TotalPayment";
 
 const router = createBrowserRouter([
     {
@@ -263,6 +264,10 @@ const router = createBrowserRouter([
                 element: <AllPayment />
             },
             /* order information */
+            {
+                path: "/dashboard/totalPayment",
+                element: <TotalPayment />
+            },
             {
                 path: "/dashboard/sslPayment",
                 element: <SSLPaymentDelivery />

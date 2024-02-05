@@ -39,7 +39,7 @@ const CashOnDeliveryPayment = () => {
             email: data.userEmail,
             userName: user.displayName,
             payStatus: "pending",
-            paymentType: "Case On Delivery.",
+            paymentType: "Case On Delivery",
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);

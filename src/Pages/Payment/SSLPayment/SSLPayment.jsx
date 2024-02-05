@@ -39,6 +39,7 @@ const SSLPayment = () => {
             PhoneNumber: data.userPhoneNumber,
             email: data.userEmail,
             userName: user.displayName,
+            payType: "success",
             paymentType: "Case On Delivery.",
             duration: "Delivery Duration Time is 7 Day!",
         }

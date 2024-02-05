@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const CashOnDeliveryPayment = () => {
     const { id } = useParams();
@@ -14,6 +15,7 @@ const CashOnDeliveryPayment = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -23,10 +25,8 @@ const CashOnDeliveryPayment = () => {
     const deliveryCharge = 1.10;
     let totalAmount = amount + tex + deliveryCharge;
     const totalPrice = totalAmount.toFixed(2);
-    console.log(texFixed);
 
     const onSubmit = data => {
-        /* TODO POST THE PAYMENT */
         const conformPayment = {
             id: singleFlower?._id,
             image: singleFlower?.flowerImg,
@@ -38,11 +38,27 @@ const CashOnDeliveryPayment = () => {
             PhoneNumber: data.userPhoneNumber,
             email: data.userEmail,
             userName: user.displayName,
+            payStatus: "pending",
             paymentType: "Case On Delivery.",
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);
-        axios.post(`${import.meta.env.VITE_API_URL}/sslPayment`, conformPayment)
+        axios.post(`${import.meta.env.VITE_API_URL}/payment`, conformPayment)
+        .then(data => {
+            console.log("post data", data.data);
+            if (data.data.insertedId) {
+                reset();
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Hand Cash Payment!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                /*TODO RETUNE BY PAYMENT ROUTER*/
+                
+            }
+        })
     }
     return (
         <div className="w-10/12 mx-auto my-5">

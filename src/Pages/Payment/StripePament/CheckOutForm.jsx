@@ -1,18 +1,42 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
+import { useAxiosSecure } from "../../../api/useAxiosSecure";
+import Swal from "sweetalert2";
+import axios from "axios";
 
-const CheckOutForm = () => {
+const CheckOutForm = ({ price, texFixed }) => {
     const { id } = useParams();
     const stripe = useStripe();
     const elements = useElements();
-    const [processing, setProcessing] = useState(false);
-    const [flowerAll] = useAllFlowers();
+
     const { user } = useAuth();
+    const { axiosSecure } = useAxiosSecure();
+
+    const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
+    const [processing, setProcessing] = useState(false);
+    const [clientSecret, setClientSecret] = useState("");
+    const [transactionId, setTransactionId] = useState("");
+
+    const [flowerAll] = useAllFlowers();
     const singleFlower = flowerAll.find(flower => flower?._id === id);
-    const handleSubmit = (e) => {
+
+
+    // console.log(conformPayment);
+    useEffect(() => {
+        if (price > 0) {
+            axios.post("/create-payment-intent", { price }).then((res) => {
+                console.log("Response from /create-payment-intent:", res);
+                setClientSecret(res.data.clientSecret);
+            }).catch(error => {
+                console.error("Error in /create-payment-intent:", error);
+            });
+        }
+    }, [price, texFixed, axiosSecure]);
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Stripe Payment system  => ", singleFlower, e);
 
@@ -26,40 +50,64 @@ const CheckOutForm = () => {
         if (card == null) {
             return
         }
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card
+        })
+        if (error) {
+            setError(error.message)
+        } else {
+            setError("")
+            console.log("payment Method", paymentMethod);
+        }
+        setProcessing(true);
+        const { paymentIntent, error: confirmError } =
+            await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        email: user?.email || "unknown",
+                        name: user?.displayName || "anonymous",
+                    },
+                },
+            });
+        if (confirmError) {
+            console.log(confirmError);
+        }
+        setProcessing(false);
+        console.log("payment intent", paymentIntent);
+        if (paymentIntent.status === "succeeded") {
+            setTransactionId(paymentIntent.id);
+            const conformPayment = {
+                id: singleFlower?._id,
+                image: singleFlower?.flowerImg,
+                name: singleFlower?.flowerName,
+                price: singleFlower?.price,
+                totalPrice: price,
+                charge: texFixed,
+                currentAddress: user?.CurrentAddress,
+                PhoneNumber: user?.userPhoneNumber,
+                email: user?.userEmail,
+                userName: user?.displayName,
+                date: new Date(),
+                payStatus: "success",
+                paymentType: "stripe payment",
+                duration: "Delivery Duration Time is 7 Day!",
+            };
+            axiosSecure.post("/payment", conformPayment)
+                .then((res) => {
+                    if (res.data.insertResult.insertedId) {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'card payment successful',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
 
-
-        // const conformPayment = {
-        //     id: singleFlower?._id,
-        //     image: singleFlower?.flowerImg,
-        //     name: singleFlower?.flowerName,
-        //     price: amount,
-        //     totalPrice: totalPrice,
-        //     charge: texFixed,
-        //     currentAddress: data.CurrentAddress,
-        //     PhoneNumber: data.userPhoneNumber,
-        //     email: data.userEmail,
-        //     userName: user.displayName,
-        //     payStatus: "success",
-        //     paymentType: "Case On Delivery",
-        //     duration: "Delivery Duration Time is 7 Day!",
-        // }
-        // console.log(conformPayment);
-        // axios.post(`${import.meta.env.VITE_API_URL}/payment`, conformPayment)
-        //     .then(data => {
-        //         console.log("post data", data.data);
-        //         if (data.data.insertedId) {
-        //             Swal.fire({
-        //                 position: 'top-center',
-        //                 icon: 'success',
-        //                 title: 'Hand Cash Payment!',
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             })
-        //             /*TODO RETUNE BY PAYMENT ROUTER*/
-
-        //         }
-        //     })
-
+                })
+        }
 
         /* button processing function */
         if (!processing) {
@@ -101,7 +149,7 @@ const CheckOutForm = () => {
                     {processing ? 'Processing...' : 'Confirm Pay'}
                 </button>
             </form>
-            {/* <div className=' md:mt-5 mt-2' >
+            <div className=' md:mt-5 mt-2' >
                 {error && (
                     <p className='text-red-600 md:mt-5 mt-2 text-center'>Failed: {error}</p>
                 )}
@@ -110,7 +158,7 @@ const CheckOutForm = () => {
                         Complete Your Payment. Your Transaction ID: {success}
                     </p>
                 )}
-            </div> */}
+            </div>
         </div>
     );
 };

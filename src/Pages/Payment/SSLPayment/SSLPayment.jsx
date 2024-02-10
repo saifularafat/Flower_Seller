@@ -41,6 +41,7 @@ const SSLPayment = () => {
             userName: user.displayName,
             payType: "success",
             paymentType: "Case On Delivery.",
+            date: new Date(),
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);

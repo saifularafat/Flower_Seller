@@ -30,7 +30,7 @@ const MyOrder = () => {
             })
     };
     return (
-        <div className=" grid grid-cols-6 gap-5 overflow-y-scroll h-screen">
+        <div className=" grid grid-cols-6 gap-5 overflow-y-scroll myScroll h-screen">
             <Helmet>
                 <title>My Order || Flower Shop </title>
             </Helmet>
@@ -79,7 +79,7 @@ const MyOrder = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-5 space-y-3 pt-7 ">
+            <div className="col-span-5 md:space-y-5 md:py-7 py-3 ">
                 <MyOrderInfo orderInfo={orderInfo} refetch={refetch} />
             </div>
         </div>

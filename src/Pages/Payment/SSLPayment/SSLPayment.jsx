@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
 import Swal from "sweetalert2";
+import DateAndTime from "../../../components/DateAndTime";
 
 const SSLPayment = () => {
     const { id } = useParams();
@@ -24,8 +25,8 @@ const SSLPayment = () => {
     const deliveryCharge = 1.10;
     let totalAmount = amount + tex + deliveryCharge;
     const totalPrice = totalAmount.toFixed(2);
-    console.log(texFixed);
 
+    const randomTransitionId = Math.random().toString(36).substring(2, 22);
     const onSubmit = data => {
         /* TODO POST THE PAYMENT */
         const conformPayment = {
@@ -42,6 +43,7 @@ const SSLPayment = () => {
             payType: "success",
             paymentType: "Case On Delivery.",
             date: new Date(),
+            transitionId:randomTransitionId,
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);
@@ -50,11 +52,11 @@ const SSLPayment = () => {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(conformPayment)
         })
-        .then(res => res.json())
-        .then(data => {
-          window.location.replace(data?.url)
-          console.log(data?.url)
-        })
+            .then(res => res.json())
+            .then(data => {
+                window.location.replace(data?.url)
+                console.log(data?.url)
+            })
     }
     return (
         <div className="w-10/12 mx-auto my-5">

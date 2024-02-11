@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import car from "../../../assets/othersImg/car.webp"
-import useTotalPaymentData from "../../../api/useTotalPaymentData";
+import car from "../../../assets/othersImg/car.webp";
+import userEmailToPayment from "../../../api/useEmailPayment";
 
 const MyOrder = () => {
-    const [totalPayment, refetch] = useTotalPaymentData();
-    const orderLength = totalPayment.filter((orLength) => orLength?.orderInfo?.payStatus ? orLength?.orderInfo?.payStatus : orLength?.payStatus == "pending");
+    const [payments] = userEmailToPayment();
+    const orderLength = payments.filter((orLength) => orLength?.orderInfo?.payStatus || orLength?.payStatus === "pending");
+
     return (
         <>
             <Link to="my-order" className="lg:w-40 lg:h-20 md:w-8 md:h-8 flex-1 items-center text-center">

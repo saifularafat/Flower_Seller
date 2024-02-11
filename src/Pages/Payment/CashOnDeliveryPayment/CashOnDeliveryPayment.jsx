@@ -29,7 +29,6 @@ const CashOnDeliveryPayment = () => {
 
     const onSubmit = data => {
         const conformPayment = {
-            id: singleFlower?._id,
             image: singleFlower?.flowerImg,
             name: singleFlower?.flowerName,
             price: amount,

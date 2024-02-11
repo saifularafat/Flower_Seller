@@ -130,10 +130,10 @@ const MiddleHeader = () => {
             <div className="md:w-1/12 w-1/2 md:block hidden">
                 <Logo />
             </div>
-            <div className="lg:w-8/12 md:w-full  relative">
+            <div className="lg:w-9/12 md:w-full  relative">
                 <Search />
             </div>
-            <div className=" md:w-1/5 md:block hidden">
+            <div className=" md:w-1/6 md:block hidden">
                 <HederRight />
             </div>
         </div>

@@ -11,26 +11,24 @@ const MyOrderInfo = ({ orderInfo }) => {
             <div className="md:flex items-center justify-between bg-white rounded-md sticky top-0 z-20">
                 <h2 className=" uppercase md:text-xl text-xs text-center md:text-ellipsis font-semibold text-slate-500">Order history</h2>
                 <div className="md:flex items-center gap-4 bg-white md:px-4 px-2 md:py-2 py-1 shadow-2xl shadow-slate-800 rounded-xl">
-                    {/* <div> */}
-                        <div className="flex items-center gap-1">
-                            <img src={car} alt="" className="md:h-7 h-4 object-cover" />
-                            <p className="text-sm font-semibold text-slate-500">DELIVERY HOURS</p>
+                    <div className="flex items-center gap-1">
+                        <img src={car} alt="" className="md:h-7 h-4 object-cover" />
+                        <p className="text-sm font-semibold text-slate-500">DELIVERY HOURS</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <FaHome className="md:text-base text-xl" />
+                        <div className="flex items-center">
+                            <p className="text-sm font-medium md:font-semibold text-slate-500 leading-none">Residential:</p>
+                            <p className="text-xs font-semibold text-slate-500 md:pl-0 pl-1">9:30AM - 8:30PM</p>
                         </div>
-                        <div className="flex items-center gap-1">
-                            <FaHome className="md:text-base text-xl" />
-                            <div className="flex items-center">
-                                <p className="text-sm font-medium md:font-semibold text-slate-500 leading-none">Residential:</p>
-                                <p className="text-xs font-semibold text-slate-500 md:pl-0 pl-1">9:30AM - 8:30PM</p>
-                            </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <IoIosBusiness className="md:text-base text-xl" />
+                        <div className="flex items-center">
+                            <p className="text-sm font-medium md:font-semibold text-slate-500 leading-none">Businesses:</p>
+                            <p className="text-xs font-semibold text-slate-500 md:pl-0 pl-1">08:00AM - 05:30PM</p>
                         </div>
-                        <div className="flex items-center gap-1">
-                            <IoIosBusiness className="md:text-base text-xl" />
-                            <div className="flex items-center">
-                                <p className="text-sm font-medium md:font-semibold text-slate-500 leading-none">Businesses:</p>
-                                <p className="text-xs font-semibold text-slate-500 md:pl-0 pl-1">08:00AM - 05:30PM</p>
-                            </div>
-                        </div>
-                    {/* </div> */}
+                    </div>
                     <div className=" -pb-5">
                         {/* order menu by Mobile */}
                         <MyOrderMobile />

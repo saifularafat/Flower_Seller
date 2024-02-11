@@ -25,10 +25,10 @@ const MiddleHeader = () => {
                     </div>
                 </div>
                 {/* Mobile Menu */}
-                <div className=" sticky top-0 z-40'">
+                <div className="">
                     {
                         isMenu &&
-                        <div className='absolute top-0 left-0 transition-all duration-300 w-full z-40'>
+                        <div className='absolute top-0 left-0 transition-all duration-300 w-full z-50'>
                             <div className="flex items-center justify-between bg-slate-700 px-2 py-2">
                                 <div>
                                     <button onClick={() => setIsMenuOpen(false)}>

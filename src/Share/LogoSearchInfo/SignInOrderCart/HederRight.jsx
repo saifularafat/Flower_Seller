@@ -6,7 +6,7 @@ const HederRight = () => {
     return (
         <div className=" flex items-center justify-between md:gap-0 gap-3 ">
             <SignIn />
-            <div className="md:block hidden relative">
+            <div className="relative">
                 <MyOrder />
             </div>
             <Cart />

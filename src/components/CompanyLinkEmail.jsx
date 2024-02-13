@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const CompanyLinkEmail =  ({ companyPath,BgColor, companyName}) => {
+    
     return (
         <NavLink to={companyPath}
             className={({ isActive }) => (isActive ? 'active' : ' default')}

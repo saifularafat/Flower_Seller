@@ -13,12 +13,6 @@ import {  RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 import { FaPhotoFilm, FaPrint } from "react-icons/fa6";
 import { SlArrowLeft } from "react-icons/sl";
 import EmailTable from "../EmailTable";
-// import user1 from "./../../../../assets/pic1.png"
-// import user2 from "./../../../../assets/pic2.png"
-// import user3 from "./../../../../assets/pic3.png"
-// import user4 from "./../../../../assets/pic4.png"
-// import pdf from "../../../../assets/coding/pdf.png"
-// import pdfImg from "../../../../assets/coding/pdfImg.png"
 
 const EmailRightSite = () => {
     const [select, setSelect] = useState(false);
@@ -29,6 +23,7 @@ const EmailRightSite = () => {
     const [emailOneClick, setEmailOneClick] = useState(false);
     const [emailTwoClick, setEmailTwoClick] = useState(false);
     const [emailThreeClick, setEmailThreeClick] = useState(false);
+
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>
             {/* search section */}

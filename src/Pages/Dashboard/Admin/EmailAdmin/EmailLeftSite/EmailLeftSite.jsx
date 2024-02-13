@@ -16,7 +16,8 @@ import { GrGallery } from "react-icons/gr";
 import NavLinksEmail from "../../../../../components/NavLinkEmail"
 import CompanyLinkEmail from "./../../../../../components/CompanyLinkEmail"
 const EmailLeftSite = () => {
-    const [compose, setCompose] = useState(false)
+    const [compose, setCompose] = useState(false);
+    
     return (
         <div className={`text-accent rounded-l-xl shadow-2xl`}>
             {/* Desktop */}

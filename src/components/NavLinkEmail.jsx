@@ -1,6 +1,7 @@
 import {  NavLink } from "react-router-dom";
 
 const NavLinkEmail = ({ path, Icon, linkName, numberBg, numberText, number }) => {
+    
     return (
         <NavLink to={path}>
             <div className="w-full flex items-center justify-between">

@@ -79,10 +79,10 @@ const EmailCompose = () => {
                             </label>
                         </div>
                         <div className="flex items-center gap-1">
-                            <button className="text-xl hover:bg-slate-300 p-1 rounded-lg transition-all duration-200">
+                            <button className="text-xl text-slate-800 hover:bg-slate-300 p-1 rounded-lg transition-all duration-200">
                                 <HiOutlineDotsVertical />
                             </button>
-                            <button className="text-xl hover:bg-slate-300 hover:text-red-800 p-1 rounded-lg transition-all duration-200">
+                            <button className="text-xl text-red-700 hover:bg-slate-300 hover:text-red-800 p-1 rounded-lg transition-all duration-200">
                                 <RiDeleteBin6Line />
                             </button>
                         </div>

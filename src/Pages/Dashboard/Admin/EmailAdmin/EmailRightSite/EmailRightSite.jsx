@@ -28,8 +28,8 @@ const EmailRightSite = () => {
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>
             {/* search section */}
             <div className="flex items-center md:py-2 py-1 px-2 border-0 border-b border-solid border-slate-300 rounded">
-                <BsSearch className="md:text-xl text-base font-bold md:mx-1 mx-1" />
-                <input className={`w-full`} type="text" placeholder="Search Email " />
+                <BsSearch className="text-slate-600 md:text-xl text-base font-bold md:mx-1 mx-1" />
+                <input className={`w-full outline-none pl-1`} type="text" placeholder="Search Email " />
             </div>
             {/* table icon */}
             <div className="flex items-center justify-between py-2 border-0 border-b border-solid border-slate-400 px-2">
@@ -49,7 +49,7 @@ const EmailRightSite = () => {
                     }
 
                 </button>
-                <div className="flex items-center gap-4 ">
+                <div className="flex items-center gap-4 text-slate-800">
                     <button className="hover:bg-slate-200 p-2 rounded-full" onClick={() => setSpin(!spin)}>
                         {
                             spin ?
@@ -78,7 +78,7 @@ const EmailRightSite = () => {
                 <div>
                     {/* email table */}
                     <button
-                        className={` flex items-center justify-between gap-6 w-full py-3 border-0 border-b border-solid border-slate-400 hover:scale-y-105 transition-all duration-200`}>
+                        className={` flex items-center justify-between gap-6 w-full py-3 border-0 border-b border-solid border-slate-400 hover:scale-y-100 transition-all duration-200`}>
                         <div className="flex items-center gap-2 px-2">
                             <button className="" onClick={() => setSelect(!select)}>
                                 {
@@ -89,7 +89,7 @@ const EmailRightSite = () => {
                                 }
 
                             </button>
-                            <button className="" onClick={() => setStartClick(!startClick)}>
+                            <button className="text-slate-800" onClick={() => setStartClick(!startClick)}>
                                 {
                                     startClick ?
                                         <AiFillStar className="text-xl text-yellow-500" />
@@ -100,19 +100,19 @@ const EmailRightSite = () => {
                             </button>
                             <button
                                 onClick={() => setEmailClick(!emailClick)}
-                                className="info flex items-center pl-2">
+                                className="text-slate-800 flex items-center pl-2">
                                 <img src={''} alt="user image" className="w-8 h-8 rounded-full" />
                                 <div className="md:flex items-center gap-3">
-                                    <h3 className="text-lg font-semibold pl-2">Katie Brandt</h3>
-                                    <p className="text-sm">Bring discussion same boy include care.</p>
+                                    <h3 className="text-base font-semibold pl-2">Katie Brandt</h3>
+                                    <p className="text-xs">Bring discussion same boy include care.</p>
                                 </div>
                             </button>
                         </div>
                         <div className="flex items-center gap-4 mx-3">
                             <Tooltip id="my-tooltip" place="top" />
-                            <BiTrash className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Delete Mail" />
-                            <HiOutlineMail className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
-                            <BiErrorAlt className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Mark to spam" />
+                            <BiTrash className="text-xl text-red-700" data-tooltip-id="my-tooltip" data-tooltip-content="Delete Mail" />
+                            <HiOutlineMail className="text-xl text-blue-500" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
+                            <BiErrorAlt className="text-xl text-slate-700" data-tooltip-id="my-tooltip" data-tooltip-content="Mark to spam" />
                         </div>
                     </button>
                     {/* <EmailTable userImage={''} userName="Katie Brandt" userTitle32="Bring smile discussion same boy include care" emailClick={emailClick} setEmailClick={setEmailClick} /> */}
@@ -124,9 +124,9 @@ const EmailRightSite = () => {
                                     {/* first part */}
                                     <div className="BACK_TITLE col-span-2 md:col-span-10 flex items-center">
                                         <button onClick={() => setEmailClick(!emailClick)}>
-                                            <SlArrowLeft className="text-2xl font-semibold hover:bg-slate-50 p-1 rounded-2xl transition-all duration-200" />
+                                            <SlArrowLeft className="text-2xl text-slate-800 font-semibold hover:bg-slate-50 p-1 rounded-2xl transition-all duration-200" />
                                         </button>
-                                        <h2 className="pl-3 text-sm font-semibold">Bring smile discussion same boy include care.</h2>
+                                        <h2 className="pl-3 text-sm font-semibold text-slate-950">Bring smile discussion same boy include care.</h2>
                                         <div className="flex items-center gap-2 pl-2">
                                             <p className="text-xs bg-red-200 text-red-800 py-1 px-2 rounded-md">Private</p>
                                             <p className="text-xs bg-blue-200 text-blue-800 py-1 px-2 rounded-md">Company</p>
@@ -138,7 +138,7 @@ const EmailRightSite = () => {
                                             <FaPrint className="text-xl text-slate-400" />
                                         </button>
                                         <button className="hover:bg-slate-200 p-2 rounded-2xl transition-all duration-200">
-                                            <BiDotsVertical className="text-xl" />
+                                            <BiDotsVertical className="text-xl text-slate-700" />
                                         </button>
                                     </div>
                                 </div>
@@ -147,14 +147,14 @@ const EmailRightSite = () => {
                                     <div className="col-span-2 md:col-span-4 flex items-center">
                                         <div className="flex items-center gap-4 mx-3">
                                             <Tooltip id="my-tooltip" place="top" />
-                                            <BiTrash className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Delete" />
-                                            <HiOutlineMailOpen className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
-                                            <AiOutlineFolder className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Folder" />
-                                            <CiShoppingTag className="text-2xl text-black" data-tooltip-id="my-tooltip" data-tooltip-content="Label" />
+                                            <BiTrash className="text-xl text-red-700 outline-none" data-tooltip-id="my-tooltip" data-tooltip-content="Delete" />
+                                            <HiOutlineMailOpen className="text-xl text-blue-700 outline-none" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
+                                            <AiOutlineFolder className="text-xl text-green-700 outline-none" data-tooltip-id="my-tooltip" data-tooltip-content="Folder" />
+                                            <CiShoppingTag className="text-2xl text-slate-950 outline-none" data-tooltip-id="my-tooltip" data-tooltip-content="Label" />
                                         </div>
                                     </div>
                                     {/* FOUR PART */}
-                                    <div className=" PART_BY_PART col-span-1 flex items-center">
+                                    <div className=" PART_BY_PART col-span-1 flex items-center text-slate-700">
                                         <p className="text-sm font-medium">1-10 <span className="text-xs">of</span> 371</p>
                                         <button className="hover:bg-slate-200 p-1 rounded-2xl transition-all duration-200">
                                             <RiArrowLeftSFill className="text-2xl" />
@@ -171,14 +171,14 @@ const EmailRightSite = () => {
                                     <div className="flex items-center gap-3">
                                         <img src={''} alt="user image" className="w-8 h-8 rounded-full" />
                                         <div>
-                                            <h2 className="font-medium">Katie Brandt</h2>
-                                            <p className="text-xs">james25@gmail.com</p>
+                                            <h2 className="font-medium text-slate-950">Katie Brandt</h2>
+                                            <p className="text-xs text-slate-600">james25@gmail.com</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex items-center gap-4 text-slate-800">
                                         <h3 className="text-sm font-medium">Nov 12, 2023</h3>
                                         <button>
-                                            <FaPhotoFilm className="text-lg" />
+                                            <FaPhotoFilm className="text-lg text-blue-900" />
                                         </button>
                                         <button className="" onClick={() => setStartClick(!startClick)}>
                                             {
@@ -195,7 +195,7 @@ const EmailRightSite = () => {
                                     </div>
                                 </div>
                                 {/* main text */}
-                                <div className="py-5 px-5 border-0 border-b border-solid border-slate-300 ">
+                                <div className="py-5 px-5 border-0 border-b border-solid border-slate-300 text-slate-700">
                                     <p className="text-justify">
                                         Guy national course pay small per. Commercial research lose key fight marriage. Young series raise degree foot degree detail number. Crime gas real pass white. Television success east.
                                         Into miss knowledge result. Seat carry tax beat line. Amount language paper machine fly. Music several common former. More mouth year site move hold. Billion material born news western late.
@@ -204,7 +204,7 @@ const EmailRightSite = () => {
                                         World them term identify. Rule southern condition thought. Article successful traditional friend. Phone financial skill theory. Change Mr experience. Everyone help structure much family. Voice general group likely.
                                     </p>
                                     <div className="pt-8">
-                                        <p className="text-base">saiful isalam </p>
+                                        <p className="text-base text-blue-800 lowercase">saiful isalam </p>
                                         <p className="mt-1 border-0 border-t border-solid border-slate-300 w-1/5 font-medium">
                                             Your Signature
                                         </p>
@@ -225,7 +225,7 @@ const EmailRightSite = () => {
                                 </div>
                             </div>
                             <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>
-                                <h2 className="text-sm font-medium"> Click here to <span className="text-blue-700 text-base cursor-pointer">Reply</span> or <span className="text-blue-700 text-base cursor-pointer">Forward</span></h2>
+                                <h2 className="text-sm font-medium text-gray-800"> Click here to <span className="text-blue-700 text-base cursor-pointer hover:underline">Reply</span> or <span className="text-blue-700 text-base hover:underline cursor-pointer">Forward</span></h2>
                             </div>
                         </div>
                     }

@@ -5,7 +5,6 @@ const TotalPayment = () => {
     console.log(totalPayment);
     return (
         <div className="overflow-x-auto">
-            
             <h3 className="text-right text-xl md:text-2xl font-semibold pb-5"><span className="md:text-3xl text-2xl">{totalPayment?.length}</span> TOTAL PAYMENT</h3>
             <table className="table">
                 {/* head */}

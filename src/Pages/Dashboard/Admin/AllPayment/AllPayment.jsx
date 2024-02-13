@@ -10,12 +10,21 @@ const AllPayment = () => {
         return <DataLoading />
     }
     console.log(totalPayment);
+
+    const handleStatusChange = () => {
+        console.log("Change the Status");
+    }
+    const handleDeletePay = (pay) => {
+        console.log("handle Delete Pay", (pay?._id));
+    }
     return (
         <div>
             <Helmet>
                 <title>Flower Shop || All Payment </title>
             </Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiFireFlower} textColor="" title="All Payment " />
+            {/* TODO TOTAL AMOUNT */}
+            {/* <h2>{}</h2> */}
             <div className="overflow-x-auto">
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <thead>
@@ -40,10 +49,11 @@ const AllPayment = () => {
                                     <td>{pay?.totalPrice + "$"}</td>
                                     <td>{pay?.transition_id}</td>
                                     {
-                                        pay?.payStatus === "success" ? <p className="text-center text-sm p-1 bg-blue-400 text-white tracking-wide capitalize rounded-md">success</p> : <>
+                                        pay?.payStatus === "success" ? <p className="disabled text-center text-sm p-1 bg-blue-300 text-white tracking-wide capitalize rounded-md">success</p> : <>
+                                            {/* TODO ACTION */}
                                             <div>
-                                                <button className="px-2 py-1 rounded-md bg-green-500 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
-                                                <button className="px-2 py-1 rounded-md bg-red-500 text-xs font-medium capitalize ml-1">Delete</button>
+                                                <button onClick={() => handleStatusChange(pay)} className="px-2 py-1 rounded-md bg-green-400 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
+                                                <button onClick={() => handleDeletePay(pay)} className="px-2 py-1 rounded-md bg-red-400 text-xs font-medium capitalize ml-1">Delete</button>
                                             </div>
                                         </>
                                     }

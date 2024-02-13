@@ -6,6 +6,7 @@ const CashOnDelivery = () => {
 
     return (
         <div className="overflow-x-auto">
+            <h2 className="text-base md:text-lg font-medium md:font-semibold">Payment : {cashOnDelivery?.length}</h2>
             <table className="table">
                 {/* head */}
                 <thead>
@@ -38,17 +39,15 @@ const CashOnDelivery = () => {
                                 </td>
                                 <td>
                                     <div>
-                                        <div className="font-bold">{delivery?.name}</div>
-                                        <div className="text-sm opacity-50">{delivery?.paymentType}</div>
+                                        <div className="md:font-bold md:text-sm text-xs">{delivery?.name}</div>
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <div className="font-bold">{delivery?.userName}</div>
-                                        <div className="text-sm opacity-50">{delivery?.email}</div>
+                                        <div className="md:text-sm text-xs opacity-50">{delivery?.email}</div>
                                     </div>
                                 </td>
-                                <td>{delivery?.totalPrice + "$"}</td>
+                                <td className="text-xs md:text-base">{delivery?.totalPrice + "$"}</td>
                                 <th>
                                     <button className="btn btn-ghost btn-xs">Cancel</button>
                                     <button className="btn btn-ghost btn-xs">Success</button>

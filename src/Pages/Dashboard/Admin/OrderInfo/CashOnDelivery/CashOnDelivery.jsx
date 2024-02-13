@@ -1,12 +1,21 @@
+import { Helmet } from "react-helmet-async";
 import useTotalPaymentData from "./../../../../../api/useTotalPaymentData.js";
 const CashOnDelivery = () => {
     const [totalPayment] = useTotalPaymentData();
     const cashOnDelivery = totalPayment.filter(delivery => delivery.paymentType === "Case On Delivery")
-    console.log(cashOnDelivery);
+
+    let amount = 0;
+    cashOnDelivery.forEach(order => {
+        amount += parseFloat(order?.totalPrice);
+    });
+    const totalAmount = amount.toFixed(2);
 
     return (
         <div className="overflow-x-auto">
-            <h2 className="text-base md:text-lg font-medium md:font-semibold">Payment : {cashOnDelivery?.length}</h2>
+            <Helmet>
+                <title>  Cash Delivery || Dashboard || Flower Shop </title>
+            </Helmet>
+            <h2 className="text-base md:text-lg font-medium md:font-semibold">Pending Payment : {cashOnDelivery?.length} <span className="text-xs font-medium text-slate-500">( total amount {totalAmount + "$"} )</span></h2>
             <table className="table">
                 {/* head */}
                 <thead>

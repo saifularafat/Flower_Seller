@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import DataLoading from "../../../../../Share/Loading/DataLoading";
 import useTotalPaymentData from "../../../../../api/useTotalPaymentData";
 
@@ -17,7 +18,10 @@ const SSLPaymentDelivery = () => {
     }
     return (
         <div className="overflow-x-auto">
-            <h3 className="md:text-right pl-2 md:pl-0 text-lg md:text-xl font-semibold md:pb-5 pb-2 uppercase"><span className="md:text-3xl text-2xl">{totalAmount}</span> TOTAL Amount <span className="text-sm font-medium lowercase">out Of </span> {sslCommerz?.length}</h3>
+            <Helmet>
+                <title>  SSL Payment || Dashboard || Flower Shop </title>
+            </Helmet>
+            <h3 className="md:text-right pl-2 md:pl-0 text-lg md:text-xl font-semibold md:pb-5 pb-2 uppercase"><span className="md:text-3xl text-2xl">{totalAmount + "$"}</span> TOTAL Amount <span className="text-sm font-medium lowercase">(out Of  {sslCommerz?.length})</span></h3>
             <table className="table">
                 {/* head */}
                 <thead>

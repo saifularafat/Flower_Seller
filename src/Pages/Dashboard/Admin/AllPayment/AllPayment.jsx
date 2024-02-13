@@ -6,16 +6,32 @@ import useTotalPaymentData from "../../../../api/useTotalPaymentData";
 
 const AllPayment = () => {
     const [totalPayment, refetch, isLoading] = useTotalPaymentData();
-    if (isLoading) {
-        return <DataLoading />
-    }
-    console.log(totalPayment);
+    const pendingPay = totalPayment.filter(pending => pending?.payStatus === "pending");
+
+    /* total Payment */
+    let amount = 0;
+    totalPayment.forEach(order => {
+        amount += parseFloat(order?.totalPrice);
+    });
+    const totalAmount = amount.toFixed(2);
+
+    /* pending pay */
+    let pAmount = 0;
+    pendingPay.forEach(order => {
+        pAmount += parseFloat(order?.totalPrice);
+    });
+    const totalPAmount = pAmount.toFixed(2);
+    console.log(totalPAmount);
 
     const handleStatusChange = () => {
         console.log("Change the Status");
     }
     const handleDeletePay = (pay) => {
         console.log("handle Delete Pay", (pay?._id));
+    }
+
+    if (isLoading) {
+        return <DataLoading />
     }
     return (
         <div>
@@ -24,7 +40,7 @@ const AllPayment = () => {
             </Helmet>
             <DashboardTitle borderColor="border-slate-600" borderStyle=" border-dashed" borderWidth=" w-3/12" Icon={GiFireFlower} textColor="" title="All Payment " />
             {/* TODO TOTAL AMOUNT */}
-            {/* <h2>{}</h2> */}
+            <h3 className="md:text-right pl-2 md:pl-0 text-lg md:text-xl font-semibold md:pb-5 pb-2 uppercase"><span className="md:text-3xl text-2xl">{totalAmount + "$"}</span> TOTAL Amount <span className="text-xs">(pending pay: {totalPAmount + "$"})</span></h3>
             <div className="overflow-x-auto">
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <thead>

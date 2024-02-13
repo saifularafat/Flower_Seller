@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import SortBy from "../Birthday/SortBy";
 import DataLoading from "../../Share/Loading/DataLoading";
+import { Helmet } from "react-helmet-async";
 const ThanksGiving = () => {
     const [cartAdd, setCartAdd] = useState(false);
     const [flowerAll, refetch, isLoading] = useAllFlowers();
@@ -17,6 +18,9 @@ const ThanksGiving = () => {
     return (
         <>
             <div className="mx-4 md:pb-10">
+            <Helmet>
+                <title> Thanks Flower || Flower Shop </title>
+            </Helmet>
                 <PageTitleAndDescription
                     path="/thanksgiving-flower"
                     name="Thanksgiving"

@@ -3,7 +3,9 @@ import {  NavLink } from "react-router-dom";
 const NavLinkEmail = ({ path, Icon, linkName, numberBg, numberText, number }) => {
     
     return (
-        <NavLink to={path}>
+        <NavLink to={path}
+        className={({ isActive }) => (isActive ? 'defaultEmail' : 'activeEmail')}
+        >
             <div className="w-full flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <Icon className="text-lg" />

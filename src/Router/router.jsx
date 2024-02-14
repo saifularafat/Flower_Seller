@@ -34,7 +34,7 @@ import RetuneOrder from "../Pages/Dashboard/Admin/OrderInfo/RetuneOrder/RetuneOr
 import OrderCancel from "../Pages/Dashboard/Admin/OrderInfo/OrderCancel/OrderCancel";
 import UserHome from "../Pages/Dashboard/Users/UserHome/UserHome";
 import AddItem from "../Pages/Dashboard/Admin/AddItems/AddItem";
-import EmailAdmin from "../Pages/Dashboard/Admin/EmailAdmin/EmailAdmin";
+import EmailLayout from "../Layouts/EmailLayout";
 import ChatAdmin from "../Pages/Dashboard/Admin/ChatAdmin/ChatAdmin";
 import Calender from "../Pages/Dashboard/Admin/Calender/Calender";
 import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
@@ -423,18 +423,26 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/footerChange/${params.id}`)
             },
             /* help section */
+            /* Email Router */
             {
                 path: "/dashboard/email",
-                element: <EmailAdmin />
+                element: <EmailLayout />,
+                children: [
+                    {
+                        path: "/dashboard/email",
+                        element: <IndexEmail />
+                    },
+                    {
+                        path: "/dashboard/email/index",
+                        element: <IndexEmail />
+                    },
+                    {
+                        path: "/dashboard/email/send",
+                        element: <SendEmail />
+                    },
+                ]
             },
-            {
-                path: "/dashboard/email/index",
-                element: <IndexEmail />
-            },
-            {
-                path: "/dashboard/email/send",
-                element: <SendEmail />
-            },
+
             {
                 path: "/dashboard/chat",
                 element: <ChatAdmin />

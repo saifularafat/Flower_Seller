@@ -9,10 +9,9 @@ import { HiOutlineMail, HiOutlineMailOpen } from "react-icons/hi";
 import { AiFillStar, AiOutlineFolder, AiOutlineStar } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 import { CiShoppingTag } from "react-icons/ci";
-import {  RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
+import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 import { FaPhotoFilm, FaPrint } from "react-icons/fa6";
 import { SlArrowLeft } from "react-icons/sl";
-import EmailTable from "../EmailTable";
 
 const EmailRightSite = () => {
     const [select, setSelect] = useState(false);
@@ -26,11 +25,6 @@ const EmailRightSite = () => {
 
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>
-            {/* search section */}
-            <div className="flex items-center md:py-2 py-1 px-2 border-0 border-b border-solid border-slate-300 rounded">
-                <BsSearch className="text-slate-600 md:text-xl text-base font-bold md:mx-1 mx-1" />
-                <input className={`w-full outline-none pl-1`} type="text" placeholder="Search Email " />
-            </div>
             {/* table icon */}
             <div className="flex items-center justify-between py-2 border-0 border-b border-solid border-slate-400 px-2">
                 <button className="" onClick={() => setSelect(!select)}>
@@ -115,7 +109,6 @@ const EmailRightSite = () => {
                             <BiErrorAlt className="text-xl text-slate-700" data-tooltip-id="my-tooltip" data-tooltip-content="Mark to spam" />
                         </div>
                     </button>
-                    {/* <EmailTable userImage={''} userName="Katie Brandt" userTitle32="Bring smile discussion same boy include care" emailClick={emailClick} setEmailClick={setEmailClick} /> */}
                     {
                         emailClick &&
                         <div className="absolute right-0 top-0 bottom-0 bg-slate-100 rounded-tr-xl rounded-br-xl w-full h-[470px] overflow-y-scroll myEmailScroll">
@@ -271,7 +264,6 @@ const EmailRightSite = () => {
                             <BiErrorAlt className="text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Mark to spam" />
                         </div>
                     </button>
-                    {/* <EmailTable userImage={user1} userName="Katie Brandt" userTitle32="Bring smile discussion same boy include care" emailClick={emailClick} setEmailClick={setEmailClick} /> */}
                     {
                         emailOneClick &&
                         <div className="absolute right-0 top-0 bottom-0 bg-slate-100 rounded-tr-xl rounded-br-xl w-full h-[470px] overflow-y-scroll myEmailScroll">
@@ -324,7 +316,7 @@ const EmailRightSite = () => {
                             <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
                                 <div className="flex items-start justify-between py-2 px-3 border-0 border-b border-solid border-slate-300">
                                     <div className="flex items-center gap-3">
-                                        <img src={user2} alt="user image" className="w-8 h-8 rounded-full" />
+                                        <img src={''} alt="user image" className="w-8 h-8 rounded-full" />
                                         <div>
                                             <h2 className="font-medium">Tipo Sultan</h2>
                                             <p className="text-xs">tiposultan@123.com</p>
@@ -370,11 +362,11 @@ const EmailRightSite = () => {
                                     <p className="text-sm font-medium text-slate-400">2 Attachments</p>
                                     <div className="space-y-3">
                                         <div className="flex items-center gap-2 mt-5">
-                                            <img src={pdf} alt="" className="object-cover w-7 h-8" />
+                                            <img src={''} alt="" className="object-cover w-7 h-8" />
                                             <h5 className="text-xs font-medium text-slate-700">logo.pdf</h5>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <img src={pdfImg} alt="" className="object-cover w-7 h-8" />
+                                            <img src={''} alt="" className="object-cover w-7 h-8" />
                                             <h5 className="text-xs font-medium text-slate-700">performance.xls</h5>
                                         </div>
                                     </div>

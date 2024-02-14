@@ -6,8 +6,10 @@ import { BiErrorAlt, BiTrash } from "react-icons/bi";
 import NavLinksEmail from "../../../../../components/NavLinkEmail"
 import CompanyLinkEmail from "./../../../../../components/CompanyLinkEmail"
 import EmailCompose from "./EmailCompose";
-const EmailLeftSite = () => {
+import useAdmin from "../../../../../api/useAdmin";
 
+const EmailLeftSite = () => {
+    const [isAdmin] = useAdmin();
     return (
         <div className={`text-accent rounded-l-xl shadow-2xl`}>
             {/* Desktop */}
@@ -34,23 +36,28 @@ const EmailLeftSite = () => {
                     <li>
                         <NavLinksEmail path="" Icon={BiTrash} linkName="Trash" numberBg="" numberText="" number="" />
                     </li>
-                    <li>
-                        <div className="bg-slate-200 w-full mt-9">
-                            <span className="text-xs pl-4 ">LABELS</span>
-                        </div>
-                    </li>
-                    <li>
-                        <CompanyLinkEmail companyPath="" BgColor="bg-blue-700" companyName="Personal" />
-                    </li>
-                    <li>
-                        <CompanyLinkEmail companyPath="" BgColor="bg-sky-500" companyName="Company" />
-                    </li>
-                    <li>
-                        <CompanyLinkEmail companyPath="" BgColor="bg-orange-600" companyName="Important" />
-                    </li>
-                    <li>
-                        <CompanyLinkEmail companyPath="" BgColor="bg-red-600" companyName="Private" />
-                    </li>
+                    {
+                        isAdmin &&
+                        <>
+                            <li>
+                                <div className="bg-slate-200 w-full mt-9">
+                                    <span className="text-xs pl-4 ">LABELS</span>
+                                </div>
+                            </li>
+                            <li>
+                                <CompanyLinkEmail companyPath="" BgColor="bg-blue-700" companyName="Personal" />
+                            </li>
+                            <li>
+                                <CompanyLinkEmail companyPath="" BgColor="bg-sky-500" companyName="Company" />
+                            </li>
+                            <li>
+                                <CompanyLinkEmail companyPath="" BgColor="bg-orange-600" companyName="Important" />
+                            </li>
+                            <li>
+                                <CompanyLinkEmail companyPath="" BgColor="bg-red-600" companyName="Private" />
+                            </li>
+                        </>
+                    }
                 </ul>
             </div>
 

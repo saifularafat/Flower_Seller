@@ -88,6 +88,8 @@ import TotalPayment from "../Pages/Payment/TotalPayment/TotalPayment";
 import OrderPending from "../Pages/Payment/OrderPending/OrderPending";
 import OrderUseCancel from "../Pages/OrderUse/OrderUseCancel";
 import OrderUserDetails from "../Pages/OrderUse/OrderUserDetails";
+import IndexEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/IndexEmail/IndexEmail";
+import SendEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/SendEmail/SendEmail";
 
 const router = createBrowserRouter([
     {
@@ -424,6 +426,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/email",
                 element: <EmailAdmin />
+            },
+            {
+                path: "/dashboard/email/index",
+                element: <IndexEmail />
+            },
+            {
+                path: "/dashboard/email/send",
+                element: <SendEmail />
             },
             {
                 path: "/dashboard/chat",

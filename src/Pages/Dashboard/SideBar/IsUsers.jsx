@@ -46,7 +46,7 @@ const IsUsers = () => {
                 <p className="py-2 my-1 pl-3 text-slate-600 font-semibold text-base uppercase bg-slate-100">Help section</p>
                 <li className="">
                     <NavLink
-                        to="/dashboard/userEmail"
+                        to="/dashboard/email"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <MdEmail className="text-xl" />
                         <span>Email </span>

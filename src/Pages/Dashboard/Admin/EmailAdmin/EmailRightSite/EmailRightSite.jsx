@@ -1,4 +1,4 @@
-import { BsSearch, BsThreeDotsVertical } from "react-icons/bs";
+import {  BsThreeDotsVertical } from "react-icons/bs";
 import { GrCheckbox } from "react-icons/gr";
 import { ImCheckboxChecked } from "react-icons/im";
 import { useState } from "react";
@@ -111,7 +111,7 @@ const EmailRightSite = () => {
                     </button>
                     {
                         emailClick &&
-                        <div className="absolute right-0 top-0 bottom-0 bg-slate-100 rounded-tr-xl rounded-br-xl w-full h-[470px] overflow-y-scroll myEmailScroll">
+                        <div className="absolute right-0 top-0 bottom-0 bg-slate-100 rounded-tr-xl rounded-br-xl w-full h-screen overflow-y-scroll myScroll">
                             <div className={`MAIN_ICONS_FULL_PART  py-2 px-4`}>
                                 <div className="grid grid-cols-3 md:grid-cols-11 py-3 border-0 border-b border-solid border-slate-300">
                                     {/* first part */}

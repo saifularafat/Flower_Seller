@@ -477,7 +477,7 @@ const router = createBrowserRouter([
                 element: <AddressAdd />
             },
             {
-                path: "/dashboard/userEmail",
+                path: "/dashboard/email",
                 element: <UserEmail />
             },
             {

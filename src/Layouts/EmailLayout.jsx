@@ -11,7 +11,7 @@ const EmailLayout = () => {
             <div className="col-span-2 bg-white h-screen overflow-y-visible">
                <EmailLeftSite />
             </div>
-            <div className="col-span-7 md:px-3 py-5 h-screen overflow-y-scroll myScroll md:bg-transparent bg-slate-200">
+            <div className="col-span-7 md:px-3 py-5 h-[580px] overflow-y-scroll myScroll md:bg-transparent bg-slate-200">
                 <EmailSearch />
                 <Outlet />
             </div>

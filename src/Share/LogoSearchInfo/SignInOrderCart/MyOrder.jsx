@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import car from "../../../assets/othersImg/car.webp";
 import userEmailToPayment from "../../../api/useEmailPayment";
+import useAuth from "../../../api/useAuth";
 
 const MyOrder = () => {
+    const {user} = useAuth();
     const [payments] = userEmailToPayment();
     const orderLength = payments.filter((orLength) => orLength?.orderInfo?.payStatus || orLength?.payStatus === "pending");
 
@@ -16,8 +18,15 @@ const MyOrder = () => {
                 <img src={car} alt="" className="lg:h-7 h-6 object-cover mt-1" />
                 <span className="text-white text-xs leading-tight font-medium text-center">Order</span>
             </Link>
-            {orderLength?.length &&
-                <span className="bg-red-50 h-4 w-4 mx-auto text-center rounded-md absolute right-1 top-0 text-xs text-slate-500 font-light" >{orderLength?.length}</span>
+            {
+                user ?
+                    <>
+                        {orderLength?.length &&
+                            <span className="bg-red-50 h-4 w-4 mx-auto text-center rounded-md absolute right-1 top-0 text-xs text-slate-500 font-light" >{orderLength?.length}</span>
+                        }
+                    </>
+                    :
+                    <></>
             }
         </>
     );

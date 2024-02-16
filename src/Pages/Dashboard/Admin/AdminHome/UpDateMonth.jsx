@@ -8,11 +8,13 @@ import medal from "../../../../assets/logo/medal.png"
 import useTotalPaymentData from "../../../../api/useTotalPaymentData";
 import allUsers from "../../../../api/useAllUser";
 import useAllFlowers from "../../../../api/useAllFlowers";
+import useAuth from "../../../../api/useAuth";
 
 const UpDateMonth = () => {
     const [totalPayment] = useTotalPaymentData();
     const [users] = allUsers();
     const [flowerAll] = useAllFlowers();
+    const {user} = useAuth();
 
     /* total flower Order  */
     let amount = 0;
@@ -35,7 +37,7 @@ const UpDateMonth = () => {
                 {/* view salary */}
                 <div className={`col-span-2 flex w-full text-slate-900 shadow-2xl p-4 overflow-hidden rounded-xl `}>
                     <div>
-                        <h3 className="font-medium text-lg">Congratulations 🎉 Saiful</h3>
+                        <h3 className="font-medium text-lg">Congratulations 🎉 {user?.displayName}</h3>
                         <p className="font-normal tracking-wider mt-3 text-sm text-blue-500">You have won the first place</p>
                         <h2 className="font-medium text-3xl text-blue-600 mt-6 mb-3 cursor-pointer">{totalAmount + "$"} </h2>
                         <Link to="/dashboard/totalPayment">
@@ -63,7 +65,7 @@ const UpDateMonth = () => {
                                 <div className="bg-blue-800/30 p-3 rounded-full">
                                     <FiUser className="text-2xl text-blue-900" />
                                 </div>
-                                <p className="text-xl font-semibold leading-none tracking-wide">{users?.length} <br /><span className="text-sm text-blue-600 font-normal leading-none">customer</span></p>
+                                <p className="text-xl font-semibold leading-none tracking-wide">{users?.length} <br /><span className="text-sm text-blue-600 font-normal leading-none">users</span></p>
                             </div>
                             <div className="flex items-center justify-between gap-2">
                                 <div className="bg-orange-600/20 p-3 rounded-full">
@@ -89,7 +91,7 @@ const UpDateMonth = () => {
                                 <div className="bg-blue-800/20 p-3 rounded-full">
                                     <TbArrowsTransferUp className="text-2xl text-blue-700" />
                                 </div>
-                                <p className="text-xl font-semibold leading-none tracking-wide">05 <br /><span className="text-sm text-blue-600 font-normal leading-none lowercase">rang</span></p>
+                                <p className="text-xl font-semibold leading-none tracking-wide">{totalPayment?.length} <br /><span className="text-sm text-blue-600 font-normal leading-none">O.Product</span></p>
                             </div>
                         </div>
                     </div>

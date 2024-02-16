@@ -308,7 +308,7 @@ const orderBarChart = {
   const budgetDashesLineChart = {
     series1: [{
       name: "Session Duration",
-      data: [23, 20, 25, 22, 23, 19, 26, 22, 21.6, 18, 23]
+      data: [10, 17, 20, 22, 26, 29, 21, 26, 28.6, 17, 25]
     },
     {
       name: "Page Views",

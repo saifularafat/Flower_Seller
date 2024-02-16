@@ -1,3 +1,4 @@
+import BrowserGoalTran from "./BrowserGoalTran/BrowserGoalTran";
 import RevenueSecondSection from "./RevenuSection/RevenueSecondSection";
 import UpDateMonth from "./UpDateMonth";
 
@@ -6,6 +7,7 @@ const AdminHome = () => {
         <div>
             <UpDateMonth />
             <RevenueSecondSection />
+            <BrowserGoalTran />
         </div>
     );
 };

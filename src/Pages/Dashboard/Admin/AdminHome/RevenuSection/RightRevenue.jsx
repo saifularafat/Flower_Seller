@@ -19,10 +19,10 @@ const RightRevenue = () => {
 
     const isShowChart = (year) => {
         switch (year) {
-            case "2022":
+            case "2023":
                 setDeashLine(state => ({ ...state, series: budgetDashesLineChart.series1 }))
                 break
-            case '2021':
+            case '2022':
                 setDeashLine(state => ({ ...state, series: budgetDashesLineChart.series2 }))
                 break
             default:
@@ -52,9 +52,9 @@ const RightRevenue = () => {
                     <IoMdArrowDropdown className="text-2xl" />
                 </button>
                 <div ref={buttonRaf} className={`${btnGroup ? 'block' : "hidden"} bg-white absolute top-full left-0 w-36 mt-3 z-10 rounded-lg shadow-lg border border-solid border-blue-400 overflow-hidden`}>
-                    <button onClick={selectBtn} className=" text-lg font-medium text-slate-700 text-left w-full py-1 px-2 hover:text-blue-500 duration-200 transition-all">2023</button>
                     <button onClick={selectBtn} className=" text-lg font-medium text-slate-700 text-left w-full py-1 px-2 hover:text-blue-500 duration-200 transition-all">2022</button>
-                    <button onClick={selectBtn} className=" text-lg font-medium text-slate-700 text-left w-full py-1 px-2 hover:text-blue-500 duration-200 transition-all">2021</button>
+                    <button onClick={selectBtn} className=" text-lg font-medium text-slate-700 text-left w-full py-1 px-2 hover:text-blue-500 duration-200 transition-all">2023</button>
+                    <button onClick={selectBtn} className=" text-lg font-medium text-slate-700 text-left w-full py-1 px-2 hover:text-blue-500 duration-200 transition-all">2024</button>
                 </div>
             </div>
             <h2 className="text-3xl text-accent font-medium">$15,463</h2>

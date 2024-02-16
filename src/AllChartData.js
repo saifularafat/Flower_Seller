@@ -125,7 +125,7 @@ const orderBarChart = {
   }
   
   const earningPieChart = {
-    series: [29, 53, 18],
+    series: [21, 63, 16],
     options: {
       stroke: {
         width: 0

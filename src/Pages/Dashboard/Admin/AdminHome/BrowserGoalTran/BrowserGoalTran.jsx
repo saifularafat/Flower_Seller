@@ -7,6 +7,7 @@ import safari from '../../../../../assets/browser/safari.png';
 import mini from '../../../../../assets/browser/mini.png';
 import explorer from '../../../../../assets/browser/explorer.png';
 import GlobalChart from "./GlobalChart";
+import TransitionSystem from "./Transitionsystem";
 const BrowserGoalTran = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 my-3">
@@ -30,7 +31,7 @@ const BrowserGoalTran = () => {
                 <GlobalChart />
             </div>
             <div className={`text-accent col-span-2 py-5 px-3 shadow-xl rounded-lg`}>
-                {/* <Transactions /> */}
+                <TransitionSystem />
             </div>
         </div>
     );

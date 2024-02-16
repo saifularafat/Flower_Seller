@@ -6,6 +6,7 @@ import firefox from '../../../../../assets/browser/firefox.png';
 import safari from '../../../../../assets/browser/safari.png';
 import mini from '../../../../../assets/browser/mini.png';
 import explorer from '../../../../../assets/browser/explorer.png';
+import GlobalChart from "./GlobalChart";
 const BrowserGoalTran = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 my-3">
@@ -25,12 +26,12 @@ const BrowserGoalTran = () => {
                     <BrowserCart image={explorer} title="Internet Explorer" percent="8.1%" settings={{ series: browserRadialBarChart.series5, options: { ...browserRadialBarChart.options, colors: browserRadialBarChart.options.colors5 } }} />
                 </div>
             </div>
-            {/* <div className={`text-accent col-span-2 py-5 px-3 shadow-xl rounded-lg`}>
+            <div className={`text-accent col-span-2 py-5 px-3 shadow-xl rounded-lg`}>
                 <GlobalChart />
             </div>
-            <div className={`${isDarkMode ? "bg-slate-800" : "bg-white"} text-accent col-span-2 py-5 px-3 shadow-xl rounded-lg`}>
-                <Transactions />
-            </div> */}
+            <div className={`text-accent col-span-2 py-5 px-3 shadow-xl rounded-lg`}>
+                {/* <Transactions /> */}
+            </div>
         </div>
     );
 };

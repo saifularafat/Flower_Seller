@@ -419,7 +419,7 @@ const orderBarChart = {
   }
   
   const globalAngleChart = {
-    series: [89],
+    series: [69],
     options: {
       stroke: {
         lineCap: "round"

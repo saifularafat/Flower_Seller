@@ -50,7 +50,7 @@ const UpDateMonth = () => {
                     <div className="w-full">
                         <div className="flex items-center justify-between">
                             <h4 className="text-xl font-medium text-slate-900">Statistics</h4>
-                            <p className="lowercase text-sm text-blue-500 text-slate-900">Updated 1 months ago</p>
+                            <p className="lowercase text-sm  text-slate-500">Updated 1 months ago</p>
                         </div>
                         <div className="md:flex items-center justify-between space-y-3 md:space-y-0 gap-5 mt-6">
                             <div className="flex items-center justify-between gap-2">

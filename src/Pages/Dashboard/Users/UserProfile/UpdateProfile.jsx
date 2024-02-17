@@ -1,21 +1,23 @@
 import { useAxiosSecure } from '../../../../api/useAxiosSecure';
 import useAuth from '../../../../api/useAuth';
 import defaultPic from '../../../../assets/othersImg/userPro.png';
-import Loading from '../../../components/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import DataLoading from '../../../../Share/Loading/DataLoading';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateProfile = () => {
-    const img_token = import.meta.env.VITE_IMG_UPLOAD_KEY
+    const img_token = import.meta.env.VITE_IMG_UPLOAD_KEY;
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_token}`
 
-    const { user, loading, updateUserInfo } = useAuth()
-    const [axiosSecure] = useAxiosSecure()
+    const { user, loading, updateUserInfo } = useAuth();
+    const [axiosSecure] = useAxiosSecure();
+    const navigate = useNavigate();
 
     const {
         data: info,
         refetch,
-        isLoading: p_loading
+        isLoading
     } = useQuery({
         queryKey: ['profile_Info', user?.email],
         enabled: !loading,
@@ -25,20 +27,20 @@ const UpdateProfile = () => {
             return res.data
         }
     })
-    console.log(info,'.......................lne 29');
+    console.log(info, '.......................lne 29');
 
     const onSubmitData = event => {
         event.preventDefault()
 
         const form = event.target
-        const batch = form.batch.value
-        const mobile = form.mobile.value
+        const name = form.name.value
+        const phoneNumber = form.phoneNumber.value
         const address = form.address.value
         const gender = form.gender.value
         const data = {
-            batch: batch ? batch : info?.batch,
-            mobile: mobile ? mobile : info?.mobile,
+            name: name ? name : info?.name,
             address: address ? address : info?.address,
+            phoneNumber: phoneNumber ? phoneNumber : info?.phoneNumber,
             gender: gender ? gender : info?.gender
         }
         const formData = new FormData()
@@ -60,19 +62,19 @@ const UpdateProfile = () => {
                         icon: 'success'
                     })
 
-                    updateUserInfo(user.displayName, imgResponse?.data?.display_url)
+                    updateUserInfo(user?.name, imgResponse?.data?.display_url)
                 }
 
                 const imgURL = imgResponse?.data?.display_url
-                const data2 = { photoURL: imgURL ? imgURL : info?.photoURL, ...data }
-                //console.log(data2);
+                const data2 = { image: imgURL ? imgURL : info?.image, ...data }
+
                 axiosSecure
                     .patch(`/updateProfile?email=${user?.email}`, data2)
                     .then(data => {
-                        //console.log(data);
+                        console.log(data);
                         if (data.data.modifiedCount) {
                             refetch()
-                            //console.log("updated");
+                            console.log("updated", data);
                             Swal.fire({
                                 showConfirmButton: false,
                                 timer: 1500,
@@ -80,12 +82,13 @@ const UpdateProfile = () => {
                                 icon: 'success'
                             })
                         }
+                        navigate("/dashboard/profile")
                     })
             })
     }
 
-    if (p_loading) {
-        return <Loading />
+    if (isLoading) {
+        return <DataLoading />
     }
 
     return (
@@ -118,9 +121,11 @@ const UpdateProfile = () => {
                                 <label className='label col-span-1'>
                                     <span className='label-text '>Name:</span>
                                 </label>
-                                <h1 className=' col-span-5 input input-sm border-primary shadow-md  '>
-                                    {info?.name}
-                                </h1>
+                                <input
+                                    defaultValue={info?.name}
+                                    name='name'
+                                    className='col-span-5 input input-sm  border-primary  shadow-md'
+                                />
                             </div>
 
                             <div className='form-control  grid grid-cols-6 my-2'>
@@ -131,13 +136,13 @@ const UpdateProfile = () => {
                                     {info?.email}
                                 </h1>
                             </div>
-                           
+
                             <div className='form-control grid grid-cols-6 my-2'>
                                 <label className='label col-span-1'>
                                     <span className='label-text '>Gender:</span>
                                 </label>
-                                <div className='col-span-5 flex gap-10 items-center space-x-4'>
-                                    <label className='radio radio-inline flex gap-2 '>
+                                <div className='col-span-5 flex md:gap-12 items-center space-x-3'>
+                                    <label className='radio radio-inline flex gap-1 '>
                                         <input
                                             type='radio'
                                             name='gender'
@@ -146,7 +151,7 @@ const UpdateProfile = () => {
                                         />
                                         <span className=' '>Male</span>
                                     </label>
-                                    <label className='radio radio-inline flex gap-2'>
+                                    <label className='radio radio-inline flex gap-1'>
                                         <input
                                             type='radio'
                                             name='gender'
@@ -155,7 +160,7 @@ const UpdateProfile = () => {
                                         />
                                         <span className=' '>Female</span>
                                     </label>
-                                    <label className='radio radio-inline flex gap-2'>
+                                    <label className='radio radio-inline flex gap-1'>
                                         <input
                                             type='radio'
                                             name='gender'
@@ -171,7 +176,8 @@ const UpdateProfile = () => {
                                     <span className='label-text '>Address:</span>
                                 </label>
                                 <input
-                                    placeholder={info?.address}
+                                    defaultValue={info?.address}
+                                    placeholder={info?.address ? info?.address : "Please Your Address!"}
                                     name='address'
                                     className='col-span-5 input input-sm  border-primary  shadow-md'
                                 />
@@ -181,7 +187,8 @@ const UpdateProfile = () => {
                                     <span className='label-text '>Mobile:</span>
                                 </label>
                                 <input
-                                    placeholder={info?.phoneNumber}
+                                    defaultValue={info?.phoneNumber}
+                                    placeholder={info?.phoneNumber ? info?.phoneNumber : "Please Your Phone Number!"}
                                     className='col-span-5 input input-sm  border-primary  shadow-md'
                                     name='phoneNumber'
                                 />

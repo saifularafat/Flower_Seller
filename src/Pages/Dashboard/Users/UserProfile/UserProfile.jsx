@@ -73,7 +73,7 @@ const UserProfile = () => {
                   <span className='label-text '>Mobile:</span>
                 </label>
                 <h1 className='col-span-5 input input-sm  capitalize shadow-xl'>
-                  {info?.phoneNumber ? info.phoneNumber : 'Add Mobile in Edit Profile'}
+                  {info?.phoneNumber ? info?.phoneNumber : 'Add Mobile in Edit Profile'}
                 </h1>
               </div>
               <Link to='/dashboard/updateProfile'>

@@ -37,7 +37,6 @@ import AddItem from "../Pages/Dashboard/Admin/AddItems/AddItem";
 import EmailLayout from "../Layouts/EmailLayout";
 import ChatAdmin from "../Pages/Dashboard/Admin/ChatAdmin/ChatAdmin";
 import Calender from "../Pages/Dashboard/Admin/Calender/Calender";
-import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
 import BestOffer from "../Pages/Dashboard/Admin/OFFER/BestOffer/BestOffer";
 import SliderChanges from "../Pages/Dashboard/Admin/OFFER/SliderChanges/SliderChanges";
 import BannerChange from "../Pages/Dashboard/Admin/OFFER/BannerChange/BannerChange";
@@ -492,8 +491,8 @@ const router = createBrowserRouter([
                 element: <Calender />
             },
             {
-                path: "/dashboard/adminProfile",
-                element: <AdminProfile />
+                path: "/dashboard/profile",
+                element: <UserProfile />
             },
             /* user DASHBOARD link */
             {
@@ -525,7 +524,7 @@ const router = createBrowserRouter([
                 element: <UserChat />
             },
             {
-                path: "/dashboard/userProfile",
+                path: "/dashboard/profile",
                 element: <UserProfile />
             },
         ]

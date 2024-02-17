@@ -72,7 +72,7 @@ const IsUsers = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/dashboard/userProfile"
+                        to="/dashboard/profile"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                         <ImProfile className="text-xl" />
                         <span>Profile </span>

@@ -231,7 +231,7 @@ const IsAdmin = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/dashboard/adminProfile"
+                        to="/dashboard/profile"
                         className={({ isActive }) => (isActive ? "active" : " default ")}>
                             <ImProfile />
                         <span>Profile </span>

@@ -8,11 +8,21 @@ import Swal from "sweetalert2";
 import { MdDelete } from "react-icons/md";
 import { BiSolidEdit } from "react-icons/bi";
 import DataLoading from "../../../../Share/Loading/DataLoading";
+import Pagination from "../../../../components/Pagination";
+import { useState } from "react";
 
 
 const TotalFlowerItems = () => {
     const [flowerAll, refetch, isLoading] = useAllFlowers();
-    // console.log(flowerAll);
+    /* Pagination by users  */
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPerPage, setItemPerPage] = useState(12);// Number of items to display per page
+    const totalItems = flowerAll?.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage)
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedData = flowerAll.slice(startIndex, endIndex)
+
     const itemDelete = (flower) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -65,10 +75,10 @@ const TotalFlowerItems = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    {
-                        flowerAll.map((flower, index) =>
-                            <tbody key={flower._id}>
-                                <tr>
+                    <tbody>
+                        {
+                            displayedData.map((flower, index) =>
+                                <tr key={flower._id}>
                                     <td>{index + 1}</td>
                                     <td>
                                         <div className="flex items-center gap-3">
@@ -89,14 +99,22 @@ const TotalFlowerItems = () => {
                                         <p className="btn-sm">{flower?.price + "$"} <br /><span className="text-sm font-medium">{flower?.offerPrice}{flower?.offerPrice && <>$</>}</span></p>
                                     </th>
                                     <div className="flex item-center gap-2 pt-4">
-                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md p-1 hover:bg-blue-200 hover:text-green-600 bg-green-400 text-white transition-all duration-200"><BiSolidEdit className="text-xl"/></Link>
-                                        <button onClick={() => itemDelete(flower)} className="rounded-md p-1 hover:bg-red-200 hover:text-red-600 bg-red-600 text-slate-800 transition-all duration-200"><MdDelete className="text-xl"/></button>
+                                        <Link to={`/dashboard/editByFlowers/${flower?._id}`} className="rounded-md p-1 hover:bg-blue-200 hover:text-green-600 bg-green-400 text-white transition-all duration-200"><BiSolidEdit className="text-xl" /></Link>
+                                        <button onClick={() => itemDelete(flower)} className="rounded-md p-1 hover:bg-red-200 hover:text-red-600 bg-red-600 text-slate-800 transition-all duration-200"><MdDelete className="text-xl" /></button>
                                     </div>
                                 </tr>
-                            </tbody>
-                        )
-                    }
+                            )
+                        }
+                    </tbody>
                 </table>
+            </div>
+
+            <div className='flex justify-center my-6'>
+                <Pagination
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                ></Pagination>
             </div>
         </div>
     );

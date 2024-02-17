@@ -12,7 +12,7 @@ import Pagination from "../../../../components/Pagination";
 const AllUsers = () => {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemPerPage] = useState(12);// Number of items to display per page
+    const [itemsPerPage, setItemPerPage] = useState(20);// Number of items to display per page
     const [users, refetch, isLoading] = useAllUsers();
 
     if (isLoading) {
@@ -24,8 +24,7 @@ const AllUsers = () => {
     const totalPages = Math.ceil(totalItems / itemsPerPage)
     const startIndex = currentPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const displayedData = users.slice(startIndex, endIndex)
-    console.log(displayedData);
+    const displayedData = users.slice(startIndex, endIndex);
 
     const handlerMakeAdmin = (user) => {
         Swal.fire({
@@ -148,6 +147,7 @@ const AllUsers = () => {
                     setCurrentPage={setCurrentPage}
                 ></Pagination>
             </div>
+            
         </>
     );
 };

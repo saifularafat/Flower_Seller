@@ -178,7 +178,7 @@ const orderBarChart = {
                 color: '#95a5a6',
                 formatter: function (w) {
                   return w.globals.seriesTotals.reduce((a, b) => {
-                    return "53%"
+                    return "63%"
                   }, 0)
                 }
               }

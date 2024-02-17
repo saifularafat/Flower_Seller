@@ -6,10 +6,26 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import axios from "axios";
 import DataLoading from "../../../../Share/Loading/DataLoading";
+import { FaTrashAlt } from "react-icons/fa";
+import Pagination from "../../../../components/Pagination";
 
 const AllUsers = () => {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPerPage, setItemPerPage] = useState(12);// Number of items to display per page
     const [users, refetch, isLoading] = useAllUsers();
+
+    if (isLoading) {
+        return <DataLoading />
+    }
+
+    /* Pagination by users  */
+    const totalItems = users?.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage)
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedData = users.slice(startIndex, endIndex)
+    console.log(displayedData);
 
     const handlerMakeAdmin = (user) => {
         Swal.fire({
@@ -44,9 +60,6 @@ const AllUsers = () => {
         })
     }
 
-    if(isLoading){
-        return <DataLoading />
-    }
     const handlerDelete = (user) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -73,6 +86,9 @@ const AllUsers = () => {
             }
         })
     }
+
+
+
     return (
         <>
             <Helmet>
@@ -88,34 +104,50 @@ const AllUsers = () => {
                             <th>User Name</th>
                             <th>Email</th>
                             <th>role</th>
+                            <th>Make Admin</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    {
-                        users.map((user, index) =>
-                            <tbody key={user._id}>
-                                <tr className="hover:bg-slate-50 transition-all duration-200">
-                                    <th>{index + 1}</th>
-                                    <td className="text-sm">{user?.name}</td>
-                                    <td className="text-sm">{user?.email}</td>
-                                    <td className={`${user?.role === "admin" ? "bg-blue-900 text-white h-2" : "bg-slate-200"} text-sm font-semibold text-center capitalize tracking-wider rounded-xl overflow-hidden`}>{user?.role}</td>
-                                    <td className="text-sm">
-                                        <td className="flex items-center gap-1">
-                                            <button
-                                                onClick={() => handlerMakeAdmin(user)}
-                                                disabled={isButtonDisabled}
-                                                className="bg-blue-800 text-white w-full py-2 rounded-lg shadow-xl">Admin</button>
-                                            <button
-                                                onClick={() => handlerDelete(user)}
-                                                className="bg-red-800 text-white w-full py-2 rounded-lg shadow-xl">Delete</button>
-                                        </td>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        )
-                    }
+                    <tbody>
+                        {/* row  */}
+                        {displayedData?.map((user, index) => (
+                            <tr key={user._id} title={user?.email}>
+                                <td>{index + 1}</td>
+                                <td>{user?.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.role}</td>
+                                <td>
+                                    {user.role === 'admin' ? (
+                                        <button className='btn btn-disabled btn-xs'>Admin</button>
+                                    ) : (
+                                        <button
+                                            onClick={() => handlerMakeAdmin(user)}
+                                            className=' bg-warning btn btn-ghost btn-sm'
+                                        >
+                                            Admin
+                                        </button>
+                                    )}
+                                </td>
+                                <td>
+                                    <button
+                                        onClick={() => handlerDelete(user)}
+                                        className='text-white bg-red-700 rounded-md btn-sm'
+                                    >
+                                        <FaTrashAlt />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
             </div >
+            <div className='flex justify-center my-6'>
+                <Pagination
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                ></Pagination>
+            </div>
         </>
     );
 };

@@ -4,7 +4,7 @@ const CompanyLinkEmail = ({ companyPath, BgColor, companyName }) => {
 
     return (
         <NavLink to={companyPath}
-        className={({ isActive }) => (isActive ? 'defaultEmail' : 'activeEmail')}
+        className={({ isActive }) => (isActive ? 'activeEmail' : 'defaultEmail')}
         >
             <div className="w-full flex items-center justify-between">
                 <div className="flex items-center gap-2">

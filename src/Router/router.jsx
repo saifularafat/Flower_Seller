@@ -90,6 +90,14 @@ import OrderUseCancel from "../Pages/OrderUse/OrderUseCancel";
 import OrderUserDetails from "../Pages/OrderUse/OrderUserDetails";
 import IndexEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/IndexEmail/IndexEmail";
 import SendEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/SendEmail/SendEmail";
+import DraftEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/DraftEmail/DraftEmail";
+import StarredEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/StarredEmail/StarredEmail";
+import SpamEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/SpamEmail/SpamEmail";
+import TrashEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/TrashEmail/TrashEmail";
+import PersonalEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PersonalEmail/ParsonalEmail";
+import CompanyEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/CompanyEmail/CompanyEmail";
+import ImportantEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/ImportantEmail/ImportanEmail";
+import PrivateEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PrivateEmail/PrivateEmail";
 
 const router = createBrowserRouter([
     {
@@ -439,6 +447,38 @@ const router = createBrowserRouter([
                     {
                         path: "/dashboard/email/send",
                         element: <SendEmail />
+                    },
+                    {
+                        path: "/dashboard/email/draft",
+                        element: <DraftEmail />
+                    },
+                    {
+                        path: "/dashboard/email/starred",
+                        element: <StarredEmail />
+                    },
+                    {
+                        path: "/dashboard/email/spam",
+                        element: <SpamEmail />
+                    },
+                    {
+                        path: "/dashboard/email/trash",
+                        element: <TrashEmail />
+                    },
+                    {
+                        path: "/dashboard/email/personal-email",
+                        element: <PersonalEmail />
+                    },
+                    {
+                        path: "/dashboard/email/company-email",
+                        element: <CompanyEmail />
+                    },
+                    {
+                        path: "/dashboard/email/important-email",
+                        element: <ImportantEmail />
+                    },
+                    {
+                        path: "/dashboard/email/private-email",
+                        element: <PrivateEmail />
                     },
                 ]
             },

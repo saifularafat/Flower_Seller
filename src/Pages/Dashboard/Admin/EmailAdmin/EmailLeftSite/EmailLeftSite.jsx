@@ -25,16 +25,16 @@ const EmailLeftSite = () => {
                         <NavLinksEmail path="/dashboard/email/send" Icon={BsSend} linkName="Send" numberBg="" numberText="" number="" />
                     </li>
                     <li>
-                        <NavLinksEmail path="" Icon={MdEdit} linkName="Draft" numberBg="bg-red-100" numberText="text-red-600" number="2" />
+                        <NavLinksEmail path="/dashboard/email/draft" Icon={MdEdit} linkName="Draft" numberBg="bg-red-100" numberText="text-red-600" number="2" />
                     </li>
                     <li>
-                        <NavLinksEmail path="" Icon={PiStarThin} linkName="Starred" numberBg="bg-yellow-100" numberText="text-yellow-800" number="9" />
+                        <NavLinksEmail path="/dashboard/email/starred" Icon={PiStarThin} linkName="Starred" numberBg="bg-yellow-100" numberText="text-yellow-800" number="9" />
                     </li>
                     <li>
-                        <NavLinksEmail path="" Icon={BiErrorAlt} linkName="Spam" numberBg="" numberText="" number="" />
+                        <NavLinksEmail path="/dashboard/email/spam" Icon={BiErrorAlt} linkName="Spam" numberBg="" numberText="" number="" />
                     </li>
                     <li>
-                        <NavLinksEmail path="" Icon={BiTrash} linkName="Trash" numberBg="" numberText="" number="" />
+                        <NavLinksEmail path="/dashboard/email/trash" Icon={BiTrash} linkName="Trash" numberBg="" numberText="" number="" />
                     </li>
                     {
                         isAdmin &&
@@ -45,16 +45,16 @@ const EmailLeftSite = () => {
                                 </div>
                             </li>
                             <li>
-                                <CompanyLinkEmail companyPath="" BgColor="bg-blue-700" companyName="Personal" />
+                                <CompanyLinkEmail companyPath="/dashboard/email/personal-email" BgColor="bg-blue-700" companyName="Personal" />
                             </li>
                             <li>
-                                <CompanyLinkEmail companyPath="" BgColor="bg-sky-500" companyName="Company" />
+                                <CompanyLinkEmail companyPath="/dashboard/email/company-email" BgColor="bg-sky-500" companyName="Company" />
                             </li>
                             <li>
-                                <CompanyLinkEmail companyPath="" BgColor="bg-orange-600" companyName="Important" />
+                                <CompanyLinkEmail companyPath="/dashboard/email/important-email" BgColor="bg-orange-600" companyName="Important" />
                             </li>
                             <li>
-                                <CompanyLinkEmail companyPath="" BgColor="bg-red-600" companyName="Private" />
+                                <CompanyLinkEmail companyPath="/dashboard/email/private-email" BgColor="bg-red-600" companyName="Private" />
                             </li>
                         </>
                     }

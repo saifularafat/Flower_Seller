@@ -57,6 +57,8 @@ const SignUp = () => {
                                     name: data.name,
                                     email: data.email,
                                     image: imageAdders,
+                                    phoneNumber: '',
+                                    address: '',
                                     gender: data.gender,
                                     role: 'client'
                                 })

@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-// import defaultPic from '../../../../assets/userPro.png'
 import defaultPic from '../../../../assets/othersImg/userPro.png';
 import useAuth from '../../../../api/useAuth';
 import { useAxiosSecure } from '../../../../api/useAxiosSecure';
@@ -40,7 +39,7 @@ const UserProfile = () => {
                 <label className='label col-span-1'>
                   <span className='label-text '>Name:</span>
                 </label>
-                <h1 className=' col-span-5 input input-sm   ag-transparent shadow-xl'>
+                <h1 className=' col-span-5 input input-sm  capitalize shadow-xl'>
                   {info?.name}
                 </h1>
               </div>
@@ -49,24 +48,15 @@ const UserProfile = () => {
                 <label className='label col-span-1'>
                   <span className='label-text '>Email:</span>
                 </label>
-                <h1 className='col-span-5 input input-sm   ag-transparent shadow-xl'>
+                <h1 className='col-span-5 input input-sm lowercase shadow-xl'>
                   {info?.email}
-                </h1>
-              </div>
-
-              <div className='form-control grid sm:grid-cols-6 my-2'>
-                <label className='label col-span-1'>
-                  <span className='label-text '>Batch:</span>
-                </label>
-                <h1 className='col-span-5 input input-sm   ag-transparent shadow-xl'>
-                  {info?.batch ? info.batch : 'Add Batch in Edit Profile'}
                 </h1>
               </div>
               <div className='form-control  grid sm:grid-cols-6 my-2'>
                 <label className='label col-span-1'>
                   <span className='label-text '>Gender:</span>
                 </label>
-                <h1 className='col-span-5 input input-sm   ag-transparent shadow-xl'>
+                <h1 className='col-span-5 input input-sm  capitalize shadow-xl'>
                   {info?.gender ? info.gender : 'Add Gender in Edit Profile'}
                 </h1>
               </div>
@@ -74,7 +64,7 @@ const UserProfile = () => {
                 <label className='label col-span-1'>
                   <span className='label-text '>Address:</span>
                 </label>
-                <h1 className='col-span-5 input input-sm   ag-transparent shadow-xl'>
+                <h1 className='col-span-5 input input-sm  capitalize shadow-xl'>
                   {info?.address ? info.address : 'Add Address in Edit Profile'}
                 </h1>
               </div>
@@ -82,11 +72,11 @@ const UserProfile = () => {
                 <label className='label col-span-1'>
                   <span className='label-text '>Mobile:</span>
                 </label>
-                <h1 className='col-span-5 input input-sm   ag-transparent shadow-xl'>
-                  {info?.mobile ? info.mobile : 'Add Mobile in Edit Profile'}
+                <h1 className='col-span-5 input input-sm  capitalize shadow-xl'>
+                  {info?.phoneNumber ? info.phoneNumber : 'Add Mobile in Edit Profile'}
                 </h1>
               </div>
-              <Link to='/updateProfile'>
+              <Link to='/dashboard/updateProfile'>
                 <button className='btn btn-primary mt-5'>Edit Profile</button>
               </Link>
             </div>

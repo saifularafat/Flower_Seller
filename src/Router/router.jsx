@@ -97,6 +97,7 @@ import PersonalEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/Persona
 import CompanyEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/CompanyEmail/CompanyEmail";
 import ImportantEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/ImportantEmail/ImportanEmail";
 import PrivateEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PrivateEmail/PrivateEmail";
+import UpdateProfile from "../Pages/Dashboard/Users/UserProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -493,6 +494,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/profile",
                 element: <UserProfile />
+            },
+            {
+                path: "/dashboard/updateProfile",
+                element: <UpdateProfile />
             },
             /* user DASHBOARD link */
             {

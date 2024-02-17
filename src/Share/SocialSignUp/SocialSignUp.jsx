@@ -24,6 +24,9 @@ const SocialSignIn = () => {
                     name: loggedUser.displayName,
                     email: loggedUser.email,
                     image: loggedUser.photoURL,
+                    phoneNumber: '',
+                    address: '',
+                    gender: loggedUser?.gender,
                     role: 'client',
                 })
                     .then(() => {

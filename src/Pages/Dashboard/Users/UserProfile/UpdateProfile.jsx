@@ -27,7 +27,7 @@ const UpdateProfile = () => {
             return res.data
         }
     })
-    console.log(info, '.......................lne 29');
+    // console.log(info, '.......................lne 29');
 
     const onSubmitData = event => {
         event.preventDefault()

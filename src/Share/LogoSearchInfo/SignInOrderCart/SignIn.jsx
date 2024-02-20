@@ -78,7 +78,7 @@ const SignIn = () => {
                             isAdmin ?
                             <>
                                 <br />
-                                <Link to="/dashboard/adminProfile" className="text-xs font-medium hover:underline leading-none">
+                                <Link to="/dashboard/profile" className="text-xs font-medium hover:underline leading-none">
                                     Your Profile
                                 </Link>
                                 <br />
@@ -89,7 +89,7 @@ const SignIn = () => {
                             :
                             <>
                                 <br />
-                                <Link to="/dashboard/userProfile" className="text-xs font-medium hover:underline leading-none">
+                                <Link to="/dashboard/profile" className="text-xs font-medium hover:underline leading-none">
                                     Your Profile
                                 </Link>
                                 <br />

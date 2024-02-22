@@ -33,8 +33,8 @@ const SignIn = () => {
                         className="md:w-11 md:h-11 w-9 h-9 mx-auto text-[#282A33] border border-[#282A33] rounded-full" />
                     {
                         user && <>
-                            <span className="md:h-4 h-3 md:w-4 w-3 bg-green-500 absolute rounded-full bottom-[2px] md:right-3 right-0 md:border-[3px] border-[2px] border-white"></span>
-                            <span className="md:h-4 h-3 md:w-4 w-3 bg-green-500 absolute rounded-full bottom-[2px] md:right-3 right-0 animate-ping transition-all duration-300"></span></>
+                            <span className="md:h-3 h-2 md:w-3 w-2 bg-green-500 absolute rounded-full bottom-[2px] md:right-1 right-0 md:border-[3px] border border-white"></span>
+                            <span className="md:h-3 h-2 md:w-3 w-2 bg-green-500 absolute rounded-full bottom-[2px] md:right-1 right-0 animate-ping transition-all duration-300"></span></>
                     }
                 </div>
             </div>

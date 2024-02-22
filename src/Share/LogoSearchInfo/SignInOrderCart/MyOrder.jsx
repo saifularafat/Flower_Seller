@@ -21,7 +21,7 @@ const MyOrder = () => {
             {
                 user ?
                     <>
-                        {orderLength?.length &&
+                        {orderLength?.length > 0 &&
                             <span className="bg-red-50 h-4 w-4 mx-auto text-center rounded-md absolute right-1 top-0 text-xs text-slate-500 font-light" >{orderLength?.length}</span>
                         }
                     </>

@@ -21,7 +21,7 @@ const IndependenceDay = () => {
         <>
             <div className="mx-4 md:pb-10">
             <Helmet>
-                <title> Thanks Flower || Flower Shop </title>
+                <title> independence Day || Flower Shop </title>
             </Helmet>
                 <PageTitleAndDescription
                     path="/independenceday-flower"
@@ -39,7 +39,7 @@ const IndependenceDay = () => {
                 />
             </div>
             <div className="mx-0 md:pb-12 pb-4 border-0 border-b border-slate-400">
-                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[280px] object-cover"/>
+                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[290px] object-cover"/>
             </div>
 
             <div className="grid md:grid-cols-4">

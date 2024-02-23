@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import DataLoading from "../../Share/Loading/DataLoading";
 import { useState } from "react";
 import useAllFlowers from "../../api/useAllFlowers";
-import bannerImage from "../../assets/othersImg/independenceDay.webp"
+import bannerImage from "../../assets/othersImg/flowerBanner.webp"
 
 
 const Flowers = () => {
@@ -25,22 +25,22 @@ const Flowers = () => {
                 <title> Thanks Flower || Flower Shop </title>
             </Helmet>
                 <PageTitleAndDescription
-                    path="/independenceday-flower"
-                    name="IndependenceDay"
-                    pageTitle="IndependenceDay Flower"
-                    title="IndependenceDay"
+                    path="/flowers-6t9"
+                    name="Flowers"
+                    pageTitle="Flowers "
+                    title="Flowers"
                     borderBG="bg-slate-300"
-                    des1="Introducing our newest collection of Disney flowers in beautifully decorated featuring everyone’s favorite classic characters! Mickey, Minnie, Goofy, "
+                    des1="Introducing our newest collection of flowers in beautifully decorated featuring everyone’s favorite classic characters! Mickey, Minnie, Goofy, "
                     textLink1=""
                     linkName1=""
-                    des2="and more adorn these vases, bringing the magic of Disney into any home or office."
+                    des2="and more adorn these vases, bringing the magic of into any home or office."
                     textLink2=""
                     linkName2=""
                     des3=""
                 />
             </div>
             <div className="mx-0 md:pb-12 pb-4 border-0 border-b border-slate-400">
-                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[284px] object-cover"/>
+                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[280px] object-cover"/>
             </div>
 
             <div className="grid md:grid-cols-4">

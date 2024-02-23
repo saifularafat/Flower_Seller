@@ -44,7 +44,7 @@ const ThanksGiving = () => {
                 <div className="md:col-span-1 md:block hidden">
 
                 </div>
-                <div className="md:col-span-3 ">
+                <div className="md:col-span-3 pr-2">
                     <SortBy length={totalNumber}
                     category={thankSgiving}
                     ascending={thankSgiving}

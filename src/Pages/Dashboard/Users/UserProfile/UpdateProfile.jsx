@@ -10,7 +10,7 @@ const UpdateProfile = () => {
     const img_token = import.meta.env.VITE_IMG_UPLOAD_KEY;
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_token}`
 
-    const { user, loading, updateUserInfo } = useAuth();
+    const { user, loading, updateUserProfile } = useAuth();
     const [axiosSecure] = useAxiosSecure();
     const navigate = useNavigate();
 
@@ -23,11 +23,10 @@ const UpdateProfile = () => {
         enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/user?email=${user?.email}`)
-            //console.log(res);
             return res.data
         }
     })
-    // console.log(info, '.......................lne 29');
+    console.log(info, '.......................lne 29');
 
     const onSubmitData = event => {
         event.preventDefault()
@@ -46,7 +45,7 @@ const UpdateProfile = () => {
         const formData = new FormData()
 
         formData.append('image', form.image.files[0])
-        //console.log(formData);
+        console.log(formData);
 
         fetch(img_hosting_url, {
             method: 'POST',
@@ -62,12 +61,12 @@ const UpdateProfile = () => {
                         icon: 'success'
                     })
 
-                    updateUserInfo(user?.name, imgResponse?.data?.display_url)
+                    updateUserProfile(user?.name, imgResponse?.data?.display_url)
                 }
 
                 const imgURL = imgResponse?.data?.display_url
                 const data2 = { image: imgURL ? imgURL : info?.image, ...data }
-
+                console.log(".........data2",data2);
                 axiosSecure
                     .patch(`/updateProfile?email=${user?.email}`, data2)
                     .then(data => {

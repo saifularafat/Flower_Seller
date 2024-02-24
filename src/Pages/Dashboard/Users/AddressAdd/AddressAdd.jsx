@@ -25,23 +25,21 @@ const AddressAdd = () => {
             return res.data
         }
     })
-
+    console.log(info);
 
     const onSubmitData = event => {
         event.preventDefault()
-
         const form = event.target
         const phoneNumber = form.phoneNumber.value
         const address = form.address.value
-        const gender = form.gender.value
+        const gender = ''
         const data = {
             name: name ? name : info?.name,
             address: address ? address : info?.address,
             phoneNumber: phoneNumber ? phoneNumber : info?.phoneNumber,
             gender: gender ? '' : info?.gender,
-            image: ""
         }
-
+        console.log(data);
 
         axiosSecure
             .patch(`/updateProfile?email=${user?.email}`, data)

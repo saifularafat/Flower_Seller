@@ -21,9 +21,9 @@ const Flowers = () => {
     return (
         <>
             <div className="mx-4 md:pb-10">
-            <Helmet>
-                <title> Thanks Flower || Flower Shop </title>
-            </Helmet>
+                <Helmet>
+                    <title> Thanks Flower || Flower Shop </title>
+                </Helmet>
                 <PageTitleAndDescription
                     path="/flowers-6t9"
                     name="Flowers"
@@ -40,7 +40,7 @@ const Flowers = () => {
                 />
             </div>
             <div className="mx-0 md:pb-12 pb-4 border-0 border-b border-slate-400">
-                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[280px] object-cover"/>
+                <img src={bannerImage} loading='lazy' alt="banner" className="w-full h-[280px] object-cover" />
             </div>
 
             <div className="grid md:grid-cols-4">
@@ -49,8 +49,8 @@ const Flowers = () => {
                 </div>
                 <div className="md:col-span-3 pr-2">
                     <SortBy length={totalNumber}
-                    category={independenceDay}
-                    ascending={independenceDay}
+                        category={independenceDay}
+                        ascending={independenceDay}
                     />
                 </div>
             </div>

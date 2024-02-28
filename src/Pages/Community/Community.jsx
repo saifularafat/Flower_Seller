@@ -1,9 +1,15 @@
 import PagesPath from "../../components/PagesPath";
 import { MdSlowMotionVideo } from "react-icons/md";
+import { FaAngleRight } from "react-icons/fa";
 import banner from "../../assets/community/communities-hero.webp"
 import Alice from "../../assets/community/alices-table.webp"
 import floral from "../../assets/community/floral-heart-project.webp"
 import ceo from "../../assets/community/communities-hero.webp"
+import light from "../../assets/community/light-after-loss.webp"
+import canvas from "../../assets/community/canvas_placeholder.aea9bb0b.gif"
+import smile from "../../assets/community/smile-farms-birthyay.webp"
+import birthdayImag from "../../assets/community/send-birthday-flowers-hero-fy24-holidays.webp"
+import { Link } from "react-router-dom";
 
 const Community = () => {
     return (
@@ -50,16 +56,36 @@ const Community = () => {
                 </div>
             </div>
             {/* second section */}
-            <div className="grid md:grid-cols-3 col-span-1 gap-5">
-                <div className="col-span-1">
-                    <img src={Alice} alt="" />
-                </div>
-                <div className="col-span-1">
-
-                </div>
-                <div className="col-span-1">
-                    <img src={floral} alt="" />
-                </div>
+            <div className="grid md:grid-cols-3 col-span-1 gap-5 py-5">
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={Alice} alt="" className="object-cover "/>
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={Alice} alt="" className="object-cover "/>
+                <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={floral} alt="" className="object-cover "/>
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+            </div>
+            <div className="grid md:grid-cols-3 col-span-1 gap-5 py-5">
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={light} alt="" className="object-cover "/>
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={canvas} alt="" className="object-cover "/>
+                <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
+                    <img src={smile} alt="" className="object-cover "/>
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                </Link>
+            </div>
+            <div className="py-8">
+                <img src={birthdayImag} alt="" className="object-cover"/>
             </div>
         </div>
     );

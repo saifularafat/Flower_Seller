@@ -10,10 +10,11 @@ import canvas from "../../assets/community/canvas_placeholder.aea9bb0b.gif"
 import smile from "../../assets/community/smile-farms-birthyay.webp"
 import birthdayImag from "../../assets/community/send-birthday-flowers-hero-fy24-holidays.webp"
 import { Link } from "react-router-dom";
+import CommunityCart from "./CommunityCart";
 
 const Community = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <PagesPath path="/community" name="Community" title="Flower Community" />
             <div className="text-center">
                 {/* Celebrations Community */}
@@ -56,36 +57,37 @@ const Community = () => {
                 </div>
             </div>
             {/* second section */}
-            <div className="grid md:grid-cols-3 col-span-1 gap-5 py-5">
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={Alice} alt="" className="object-cover "/>
-                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+            <div className="grid md:grid-cols-3 col-span-1 gap-x-5 gap-y-6 space-y-2 py-5">
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={Alice} alt="" className="object-cover " />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={Alice} alt="" className="object-cover "/>
-                <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={Alice} alt="" className="object-cover " />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={floral} alt="" className="object-cover "/>
-                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={floral} alt="" className="object-cover " />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
-            </div>
-            <div className="grid md:grid-cols-3 col-span-1 gap-5 py-5">
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={light} alt="" className="object-cover "/>
-                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={light} alt="" className="object-cover " />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={canvas} alt="" className="object-cover "/>
-                <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={canvas} alt="" className="object-cover w-full" />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
-                <Link className="col-span-1 hover:bg-black/25 transition-all duration-200 overflow-hidden z-10">
-                    <img src={smile} alt="" className="object-cover "/>
-                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal"/></p>
+                <Link className="col-span-1 hover:scale-105 transition-all duration-200 overflow-hidden z-10">
+                    <img src={smile} alt="" className="object-cover " />
+                    <p className="uppercase text-lg font-bold pt-1 flex items-center justify-center gap-[2px]">Alice's Table WorkShop <FaAngleRight className="text-base font-normal" /></p>
                 </Link>
             </div>
             <div className="py-8">
-                <img src={birthdayImag} alt="" className="object-cover"/>
+                <img src={birthdayImag} alt="" className="object-cover" />
+            </div>
+            <div className="py-10">
+                <CommunityCart />
             </div>
         </div>
     );

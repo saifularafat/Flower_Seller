@@ -15,20 +15,20 @@ const FlowerDetails = () => {
     const totalPrice = totalAmount.toFixed(2);
     return (
         <>
-            <div className="grid md:grid-cols-5 grid-cols-3 gap-5 py-6 container mx-auto">
-                <div className="md:col-span-2 col-span-1">
-                    <div className=" md:flex items-center rounded-lg overflow-hidden">
+            <div className="grid md:grid-cols-5 gap-5 py-6 container mx-auto">
+                <div className="md:col-span-2 ">
+                    <div className=" md:flex items-center rounded-lg overflow-hidden px-5">
                         <div className="w-1/5 md:block hidden">
 
                         </div>
-                        <img src={singleFlower?.flowerImg} alt="" className="w-full mx-auto rounded-lg object-cover hover:scale-105 transition-all duration-200" />
+                        <img src={singleFlower?.flowerImg} alt="" className="w-full  md:mx-auto  rounded-lg object-cover hover:scale-105 transition-all duration-200" />
                     </div>
                     {
                         singleFlower?.FlowerDetails &&
                         <p>{singleFlower?.FlowerDetails}</p>
                     }
                 </div>
-                <div className="md:col-span-3 col-span-2 rounded-lg space-y-1">
+                <div className="md:col-span-3 rounded-lg space-y-1 px-2">
                     <h2 className="md:text-3xl text-xl font-semibold pb-3">{singleFlower?.flowerName}</h2>
                     <div className="flex items-center justify-between shadow rounded-md md:w-2/3 md:p-3 w-full p-1">
                         <p className="text-xl font-semibold">Flower Price</p>

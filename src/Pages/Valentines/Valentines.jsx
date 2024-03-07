@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
 import DataLoading from "../../Share/Loading/DataLoading";
 import NoFoundData from "../../components/NoFoundData";
+import FlowerAddToCart from "../../components/FlowerAddToCart/FlowerAddToCart";
 
 const Valentines = () => {
     const [cartAdd, setCartAdd] = useState(false);
@@ -51,11 +52,11 @@ const Valentines = () => {
                         <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                             {
                                 valentines.map(valentine =>
-                                    <div key={valentine?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden relative">
+                                    <div key={valentine?._id} className="w-full md:h-[470px] h-[300px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden relative">
                                         <Link to={`/flowerDetails/${valentine?._id}`} className="">
                                             <img src={valentine?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
-                                            <div className="px-2 pt-1">
-                                                <h4 className="text-base md:font-semibold font-medium leading-tight">{valentine?.flowerName}</h4>
+                                            <div className="px-2 pt-2">
+                                                <h4 className="text-lg md:font-semibold font-medium leading-tight">{valentine?.flowerName}</h4>
                                             </div>
                                         </Link>
                                         <div className="flex items-center justify-between px-2 py-1">
@@ -71,15 +72,10 @@ const Valentines = () => {
                                                     <p className="bg-red-700 text-white md:text-sm text-xs font-medium md:p-1 p-[2px] tracking-wider rounded uppercase">save <span className="text-base">{valentine?.percent}</span></p>
                                                 </div>
                                             }
-                                            <div onClick={() => setCartAdd(!cartAdd)}>
-                                                {
-                                                    cartAdd ?
-                                                        <IoFlowerSharp onClick={() => setCartAdd(true)} />
-                                                        :
-                                                        <IoFlowerOutline onClick={() => setCartAdd(false)} />
-                                                }
-                                            </div>
                                         </div>
+                                        <FlowerAddToCart
+                                        item={valentine}
+                                    />
                                     </div>)
                             }
                         </div>

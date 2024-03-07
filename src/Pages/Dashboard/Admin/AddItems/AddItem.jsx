@@ -167,7 +167,6 @@ const AddItem = () => {
                                 <option value="plants">Plants</option>
                                 <option value="giftsMore">Gifts & More</option>
                                 <option value="sale">Sale</option>
-                                <option value="community">Community</option>
                                 <option value="chocolate">Chocolate</option>
                                 <option value="baby">BabyGift</option>
                                 <option value="christmasGift">Christmas Gift</option>

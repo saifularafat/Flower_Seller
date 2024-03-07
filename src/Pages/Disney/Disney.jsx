@@ -1,16 +1,14 @@
 import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import bannerImage from "../../assets/disney/disney-banner.webp"
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import useAllFlowers from "../../api/useAllFlowers";
-import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
 import DataLoading from "../../Share/Loading/DataLoading";
 import NoFoundData from "../../components/NoFoundData";
+import FlowerAddToCart from "../../components/FlowerAddToCart/FlowerAddToCart";
 
 const Disney = () => {
-    const [cartAdd, setCartAdd] = useState(false);
     const [flowerAll, refetch, isLoading] = useAllFlowers();
-    const birthDays = flowerAll.filter(birthDay => birthDay.flowerCategory === "disney");
+    const disneyAll = flowerAll.filter(disney => disney.flowerCategory === "disney");
     if (isLoading) {
         return <DataLoading />
     }
@@ -37,33 +35,28 @@ const Disney = () => {
             </div>
             <div className="md:mx-4 mx-1 md:py-5 py-2">
                 {
-                    birthDays?.length > 0 ?
+                    disneyAll?.length > 0 ?
                         <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                             {
-                                birthDays.map(birthDay =>
-                                    <div key={birthDay?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
-                                        <Link to={`/flowerDetails/${birthDay?._id}`} className="">
-                                            <img src={birthDay?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
-                                            <div className="px-2 pt-1">
-                                                <h4 className="text-base md:font-semibold font-medium leading-tight">{birthDay?.flowerName}</h4>
+                                disneyAll.map(disney =>
+                                    <div key={disney?._id} className="w-full md:h-[470px] h-[300px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
+                                        <Link to={`/flowerDetails/${disney?._id}`} className="">
+                                            <img src={disney?.flowerImg} loading='lazy' alt="flowerdisney" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
+                                            <div className="px-2 pt-2">
+                                                <h4 className="text-lg md:font-semibold font-medium leading-tight">{disney?.flowerName}</h4>
                                             </div>
                                         </Link>
                                         <div className="flex items-center justify-between px-2 py-1">
                                             <p>
                                                 {
-                                                    birthDay?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{birthDay?.offerPrice}</span>
+                                                    disney?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{disney?.offerPrice}</span>
                                                 }
-                                                <span className={`md:text-lg text-base md:font-bold font-bold ${birthDay?.offerPrice && "line-through text-red-700"}`}>{birthDay?.price + "$"}</span>
+                                                <span className={`md:text-lg text-base md:font-bold font-bold ${disney?.offerPrice && "line-through text-red-700"}`}>{disney?.price + "$"}</span>
                                             </p>
-                                            <div onClick={() => setCartAdd(!cartAdd)}>
-                                                {
-                                                    cartAdd ?
-                                                        <IoFlowerSharp onClick={() => setCartAdd(true)} />
-                                                        :
-                                                        <IoFlowerOutline onClick={() => setCartAdd(false)} />
-                                                }
-                                            </div>
                                         </div>
+                                        <FlowerAddToCart
+                                        item={disney}
+                                    />
                                     </div>)
                             }
                         </div>

@@ -8,6 +8,7 @@ import SortBy from "../Birthday/SortBy";
 import DataLoading from "../../Share/Loading/DataLoading";
 import { Helmet } from "react-helmet-async";
 import NoFoundData from "../../components/NoFoundData";
+import FlowerAddToCart from "../../components/FlowerAddToCart/FlowerAddToCart";
 const ThanksGiving = () => {
     const [cartAdd, setCartAdd] = useState(false);
     const [flowerAll, refetch, isLoading] = useAllFlowers();
@@ -58,11 +59,11 @@ const ThanksGiving = () => {
                         <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                             {
                                 thankSgiving.map(thanksGift =>
-                                    <div key={thanksGift?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
+                                    <div key={thanksGift?._id} className="w-full md:h-[470px] h-[300px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
                                         <Link to={`/flowerDetails/${thanksGift?._id}`} className="">
                                             <img src={thanksGift?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
-                                            <div className="px-2 pt-1">
-                                                <h4 className="text-base md:font-semibold font-medium leading-tight">{thanksGift?.flowerName}</h4>
+                                            <div className="px-2 pt-2">
+                                                <h4 className="text-lg md:font-semibold font-medium leading-tight">{thanksGift?.flowerName}</h4>
                                             </div>
                                         </Link>
                                         <div className="flex items-center justify-between px-2 py-1">
@@ -72,15 +73,10 @@ const ThanksGiving = () => {
                                                 }
                                                 <span className={`md:text-lg text-base md:font-bold font-bold ${thanksGift?.offerPrice && "line-through text-red-700"}`}>{thanksGift?.price + "$"}</span>
                                             </p>
-                                            <div onClick={() => setCartAdd(!cartAdd)}>
-                                                {
-                                                    cartAdd ?
-                                                        <IoFlowerSharp onClick={() => setCartAdd(true)} />
-                                                        :
-                                                        <IoFlowerOutline onClick={() => setCartAdd(false)} />
-                                                }
-                                            </div>
                                         </div>
+                                        <FlowerAddToCart
+                                            item={thanksGift}
+                                        />
                                     </div>)
                             }
                         </div>

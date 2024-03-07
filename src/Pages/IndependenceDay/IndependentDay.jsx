@@ -8,6 +8,7 @@ import SortBy from "../Birthday/SortBy";
 import { Link } from "react-router-dom";
 import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
 import NoFoundData from "../../components/NoFoundData";
+import FlowerAddToCart from "../../components/FlowerAddToCart/FlowerAddToCart";
 
 const IndependenceDay = () => {
     const [cartAdd, setCartAdd] = useState(false);
@@ -60,11 +61,11 @@ const IndependenceDay = () => {
                         <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                             {
                                 independenceDay.map(independenceDay =>
-                                    <div key={independenceDay?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
+                                    <div key={independenceDay?._id} className="w-full md:h-[470px] h-[300px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
                                         <Link to={`/flowerDetails/${independenceDay?._id}`} className="">
                                             <img src={independenceDay?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
-                                            <div className="px-2 pt-1">
-                                                <h4 className="text-base md:font-semibold font-medium leading-tight">{independenceDay?.flowerName}</h4>
+                                            <div className="px-2 pt-2">
+                                                <h4 className="text-lg md:font-semibold font-medium leading-tight">{independenceDay?.flowerName}</h4>
                                             </div>
                                         </Link>
                                         <div className="flex items-center justify-between px-2 py-1">
@@ -74,15 +75,10 @@ const IndependenceDay = () => {
                                                 }
                                                 <span className={`md:text-lg text-base md:font-bold font-bold ${independenceDay?.offerPrice && "line-through text-red-700"}`}>{independenceDay?.price + "$"}</span>
                                             </p>
-                                            <div onClick={() => setCartAdd(!cartAdd)}>
-                                                {
-                                                    cartAdd ?
-                                                        <IoFlowerSharp onClick={() => setCartAdd(true)} />
-                                                        :
-                                                        <IoFlowerOutline onClick={() => setCartAdd(false)} />
-                                                }
-                                            </div>
                                         </div>
+                                        <FlowerAddToCart
+                                        item={independenceDay}
+                                    />
                                     </div>)
                             }
                         </div>

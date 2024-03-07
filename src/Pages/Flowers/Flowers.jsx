@@ -1,20 +1,18 @@
-import { IoFlowerOutline, IoFlowerSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import SortBy from "../Birthday/SortBy";
 import PageTitleAndDescription from "../../components/PageTitleAndDescription";
 import { Helmet } from "react-helmet-async";
 import DataLoading from "../../Share/Loading/DataLoading";
-import { useState } from "react";
 import useAllFlowers from "../../api/useAllFlowers";
 import bannerImage from "../../assets/othersImg/flowerBanner.webp"
 import NoFoundData from "../../components/NoFoundData";
+import FlowerAddToCart from "../../components/FlowerAddToCart/FlowerAddToCart";
 
 
 const Flowers = () => {
-    const [cartAdd, setCartAdd] = useState(false);
-    const [flowerAll, refetch, isLoading] = useAllFlowers();
-    const independenceDay = flowerAll.filter(independenceDays => independenceDays.flowerCategory === "IndependenceDay");
-    const totalNumber = independenceDay?.length;
+    const [flowerAll, , isLoading] = useAllFlowers();
+    const flowers = flowerAll.filter(flower => flower.flowerCategory === "flower");
+    const totalNumber = flowers?.length;
     console.log(totalNumber);
     if (isLoading) {
         return <DataLoading />
@@ -50,8 +48,8 @@ const Flowers = () => {
                 </div>
                 <div className="md:col-span-3 pr-2">
                     <SortBy length={totalNumber}
-                        category={independenceDay}
-                        ascending={independenceDay}
+                        category={flowers}
+                        ascending={flowers}
                     />
                 </div>
             </div>
@@ -60,30 +58,25 @@ const Flowers = () => {
                     totalNumber > 0 ?
                         <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3">
                             {
-                                independenceDay.map(independenceDay =>
-                                    <div key={independenceDay?._id} className="w-full md:h-[420px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
-                                        <Link to={`/flowerDetails/${independenceDay?._id}`} className="">
-                                            <img src={independenceDay?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
-                                            <div className="px-2 pt-1">
-                                                <h4 className="text-base md:font-semibold font-medium leading-tight">{independenceDay?.flowerName}</h4>
+                                flowers.map(flower =>
+                                    <div key={flower?._id} className="w-full md:h-[480px] h-[300px] hover:shadow-xl transition-all duration-200 rounded overflow-hidden">
+                                        <Link to={`/flowerDetails/${flower?._id}`} className="">
+                                            <img src={flower?.flowerImg} loading='lazy' alt="flowerBirthday" className="w-full md:h-80 object-cover hover:scale-105 duration-200 transition-all" />
+                                            <div className="px-2 pt-2">
+                                                <h4 className="text-lg md:font-semibold font-medium leading-tight">{flower?.flowerName}</h4>
                                             </div>
                                         </Link>
                                         <div className="flex items-center justify-between px-2 py-1">
                                             <p>
                                                 {
-                                                    independenceDay?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{independenceDay?.offerPrice}</span>
+                                                    flower?.offerPrice && <span className="md:text-lg text-base md:font-bold font-bold pr-2">{flower?.offerPrice}</span>
                                                 }
-                                                <span className={`md:text-lg text-base md:font-bold font-bold ${independenceDay?.offerPrice && "line-through text-red-700"}`}>{independenceDay?.price + "$"}</span>
+                                                <span className={`md:text-lg text-base md:font-bold font-bold ${flower?.offerPrice && "line-through text-red-700"}`}>{flower?.price + "$"}</span>
                                             </p>
-                                            <div onClick={() => setCartAdd(!cartAdd)}>
-                                                {
-                                                    cartAdd ?
-                                                        <IoFlowerSharp onClick={() => setCartAdd(true)} />
-                                                        :
-                                                        <IoFlowerOutline onClick={() => setCartAdd(false)} />
-                                                }
-                                            </div>
                                         </div>
+                                        <FlowerAddToCart
+                                        item={flower}
+                                    />
                                     </div>)
                             }
                         </div>

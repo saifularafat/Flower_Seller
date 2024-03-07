@@ -3,14 +3,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../api/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
+import useBookMarlFlower from "../../api/useBookMarlFlower";
 
-const FlowerAddToCart = ({ item, refetch }) => {
-    console.log(item);
+const FlowerAddToCart = ({ item }) => {
+    const [, refetch] = useBookMarlFlower();
+
     const navigate = useNavigate();
     const location = useLocation();
     const { user } = useAuth();
     const { _id, flowerImg, flowerName, price, percent, offerPrice } = item;
-   
+
     const handlerFlowerBookMark = (item) => {
         if (user) {
             const BookFlower = {
@@ -24,8 +26,9 @@ const FlowerAddToCart = ({ item, refetch }) => {
             };
             axios.post(`${import.meta.env.VITE_API_URL}/bookmarkFlower`, BookFlower)
                 .then(res => {
-                    console.log("..............69",res.data);
+                    console.log("..............69", res.data);
                     if (res.data.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',

@@ -42,7 +42,6 @@ const BirthdayContainer = () => {
 
                                     </div>
                                     <FlowerAddToCart
-                                        refetch={refetch}
                                         item={birthDay}
                                     />
                                 </div>)

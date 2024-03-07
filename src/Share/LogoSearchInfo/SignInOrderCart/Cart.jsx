@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import useBookMarlFlower from "../../../api/useBookMarlFlower";
 
 const Cart = () => {
-    const [bookMark, refetch] = useBookMarlFlower();
+    const [bookMark, ] = useBookMarlFlower();
     console.log(bookMark);
     return (
         <div>
-            <Link to="" className="flex-1 items-center text-center">
+            <Link to="/dashboard/selectItems" className="flex-1 items-center text-center">
                 <div className="w-full mx-auto">
                     <GrCart className="lg::w-8 lg:h-8 w-7 h-7 mx-auto md:text-[#282A33] text-slate-100" />
                 </div>

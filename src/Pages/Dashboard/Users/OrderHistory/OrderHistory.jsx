@@ -4,8 +4,7 @@ import NoDataDashboard from "../../../../components/NoDataDashboard";
 import { Link } from "react-router-dom";
 
 const OrderHistory = () => {
-    const [payments, refetch] = userEmailToPayment();
-    console.log("...........>", payments);
+    const [payments] = userEmailToPayment();
     return (
         <div>
             <Helmet>

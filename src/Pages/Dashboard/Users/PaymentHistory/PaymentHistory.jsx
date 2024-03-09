@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async"
+import userEmailToPayment from "../../../../api/useEmailPayment";
 
 const PaymentHistory = () => {
+    const [payments] = userEmailToPayment();
+    console.log(payments);
     return (
         <div>
             <Helmet>
@@ -17,16 +20,20 @@ const PaymentHistory = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="hover:bg-gray-50 border-b transition duration-300">
-                            <td className="py-4 px-4 flex justify-start">
-                                <img src="https://source.unsplash.com/64x64/?phone" alt="table navigate ui" className="h-14 w-14 object-cover bg-gray-300" />
-                            </td>
-                            <td className="py-4 px-6 border-b text-base font-semibold">Samsung s22</td>
-                            <td className="py-4 px-6 border-b text-base font-semibold">$599.99</td>
-                            <td className="py-4 px-6 border-b text-end text-base">
-                               <h2>sdfdkfngvdjkb</h2>
-                            </td>
-                        </tr>
+                        {
+                            payments.map(pay =>
+                                <tr key={pay?._id} className="hover:bg-gray-50 border-b transition duration-300">
+                                    <td className="py-4 px-4 flex justify-start">
+                                        <img src={pay?.image} alt="table navigate ui" className="h-14 w-14 object-cover bg-gray-300" />
+                                    </td>
+                                    <td className="py-4 px-6 border-b text-sm font-semibold">{pay?.name}</td>
+                                    <td className="py-4 px-6 border-b text-sm font-semibold">{pay?.totalPrice}$</td>
+                                    <td className="py-4 px-6 border-b text-end text-sm">
+                                        <h2>{pay?.transition_id}</h2>
+                                    </td>
+                                </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>

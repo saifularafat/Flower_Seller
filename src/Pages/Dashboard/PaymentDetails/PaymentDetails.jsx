@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import userEmailToPayment from "../../../api/useEmailPayment";
 const PaymentDetails = () => {
     const { id } = useParams();
@@ -14,31 +14,34 @@ const PaymentDetails = () => {
                         <div className=" max-w-[350px] group">
                             <img className="rounded-lg transform scale-105" src={payD?.image} alt="card navigate ui" />
                         </div>
-                        <div className="bg-white space-y-12  max-w-[350px] rounded-tr-lg rounded-br-lg md:w-[350px] p-10 shadow-[0px_7px_30px_2px_rgba(100,100,111,0.2)]">
+                        <div className="bg-white space-y-4 max-w-[350px] rounded-tr-lg rounded-br-lg md:w-[450px] p-5 shadow-[0px_7px_30px_2px_rgba(100,100,111,0.2)]">
                             <div className="space-y-1 text-left">
-                                <h2 className="text-lg font-medium text-gray-700 font-sans">
-                                   <span className="">Flower Name: </span> {payD?.name}
+                                {/* flower info */}
+                                <h2 className="text-sm font-medium text-gray-700 font-sans">
+                                    <span className="">Flower Name: </span> {payD?.name}
                                 </h2>
-                                <p className="font-sans text-lg text-gray-700 font-bold"> Total Price: {payD?.totalPrice}$</p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> flower Price: {payD?.price}$</p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> Bat & Charge: {payD?.charge}$</p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> Total Price: {payD?.totalPrice}$</p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> Transition ID: <span className="text-blue-800 text-base">{payD?.transition_id}</span></p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> Payment Type: {payD?.paymentType}</p>
+                                <p className="font-sans text-sm text-gray-700 font-medium"> Payment Date: {payD?.date}</p>
+                                <p className="text-slate-800 text-sm font-sans font-medium">Delivery Address: {payD?.currentAddress}</p>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <div className="space-y-1">
-                                    <p className="text-gray-500 text-sm font-sans">Shots</p>
-                                    <p className="text-3xl tracking-wider text-gray-700">23</p>
-                                </div>
-                                <div className="space-y-1">
-                                    <p className="text-gray-500 text-sm font-sans">Following</p>
-                                    <p className="text-3xl tracking-wider text-gray-700">314</p>
-                                </div>
-                                <div className="space-y-1">
-                                    <p className="text-gray-500 text-sm font-sans">Followers</p>
-                                    <p className="text-3xl tracking-wider text-gray-700">487</p>
-                                </div>
+                            <div className="">
+                                {/* user info */}
+                                <p className="text-slate-800 text-[15px] font-sans font-medium">User Name: {payD?.userName}</p>
+                                <p className="text-slate-800 text-[15px] font-sans font-medium">Email: {payD?.email}</p>
+                                <p className="text-slate-800 text-[15px] font-sans font-medium">Phone Number: {payD?.PhoneNumber}</p>
+                                <p className="text-slate-800 text-[15px] font-sans font-medium">Flower ID: {payD?._id}</p>
+                                <p className="text-[15px] font-sans font-medium bg-black/80 text-red-600 rounded px-3 mt-1">{payD?.duration}</p>
                             </div>
-                            <div>
-                                <button className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
-                                    SEND MESSAGE
-                                </button>
+                            <div className="text-center">
+                                <Link to="/dashboard/orderHistory">
+                                    <button className="text-xl w-36 h-11 rounded-lg before:block before:absolute bg-[#f3f0f0] hover:before:bg-sky-700 before:w-0 before:h-0 hover:before:h-20 hover:before:w-40 before:-bottom-2 before:-right-2 before:duration-500 before:rounded-xl before:-z-10 relative inline-block transform hover:text-white text-sky-500 bg-transparent border-2 overflow-hidden border-sky-700 duration-500">
+                                        Order History
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

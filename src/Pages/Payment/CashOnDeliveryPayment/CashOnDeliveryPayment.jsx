@@ -6,13 +6,16 @@ import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import DateAndTime from "../../../components/DateAndTime";
+import allUsers from "../../../api/useAllUser";
 
 const CashOnDeliveryPayment = () => {
     const { id } = useParams();
     const [flowerAll] = useAllFlowers();
     const singleFlower = flowerAll.find(flower => flower?._id === id);
+    const [users, ,] = allUsers();
     const { user } = useAuth();
+    const singleUser = users.find(userDB => userDB?.email === user?.email)
+
     const {
         register,
         handleSubmit,
@@ -26,6 +29,7 @@ const CashOnDeliveryPayment = () => {
     const deliveryCharge = 1.10;
     let totalAmount = amount + tex + deliveryCharge;
     const totalPrice = totalAmount.toFixed(2);
+
 
     const onSubmit = data => {
         const conformPayment = {
@@ -45,21 +49,21 @@ const CashOnDeliveryPayment = () => {
         }
         console.log(conformPayment);
         axios.post(`${import.meta.env.VITE_API_URL}/payment`, conformPayment)
-        .then(data => {
-            console.log("post data", data.data);
-            if (data.data.insertedId) {
-                reset();
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Hand Cash Payment!',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                /*TODO RETUNE BY PAYMENT ROUTER*/
-                
-            }
-        })
+            .then(data => {
+                console.log("post data", data.data);
+                if (data.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Hand Cash Payment!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    /*TODO RETUNE BY PAYMENT ROUTER*/
+
+                }
+            })
     }
     return (
         <div className="w-10/12 mx-auto my-5">
@@ -118,7 +122,7 @@ const CashOnDeliveryPayment = () => {
                         </label>
                         <input
                             type="text"
-                            defaultValue={""}
+                            defaultValue={singleUser?.address ? singleUser?.address : ""}
                             placeholder="Please Provide Your Current Address"
                             {...register("CurrentAddress", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
@@ -131,7 +135,7 @@ const CashOnDeliveryPayment = () => {
                         </label>
                         <input
                             type="number"
-                            defaultValue={""}
+                            defaultValue={singleUser?.phoneNumber ? singleUser?.phoneNumber : ''}
                             placeholder="Please Provide Your Phone number"
                             {...register("userPhoneNumber", { required: true, maxLength: 14 })}
                             className="input input-bordered w-full text-base"

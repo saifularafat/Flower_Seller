@@ -1,20 +1,19 @@
-import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { GiFlowerPot } from "react-icons/gi";
 import { useParams } from "react-router-dom";
 import useAllFlowers from "../../../api/useAllFlowers";
 import useAuth from "../../../api/useAuth";
-import Swal from "sweetalert2";
-import DateAndTime from "../../../components/DateAndTime";
+import allUsers from "../../../api/useAllUser";
 
 const SSLPayment = () => {
     const { id } = useParams();
-    console.log(id);
     const [flowerAll] = useAllFlowers();
     const singleFlower = flowerAll.find(flower => flower?._id === id);
-    console.log(flowerAll);
+    const [users, ,] = allUsers();
     const { user } = useAuth();
+    const singleUser = users.find(userDB => userDB?.email === user?.email)
+
     const {
         register,
         handleSubmit,
@@ -117,7 +116,7 @@ const SSLPayment = () => {
                         </label>
                         <input
                             type="text"
-                            defaultValue={""}
+                            defaultValue={singleUser?.address ? singleUser?.address : ""}
                             placeholder="Please Provide Your Current Address"
                             {...register("CurrentAddress", { required: true, maxLength: 30 })}
                             className="input input-bordered w-full text-base"
@@ -130,9 +129,10 @@ const SSLPayment = () => {
                         </label>
                         <input
                             type="number"
-                            defaultValue={""}
+                            min="11" max="13"
+                            defaultValue={singleUser?.phoneNumber ? singleUser?.phoneNumber : ''}
                             placeholder="Please Provide Your Phone number"
-                            {...register("userPhoneNumber", { required: true, maxLength: 14 })}
+                            {...register("userPhoneNumber", { required: true, maxLength: 13 })}
                             className="input input-bordered w-full text-base"
                         />
                         {errors.userPhoneNumber?.type === "required" && (

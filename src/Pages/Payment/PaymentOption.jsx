@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 const PaymentOption = () => {
     const { id } = useParams();
+    console.log(id);
     const [selectSystem, setSelectSystem] = useState("sslPayment");
 
     const handleSystemChange = (e) => {

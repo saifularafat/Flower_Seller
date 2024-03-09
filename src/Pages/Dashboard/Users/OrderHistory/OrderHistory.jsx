@@ -29,7 +29,7 @@ const OrderHistory = () => {
                         </div>
                     </div>
                     :
-                    <NoDataDashboard title1=" Dashboard No Data!" title2="Did you know you can Order a Flower" link={``} linkName="Details" />
+                    <NoDataDashboard title1=" Dashboard No Data!" title2="Did you know you can Order a Flower" link={`/dashboard/selectItems`} l1="S" l2="E" l3="L" l4="E" l5="C" l6="T" l7="." />
             }
         </div>
     );

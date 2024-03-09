@@ -10,8 +10,10 @@ import DateAndTime from "../../../components/DateAndTime";
 
 const SSLPayment = () => {
     const { id } = useParams();
+    console.log(id);
     const [flowerAll] = useAllFlowers();
     const singleFlower = flowerAll.find(flower => flower?._id === id);
+    console.log(flowerAll);
     const { user } = useAuth();
     const {
         register,
@@ -43,7 +45,7 @@ const SSLPayment = () => {
             payType: "success",
             paymentType: "Case On Delivery.",
             date: new Date(),
-            transitionId:randomTransitionId,
+            transitionId: randomTransitionId,
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);

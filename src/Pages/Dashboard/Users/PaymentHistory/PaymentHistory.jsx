@@ -4,6 +4,7 @@ import userEmailToPayment from "../../../../api/useEmailPayment";
 const PaymentHistory = () => {
     const [payments] = userEmailToPayment();
     console.log(payments);
+    const checkPayment = payments.filter(pay => pay.payStatus === "success")
     return (
         <div>
             <Helmet>
@@ -21,7 +22,7 @@ const PaymentHistory = () => {
                     </thead>
                     <tbody>
                         {
-                            payments.map(pay =>
+                            checkPayment.map(pay =>
                                 <tr key={pay?._id} className="hover:bg-gray-50 border-b transition duration-300">
                                     <td className="py-4 px-4 flex justify-start">
                                         <img src={pay?.image} alt="table navigate ui" className="h-14 w-14 object-cover bg-gray-300" />

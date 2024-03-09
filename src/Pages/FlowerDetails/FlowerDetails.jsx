@@ -5,7 +5,6 @@ const FlowerDetails = () => {
     const { id } = useParams();
     const [flowerAll] = useAllFlowers();
     const singleFlower = flowerAll.find(flower => flower._id === id);
-    console.log(id, "full Details =>", singleFlower);
 
     let amount = parseFloat(singleFlower?.price);
     let tex = parseFloat(amount * 9 / 100);

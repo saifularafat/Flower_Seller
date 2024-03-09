@@ -98,6 +98,7 @@ import CompanyEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/CompanyE
 import ImportantEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/ImportantEmail/ImportanEmail";
 import PrivateEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PrivateEmail/PrivateEmail";
 import UpdateProfile from "../Pages/Dashboard/Users/UserProfile/UpdateProfile";
+import PaymentDetails from "../Pages/Dashboard/PaymentDetails/PaymentDetails";
 
 const router = createBrowserRouter([
     {
@@ -158,6 +159,10 @@ const router = createBrowserRouter([
             {
                 path: "flowerDetails/:id",
                 element: <FlowerDetails />
+            },
+            {
+                path: "paymentDetails/:id",
+                element: <PaymentDetails />
             },
             /* main page link */
             /* side page link */

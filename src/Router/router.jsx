@@ -86,7 +86,6 @@ import StripePay from "../Pages/Dashboard/Admin/OrderInfo/StripePay/StripePay";
 import TotalPayment from "../Pages/Payment/TotalPayment/TotalPayment";
 import OrderPending from "../Pages/Payment/OrderPending/OrderPending";
 import OrderUseCancel from "../Pages/OrderUse/OrderUseCancel";
-import OrderUserDetails from "../Pages/OrderUse/OrderUserDetails";
 import IndexEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/IndexEmail/IndexEmail";
 import SendEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/SendEmail/SendEmail";
 import DraftEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/DraftEmail/DraftEmail";
@@ -162,7 +161,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "paymentDetails/:id",
-                element: <PaymentDetails />
+                element: <PrivateRouter><PaymentDetails /></PrivateRouter>
+            },
+            {
+                path: "orderCancel/:id",
+                element: <PrivateRouter><OrderUseCancel /></PrivateRouter>
             },
             /* main page link */
             /* side page link */
@@ -172,14 +175,6 @@ const router = createBrowserRouter([
                     <PrivateRouter>
                         <MyOrder />
                     </PrivateRouter>
-            },
-            {
-                path: "myOrder/orderCancel/:id",
-                element: <OrderUseCancel />
-            },
-            {
-                path: "myOrder/orderDetails/:id",
-                element: <OrderUserDetails />
             },
             {
                 path: "chocolate-gift",

@@ -5,7 +5,6 @@ import car from "../../assets/othersImg/car.webp";
 import MyOrderMobile from "./MyOrderMobile";
 
 const MyOrderInfo = ({ orderInfo }) => {
-    console.log(orderInfo);
     return (
         <>
             <div className="md:flex items-center justify-between bg-white rounded-md sticky top-0 z-20">
@@ -58,10 +57,10 @@ const MyOrderInfo = ({ orderInfo }) => {
 
                         <div className="md:flex-none flex items-center justify-center gap-2">
                             <div className="">
-                                <Link to={`/myOrder/orderCancel/${orders?._id}`} className="text-sm font-medium tracking-wide py-1 md:px-2 px-1 bg-red-700 text-slate-900 rounded-md"> Order Cancel</Link>
+                                <Link to={`/orderCancel/${orders?._id}`} className="text-sm font-medium tracking-wide py-1 md:px-2 px-1 bg-red-700 text-slate-900 rounded-md"> Order Cancel</Link>
                             </div>
                             <div>
-                                <Link to={`/myOrder/orderDetails/${orders?._id}`} className="text-sm font-medium tracking-wide py-1 md:px-2 px-1 bg-blue-800 text-white rounded-md">Order Details </Link>
+                                <Link to={`/paymentDetails/${orders?._id}`} className="text-sm font-medium tracking-wide py-1 md:px-2 px-1 bg-blue-800 text-white rounded-md">Order Details </Link>
                             </div>
                         </div>
                     </div>)

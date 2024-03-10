@@ -93,7 +93,7 @@ const SelectItems = () => {
                         </table>
                     </div>
                     :
-                    <NoDataDashboard title1="No Book Mark!" title2="Did you know you can book mark" link="/" />
+                    <NoDataDashboard title1="No Book Mark!" title2="Did you know you can book mark" link="/birthday-flower"  l1="D" l2="E" l3="T" l4="A" l5="I" l6="L" l7="S" />
             }
         </div>
     );

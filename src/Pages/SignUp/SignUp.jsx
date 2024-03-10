@@ -230,7 +230,7 @@ const SignUp = () => {
                             <div className="flex items-center justify-between gap-5">
                                 <div className="w-full">
                                     <label htmlFor='image' className='formLabel'>
-                                        Select Image:*
+                                        Select Image:
                                     </label>
                                     <label htmlFor="image">
                                         <input

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const OrderHistory = () => {
     const [payments] = userEmailToPayment();
-    console.log(payments);
+
     return (
         <div>
             <Helmet>

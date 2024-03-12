@@ -1,35 +1,46 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import userEmailToPayment from "../../api/useEmailPayment";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import Swal from "sweetalert2";
 const OrderUseCancel = () => {
     const { id } = useParams();
     const [payments, refetch] = userEmailToPayment();
     const payD = payments.find(pay => pay._id === id);
     const [openModal, setOpenModal] = useState(false);
 
-    // const { image, name, price, totalPrice, payStatus, paymentType, date, currentAddress, userName, email, PhoneNumber } = payD;
+    const navigate = useNavigate();
+
     const {
         register,
         formState: { errors },
-        handleSubmit } = useForm();
+        handleSubmit,
+        reset } = useForm();
 
-    const onSubmit = (data) => {
-        const info = {
-            image: payD?.image,
-            name: payD?.name,
-            price: payD?.price,
-            totalPrice: payD?.totalPrice,
-            payStatus: payD?.payStatus,
-            paymentType: "Cancel",
-            currentAddress: payD?.currentAddress,
-            userName: payD?.userName,
-            email:payD?.email,
-            PhoneNumber:payD?.PhoneNumber,
+    const handleCancelSubmit = (data) => {
+        const cancel = {
             cancelType: data.cancelDec,
             cancelMessage: data.cancelMessage
         }
-        console.log("this info ====>", info);
+        console.log("this info ====>", cancel);
+        axios.patch(`${import.meta.env.VITE_API_URL}/payment/user/cancel/${payD?._id}`, cancel)
+            .then(data => {
+                console.log("post data", data.data);
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    reset()
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Order Cancel!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+        navigate("/dashboard/orderHistory")
+
     }
 
     return (
@@ -78,7 +89,7 @@ const OrderUseCancel = () => {
                             <div onClick={() => setOpenModal(false)} className={`fixed flex justify-center items-center z-[100] ${openModal ? 'visible opacity-1' : 'invisible opacity-0'} inset-0 w-full h-full backdrop-blur-sm bg-black/20 duration-100`}>
                                 <div onClick={(e_) => e_.stopPropagation()} className={`absolute p-8 w-full lg:w-[768px] bg-white drop-shadow-2xl rounded-lg ${openModal ? 'opacity-1 duration-300 translate-y-0' : '-translate-y-20 opacity-0 duration-150'}`}>
                                     {/* cancel Form  */}
-                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                    <form onSubmit={handleSubmit(handleCancelSubmit)}>
                                         <div>
                                             <label className="label">
                                                 <span className="label-text md:text-xl text-xl font-semibold ">Select Your Cancel Product Type Option*</span>

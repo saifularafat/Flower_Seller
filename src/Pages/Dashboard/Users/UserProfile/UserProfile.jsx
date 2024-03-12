@@ -1,17 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import defaultPic from '../../../../assets/othersImg/userPro.png';
 import useAuth from '../../../../api/useAuth';
 import { useAxiosSecure } from '../../../../api/useAxiosSecure';
 import DataLoading from '../../../../Share/Loading/DataLoading';
-import useBookMarlFlower from '../../../../api/useBookMarlFlower';
-import userEmailToPayment from '../../../../api/useEmailPayment';
+import AdminProfile from './AdminProfile';
 
 
 const UserProfile = () => {
 
     const { user, loading } = useAuth();
     const [axiosSecure] = useAxiosSecure();
+
     const {
         data: info,
         isLoading
@@ -23,9 +22,6 @@ const UserProfile = () => {
             return res.data
         }
     })
-    const [bookMark, ] = useBookMarlFlower();
-    const [payments] = userEmailToPayment();
-    const checkPayment = payments.filter(pay => pay.payStatus === "success")
 
 
     console.log(info)
@@ -43,20 +39,7 @@ const UserProfile = () => {
                 <h1 className="text-2xl text-gray-700"> {info?.name}</h1>
                 <p className="text-gray-400 text-sm">{info?.email}</p>
             </div>
-            <div className="flex justify-between w-full py-2">
-                <div className="text-center space-y-1">
-                    <p className="text-gray-500 font-medium">F. Select</p>
-                    <p className="text-xl font-mono text-gray-700">{bookMark?.length}</p>
-                </div>
-                <div className="text-center space-y-1">
-                    <p className="text-gray-500 font-medium">Order History</p>
-                    <p className="text-xl font-mono text-gray-700">{payments?.length}</p>
-                </div>
-                <div className="text-center space-y-1 ">
-                    <p className="text-gray-500 font-medium">Pay History</p>
-                    <p className="text-xl font-mono text-gray-700">{checkPayment?.length}</p>
-                </div>
-            </div>
+            <AdminProfile />
             <div>
                 <h6 className='p-1 rounded-md capitalize shadow-sm'>
                     Address:  {info?.address ? info?.address : 'Add Address in Edit Profile'}

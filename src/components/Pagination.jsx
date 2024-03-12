@@ -34,7 +34,7 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
             {
                 visiblePages?.map((number, index) => <button onClick={() =>
                     typeof (number) == 'number' && setCurrentPage(number)
-                } key={index} className={currentPages == number ? 'btn mx-1 btn-sm   btn-primary' : 'btn mx-1 btn-sm btn-outline btn-primary'}>{typeof (number) == 'number' ? number + 1 : '...'}</button>)
+                } key={index} className={currentPages == number ? 'btn mx-1 btn-sm   btn-primary rounded-full gap-3 hover:scale-105 transition-all duration-200' : 'btn mx-1 btn-sm btn-outline btn-primary rounded-full gap-3 hover:scale-105 transition-all duration-200'}>{typeof (number) == 'number' ? number + 1 : '...'}</button>)
             }
         </div>
     );

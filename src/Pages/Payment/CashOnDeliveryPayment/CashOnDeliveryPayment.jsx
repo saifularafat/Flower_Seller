@@ -45,6 +45,8 @@ const CashOnDeliveryPayment = () => {
             payStatus: "pending",
             paymentType: "Case On Delivery",
             date: new Date(),
+            cancelType: data.cancelDec,
+            cancelMessage: data.cancelMessage,
             duration: "Delivery Duration Time is 7 Day!",
         }
         console.log(conformPayment);

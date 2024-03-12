@@ -41,6 +41,8 @@ const SSLPayment = () => {
             PhoneNumber: data.userPhoneNumber,
             email: data.userEmail,
             userName: user.displayName,
+            retuneType: "",
+            retuneMessage: "",
             payType: "success",
             paymentType: "Case On Delivery.",
             date: new Date(),

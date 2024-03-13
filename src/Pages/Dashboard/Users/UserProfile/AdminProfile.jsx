@@ -21,20 +21,22 @@ const AdminProfile = () => {
         <>
             {
                 admin?.role === "admin" ?
-                    <div className="flex justify-between w-full py-2">
-                        <div className="text-center space-y-1">
-                            <p className="text-gray-500 font-medium">All Users</p>
-                            <p className="text-xl font-mono text-gray-700">{users?.length}</p>
+                    <>
+                        <div className="flex justify-between w-full py-2">
+                            <div className="text-center space-y-1">
+                                <p className="text-gray-500 font-medium">All Users</p>
+                                <p className="text-xl font-mono text-gray-700">{users?.length}</p>
+                            </div>
+                            <div className="text-center space-y-1">
+                                <p className="text-gray-500 font-medium">All Flowers</p>
+                                <p className="text-xl font-mono text-gray-700">{flowerAll?.length}</p>
+                            </div>
+                            <div className="text-center space-y-1 ">
+                                <p className="text-gray-500 font-medium">All Pay</p>
+                                <p className="text-xl font-mono text-gray-700">{checkSuccessPayment?.length}</p>
+                            </div>
                         </div>
-                        <div className="text-center space-y-1">
-                            <p className="text-gray-500 font-medium">All Flowers</p>
-                            <p className="text-xl font-mono text-gray-700">{flowerAll?.length}</p>
-                        </div>
-                        <div className="text-center space-y-1 ">
-                            <p className="text-gray-500 font-medium">All Pay</p>
-                            <p className="text-xl font-mono text-gray-700">{checkSuccessPayment?.length}</p>
-                        </div>
-                    </div>
+                    </>
                     :
                     <div className="flex justify-between w-full py-2">
                         <div className="text-center space-y-1">

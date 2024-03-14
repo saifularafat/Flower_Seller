@@ -69,7 +69,7 @@ const AllPayment = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.patch(`${import.meta.env.VITE_API_URL}/payment/adminDelete/${pay._id}`)
+                axios.patch(`${import.meta.env.VITE_API_URL}/payment/admin/cancel/${pay._id}`)
                     .then(data => {
                         console.log(data.data);
                         if (data.data.deletedCount > 0) {

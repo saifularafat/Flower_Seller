@@ -98,6 +98,7 @@ import ImportantEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/Import
 import PrivateEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PrivateEmail/PrivateEmail";
 import UpdateProfile from "../Pages/Dashboard/Users/UserProfile/UpdateProfile";
 import PaymentDetails from "../Pages/Dashboard/PaymentDetails/PaymentDetails";
+import AdminDeleteOrder from "../Pages/Dashboard/Admin/OrderInfo/AdminDeleteOrder/AdminDeleteOrder";
 
 const router = createBrowserRouter([
     {
@@ -316,6 +317,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/orderCancel",
                 element: <OrderCancel />
+            },
+            {
+                path: "/dashboard/orderDelete",
+                element: <AdminDeleteOrder />
             },
             /* offer and change section link */
             {

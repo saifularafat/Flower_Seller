@@ -5,6 +5,7 @@ import DataLoading from "../../../../Share/Loading/DataLoading";
 import useTotalPaymentData from "../../../../api/useTotalPaymentData";
 import Swal from "sweetalert2";
 import useAuth from "../../../../api/useAuth";
+import axios from "axios";
 
 const AllPayment = () => {
     const { user } = useAuth();
@@ -43,7 +44,7 @@ const AllPayment = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log("serial number 46 =>",data);
+                        console.log("serial number 46 =>", data);
                         if (data.modifiedCount) {
                             refetch();
                             Swal.fire(
@@ -57,8 +58,31 @@ const AllPayment = () => {
         })
 
     }
-    const handleDeletePay = (pay) => {
-        console.log("handle Delete Pay", (pay?._id));
+    const handleAdminDeletePay = (pay) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You Client Payment Delete by Admin!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.patch(`${import.meta.env.VITE_API_URL}/payment/adminDelete/${pay._id}`)
+                    .then(data => {
+                        console.log(data.data);
+                        if (data.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Wronging!',
+                                'Pay Admin Delete .',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
     }
 
     if (isLoading) {
@@ -89,51 +113,58 @@ const AllPayment = () => {
                         totalPayment.map((pay, index) =>
                             <tbody key={pay?._id}>
                                 {
-                                    pay?.payStatus === "cancel" ?
-
-                                        <tr className="bg-red-200">
-                                            <th>{index + 1}</th>
-                                            <td>{pay?.email}</td>
-                                            <td>{pay?.paymentType}</td>
-                                            <td>{pay?.name}</td>
-                                            <td>{pay?.totalPrice + "$"}</td>
-                                            {
-                                                pay?.payStatus === "cancel" ?
-                                                    <td>{pay?.cancelType}</td>
-                                                    :
-                                                    <td>{pay?.transition_id}</td>
-                                            }
-                                            {
-                                                pay?.payStatus === "cancel" && <p className="disabled text-center text-sm p-1 bg-red-500 text-white tracking-wide capitalize rounded-md">Cancel</p>
-                                            }
-                                        </tr>
+                                    pay?.payStatus === "adminDelete" ?
+                                        <></>
                                         :
-                                        <tr>
-                                            <th>{index + 1}</th>
-                                            <td>{pay?.email}</td>
-                                            <td>{pay?.paymentType}</td>
-                                            <td>{pay?.name}</td>
-                                            <td>{pay?.totalPrice + "$"}</td>
+                                        <>
                                             {
                                                 pay?.payStatus === "cancel" ?
-                                                    <td>{pay?.cancelType}</td>
+
+                                                    <tr className="bg-red-200">
+                                                        <th>{index + 1}</th>
+                                                        <td>{pay?.email}</td>
+                                                        <td>{pay?.paymentType}</td>
+                                                        <td>{pay?.name}</td>
+                                                        <td>{pay?.totalPrice + "$"}</td>
+                                                        {
+                                                            pay?.payStatus === "cancel" ?
+                                                                <td>{pay?.cancelType}</td>
+                                                                :
+                                                                <td>{pay?.transition_id}</td>
+                                                        }
+                                                        {
+                                                            pay?.payStatus === "cancel" && <p className="disabled text-center text-sm p-1 bg-red-500 text-white tracking-wide capitalize rounded-md">Cancel</p>
+                                                        }
+                                                    </tr>
                                                     :
-                                                    <td>{pay?.transition_id}</td>
+                                                    <tr>
+                                                        <th>{index + 1}</th>
+                                                        <td>{pay?.email}</td>
+                                                        <td>{pay?.paymentType}</td>
+                                                        <td>{pay?.name}</td>
+                                                        <td>{pay?.totalPrice + "$"}</td>
+                                                        {
+                                                            pay?.payStatus === "cancel" ?
+                                                                <td>{pay?.cancelType}</td>
+                                                                :
+                                                                <td>{pay?.transition_id}</td>
+                                                        }
+                                                        {
+                                                            pay?.payStatus === "success" ?
+                                                                <p className="disabled text-center text-sm p-1 bg-blue-300 text-white tracking-wide capitalize rounded-md">success</p>
+                                                                :
+                                                                pay?.payStatus === "cancel" ?
+                                                                    <p className="disabled text-center text-sm p-1 bg-red-600 text-white tracking-wide capitalize rounded-md">Cancel</p>
+                                                                    :
+                                                                    < div >
+                                                                        {/* TODO ACTION */}
+                                                                        <button onClick={() => handleStatusChange(pay)} className="px-2 py-1 rounded-md bg-green-400 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
+                                                                        <button onClick={() => handleAdminDeletePay(pay)} className="px-2 py-1 rounded-md bg-red-700 text-xs text-white font-medium capitalize ml-1">Cancel</button>
+                                                                    </div>
+                                                        }
+                                                    </tr>
                                             }
-                                            {
-                                                pay?.payStatus === "success" ?
-                                                    <p className="disabled text-center text-sm p-1 bg-blue-300 text-white tracking-wide capitalize rounded-md">success</p>
-                                                    :
-                                                    pay?.payStatus === "cancel" ?
-                                                        <p className="disabled text-center text-sm p-1 bg-red-600 text-white tracking-wide capitalize rounded-md">Cancel</p>
-                                                        :
-                                                        < div >
-                                                            {/* TODO ACTION */}
-                                                            <button onClick={() => handleStatusChange(pay)} className="px-2 py-1 rounded-md bg-green-400 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
-                                                            <button onClick={() => handleDeletePay(pay)} className="px-2 py-1 rounded-md bg-red-400 text-xs font-medium capitalize ml-1">Delete</button>
-                                                        </div>
-                                            }
-                                        </tr>
+                                        </>
                                 }
                             </tbody>)
                     }

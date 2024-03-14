@@ -135,6 +135,14 @@ const IsAdmin = () => {
                                 <span>Order Cancel</span>
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/dashboard/orderDelete"
+                                className={({ isActive }) => (isActive ? "active" : " default ")}>
+                                <GoDot className="text-xl" />
+                                <span>Order Delete</span>
+                            </NavLink>
+                        </li>
                     </div>
                 }
                 {/* order link end */}

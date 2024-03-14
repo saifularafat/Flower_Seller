@@ -3,11 +3,13 @@ import DashboardTitle from "../../../../components/DashboardTitle";
 import { GiFireFlower } from "react-icons/gi";
 import DataLoading from "../../../../Share/Loading/DataLoading";
 import useTotalPaymentData from "../../../../api/useTotalPaymentData";
+import Swal from "sweetalert2";
+import useAuth from "../../../../api/useAuth";
 
 const AllPayment = () => {
+    const { user } = useAuth();
     const [totalPayment, refetch, isLoading] = useTotalPaymentData();
     const pendingPay = totalPayment.filter(pending => pending?.payStatus === "pending");
-
     /* total Payment */
     let amount = 0;
     totalPayment.forEach(order => {
@@ -23,8 +25,37 @@ const AllPayment = () => {
     const totalPAmount = pAmount.toFixed(2);
     console.log(totalPAmount);
 
-    const handleStatusChange = () => {
+    const handleStatusChange = status => {
         console.log("Change the Status");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Your Client Payment Success!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#173931',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes.!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`${import.meta.env.VITE_API_URL}/payment/admin/${status?._id}`, {
+                    method: 'PATCH',
+                    headers: { authorization: `bearer ${localStorage.getItem('token_access')}` }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("serial number 46 =>",data);
+                        if (data.modifiedCount) {
+                            refetch();
+                            Swal.fire(
+                                'Payment!',
+                                `${user?.name} is an Admin Now!!`,
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+
     }
     const handleDeletePay = (pay) => {
         console.log("handle Delete Pay", (pay?._id));
@@ -57,28 +88,58 @@ const AllPayment = () => {
                     {
                         totalPayment.map((pay, index) =>
                             <tbody key={pay?._id}>
-                                <tr>
-                                    <th>{index + 1}</th>
-                                    <td>{pay?.email}</td>
-                                    <td>{pay?.paymentType}</td>
-                                    <td>{pay?.name}</td>
-                                    <td>{pay?.totalPrice + "$"}</td>
-                                    <td>{pay?.transition_id}</td>
-                                    {
-                                        pay?.payStatus === "success" ? <p className="disabled text-center text-sm p-1 bg-blue-300 text-white tracking-wide capitalize rounded-md">success</p> : <>
-                                            {/* TODO ACTION */}
-                                            <div>
-                                                <button onClick={() => handleStatusChange(pay)} className="px-2 py-1 rounded-md bg-green-400 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
-                                                <button onClick={() => handleDeletePay(pay)} className="px-2 py-1 rounded-md bg-red-400 text-xs font-medium capitalize ml-1">Delete</button>
-                                            </div>
-                                        </>
-                                    }
-                                </tr>
+                                {
+                                    pay?.payStatus === "cancel" ?
+
+                                        <tr className="bg-red-200">
+                                            <th>{index + 1}</th>
+                                            <td>{pay?.email}</td>
+                                            <td>{pay?.paymentType}</td>
+                                            <td>{pay?.name}</td>
+                                            <td>{pay?.totalPrice + "$"}</td>
+                                            {
+                                                pay?.payStatus === "cancel" ?
+                                                    <td>{pay?.cancelType}</td>
+                                                    :
+                                                    <td>{pay?.transition_id}</td>
+                                            }
+                                            {
+                                                pay?.payStatus === "cancel" && <p className="disabled text-center text-sm p-1 bg-red-500 text-white tracking-wide capitalize rounded-md">Cancel</p>
+                                            }
+                                        </tr>
+                                        :
+                                        <tr>
+                                            <th>{index + 1}</th>
+                                            <td>{pay?.email}</td>
+                                            <td>{pay?.paymentType}</td>
+                                            <td>{pay?.name}</td>
+                                            <td>{pay?.totalPrice + "$"}</td>
+                                            {
+                                                pay?.payStatus === "cancel" ?
+                                                    <td>{pay?.cancelType}</td>
+                                                    :
+                                                    <td>{pay?.transition_id}</td>
+                                            }
+                                            {
+                                                pay?.payStatus === "success" ?
+                                                    <p className="disabled text-center text-sm p-1 bg-blue-300 text-white tracking-wide capitalize rounded-md">success</p>
+                                                    :
+                                                    pay?.payStatus === "cancel" ?
+                                                        <p className="disabled text-center text-sm p-1 bg-red-600 text-white tracking-wide capitalize rounded-md">Cancel</p>
+                                                        :
+                                                        < div >
+                                                            {/* TODO ACTION */}
+                                                            <button onClick={() => handleStatusChange(pay)} className="px-2 py-1 rounded-md bg-green-400 text-xs font-medium capitalize text-white">{pay?.payStatus}</button>
+                                                            <button onClick={() => handleDeletePay(pay)} className="px-2 py-1 rounded-md bg-red-400 text-xs font-medium capitalize ml-1">Delete</button>
+                                                        </div>
+                                            }
+                                        </tr>
+                                }
                             </tbody>)
                     }
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 

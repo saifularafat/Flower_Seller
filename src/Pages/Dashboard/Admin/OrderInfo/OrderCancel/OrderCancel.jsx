@@ -1,12 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import DataLoading from "../../../../../Share/Loading/DataLoading";
 import useTotalPaymentData from "../../../../../api/useTotalPaymentData";
 
 const OrderCancel = () => {
-    const [totalPayment, refetch, isLoading] = useTotalPaymentData();
-    const sslCommerz = totalPayment.filter(sslPay => sslPay?.payStatus === "cancel");
-    console.log(sslCommerz);
+    const [totalPayment, , isLoading] = useTotalPaymentData();
+    const cancelPay = totalPayment.filter(cancel => cancel?.payStatus === "cancel");
+    console.log(cancelPay);
     let amount = 0;
-    sslCommerz.forEach(order => {
+    cancelPay.forEach(order => {
         amount += parseFloat(order?.totalPrice);
     });
     const totalAmount = amount.toFixed(2);
@@ -16,45 +17,37 @@ const OrderCancel = () => {
     }
     return (
         <div className="overflow-x-auto">
-
-            <h3 className="md:text-right pl-2 md:pl-0 text-lg md:text-xl font-semibold md:pb-5 pb-2 uppercase"><span className="md:text-3xl text-2xl">{totalAmount}</span> TOTAL Amount <span className="text-sm font-medium lowercase">out Of </span> {sslCommerz?.length}</h3>
+            <Helmet>
+                <title>All Cancel Pay || Flower Shop </title>
+            </Helmet>
+            <h3 className="md:text-right pl-2 md:pl-0 text-lg md:text-xl font-semibold md:pb-5 pb-2 uppercase"><span className="md:text-3xl text-2xl">{totalAmount + "$"}</span> TOTAL Cancel Amount <span className="text-sm font-medium lowercase">out Of </span> {cancelPay?.length}</h3>
             <table className="table">
                 {/* head */}
                 <thead>
                     <tr>
-                        <th></th>
-                        <th className="text-base">Flower Image</th>
-                        <th className="text-base">Flower Name</th>
-                        <th className="text-base">Transition Id</th>
-                        <th className="text-base">Price</th>
-                        <th className="text-base">Pay Status</th>
+                        <th className="text-base font-semibold">##</th>
+                        <td className="text-base font-semibold">Email</td>
+                        <td className="text-base font-semibold">Pay Type</td>
+                        <td className="text-base font-semibold">Flower Name</td>
+                        <td className="text-base font-semibold">Amount</td>
+                        <td className="text-base font-semibold">Transition ID</td>
+                        <td className="text-base font-semibold">Action</td>
                     </tr>
                 </thead>
                 {
-                    sslCommerz.map((pay, index) =>
+                    totalPayment.map((pay, index) =>
                         <tbody key={pay?._id}>
-                            <tr className="hover:bg-slate-50 transition-all duration-200">
-                                <th className="text-xs">{index + 1}</th>
-                                <td>
-                                    <div className="flex items-center gap-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={pay?.image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="text-xs">{pay?.name ? pay?.name : pay?.orderInfo?.name}</td>
-                                <td className="text-xs">{pay?.transition_id ? pay?.transition_id : pay?.paymentType}</td>
-                                <td className="text-xs">{pay?.totalPrice ? pay?.totalPrice : pay?.orderInfo?.totalPrice}$</td>
-                                <td
-                                    className={`${pay?.payStatus === "pending" ? 'text-green-800'
-                                        : pay?.orderInfo?.payStatus === "success" ? 'text-sky-900'
-                                            : pay?.payStatus ? pay?.payStatus : pay?.orderInfo?.payStatus === "cancel" ? 'text-amber-900'
-                                                : pay?.payStatus ? pay?.payStatus : pay?.orderInfo?.payStatus === "retune" ? 'text-red-700'
-                                                    : pay?.payStatus === "pending" ? 'text-blue-900'
-                                                        : 'text-blue-900'} text-base font-medium`}>{pay?.payStatus ? pay?.payStatus : pay?.orderInfo?.payStatus}</td>
-                            </tr>
+                            {
+                                pay?.payStatus === "cancel" &&
+                                <tr className="bg-red-200">
+                                    <th>{index + 1}</th>
+                                    <td>{pay?.email}</td>
+                                    <td>{pay?.paymentType}</td>
+                                    <td>{pay?.name}</td>
+                                    <td>{pay?.totalPrice + "$"}</td>
+                                    <td>{pay?.transition_id ? pay?.transition_id : pay?.cancelType}</td> <p className="disabled text-center text-sm p-1 bg-red-600 text-white tracking-wide capitalize rounded-md">{pay?.payStatus}</p>
+                                </tr>
+                            }
                         </tbody>)
                 }
             </table>

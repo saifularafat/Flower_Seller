@@ -85,7 +85,7 @@ const UpDateMonth = () => {
                                 <div className="bg-green-600/20 p-3 rounded-full">
                                     <AiOutlineCreditCard className="text-2xl text-green-500" />
                                 </div>
-                                <p className="text-xl font-semibold leading-none tracking-wide">{profitTotalAmount + "$"} <br /><span className="text-sm text-blue-600 lowercase font-normal leading-none">profit</span></p>
+                                <p className="text-xl font-semibold leading-none tracking-wide">{profitTotalAmount.toFixed(2) + "$"} <br /><span className="text-sm text-blue-600 lowercase font-normal leading-none">profit</span></p>
                             </div>
                             <div className="flex items-center justify-between gap-2">
                                 <div className="bg-blue-800/20 p-3 rounded-full">

@@ -16,7 +16,7 @@ const TotalFlowerItems = () => {
     const [flowerAll, refetch, isLoading] = useAllFlowers();
     /* Pagination by users  */
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemPerPage] = useState(12);// Number of items to display per page
+    const [itemsPerPage, setItemPerPage] = useState(10);// Number of items to display per page
     const totalItems = flowerAll?.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage)
     const startIndex = currentPage * itemsPerPage;

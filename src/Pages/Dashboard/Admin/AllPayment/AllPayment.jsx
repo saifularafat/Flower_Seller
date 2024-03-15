@@ -6,11 +6,23 @@ import useTotalPaymentData from "../../../../api/useTotalPaymentData";
 import Swal from "sweetalert2";
 import useAuth from "../../../../api/useAuth";
 import axios from "axios";
+import Pagination from "../../../../components/Pagination";
+import { useState } from "react";
 
 const AllPayment = () => {
     const { user } = useAuth();
     const [totalPayment, refetch, isLoading] = useTotalPaymentData();
     const pendingPay = totalPayment.filter(pending => pending?.payStatus === "pending");
+
+    /* Pagination by users  */
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPerPage, setItemPerPage] = useState(16);// Number of items to display per page
+    const totalItems = totalPayment?.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage)
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedData = totalPayment.slice(startIndex, endIndex)
+
     /* total Payment */
     let amount = 0;
     totalPayment.forEach(order => {
@@ -110,7 +122,7 @@ const AllPayment = () => {
                         </tr>
                     </thead>
                     {
-                        totalPayment.map((pay, index) =>
+                        displayedData.map((pay, index) =>
                             <tbody key={pay?._id}>
                                 {
                                     pay?.payStatus === "adminDelete" ?
@@ -169,6 +181,13 @@ const AllPayment = () => {
                             </tbody>)
                     }
                 </table>
+            </div>
+            <div className='flex justify-center my-6'>
+                <Pagination
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                ></Pagination>
             </div>
         </div >
     );

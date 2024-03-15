@@ -1,4 +1,4 @@
-import { AiOutlineMail, AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { BsSend } from "react-icons/bs";
 import { MdEdit } from "react-icons/md";
 import { PiStarThin } from "react-icons/pi";

@@ -4,11 +4,8 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
     const currentPages = parseInt(currentPage)
     /* page number */
     const pageNumber = [...Array(totalPage).keys()]
-    console.log(pageNumber?.length, pageNumber)
 
     const visiblePages = [];
-
-
 
     if (pageNumber.length <= 5) {
         // If total pages are less than or equal to 7, show all page numbers
@@ -18,7 +15,6 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
         // If there are more than 7 pages, show a limited set of pages with ellipsis
         if (currentPages <= 3) {
             visiblePages.push(0, 1, 2, 3, 4, '...', pageNumber?.length - 1);
-            console.log('hit2')
         } else if (currentPages >= pageNumber?.length - 3) {
             visiblePages.push(0, '...', pageNumber?.length - 3, pageNumber?.length - 2, pageNumber.length - 1);
         } else {
@@ -26,7 +22,7 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
         }
     }
 
-    console.log(visiblePages, pageNumber, currentPages, totalPage)
+    // console.log(visiblePages, pageNumber, currentPages, totalPage)
 
 
     return (

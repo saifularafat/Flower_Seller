@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios";
 
-export const useEmailAdmin = () => {
+export const useEmailAll = () => {
     const { data: email = [], refetch } = useQuery({
         queryKey: ['email'],
         queryFn: async () => {

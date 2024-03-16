@@ -5,14 +5,11 @@ import { BiErrorAlt, BiTrash } from "react-icons/bi";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
-import useAuth from "../../../../../api/useAuth";
-import MainEmail from "./MainEmail";
-import EmailImageFile from "./EmailImageFile";
 import EmailUserInfo from "./EmailUserInfo";
 import ModalFirstPart from "./ModalFirstPart";
 import ModalSecondPart from "./ModalSecondPart";
-import ModalEmailContent from "./ModalEmailContent";
 import EmailTopTableIcon from "./EmailTopTableIcon";
+import ModalMainEmailShow from "./ModalMainEmailShow";
 
 const EmailRightSite = ({ allEmail }) => {
     const [select, setSelect] = useState(false);
@@ -62,7 +59,7 @@ const EmailRightSite = ({ allEmail }) => {
 
                                     </button>
                                     {/* Show Email table */}
-                                    <EmailUserInfo emailClick={emailClick} setEmailClick={setEmailClick} email={email}/>
+                                    <EmailUserInfo email={email} />
                                 </div>
                                 <div className="flex items-center gap-4 mx-3">
                                     <Tooltip id="my-tooltip" place="top" />
@@ -83,10 +80,8 @@ const EmailRightSite = ({ allEmail }) => {
                             </div>
                             {/* email content */}
                             <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
-                                <ModalEmailContent startClick={startClick} setStartClick={setStartClick} />
-                                {/* main text */}
-                                <MainEmail allEmail={allEmail} />
-                                <EmailImageFile allEmail={allEmail} />
+                                <ModalMainEmailShow startClick={startClick} setStartClick={setStartClick} allEmail={allEmail} />
+
                             </div>
                             <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>
                                 <h2 className="text-sm font-medium text-gray-800"> Click here to <span className="text-blue-700 text-base cursor-pointer hover:underline">Reply</span> or <span className="text-blue-700 text-base hover:underline cursor-pointer">Forward</span></h2>

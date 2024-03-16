@@ -1,9 +1,9 @@
 import useAuth from "../../../../../../api/useAuth";
-import { useEmailAdmin } from "../../../../../../api/useEmailAll";
+import { useEmailAll } from "../../../../../../api/useEmailAll";
 import EmailRightSite from "../../EmailRightSite/EmailRightSite";
 
 const IndexEmail = () => {
-    const [email] = useEmailAdmin();
+    const [email] = useEmailAll();
     const { user } = useAuth();
     const toEmailFilter = email.filter(email => email?.toEmail === user?.email)
     console.log(toEmailFilter);

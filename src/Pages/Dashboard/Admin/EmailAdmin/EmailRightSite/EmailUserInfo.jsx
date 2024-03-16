@@ -11,8 +11,6 @@ const EmailUserInfo = ({ email }) => {
             {
                 emailFilter.map(email =>
                     <Link to={`/dashboard/email/${_id}`} key={email?._id}
-                        // <button key={email?._id}
-                        //     onClick={() => setEmailClick(!emailClick)}
                         className="text-slate-800 flex items-center pl-2"
                     >
 
@@ -21,7 +19,6 @@ const EmailUserInfo = ({ email }) => {
                             <h3 className="text-base font-semibold pl-2">{email?.name}</h3>
                             <p className="text-xs">{subject}</p>
                         </div>
-                        {/* </button> */}
                     </Link>
                 )
             }

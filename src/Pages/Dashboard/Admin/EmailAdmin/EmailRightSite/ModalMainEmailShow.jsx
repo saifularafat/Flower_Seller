@@ -2,18 +2,20 @@ import { useParams } from "react-router-dom";
 import EmailImageFile from "./EmailImageFile";
 import MainEmail from "./MainEmail";
 import ModalEmailContent from "./ModalEmailContent";
+import { useEmailAll } from "../../../../../api/useEmailAll";
 
-const ModalMainEmailShow = ({ startClick, setStartClick, allEmail }) => {
+const ModalMainEmailShow = () => {
     const { id } = useParams();
+    const [email, refetch, isLoading] = useEmailAll()
     console.log(id);
-    // const findEmail = allEmail.find(email => email?._id === id)
-    console.log(allEmail);
+    const findEmail = email.find(email => email?._id === id)
+    console.log("........... >10 number serial", findEmail);
     return (
         <>
-            <ModalEmailContent startClick={startClick} setStartClick={setStartClick} />
+            <ModalEmailContent findEmail={findEmail} />
             {/* main text */}
-            <MainEmail allEmail={allEmail} />
-            <EmailImageFile allEmail={allEmail} />
+            <MainEmail findEmail={findEmail} />
+            <EmailImageFile findEmail={findEmail} />
         </>
     );
 };

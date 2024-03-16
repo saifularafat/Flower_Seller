@@ -1,25 +1,33 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BiDotsVertical } from "react-icons/bi";
 import { FaPhotoFilm } from "react-icons/fa6";
+import allUsers from "../../../../../api/useAllUser";
 
-const ModalEmailContent = ({ startClick, setStartClick }) => {
+const ModalEmailContent = ({ findEmail }) => {
+    const [users] = allUsers()
+    const emailFilter = users.filter(emailOne => emailOne?.email === findEmail?.toEmail)
+    // console.log("=======> modal Email ....>", findEmail?.starred);
     return (
         <div className="flex items-start justify-between py-2 px-3 border-0 border-b border-solid border-slate-300">
-            <div className="flex items-center gap-3">
-                <img src={''} alt="user image" className="w-8 h-8 rounded-full" />
-                <div>
-                    <h2 className="font-medium text-slate-950">Katie Brandt</h2>
-                    <p className="text-xs text-slate-600">james25@gmail.com</p>
-                </div>
-            </div>
+            {
+                emailFilter.map(emailSingle =>
+                    <div key={emailSingle?._id} className="flex items-center gap-3">
+                        <img src={emailSingle?.image} alt="user image" className="w-8 h-8 rounded-full" />
+                        <div>
+                            <h2 className="font-medium text-slate-950">{emailSingle?.name}</h2>
+                            <p className="text-xs text-slate-600">{emailSingle?.email}</p>
+                        </div>
+                    </div>
+                )
+            }
             <div className="flex items-center gap-4 text-slate-800">
                 <h3 className="text-sm font-medium">Nov 12, 2023</h3>
                 <button>
                     <FaPhotoFilm className="text-lg text-blue-900" />
                 </button>
-                <button className="" onClick={() => setStartClick(!startClick)}>
+                <button className="">
                     {
-                        startClick ?
+                        findEmail?.starred === "start" ?
                             <AiFillStar className="text-xl text-yellow-500" />
                             :
                             <AiOutlineStar className="text-xl " />

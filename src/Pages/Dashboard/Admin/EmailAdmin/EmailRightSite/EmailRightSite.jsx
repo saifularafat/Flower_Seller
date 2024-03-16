@@ -18,7 +18,8 @@ const EmailRightSite = ({ allEmail }) => {
     const [startClick, setStartClick] = useState(false);
     const [emailClick, setEmailClick] = useState(false);
 
-    console.log("..............>", allEmail);
+    const startEmail = allEmail.map(start => start)
+    console.log("..............EmailRightSite>", startEmail);
 
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>
@@ -38,9 +39,10 @@ const EmailRightSite = ({ allEmail }) => {
                     {
                         allEmail.map(email =>
                             <button key={email?._id}
+                            onClick={() => setSelect(!select)}
                                 className={`flex items-center justify-between gap-6 w-full py-3 border-0 border-b border-solid border-slate-400 hover:scale-y-100 transition-all duration-200`}>
                                 <div className="flex items-center gap-2 px-2">
-                                    <button className="" onClick={() => setSelect(!select)}>
+                                    <button className="" >
                                         {
                                             select ?
                                                 <ImCheckboxChecked />
@@ -49,14 +51,15 @@ const EmailRightSite = ({ allEmail }) => {
                                         }
 
                                     </button>
-                                    <button className="text-slate-800 border-none" onClick={() => setStartClick(!startClick)}>
-                                        {
-                                            startClick ?
-                                                <AiFillStar className="text-xl text-yellow-500 border-none" />
-                                                :
-                                                <AiOutlineStar className="text-xl " />
-                                        }
 
+
+                                    <button className="text-slate-800 border-none" onClick={() => setStartClick(!startClick)}>
+
+                                        {email?.starred === "start" ?
+                                            <AiFillStar className="text-xl text-yellow-500" />
+                                            :
+                                            <AiOutlineStar className="text-xl " />
+                                        }
                                     </button>
                                     {/* Show Email table */}
                                     <EmailUserInfo email={email} />
@@ -80,7 +83,7 @@ const EmailRightSite = ({ allEmail }) => {
                             </div>
                             {/* email content */}
                             <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
-                                <ModalMainEmailShow startClick={startClick} setStartClick={setStartClick} allEmail={allEmail} />
+                                <ModalMainEmailShow />
 
                             </div>
                             <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>

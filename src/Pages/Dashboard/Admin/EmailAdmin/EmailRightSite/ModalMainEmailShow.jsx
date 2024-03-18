@@ -7,7 +7,7 @@ import { useEmailAll } from "../../../../../api/useEmailAll";
 const ModalMainEmailShow = () => {
     const { id } = useParams();
     const [email, refetch, isLoading] = useEmailAll()
-    console.log(id);
+    // console.log(id);
     const findEmail = email.find(email => email?._id === id)
     console.log("........... >10 number serial", findEmail);
     return (

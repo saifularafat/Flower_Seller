@@ -48,7 +48,8 @@ const EmailCompose = () => {
                     role: userRole?.role,
                     category: "send",
                     emailImage: imgURL,
-                    emailStatus: ""
+                    emailStatus: "",
+                    starred: ""
                 }
                 console.log("update data", sendEmailInfo);
                 axios.post(`${import.meta.env.VITE_API_URL}/emailPost`, sendEmailInfo)

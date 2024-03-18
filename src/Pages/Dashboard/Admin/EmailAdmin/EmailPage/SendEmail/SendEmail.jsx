@@ -1,6 +1,6 @@
 import useAuth from "../../../../../../api/useAuth";
 import { useEmailAll } from "../../../../../../api/useEmailAll";
-import EmailRightSite from "../../EmailRightSite/EmailRightSite";
+// import EmailRightSite from "../../EmailRightSite/EmailRightSite";
 
 const SendEmail = () => {
     const [email] = useEmailAll();
@@ -8,9 +8,10 @@ const SendEmail = () => {
     const sendEmailFilter = email.filter(email => email?.sendEmail === user?.email)
     console.log(sendEmailFilter);
     return (
-        <div>
-            <EmailRightSite allEmail={sendEmailFilter} />
-        </div>
+        // <div>
+        //     <EmailRightSite allEmail={sendEmailFilter} />
+        // </div>
+        <></>
     );
 };
 

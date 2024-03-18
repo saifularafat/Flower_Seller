@@ -3,9 +3,8 @@ import allUsers from "../../../../../api/useAllUser";
 
 const EmailUserInfo = ({ email }) => {
     const [users] = allUsers()
-    const emailFilter = users.filter(emailOne => emailOne?.email === email?.toEmail)
+    const emailFilter = users.filter(emailOne => emailOne?.email === email?.sendEmail)
     const { _id, subject } = email;
-    // console.log("======> serial 07 .", emailFilter);
     return (
         <>
             {

@@ -5,11 +5,12 @@ const EmailUserInfo = ({ email }) => {
     const [users] = allUsers()
     const emailFilter = users.filter(emailOne => emailOne?.email === email?.sendEmail)
     const { _id, subject } = email;
+    console.log("kjsd eiof=>>",email);
     return (
         <>
             {
                 emailFilter.map(email =>
-                    <Link to={`/dashboard/email/${_id}`} key={email?._id}
+                    <Link to={`/dashboard/email/${_id}?email=${email.sendEmail}`} key={email?._id}
                         className="text-slate-800 flex items-center pl-2"
                     >
 

@@ -5,7 +5,7 @@ import allUsers from "../../../../../api/useAllUser";
 
 const ModalEmailContent = ({ findEmail }) => {
     const [users] = allUsers()
-    const emailFilter = users.filter(emailOne => emailOne?.email === findEmail?.sendEmail)
+    const emailFilter = users.filter(emailOne => emailOne?.email === findEmail?.sendEmail )
     // console.log("=======> modal Email ....>", findEmail?.starred);
     return (
         <div className="flex items-start justify-between py-2 px-3 border-0 border-b border-solid border-slate-300">

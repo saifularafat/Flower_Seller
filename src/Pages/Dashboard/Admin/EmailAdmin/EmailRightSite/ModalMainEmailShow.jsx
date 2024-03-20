@@ -4,7 +4,8 @@ import MainEmail from "./MainEmail";
 import ModalEmailContent from "./ModalEmailContent";
 import { useEmailAll } from "../../../../../api/useEmailAll";
 
-const ModalMainEmailShow = () => {
+const ModalMainEmailShow = ({toEmailFilter}) => {
+    console.log("toEmailFilter",toEmailFilter);
     const { id } = useParams();
     const [email, refetch, isLoading] = useEmailAll()
     // console.log("fvkjefsj iogejoif j ====>",allEmail);

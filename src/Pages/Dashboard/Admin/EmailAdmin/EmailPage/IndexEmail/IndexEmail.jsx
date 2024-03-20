@@ -24,8 +24,9 @@ const IndexEmail = () => {
     const { user } = useAuth();
     const toEmailFilter = emails.filter(email => email?.toEmail === user?.email)
 
-    const indexEmailFilter = emails.filter(email => email?.sendEmail === user?.email)
-    console.log(indexEmailFilter);
+    // const indexEmailFilter = emails.filter(email => email?.toEmail === user?.email)
+    console.log("index",toEmailFilter);
+    // const emailFilter = users.filter(emailOne => emailOne?.email === findEmail?.sendEmail )
 
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>
@@ -96,8 +97,7 @@ const IndexEmail = () => {
                             </div>
                             {/* email content */}
                             <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
-                                <ModalMainEmailShow />
-
+                                <ModalMainEmailShow toEmailFilter={toEmailFilter}/>
                             </div>
                             <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>
                                 <h2 className="text-sm font-medium text-gray-800"> Click here to <span className="text-blue-700 text-base cursor-pointer hover:underline">Reply</span> or <span className="text-blue-700 text-base hover:underline cursor-pointer">Forward</span></h2>

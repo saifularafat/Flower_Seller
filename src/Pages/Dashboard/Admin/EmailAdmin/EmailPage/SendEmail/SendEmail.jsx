@@ -50,7 +50,7 @@ const SendEmail = () => {
     const { user } = useAuth();
     const toEmailFilter = emails.filter(email => email?.sendEmail === user?.email)
 
-    const indexEmailFilter = emails.filter(email => email?.sendEmail === user?.email)
+    const indexEmailFilter = emails.filter(email => email?.toEmail === user?.email)
     console.log(indexEmailFilter);
 
     return (

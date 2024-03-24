@@ -49,7 +49,8 @@ const EmailCompose = () => {
                     category: "send",
                     emailImage: imgURL,
                     emailStatus: "",
-                    starred: ""
+                    starred: "",
+                    delete: ""
                 }
                 console.log("update data", sendEmailInfo);
                 axios.post(`${import.meta.env.VITE_API_URL}/emailPost`, sendEmailInfo)
@@ -173,6 +174,7 @@ const EmailCompose = () => {
                                         type="file"
                                         name="image"
                                         id="file"
+                                        required
                                         {...register("image", { require: true })}
                                         style={{ display: "none" }} />
 

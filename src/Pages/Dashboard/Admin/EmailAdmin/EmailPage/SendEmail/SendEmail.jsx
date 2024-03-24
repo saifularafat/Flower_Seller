@@ -13,13 +13,6 @@ import SendEmailUserInfo from "./ModalSendEmailShow/SendEmailUserInfo";
 import ModalFirstPart from "../../EmailRightSite/ModalFirstPart";
 import ModalSecondPart from "../../EmailRightSite/ModalSecondPart";
 import ModalMainSendEmailShow from "./ModalSendEmailShow/ModalMainSendEmailShow";
-// import { useEmailAll } from "../../../../../../api/useEmailAll";
-// import useAuth from "../../../../../../api/useAuth";
-// import EmailTopTableIcon from "../../EmailRightSite/EmailTopTableIcon";
-// import EmailUserInfo from "../../EmailRightSite/EmailUserInfo";
-// import ModalFirstPart from "../../EmailRightSite/ModalFirstPart";
-// import ModalSecondPart from "../../EmailRightSite/ModalSecondPart";
-// import ModalMainEmailShow from "../../EmailRightSite/ModalMainEmailShow";
 
 const SendEmail = () => {
     const [select, setSelect] = useState(false);
@@ -28,13 +21,9 @@ const SendEmail = () => {
     const [startClick, setStartClick] = useState(false);
     const [emailClick, setEmailClick] = useState(false);
 
-    // const [emails, refetch, isLoading] = useEmailAll();
     const [emails, refetch, isLoading] = useEmailAll()
     const { user } = useAuth();
     const toEmailFilter = emails.filter(email => email?.sendEmail === user?.email)
-
-    const indexEmailFilter = emails.filter(email => email?.toEmail === user?.email)
-    console.log(indexEmailFilter);
 
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>

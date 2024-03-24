@@ -3,7 +3,7 @@ import { BiDotsVertical } from "react-icons/bi";
 import { FaPhotoFilm } from "react-icons/fa6";
 import allUsers from "../../../../../../../api/useAllUser";
 
-const ModalSendEmailContent = ({ findEmail }) => {
+const ModalStarredEmailContent = ({ findEmail }) => {
     const [users, refetch, isLoading] = allUsers()
     const emailFilter = users.filter(emailOne => emailOne?.email === findEmail?.toEmail)
     return (
@@ -47,4 +47,4 @@ const ModalSendEmailContent = ({ findEmail }) => {
     );
 };
 
-export default ModalSendEmailContent;
+export default ModalStarredEmailContent;

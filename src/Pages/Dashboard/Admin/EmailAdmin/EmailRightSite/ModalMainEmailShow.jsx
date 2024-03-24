@@ -5,12 +5,9 @@ import ModalEmailContent from "./ModalEmailContent";
 import { useEmailAll } from "../../../../../api/useEmailAll";
 
 const ModalMainEmailShow = ({toEmailFilter}) => {
-    console.log("toEmailFilter",toEmailFilter);
     const { id } = useParams();
     const [email, refetch, isLoading] = useEmailAll()
-    // console.log("fvkjefsj iogejoif j ====>",allEmail);
     const findEmail = email.find(email => email?._id === id)
-    console.log("........... >10 number serial", findEmail);
     return (
         <>
             <ModalEmailContent findEmail={findEmail} />

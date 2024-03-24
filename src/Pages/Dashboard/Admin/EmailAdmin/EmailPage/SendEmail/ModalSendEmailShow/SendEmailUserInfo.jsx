@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import allUsers from "../../../../../api/useAllUser";
+import allUsers from "../../../../../../../api/useAllUser";
 
-const EmailUserInfo = ({ email }) => {
+const SendEmailUserInfo = ({ email }) => {
     const [users] = allUsers()
-    const emailFilter = users.filter(emailOne => emailOne?.email === email?.sendEmail)
+    const emailFilter = users.filter(emailOne => emailOne?.email === email?.toEmail)
     const { _id, subject } = email;
     return (
         <>
             {
                 emailFilter.map(email =>
-                    <Link to={`/dashboard/email/${_id}?email=${email.sendEmail}`} key={email?._id}
+                    <Link to={`/dashboard/email/send/${_id}`} key={email?._id}
                         className="text-slate-800 flex items-center pl-2"
                     >
 
@@ -26,4 +26,4 @@ const EmailUserInfo = ({ email }) => {
     );
 };
 
-export default EmailUserInfo;
+export default SendEmailUserInfo;

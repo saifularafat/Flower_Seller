@@ -1,20 +1,3 @@
-// import useAuth from "../../../../../../api/useAuth";
-// import { useEmailAll } from "../../../../../../api/useEmailAll";
-// import EmailRightSite from "../../EmailRightSite/EmailRightSite";
-
-// const SendEmail = () => {
-//     const [email] = useEmailAll();
-//     const { user } = useAuth();
-//     const sendEmailFilter = email.filter(email => email?.sendEmail === user?.email)
-//     console.log(sendEmailFilter);
-//     return (
-//         <div>
-//             <EmailRightSite allEmail={sendEmailFilter} />
-//         </div>
-//     );
-// };
-
-// export default SendEmail;
 
 import { GrCheckbox } from "react-icons/gr";
 import { ImCheckboxChecked } from "react-icons/im";
@@ -26,17 +9,17 @@ import { Tooltip } from "react-tooltip";
 import { useEmailAll } from "../../../../../../api/useEmailAll";
 import useAuth from "../../../../../../api/useAuth";
 import EmailTopTableIcon from "../../EmailRightSite/EmailTopTableIcon";
-import EmailUserInfo from "../../EmailRightSite/EmailUserInfo";
+import SendEmailUserInfo from "./ModalSendEmailShow/SendEmailUserInfo";
 import ModalFirstPart from "../../EmailRightSite/ModalFirstPart";
 import ModalSecondPart from "../../EmailRightSite/ModalSecondPart";
-import ModalMainEmailShow from "../../EmailRightSite/ModalMainEmailShow";
+import ModalMainSendEmailShow from "./ModalSendEmailShow/ModalMainSendEmailShow";
+// import { useEmailAll } from "../../../../../../api/useEmailAll";
+// import useAuth from "../../../../../../api/useAuth";
 // import EmailTopTableIcon from "../../EmailRightSite/EmailTopTableIcon";
 // import EmailUserInfo from "../../EmailRightSite/EmailUserInfo";
 // import ModalFirstPart from "../../EmailRightSite/ModalFirstPart";
 // import ModalSecondPart from "../../EmailRightSite/ModalSecondPart";
 // import ModalMainEmailShow from "../../EmailRightSite/ModalMainEmailShow";
-// import { useEmailAll } from "../../../../../../api/useEmailAll";
-// import useAuth from "../../../../../../api/useAuth";
 
 const SendEmail = () => {
     const [select, setSelect] = useState(false);
@@ -94,7 +77,7 @@ const SendEmail = () => {
                                         }
                                     </button>
                                     {/* Show Email table */}
-                                    <EmailUserInfo email={email} />
+                                    <SendEmailUserInfo email={email} />
                                 </div>
                                 <div className="flex items-center gap-4 mx-3">
                                     <Tooltip id="my-tooltip" place="top" />
@@ -122,7 +105,7 @@ const SendEmail = () => {
                             </div>
                             {/* email content */}
                             <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
-                                <ModalMainEmailShow />
+                                <ModalMainSendEmailShow />
 
                             </div>
                             <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>

@@ -99,6 +99,7 @@ import PrivateEmail from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/PrivateE
 import UpdateProfile from "../Pages/Dashboard/Users/UserProfile/UpdateProfile";
 import PaymentDetails from "../Pages/Dashboard/PaymentDetails/PaymentDetails";
 import ModalMainEmailShow from "../Pages/Dashboard/Admin/EmailAdmin/EmailRightSite/ModalMainEmailShow";
+import ModalMainSendEmailShow from "../Pages/Dashboard/Admin/EmailAdmin/EmailPage/SendEmail/ModalSendEmailShow/ModalMainSendEmailShow";
 
 const router = createBrowserRouter([
     {
@@ -484,6 +485,10 @@ const router = createBrowserRouter([
                     {
                         path: "/dashboard/email/:id",
                         element: <ModalMainEmailShow />
+                    },
+                    {
+                        path: "/dashboard/email/send/:id",
+                        element: <ModalMainSendEmailShow />
                     },
                 ]
             },

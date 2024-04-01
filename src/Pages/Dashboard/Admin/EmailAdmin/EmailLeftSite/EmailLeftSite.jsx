@@ -7,8 +7,13 @@ import NavLinksEmail from "../../../../../components/NavLinkEmail"
 import CompanyLinkEmail from "./../../../../../components/CompanyLinkEmail"
 import EmailCompose from "./EmailCompose";
 import useAdmin from "../../../../../api/useAdmin";
+import useAuth from "../../../../../api/useAuth";
+import { useEmailAll } from "../../../../../api/useEmailAll";
 
 const EmailLeftSite = () => {
+    const [emails, refetch, isLoading] = useEmailAll();
+    const { user } = useAuth();
+    const toEmailFilter = emails.filter(email => email?.toEmail === user?.email)
     const [isAdmin] = useAdmin();
     return (
         <div className={`text-accent rounded-l-xl shadow-2xl`}>
@@ -19,7 +24,7 @@ const EmailLeftSite = () => {
                 {/* email router */}
                 <ul className="pt-6 space-y-4">
                     <li>
-                        <NavLinksEmail path="/dashboard/email/index" Icon={AiOutlineMail} linkName="Inbox" numberBg="bg-blue-200" numberText="text-blue-700" number="6" />
+                        <NavLinksEmail path="/dashboard/email/index" Icon={AiOutlineMail} linkName="Inbox" numberBg="bg-blue-200" numberText="text-blue-700" number={toEmailFilter?.length} />
                     </li>
                     <li>
                         <NavLinksEmail path="/dashboard/email/send" Icon={BsSend} linkName="Send" numberBg="" numberText="" number="" />

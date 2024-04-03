@@ -31,7 +31,7 @@ const SendEmailUserInfo = ({ email }) => {
                     </>
                     :
                     <>
-                       <div className="text-red-500" >No matching users found</div>
+                        <div className="text-red-500" >No matching users found</div>
                     </>
             }
 

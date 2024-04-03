@@ -23,7 +23,7 @@ const SendEmail = () => {
 
     const [emails, refetch, isLoading] = useEmailAll()
     const { user } = useAuth();
-    const toEmailFilter = emails.filter(email => email?.sendEmail === user?.email)
+    const toEmailFilter = emails.filter(email => email?.emailStatus === "delete" ? "" : email?.sendEmail === user?.email)
 
     return (
         <div className={`h-[580px] text-accent rounded-r-xl shadow-2xl relative`}>

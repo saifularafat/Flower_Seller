@@ -39,28 +39,30 @@ const TrashEmail = () => {
                 <div>
                     {/* email table */}
                     {
-                        emailDelete.map(email =>
-                            <button key={email?._id}
-                                onClick={() => setSelect(!select)}
-                                className={`flex items-center justify-between gap-6 w-full py-3 border-0 border-b border-solid border-slate-400 hover:scale-y-100 transition-all duration-200`}>
-                                <div className="flex items-center gap-2 px-2">
-                                    <button className="text-slate-800 border-none" onClick={() => setStartClick(!startClick)}>
+                        emailDelete.map(email => {
+                            email?.toEmail === user?.email &&
+                                <button key={email?._id}
+                                    onClick={() => setSelect(!select)}
+                                    className={`flex items-center justify-between gap-6 w-full py-3 border-0 border-b border-solid border-slate-400 hover:scale-y-100 transition-all duration-200`}>
+                                    <div className="flex items-center gap-2 px-2">
+                                        <button className="text-slate-800 border-none" onClick={() => setStartClick(!startClick)}>
 
-                                        {email?.starred === "start" ?
-                                            <AiFillStar className="text-xl text-yellow-500" />
-                                            :
-                                            <AiOutlineStar className="text-xl " />
-                                        }
-                                    </button>
-                                    {/* Show Email table */}
-                                    <TrashEmailUserInfo email={email} />
-                                </div>
-                                <div className="flex items-center gap-4 mx-3">
-                                    <Tooltip id="my-tooltip" place="top" />
-                                    <BiTrash className="text-xl text-red-700 border-none" data-tooltip-id="my-tooltip" data-tooltip-content="Delete Mail" />
-                                    <HiOutlineMail className="text-xl text-blue-500" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
-                                </div>
-                            </button>
+                                            {email?.starred === "start" ?
+                                                <AiFillStar className="text-xl text-yellow-500" />
+                                                :
+                                                <AiOutlineStar className="text-xl " />
+                                            }
+                                        </button>
+                                        {/* Show Email table */}
+                                        <TrashEmailUserInfo email={email} />
+                                    </div>
+                                    <div className="flex items-center gap-4 mx-3">
+                                        <Tooltip id="my-tooltip" place="top" />
+                                        <BiTrash className="text-xl text-red-700 border-none" data-tooltip-id="my-tooltip" data-tooltip-content="Delete Mail" />
+                                        <HiOutlineMail className="text-xl text-blue-500" data-tooltip-id="my-tooltip" data-tooltip-content="Mark as Unread" />
+                                    </div>
+                                </button>
+                        }
                         )
                     }
                     {

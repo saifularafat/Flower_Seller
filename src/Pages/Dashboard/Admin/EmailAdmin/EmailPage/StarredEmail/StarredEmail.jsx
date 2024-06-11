@@ -23,8 +23,8 @@ const StarredEmail = () => {
 
   const [emails, refetch, isLoading] = useEmailAll()
   const { user } = useAuth();
-  const starredEmailFilter = emails.filter(email => email?.starred === "start" && email?.toEmail === user?.email)
-  // const starredMap = starredEmailFilter.map(starred=> starred)
+  const starredEmailFilter = emails.filter(email => email?.starred === "start" && email?.sendEmail === user?.email)
+  const starredMap = starredEmailFilter.map(starred=> starred)
   console.log(starredEmailFilter);
 
   return (

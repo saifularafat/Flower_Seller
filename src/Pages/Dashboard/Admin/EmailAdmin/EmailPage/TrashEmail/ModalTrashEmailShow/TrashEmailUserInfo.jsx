@@ -3,7 +3,8 @@ import allUsers from "../../../../../../../api/useAllUser";
 
 const TrashEmailUserInfo = ({ email }) => {
     const [users] = allUsers();
-    const emailFilter = users.filter(emailOne => emailOne?.email === email?.toEmail)
+    const emailFilter = users.filter(emailOne => emailOne?.email === email?.sendEmail)
+    console.log("numbedr 4",emailFilter);
     const { _id, subject } = email;
     return (
         <>
@@ -12,7 +13,7 @@ const TrashEmailUserInfo = ({ email }) => {
                     <>
                         {
                             emailFilter.map(email =>
-                                <Link to={`/dashboard/email/trash/${_id}`} key={email?._id}
+                                <Link to={`/dashboard/email/trash/${email?._id}`} key={email?._id}
                                     className="text-slate-800 flex items-center pl-2"
                                 >
                                     {

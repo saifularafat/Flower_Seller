@@ -3,6 +3,7 @@ import { FaPrint } from "react-icons/fa6";
 import { SlArrowLeft } from "react-icons/sl";
 
 const ModalFirstPart = ({ emailClick, setEmailClick }) => {
+    console.log("emailDelete", setEmailClick);
     return (
         <div className="grid grid-cols-3 md:grid-cols-11 py-3 border-0 border-b border-solid border-slate-300">
             {/* first part */}

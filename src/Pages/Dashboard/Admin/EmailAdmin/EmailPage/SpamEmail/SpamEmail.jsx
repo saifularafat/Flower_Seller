@@ -81,7 +81,30 @@ const SpamEmail = () => {
                             </button>
                         )
                     }
-                   
+                    {
+                        emailClick &&
+                        <div className="absolute right-0 top-0 bottom-0 bg-slate-100 rounded-tr-xl rounded-br-xl w-full h-screen overflow-y-scroll myScroll">
+                            <div className={`MAIN_ICONS_FULL_PART  py-2 px-4`}>
+                                {
+                                    toEmailFilter.map(toEmail =>
+                                        <ModalFirstPart key={toEmail?._id}
+                                            emailClick={emailClick}
+                                            setEmailClick={setEmailClick}
+                                            allEmail={toEmail} />)
+                                }
+
+                                {/* THREE PART */}
+                                <ModalSecondPart allEmail={toEmailFilter} />
+                            </div>
+                            {/* email content */}
+                            <div className={` text-accent mt-4 mx-4 py-2 px-3 rounded-t-lg`}>
+                                <ModalMainEmailShow toEmailFilter={toEmailFilter} />
+                            </div>
+                            <div className={` text-accent mt-3 mx-4 py-3 px-3 rounded-t-lg`}>
+                                <h2 className="text-sm font-medium text-gray-800"> Click here to <span className="text-blue-700 text-base cursor-pointer hover:underline">Reply</span> or <span className="text-blue-700 text-base hover:underline cursor-pointer">Forward</span></h2>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

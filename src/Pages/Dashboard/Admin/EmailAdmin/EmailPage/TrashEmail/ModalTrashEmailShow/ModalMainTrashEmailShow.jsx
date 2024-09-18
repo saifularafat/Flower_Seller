@@ -6,7 +6,9 @@ import EmailTrashImageFile from "./EmailTrashImageFile";
 
 const ModalMainTrashEmailShow = () => {
     const { id } = useParams();
+    console.log("dnjfdhf id",id);
     const [email, refetch, isLoading] = useEmailAll();
+    console.log("emalndsjfbsk sdf",email);
     const findEmail = email.find(email => email?._id === id);
     return (
         <>
